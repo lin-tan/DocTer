@@ -1,0 +1,22 @@
+constraints:
+  lhs:
+    descp: First array in division.
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array in division. The arrays to be divided. If `lhs.shape != rhs.shape`,
+      they must be broadcastable to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.divide
+package: mxnet
+target: divide
+title: mxnet.ndarray.sparse.divide
+version: 1.6.0

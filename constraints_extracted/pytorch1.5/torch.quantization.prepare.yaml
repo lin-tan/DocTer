@@ -1,0 +1,20 @@
+constraints:
+  inplace:
+    default: 'False'
+    descp: carry out model transformations in-place, the original module is mutated
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  model:
+    descp: input model to be modified in-place
+inputs:
+  optional:
+  - inplace
+  required:
+  - model
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.quantization.prepare
+package: torch
+target: prepare
+title: torch.quantization.prepare
+version: 1.5.0

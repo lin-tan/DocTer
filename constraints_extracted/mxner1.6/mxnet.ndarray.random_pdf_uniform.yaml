@@ -1,0 +1,54 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  high:
+    default: None
+    descp: Upper bounds of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  is_log:
+    default: _Null
+    descp: If set, compute the density of the log-probability instead of the probability.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  low:
+    default: None
+    descp: Lower bounds of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  sample:
+    default: None
+    descp: Samples from the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - sample
+  - low
+  - high
+  - is_log
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.random_pdf_uniform
+package: mxnet
+target: random_pdf_uniform
+title: mxnet.ndarray.random_pdf_uniform
+version: 1.6.0

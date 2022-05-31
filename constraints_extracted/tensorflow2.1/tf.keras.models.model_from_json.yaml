@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.keras.models.model_from_json
+constraints:
+  custom_objects:
+    default: None
+    descp: Optional dictionary mapping names (strings) to custom classes or functions
+      to be considered during deserialization.
+  json_string:
+    descp: JSON string encoding a model configuration.
+    dtype:
+    - tf.string
+inputs:
+  optional:
+  - custom_objects
+  required:
+  - json_string
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/models/model_from_json
+outputs: A Keras model instance (uncompiled).
+package: tensorflow
+target: model_from_json
+title: tf.keras.models.model_from_json
+version: 2.1.0

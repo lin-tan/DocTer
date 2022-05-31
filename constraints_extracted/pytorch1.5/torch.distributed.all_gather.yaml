@@ -1,0 +1,38 @@
+constraints:
+  async_op:
+    default: 'False'
+    descp: Whether this op should be an async op
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  group:
+    default: <objectobject>
+    descp: The process group to work on
+    doc_dtype: ProcessGroup, optional
+  tensor:
+    descp: Tensor to be broadcast from current process.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  tensor_list:
+    descp: Output list. It should contain correctly-sized tensors to be used for output
+      of the collective.
+    doc_dtype: list[Tensor]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - group
+  - async_op
+  required:
+  - tensor_list
+  - tensor
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.all_gather
+package: torch
+target: all_gather
+title: torch.distributed.all_gather
+version: 1.5.0

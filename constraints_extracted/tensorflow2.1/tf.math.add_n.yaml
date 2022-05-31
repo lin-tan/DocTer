@@ -1,0 +1,33 @@
+aliases:
+- tf.add_n
+- tf.compat.v1.add_n
+- tf.compat.v1.math.add_n
+constraints:
+  inputs:
+    descp: A list of `tf.Tensor` or `tf.IndexedSlices` objects, each with same shape
+      and type.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If `inputs` don't all have same shape and dtype or the shape cannot
+    be inferred.
+inputs:
+  optional:
+  - name
+  required:
+  - inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/add_n
+outputs: A `Tensor` of same shape and type as the elements of `inputs`.
+package: tensorflow
+target: add_n
+title: tf.math.add_n
+version: 2.1.0

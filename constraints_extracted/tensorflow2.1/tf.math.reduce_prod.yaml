@@ -1,0 +1,40 @@
+aliases:
+- tf.reduce_prod
+constraints:
+  axis:
+    default: None
+    descp: The dimensions to reduce. If `None` (the default), reduces all dimensions.
+      Must be in the range `[-rank(input_tensor), rank(input_tensor))`.
+  input_tensor:
+    descp: The tensor to reduce. Should have numeric type.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+  keepdims:
+    default: 'False'
+    descp: If true, retains reduced dimensions with length 1.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - axis
+  - keepdims
+  - name
+  required:
+  - input_tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/reduce_prod
+outputs: The reduced tensor.
+package: tensorflow
+target: reduce_prod
+title: tf.math.reduce_prod
+version: 2.1.0

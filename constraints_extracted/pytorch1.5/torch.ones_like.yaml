@@ -1,0 +1,72 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, defaults to
+      the device of `input`.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned Tensor. Default: if `None`, defaults
+      to the dtype of `input`.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: the size of `input` will determine size of the output tensor.
+    doc_dtype: Tensor
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - torch.tensor
+  layout:
+    default: None
+    descp: 'the desired layout of returned tensor. Default: if `None`, defaults to
+      the layout of `input`.'
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  memory_format:
+    default: torch.preserve_format
+    descp: 'the desired memory format of returned Tensor. Default: `torch.preserve_format`.'
+    doc_dtype: '`torch.memory_format`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  - memory_format
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.ones_like
+package: torch
+ret_type: Tensor
+target: ones_like
+title: torch.ones_like
+version: 1.5.0

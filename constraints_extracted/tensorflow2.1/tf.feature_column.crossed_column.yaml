@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.feature_column.crossed_column
+constraints:
+  hash_bucket_size:
+    descp: An int > 1. The number of buckets.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  hash_key:
+    default: None
+    descp: Specify the hash_key that will be used by the `FingerprintCat64`function
+      to combine the crosses fingerprints on SparseCrossOp (optional).
+  keys:
+    descp: 'An iterable identifying the features to be crossed. Each element can be
+      either: string: Will use the corresponding feature which must be of string type.`CategoricalColumn`:
+      Will use the transformed tensor produced by this column. Does not support hashed
+      categorical column. '
+    dtype:
+    - tf.string
+    enum:
+    - CategoricalColumn
+    structure:
+    - list
+exceptions:
+- ValueError: If `len(keys) < 2`.
+- ValueError: If any of the keys is neither a string nor `CategoricalColumn`.
+- ValueError: If any of the keys is `HashedCategoricalColumn`.
+- ValueError: If `hash_bucket_size < 1`.
+inputs:
+  optional:
+  - hash_key
+  required:
+  - keys
+  - hash_bucket_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/crossed_column
+outputs: A `CrossedColumn`.
+package: tensorflow
+target: crossed_column
+title: tf.feature_column.crossed_column
+version: 2.1.0

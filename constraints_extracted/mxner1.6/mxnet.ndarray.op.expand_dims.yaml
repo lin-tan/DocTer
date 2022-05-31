@@ -1,0 +1,39 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Position where new axis is to be inserted. Suppose that the input NDArray's
+      dimension is ndim, the range of the inserted axis is [-ndim, ndim]
+    doc_dtype: int, required
+    dtype:
+    - int
+  data:
+    default: None
+    descp: Source input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.expand_dims
+package: mxnet
+target: expand_dims
+title: mxnet.ndarray.op.expand_dims
+version: 1.6.0

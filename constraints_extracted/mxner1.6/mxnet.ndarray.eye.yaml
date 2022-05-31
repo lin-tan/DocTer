@@ -1,0 +1,58 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  M:
+    default: '0'
+    descp: Number of columns in the output. If 0, defaults to N.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  N:
+    descp: Number of rows in the output.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  ctx:
+    default: None
+    descp: An optional device context (default is the current default context)
+    doc_dtype: Context, optional
+  dtype:
+    default: None
+    descp: An optional value type (default is float32)
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+  k:
+    default: '0'
+    descp: 'Index of the diagonal: 0 (the default) refers to the main diagonal, a
+      positive value refers to an upper diagonal, and a negative value to a lower
+      diagonal.'
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - M
+  - k
+  - ctx
+  - dtype
+  required:
+  - N
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.eye
+package: mxnet
+target: eye
+title: mxnet.ndarray.eye
+version: 1.6.0

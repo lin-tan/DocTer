@@ -1,0 +1,57 @@
+aliases:
+- tf.compat.v1.histogram_fixed_width
+constraints:
+  dtype:
+    default: tf.dtypes.int32
+    descp: dtype for returned histogram.
+    dtype:
+    - tf.dtype
+    - tf.int32
+  name:
+    default: None
+    descp: A name for this operation (defaults to 'histogram_fixed_width').
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  nbins:
+    default: '100'
+    descp: Scalar `int32 Tensor`.  Number of histogram bins.
+    dtype:
+    - int
+    - tf.int32
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  value_range:
+    descp: Shape [2] `Tensor` of same `dtype` as `values`. values <= value_range[0]
+      will be mapped to hist[0], values >= value_range[1] will be mapped to hist[-1].
+    tensor_t:
+    - tf.tensor
+  values:
+    descp: Numeric `Tensor`.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: If any unsupported dtype is provided.
+- tf.errors.InvalidArgumentError: If value_range does not satisfy value_range[0] <
+    value_range[1].
+inputs:
+  optional:
+  - nbins
+  - dtype
+  - name
+  required:
+  - values
+  - value_range
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/histogram_fixed_width
+outputs: A 1-D `Tensor` holding histogram of values.
+package: tensorflow
+target: histogram_fixed_width
+title: tf.histogram_fixed_width
+version: 2.1.0

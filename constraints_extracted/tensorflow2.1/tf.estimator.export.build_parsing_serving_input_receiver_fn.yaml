@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.estimator.export.build_parsing_serving_input_receiver_fn
+constraints:
+  default_batch_size:
+    default: None
+    descp: the number of query examples expected per batch. Leave unset for variable
+      batch size (recommended).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  feature_spec:
+    descp: a dict of string to `VarLenFeature`/`FixedLenFeature`.
+    dtype:
+    - tf.string
+    structure:
+    - dict
+inputs:
+  optional:
+  - default_batch_size
+  required:
+  - feature_spec
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/estimator/export/build_parsing_serving_input_receiver_fn
+outputs: A serving_input_receiver_fn suitable for use in serving.
+package: tensorflow
+target: build_parsing_serving_input_receiver_fn
+title: tf.estimator.export.build_parsing_serving_input_receiver_fn
+version: 2.1.0

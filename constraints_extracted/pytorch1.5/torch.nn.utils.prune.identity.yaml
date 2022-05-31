@@ -1,0 +1,21 @@
+constraints:
+  module:
+    descp: module containing the tensor to prune.
+    doc_dtype: nn.Module
+    tensor_t:
+    - torch.tensor
+  name:
+    descp: parameter name within `module` on which pruning will act.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - module
+  - name
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.prune.identity
+package: torch
+target: identity
+title: torch.nn.utils.prune.identity
+version: 1.5.0

@@ -1,0 +1,18 @@
+check_nan: true
+constraints:
+  dim:
+    default: None
+    descp: A dimension along which LogSoftmax will be computed.
+    doc_dtype: int
+    dtype:
+    - int
+inputs:
+  optional:
+  - dim
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.LogSoftmax
+package: torch
+target: LogSoftmax
+title: torch.nn.LogSoftmax
+version: 1.5.0

@@ -1,0 +1,108 @@
+aliases:
+- tf.image.encode_jpeg
+- tf.compat.v1.image.encode_jpeg
+- tf.compat.v1.io.encode_jpeg
+constraints:
+  chroma_downsampling:
+    default: 'True'
+    descp: An optional `bool`. Defaults to `True`. See http://en.wikipedia.org/wiki/Chroma_subsampling
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  density_unit:
+    default: in
+    descp: 'An optional `string` from: `"in", "cm"`. Defaults to `"in"`. Unit used
+      to specify `x_density` and `y_density`: pixels per inch (`''in''`) or centimeter
+      (`''cm''`).'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  format:
+    default: ''
+    descp: 'An optional `string` from: `"", "grayscale", "rgb"`. Defaults to `""`.
+      Per pixel image format.'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  image:
+    descp: A `Tensor` of type `uint8`. 3-D with shape `[height, width, channels]`.
+    dtype:
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  optimize_size:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. If True, spend CPU/RAM to reduce
+      size with no quality change.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  progressive:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. If True, create a JPEG that loads
+      progressively (coarse to fine).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  quality:
+    default: '95'
+    descp: An optional `int`. Defaults to `95`. Quality of the compression from 0
+      to 100 (higher is better and slower).
+    dtype:
+    - int
+    ndim:
+    - '0'
+  x_density:
+    default: '300'
+    descp: An optional `int`. Defaults to `300`. Horizontal pixels per density unit.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  xmp_metadata:
+    default: ''
+    descp: An optional `string`. Defaults to `""`. If not empty, embed this XMP metadata
+      in the image header.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  y_density:
+    default: '300'
+    descp: An optional `int`. Defaults to `300`. Vertical pixels per density unit.
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - format
+  - quality
+  - progressive
+  - optimize_size
+  - chroma_downsampling
+  - density_unit
+  - x_density
+  - y_density
+  - xmp_metadata
+  - name
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/encode_jpeg
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: encode_jpeg
+title: tf.io.encode_jpeg
+version: 2.1.0

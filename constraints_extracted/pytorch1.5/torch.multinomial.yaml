@@ -1,0 +1,50 @@
+constraints:
+  generator:
+    default: None
+    descp: a pseudorandom number generator for sampling
+    doc_dtype: '`torch.Generator`, optional'
+  input:
+    descp: the input tensor containing probabilities
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  num_samples:
+    descp: number of samples to draw
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  replacement:
+    default: 'False'
+    descp: whether to draw with replacement or not
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  keyword_only:
+  - generator
+  - out
+  optional:
+  - replacement
+  - generator
+  - out
+  required:
+  - input
+  - num_samples
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.multinomial
+package: torch
+ret_type: LongTensor
+target: multinomial
+title: torch.multinomial
+version: 1.5.0

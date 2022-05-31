@@ -1,0 +1,45 @@
+constraints:
+  arg1:
+    descp: The argument to help instantiate the row sparse ndarray. See above for
+      further details.
+    doc_dtype: NDArray, numpy.ndarray, RowSparseNDArray, tuple of int or tuple of
+      array_like
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+  ctx:
+    default: None
+    descp: Device context (default is the current default context).
+    doc_dtype: Context, optional
+  dtype:
+    default: None
+    descp: The data type of the output array. (Default value = None)
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+    structure:
+    - ndarray
+  shape:
+    default: None
+    descp: The shape of the row sparse ndarray. (Default value = None)
+    doc_dtype: tuple of int, optional
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+inputs:
+  optional:
+  - shape
+  - ctx
+  - dtype
+  required:
+  - arg1
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.row_sparse_array
+package: mxnet
+target: row_sparse_array
+title: mxnet.ndarray.sparse.row_sparse_array
+version: 1.6.0

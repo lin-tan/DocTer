@@ -1,0 +1,44 @@
+constraints:
+  data:
+    descp: A `Tensor` with data that will be assembled in the output.
+    tensor_t:
+    - tf.tensor
+  indices:
+    descp: A 1-D `Tensor` with indices into `data`. Has same rank as`segment_ids`.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_segments:
+    default: None
+    descp: An optional int32 scalar. Indicates the size of the output`Tensor`.
+  segment_ids:
+    descp: A 1-D `Tensor` with indices into the output `Tensor`. Values should be
+      sorted and can be repeated.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - num_segments
+  - name
+  required:
+  - data
+  - indices
+  - segment_ids
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/segment_mean
+outputs: A `tensor` of the shape as data, except for dimension 0 which has size `k`,
+  the number of segments specified via `num_segments` or inferred for the last element
+  in `segments_ids`.
+package: tensorflow
+target: segment_mean
+title: tf.sparse.segment_mean
+version: 2.1.0

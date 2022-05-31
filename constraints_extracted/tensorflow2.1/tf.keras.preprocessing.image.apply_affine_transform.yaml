@@ -1,0 +1,92 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.image.apply_affine_transform
+constraints:
+  channel_axis:
+    default: '2'
+    descp: Index of axis for channels in the input image.
+    dtype:
+    - int
+  col_axis:
+    default: '1'
+    descp: Index of axis for columns in the input image.
+    dtype:
+    - int
+  cval:
+    default: '0.0'
+    descp: Value used for points outside the boundaries     of the input if `mode='constant'`.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  fill_mode:
+    default: nearest
+    descp: Points outside the boundaries of the input     are filled according to
+      the given mode     (one of `{'constant', 'nearest', 'reflect', 'wrap'}`).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  order:
+    default: '1'
+    descp: int, order of interpolation`
+    dtype:
+    - int
+  row_axis:
+    default: '0'
+    descp: Index of axis for rows in the input image.
+    dtype:
+    - int
+  shear:
+    default: '0'
+    descp: Shear angle in degrees.
+    dtype:
+    - int
+  theta:
+    default: '0'
+    descp: Rotation angle in degrees.
+    dtype:
+    - int
+  tx:
+    default: '0'
+    descp: Width shift.
+    dtype:
+    - int
+  ty:
+    default: '0'
+    descp: Heigh shift.
+    dtype:
+    - int
+  x:
+    descp: 2D numpy array, single image.
+  zx:
+    default: '1'
+    descp: Zoom in x direction.
+    dtype:
+    - int
+  zy:
+    default: '1'
+    descp: Zoom in y direction
+    dtype:
+    - int
+inputs:
+  optional:
+  - theta
+  - tx
+  - ty
+  - shear
+  - zx
+  - zy
+  - row_axis
+  - col_axis
+  - channel_axis
+  - fill_mode
+  - cval
+  - order
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/image/apply_affine_transform
+outputs: '`The transformed version of the input.`'
+package: tensorflow
+target: apply_affine_transform
+title: tf.keras.preprocessing.image.apply_affine_transform
+version: 2.1.0

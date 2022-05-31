@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.parallel_stack
+constraints:
+  name:
+    default: parallel_stack
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    descp: A list of `Tensor` objects with the same shape and type.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - values
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/parallel_stack
+outputs:
+- output: A stacked `Tensor` with the same type as `values`.
+package: tensorflow
+target: parallel_stack
+title: tf.parallel_stack
+version: 2.1.0

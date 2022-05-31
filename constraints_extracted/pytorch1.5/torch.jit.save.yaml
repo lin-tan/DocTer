@@ -1,0 +1,25 @@
+constraints:
+  _extra_files:
+    default: ExtraFilesMap{}
+    descp: Map from filename to contents which will be stored as part of 'f'.
+    dtype:
+    - string
+  f:
+    descp: A file-like object (has to implement write and flush) or a string containing
+      a file name.
+    ndim:
+    - '0'
+    - '1'
+  m:
+    descp: A `ScriptModule` to save.
+inputs:
+  optional:
+  - _extra_files
+  required:
+  - m
+  - f
+link: https://pytorch.org/docs/1.5.0/jit.html#torch.jit.save
+package: torch
+target: save
+title: torch.jit.save
+version: 1.5.0

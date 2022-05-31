@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  lhs:
+    descp: First array to be added.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array to be added. If `lhs.shape != rhs.shape`, they must be broadcastable
+      to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.add
+package: mxnet
+target: add
+title: mxnet.ndarray.add
+version: 1.6.0

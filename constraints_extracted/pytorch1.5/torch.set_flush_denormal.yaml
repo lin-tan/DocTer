@@ -1,0 +1,16 @@
+constraints:
+  mode:
+    descp: Controls whether to enable flush denormal mode or not
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+inputs:
+  optional: []
+  required:
+  - mode
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.set_flush_denormal
+package: torch
+ret_type: bool
+target: set_flush_denormal
+title: torch.set_flush_denormal
+version: 1.5.0

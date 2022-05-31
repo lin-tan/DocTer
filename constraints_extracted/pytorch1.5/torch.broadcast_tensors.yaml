@@ -1,0 +1,23 @@
+constraints:
+  '*tensors':
+    descp: any number of tensors of the same type
+    dtype:
+    - int
+    - torch.dtype
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - '*tensors'
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.broadcast_tensors
+package: torch
+ret_type: List of Tensors
+target: broadcast_tensors
+title: torch.broadcast_tensors
+version: 1.5.0

@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.sparse.mask
+- tf.compat.v1.sparse_mask
+constraints:
+  a:
+    descp: An `IndexedSlices` instance.
+  mask_indices:
+    descp: Indices of elements to mask.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - a
+  - mask_indices
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/mask
+outputs: The masked `IndexedSlices` instance.
+package: tensorflow
+target: mask
+title: tf.sparse.mask
+version: 2.1.0

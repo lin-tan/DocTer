@@ -1,0 +1,53 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axes:
+    default: _Null
+    descp: List of axes on which input data will be sliced according to the corresponding
+      size of the second input. By default will slice on all axes. Negative axes are
+      supported.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  data:
+    default: None
+    descp: Source input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape_like:
+    default: None
+    descp: Shape like input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - shape_like
+  - axes
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.slice_like
+package: mxnet
+target: slice_like
+title: mxnet.ndarray.op.slice_like
+version: 1.6.0

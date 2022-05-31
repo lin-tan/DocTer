@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.keras.models.model_from_yaml
+constraints:
+  custom_objects:
+    default: None
+    descp: Optional dictionary mapping names (strings) to custom classes or functions
+      to be considered during deserialization.
+  yaml_string:
+    descp: YAML string encoding a model configuration.
+    dtype:
+    - tf.string
+exceptions:
+- ImportError: if yaml module is not found.
+inputs:
+  optional:
+  - custom_objects
+  required:
+  - yaml_string
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/models/model_from_yaml
+outputs: A Keras model instance (uncompiled).
+package: tensorflow
+target: model_from_yaml
+title: tf.keras.models.model_from_yaml
+version: 2.1.0

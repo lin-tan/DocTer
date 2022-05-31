@@ -1,0 +1,62 @@
+constraints:
+  aux_states:
+    default: None
+    descp: Auxiliary states values used as location to compute gradient Maps the name
+      of aux_states to the corresponding numpy.ndarray. Value of all the auxiliary
+      arguments must be provided.
+    doc_dtype: None or list of numpy.ndarray or dict of str to numpy.ndarray, optional
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  dtype:
+    default: <classnumpy.float32>
+    descp: Datatype for mx.nd.array.
+    doc_dtype: np.float16 or np.float32 or np.float64
+    dtype:
+    - numpy.float16
+    - numpy.float32
+    - numpy.float64
+  eps:
+    default: '0.0001'
+    descp: Epsilon for the finite-difference method.
+    doc_dtype: float, optional
+    dtype:
+    - float
+    ndim:
+    - '0'
+  executor:
+    descp: Executor that computes the forward pass.
+    doc_dtype: Executor
+  location:
+    descp: Argument values used as location to compute gradient Maps the name of arguments
+      to the corresponding numpy.ndarray. Value of all the arguments must be provided.
+    doc_dtype: list of numpy.ndarray or dict of str to numpy.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  use_forward_train:
+    default: 'True'
+    descp: Whether to use is_train=True in testing.
+    doc_dtype: bool, optional
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - aux_states
+  - eps
+  - use_forward_train
+  - dtype
+  required:
+  - executor
+  - location
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.numeric_grad
+package: mxnet
+target: numeric_grad
+title: mxnet.test_utils.numeric_grad
+version: 1.6.0

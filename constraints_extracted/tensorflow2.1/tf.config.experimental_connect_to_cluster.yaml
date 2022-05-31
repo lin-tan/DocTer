@@ -1,0 +1,46 @@
+aliases:
+- tf.compat.v1.config.experimental_connect_to_cluster
+constraints:
+  cluster_spec_or_resolver:
+    descp: A `ClusterSpec` or `ClusterResolver` describing the cluster.
+    ndim:
+    - '0'
+  job_name:
+    default: localhost
+    descp: The name of the local job.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  make_master_device_default:
+    default: 'True'
+    descp: If True and a cluster resolver is passed, will automatically enter the
+      master task device scope, which indicates the master becomes the default device
+      to run ops. It won't do anything if a cluster spec is passed. Will throw an
+      error if the caller is currently already in some device scope.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  protocol:
+    default: None
+    descp: The communication protocol, such as `"grpc"`. If unspecified, will use
+      the default from `python/platform/remote_utils.py`.
+  task_index:
+    default: '0'
+    descp: The local task index.
+    dtype:
+    - int
+inputs:
+  optional:
+  - job_name
+  - task_index
+  - protocol
+  - make_master_device_default
+  required:
+  - cluster_spec_or_resolver
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/experimental_connect_to_cluster
+package: tensorflow
+target: experimental_connect_to_cluster
+title: tf.config.experimental_connect_to_cluster
+version: 2.1.0

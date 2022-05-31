@@ -1,0 +1,30 @@
+constraints:
+  entity:
+    descp: Python callable or class to convert.
+  experimental_optional_features:
+    default: None
+    descp: '`None`, a tuple of, or a single`tf.autograph.experimental.Feature` value.'
+    ndim:
+    - '0'
+    structure:
+    - tuple
+  recursive:
+    default: 'True'
+    descp: Whether to recursively convert any functions that the converted function
+      may call.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - recursive
+  - experimental_optional_features
+  required:
+  - entity
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/autograph/to_code
+outputs: The converted code as string.
+package: tensorflow
+target: to_code
+title: tf.autograph.to_code
+version: 2.1.0

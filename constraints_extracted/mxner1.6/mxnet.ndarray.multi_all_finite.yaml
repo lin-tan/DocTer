@@ -1,0 +1,46 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: Arrays
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  init_output:
+    default: None
+    descp: Initialize output to 1.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_arrays:
+    default: None
+    descp: Number of arrays.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - num_arrays
+  - init_output
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.multi_all_finite
+package: mxnet
+target: multi_all_finite
+title: mxnet.ndarray.multi_all_finite
+version: 1.6.0

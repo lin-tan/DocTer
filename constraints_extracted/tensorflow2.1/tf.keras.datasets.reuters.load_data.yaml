@@ -1,0 +1,76 @@
+aliases:
+- tf.compat.v1.keras.datasets.reuters.load_data
+constraints:
+  '**kwargs':
+    descp: Used for backwards compatibility.
+  index_from:
+    default: '3'
+    descp: index actual words with this index and higher.
+    dtype:
+    - int
+  maxlen:
+    default: None
+    descp: truncate sequences after this length.
+  num_words:
+    default: None
+    descp: max number of words to include. Words are ranked by how often they occur
+      (in the training set) and only the most frequent words are kept
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  oov_char:
+    default: '2'
+    descp: words that were cut out because of the `num_words`or `skip_top` limit will
+      be replaced with this character.
+    dtype:
+    - int
+  path:
+    default: reuters.npz
+    descp: where to cache the data (relative to `~/.keras/dataset`).
+  seed:
+    default: '113'
+    descp: random seed for sample shuffling.
+    dtype:
+    - int
+  skip_top:
+    default: '0'
+    descp: skip the top N most frequently occurring words (which may not be informative).
+    dtype:
+    - int
+  start_char:
+    default: '1'
+    descp: The start of a sequence will be marked with this character. Set to 1 because
+      0 is usually the padding character.
+    dtype:
+    - int
+    structure:
+    - list
+  test_split:
+    default: '0.2'
+    descp: Fraction of the dataset to be used as test data.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - path
+  - num_words
+  - skip_top
+  - maxlen
+  - test_split
+  - seed
+  - start_char
+  - oov_char
+  - index_from
+  required:
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/datasets/reuters/load_data
+outputs: 'Tuple of Numpy arrays: `(x_train, y_train), (x_test, y_test)`.'
+package: tensorflow
+target: load_data
+title: tf.keras.datasets.reuters.load_data
+version: 2.1.0

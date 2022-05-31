@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  loc:
+    default: _Null
+    descp: Mean of the distribution.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  scale:
+    default: _Null
+    descp: Standard deviation of the distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - loc
+  - scale
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.normal_like
+package: mxnet
+target: normal_like
+title: mxnet.ndarray.random.normal_like
+version: 1.6.0

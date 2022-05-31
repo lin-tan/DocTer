@@ -1,0 +1,48 @@
+constraints:
+  data:
+    default: None
+    descp: The tensors to print out if the condition is False.  Defaults to error
+      message and first few entries of the violating tensor.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional).  Defaults to "assert_shapes".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  shapes:
+    descp: dictionary with (`Tensor` to shape) items. A shape must be an iterable.
+    structure:
+    - dict
+    - list
+    tensor_t:
+    - tf.tensor
+  summarize:
+    default: None
+    descp: Print this many entries of the tensor.
+exceptions:
+- ValueError: If static checks determine any shape constraint is violated.
+inputs:
+  optional:
+  - data
+  - summarize
+  - message
+  - name
+  required:
+  - shapes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_shapes
+package: tensorflow
+target: assert_shapes
+title: tf.debugging.assert_shapes
+version: 2.1.0

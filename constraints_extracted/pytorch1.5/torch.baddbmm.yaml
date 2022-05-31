@@ -1,0 +1,57 @@
+constraints:
+  alpha:
+    default: '1'
+    descp: multiplier for batch1  mathbin{@} batch2  ( alpha )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  batch1:
+    descp: the first batch of matrices to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  batch2:
+    descp: the second batch of matrices to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  beta:
+    default: '1'
+    descp: multiplier for `input` ( beta )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  input:
+    descp: the tensor to be added
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  keyword_only:
+  - beta
+  - alpha
+  - out
+  optional:
+  - beta
+  - alpha
+  - out
+  required:
+  - input
+  - batch1
+  - batch2
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.baddbmm
+package: torch
+ret_type: Tensor
+target: baddbmm
+title: torch.baddbmm
+version: 1.5.0

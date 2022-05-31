@@ -1,0 +1,83 @@
+check_nan: true
+constraints:
+  pos_weight:
+    default: None
+    descp: a weight of positive examples. Must be a vector with length equal to the
+      number of classes.
+    doc_dtype: Tensor, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  reduce:
+    default: None
+    descp: 'Deprecated (see `reduction`). By default, the losses are averaged or summed
+      over observations for each minibatch depending on `size_average`. When `reduce`
+      is `False`, returns a loss per batch element instead and ignores `size_average`.
+      Default: `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  reduction:
+    default: mean
+    descp: 'Specifies the reduction to apply to the output: `''none''` | `''mean''`
+      | `''sum''`. `''none''`: no reduction will be applied, `''mean''`: the sum of
+      the output will be divided by the number of elements in the output, `''sum''`:
+      the output will be summed. Note: `size_average` and `reduce` are in the process
+      of being deprecated, and in the meantime, specifying either of those two args
+      will override `reduction`. Default: `''mean''`'
+    doc_dtype: string, optional
+    dtype:
+    - int
+    - string
+    enum:
+    - mean
+    - none
+    - sum
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  size_average:
+    default: None
+    descp: 'Deprecated (see `reduction`). By default, the losses are averaged over
+      each loss element in the batch. Note that for some losses, there are multiple
+      elements per sample. If the field `size_average` is set to `False`, the losses
+      are instead summed for each minibatch. Ignored when reduce is `False`. Default:
+      `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    enum:
+    - size_average
+    ndim:
+    - '0'
+  weight:
+    default: None
+    descp: a manual rescaling weight given to the loss of each batch element. If given,
+      has to be a Tensor of size nbatch.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - weight
+  - size_average
+  - reduce
+  - reduction
+  - pos_weight
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.BCEWithLogitsLoss
+package: torch
+target: BCEWithLogitsLoss
+title: torch.nn.BCEWithLogitsLoss
+version: 1.5.0

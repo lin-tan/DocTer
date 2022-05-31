@@ -1,0 +1,70 @@
+check_nan: true
+constraints:
+  blank:
+    default: '0'
+    descp: Blank label. Default 0 .
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  input_lengths:
+    descp: (N) . Lengths of the inputs (must each be  <= T )
+  log_probs:
+    descp: (T, N, C)  where C = number of characters in alphabet including blank,
+      T = input length, and N = batch size. The logarithmized probabilities of the
+      outputs (e.g. obtained with `torch.nn.functional.log_softmax()`).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  reduction:
+    default: mean
+    descp: 'Specifies the reduction to apply to the output: `''none''` | `''mean''`
+      | `''sum''`. `''none''`: no reduction will be applied, `''mean''`: the output
+      losses will be divided by the target lengths and then the mean over the batch
+      is taken, `''sum''`: the output will be summed. Default: `''mean''`'
+    doc_dtype: string, optional
+    dtype:
+    - string
+    enum:
+    - mean
+    - none
+    - sum
+  target_lengths:
+    descp: (N) . Lengths of the targets
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  targets:
+    descp: (N, S)  or (sum(target_lengths)). Targets cannot be blank. In the second
+      form, the targets are assumed to be concatenated.
+  zero_infinity:
+    default: 'False'
+    descp: 'Whether to zero infinite losses and the associated gradients. Default:
+      `False` Infinite losses mainly occur when the inputs are too short to be aligned
+      to the targets.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.int16
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - blank
+  - reduction
+  - zero_infinity
+  required:
+  - log_probs
+  - targets
+  - input_lengths
+  - target_lengths
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.ctc_loss
+package: torch
+target: ctc_loss
+title: torch.nn.functional.ctc_loss
+version: 1.5.0

@@ -1,0 +1,36 @@
+constraints:
+  a:
+    descp: The first operand; `SparseTensor` or `Tensor`.
+  b:
+    descp: The second operand; `SparseTensor` or `Tensor`. At least one operand must
+      be sparse.
+  threshold:
+    default: '0'
+    descp: A 0-D `Tensor`. The magnitude threshold that determines if an output value/index
+      pair takes space. Its dtype should match that of the values if they are real;
+      if the latter are complex64/complex128, then the dtype should be float32/float64,
+      correspondingly.
+    dtype:
+    - int
+    - tf.complex128
+    - tf.complex64
+    - tf.float32
+    - tf.float64
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: If both `a` and `b` are `Tensor`s.  Use `tf.add()` instead.
+inputs:
+  optional:
+  - threshold
+  required:
+  - a
+  - b
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/add
+outputs: A `SparseTensor` or a `Tensor`, representing the sum.
+package: tensorflow
+target: add
+title: tf.sparse.add
+version: 2.1.0

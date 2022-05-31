@@ -1,0 +1,77 @@
+aliases:
+- tf.compat.v1.function
+constraints:
+  autograph:
+    default: 'True'
+    descp: Whether autograph should be applied on `func` before tracing a graph. Data-dependent
+      control flow requires `autograph=True`. For more information, see the tf.function
+      and AutoGraph guide.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  experimental_autograph_options:
+    default: None
+    descp: Optional tuple of`tf.autograph.experimental.Feature` values.
+  experimental_compile:
+    default: None
+    descp: If True, the function is always compiled byXLA. XLA may be more efficient
+      in some cases (e.g. TPU, XLA_GPU, dense tensor computations).
+  experimental_implements:
+    default: None
+    descp: If provided, contains a name of a "known" function this implements. For
+      example "mycompany.my_recurrent_cell". This is stored as an attribute in inference
+      function, which can then be detected when processing serialized function. Seehttps://github.com/tensorflow/community/blob/master/rfcs/20190610-standardizing-composite_ops.mdfor
+      details.  For an example of utilizing this attribute see:https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.ccThe
+      code above automatically detects and substitutes function that implements "embedded_matmul"
+      and allows TFLite to substitute its own implementations. For instance, a tensorflow
+      user can use this attribute to mark that their function also implements`embedded_matmul```
+      (perhaps more efficiently!) by specifying it using this flag.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  experimental_relax_shapes:
+    default: 'False'
+    descp: When True, `tf.function` may generate fewer, graphs that are less specialized
+      on input shapes.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  func:
+    default: None
+    descp: the function to be compiled. If `func` is None, `tf.function` returns a
+      decorator that can be invoked with a single argument - `func`. In other words,
+      `tf.function(input_signature=...)(func)` is equivalent to`tf.function(func,
+      input_signature=...)`. The former can be used as decorator.
+  input_signature:
+    default: None
+    descp: A possibly nested sequence of `tf.TensorSpec` objects specifying the shapes
+      and dtypes of the Tensors that will be supplied to this function. If `None`,
+      a separate function is instantiated for each inferred input signature.  If input_signature
+      is specified, every input to`func` must be a `Tensor`, and `func` cannot accept
+      `**kwargs`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - func
+  - input_signature
+  - autograph
+  - experimental_implements
+  - experimental_autograph_options
+  - experimental_relax_shapes
+  - experimental_compile
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/function
+outputs: If `func` is not None, returns a callable that will execute the compiled
+  function (and return zero or more `tf.Tensor` objects). If `func` is None, returns
+  a decorator that, when invoked with a single`func` argument, returns a callable
+  equivalent to the case above.
+package: tensorflow
+target: function
+title: tf.function
+version: 2.1.0

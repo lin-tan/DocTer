@@ -1,0 +1,72 @@
+aliases:
+- tf.compat.v1.random.gamma
+- tf.compat.v1.random_gamma
+constraints:
+  alpha:
+    descp: A Tensor or Python value or N-D array of type `dtype`. `alpha`provides
+      the shape parameter(s) describing the gamma distribution(s) to sample. Must
+      be broadcastable with `beta`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  beta:
+    default: None
+    descp: A Tensor or Python value or N-D array of type `dtype`. Defaults to 1.`beta`
+      provides the inverse scale parameter(s) of the gamma distribution(s) to sample.
+      Must be broadcastable with `alpha`.
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  dtype:
+    default: tf.dtypes.float32
+    descp: 'The type of alpha, beta, and the output: `float16`, `float32`, or`float64`.'
+    dtype:
+    - tf.dtype
+    - tf.float16
+    - tf.float32
+    - tf.float64
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed for the distributions. See`tf.compat.v1.set_random_seed`for
+      behavior.
+    dtype:
+    - int
+  shape:
+    descp: A 1-D integer Tensor or Python array. The shape of the output samples to
+      be drawn per alpha/beta-parameterized distribution.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - beta
+  - dtype
+  - seed
+  - name
+  required:
+  - shape
+  - alpha
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/gamma
+outputs:
+- samples: a `Tensor` of shape`tf.concat([shape, tf.shape(alpha + beta)], axis=0)`
+    with values of type`dtype`.
+package: tensorflow
+target: gamma
+title: tf.random.gamma
+version: 2.1.0

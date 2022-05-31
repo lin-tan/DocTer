@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.linalg.adjoint
+constraints:
+  matrix:
+    descp: A `Tensor`. Must be `float16`, `float32`, `float64`, `complex64`, or `complex128`
+      with shape `[..., M, M]`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name to give this `Op` (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - matrix
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/adjoint
+outputs: The adjoint (a.k.a. Hermitian transpose a.k.a. conjugate transpose) of matrix.
+package: tensorflow
+target: adjoint
+title: tf.linalg.adjoint
+version: 2.1.0

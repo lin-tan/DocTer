@@ -1,0 +1,82 @@
+aliases:
+- tf.compat.v1.nn.uniform_candidate_sampler
+- tf.compat.v1.random.uniform_candidate_sampler
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_sampled:
+    descp: An `int`.  The number of classes to randomly sample. The`sampled_candidates`
+      return value will have shape `[num_sampled]`. If`unique=True`, `num_sampled`
+      must be less than or equal to `range_max`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_true:
+    descp: An `int`.  The number of target classes per training example.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  range_max:
+    descp: An `int`. The number of possible classes.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  seed:
+    default: None
+    descp: An `int`. An operation-specific seed. Default is 0.
+    dtype:
+    - int
+  true_classes:
+    descp: A `Tensor` of type `int64` and shape `[batch_size, num_true]`. The target
+      classes.
+    dtype:
+    - tf.int64
+    ndim:
+    - '2'
+    shape:
+    - '[batch_size,&num_true]'
+    tensor_t:
+    - tf.tensor
+  unique:
+    descp: A `bool`. Determines whether all sampled classes in a batch are unique.
+    dtype:
+    - tf.bool
+dependency:
+- batch_size
+inputs:
+  optional:
+  - seed
+  - name
+  required:
+  - true_classes
+  - num_true
+  - num_sampled
+  - unique
+  - range_max
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/uniform_candidate_sampler
+outputs:
+- sampled_candidates: A tensor of type `int64` and shape `[num_sampled]`.  The sampled
+    classes, either with possible duplicates (`unique=False`) or all unique (`unique=True`).
+    In either case, `sampled_candidates` is independent of the true classes.
+- true_expected_count: A tensor of type `float`.  Same shape as`true_classes`. The
+    expected counts under the sampling distribution of each of `true_classes`.
+- sampled_expected_count: A tensor of type `float`. Same shape as`sampled_candidates`.
+    The expected counts under the sampling distribution of each of `sampled_candidates`.
+package: tensorflow
+target: uniform_candidate_sampler
+title: tf.random.uniform_candidate_sampler
+version: 2.1.0

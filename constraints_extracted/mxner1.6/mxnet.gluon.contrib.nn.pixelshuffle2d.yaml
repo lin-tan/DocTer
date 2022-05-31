@@ -1,0 +1,21 @@
+check_nan: true
+constraints:
+  factor:
+    descp: Upsampling factors, applied to the `H` and `W` dimensions, in that order.
+    doc_dtype: int or 2-tuple of int
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - tuple
+inputs:
+  optional: []
+  required:
+  - factor
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/contrib/index.html#mxnet.gluon.contrib.nn.PixelShuffle2D
+package: mxnet
+target: PixelShuffle2D
+title: mxnet.gluon.contrib.nn.PixelShuffle2D
+version: 1.6.0

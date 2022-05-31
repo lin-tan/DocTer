@@ -1,0 +1,37 @@
+constraints:
+  _extra_files:
+    default: ExtraFilesMap{}
+    descp: The extra filenames given in the map would be loaded and their content
+      would be stored in the provided map.
+    doc_dtype: dictionary of filename to content
+    dtype:
+    - string
+    structure:
+    - dict
+  f:
+    descp: a file-like object (has to implement read, readline, tell, and seek), or
+      a string containing a file name
+    ndim:
+    - '0'
+    - '1'
+  map_location:
+    default: None
+    descp: A simplified version of `map_location` in `torch.save` used to dynamically
+      remap storages to an alternative set of devices.
+    doc_dtype: string or torch.device
+    dtype:
+    - string
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - map_location
+  - _extra_files
+  required:
+  - f
+link: https://pytorch.org/docs/1.5.0/jit.html#torch.jit.load
+package: torch
+target: load
+title: torch.jit.load
+version: 1.5.0

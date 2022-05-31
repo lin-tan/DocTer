@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.xla.experimental.jit_scope
+constraints:
+  compile_ops:
+    default: 'True'
+    descp: Whether to enable or disable compilation in the scope. Either a Python
+      bool, or a callable that accepts the parameter`node_def` and returns a python
+      bool.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  separate_compiled_gradients:
+    default: 'False'
+    descp: If true put each gradient subgraph into a separate compilation scope. This
+      gives fine-grained control over which portions of the graph will be compiled
+      as a single unit. Compiling gradients separately may yield better performance
+      for some graphs. The scope is named based on the scope of the forward computation
+      as well as the name of the gradients. As a result, the gradients will be compiled
+      in a scope that is separate from both the forward computation, and from other
+      gradients.
+    dtype:
+    - tf.bool
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- RuntimeError: if called when eager execution is enabled.
+inputs:
+  optional:
+  - compile_ops
+  - separate_compiled_gradients
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/xla/experimental/jit_scope
+outputs: The current scope, enabling or disabling compilation.
+package: tensorflow
+target: jit_scope
+title: tf.xla.experimental.jit_scope
+version: 2.1.0

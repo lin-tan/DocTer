@@ -1,0 +1,36 @@
+aliases:
+- tf.compat.v1.math.reduce_variance
+constraints:
+  axis:
+    default: None
+    descp: The dimensions to reduce. If `None` (the default), reduces all dimensions.
+      Must be in the range `[-rank(input_tensor), rank(input_tensor))`.
+  input_tensor:
+    descp: The tensor to reduce. Should have numeric type.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+  keepdims:
+    default: 'False'
+    descp: If true, retains reduced dimensions with length 1.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name scope for the associated operations (optional).
+inputs:
+  optional:
+  - axis
+  - keepdims
+  - name
+  required:
+  - input_tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/reduce_variance
+outputs: The reduced tensor, of the same dtype as the input_tensor.
+package: tensorflow
+target: reduce_variance
+title: tf.math.reduce_variance
+version: 2.1.0

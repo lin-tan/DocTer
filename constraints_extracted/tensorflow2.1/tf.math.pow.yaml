@@ -1,0 +1,50 @@
+aliases:
+- tf.pow
+- tf.compat.v1.math.pow
+- tf.compat.v1.pow
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor` of type `float16`, `float32`, `float64`, `int32`, `int64`,`complex64`,
+      or `complex128`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor` of type `float16`, `float32`, `float64`, `int32`, `int64`,`complex64`,
+      or `complex128`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/pow
+outputs: A `Tensor`.
+package: tensorflow
+target: pow
+title: tf.math.pow
+version: 2.1.0

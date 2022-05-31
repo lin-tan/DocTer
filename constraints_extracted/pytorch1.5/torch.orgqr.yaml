@@ -1,0 +1,22 @@
+constraints:
+  input:
+    descp: the a from `torch.geqrf()`.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  input2:
+    descp: the tau from `torch.geqrf()`.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - input
+  - input2
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.orgqr
+package: torch
+ret_type: Tensor
+target: orgqr
+title: torch.orgqr
+version: 1.5.0

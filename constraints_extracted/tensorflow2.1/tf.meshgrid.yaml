@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.meshgrid
+constraints:
+  '**kwargs':
+    descp: '- indexing: Either ''xy'' or ''ij'' (optional, default: ''xy''). name:
+      A name for the operation (optional). '
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  '*args':
+    descp: '`Tensor`s with rank 1.'
+exceptions:
+- TypeError: When no keyword arguments (kwargs) are passed.
+- ValueError: When indexing keyword argument is not one of `xy` or `ij`.
+inputs:
+  optional: []
+  required:
+  - '*args'
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/meshgrid
+outputs:
+- outputs: A list of N `Tensor`s with rank N.
+package: tensorflow
+target: meshgrid
+title: tf.meshgrid
+version: 2.1.0

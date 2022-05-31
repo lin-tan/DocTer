@@ -1,0 +1,84 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  aggregate_stats:
+    default: None
+    descp: whether to maintain aggregate stats in memory for console dump.  Has some
+      negative performance impact.
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  continuous_dump:
+    default: None
+    descp: whether to periodically dump profiling data to file
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  dump_period:
+    default: None
+    descp: seconds between profile data dumps
+    doc_dtype: float,
+    dtype:
+    - float
+  filename:
+    default: None
+    descp: output file for profile data
+    doc_dtype: string,
+    dtype:
+    - string
+  profile_all:
+    default: None
+    descp: all profile types enabled
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  profile_api:
+    default: None
+    descp: whether to profile the C API
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  profile_imperative:
+    default: None
+    descp: whether to profile imperative operators
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  profile_memory:
+    default: None
+    descp: whether to profile memory usage
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+  profile_process:
+    default: None
+    descp: whether to profile kvstore server or worker. server can only be profiled
+      when kvstore is of type dist. if this is not passed, defaults to worker
+    doc_dtype: string
+    dtype:
+    - string
+  profile_symbolic:
+    default: None
+    descp: whether to profile symbolic operators
+    doc_dtype: boolean,
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - filename
+  - profile_all
+  - profile_symbolic
+  - profile_imperative
+  - profile_memory
+  - profile_api
+  - continuous_dump
+  - dump_period
+  - aggregate_stats
+  - profile_process
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/profiler/index.html#mxnet.profiler.set_config
+package: mxnet
+target: set_config
+title: mxnet.profiler.set_config
+version: 1.6.0

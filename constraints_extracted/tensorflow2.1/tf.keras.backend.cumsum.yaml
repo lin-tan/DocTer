@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.cumsum
+constraints:
+  axis:
+    default: '0'
+    descp: An integer, the axis to compute the sum.
+    dtype:
+    - int
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/cumsum
+outputs: A tensor of the cumulative sum of values of `x` along `axis`.
+package: tensorflow
+target: cumsum
+title: tf.keras.backend.cumsum
+version: 2.1.0

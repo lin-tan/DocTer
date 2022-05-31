@@ -1,0 +1,44 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  u:
+    default: None
+    descp: u ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  v:
+    default: None
+    descp: v ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - u
+  - v
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.edge_id
+package: mxnet
+target: edge_id
+title: mxnet.ndarray.contrib.edge_id
+version: 1.6.0

@@ -1,0 +1,38 @@
+check_nan: true
+constraints:
+  bias:
+    default: 'True'
+    descp: 'If `False`, then the layer does not use bias weights b_ih and b_hh. Default:
+      `True`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  hidden_size:
+    descp: The number of features in the hidden state h
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  input_size:
+    descp: The number of expected features in the input x
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - bias
+  required:
+  - input_size
+  - hidden_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.GRUCell
+package: torch
+target: GRUCell
+title: torch.nn.GRUCell
+version: 1.5.0

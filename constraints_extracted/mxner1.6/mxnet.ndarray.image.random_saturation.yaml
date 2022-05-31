@@ -1,0 +1,44 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  max_factor:
+    default: _Null
+    descp: Maximum factor.
+    doc_dtype: float, required
+    dtype:
+    - float
+  min_factor:
+    default: _Null
+    descp: Minimum factor.
+    doc_dtype: float, required
+    dtype:
+    - float
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - min_factor
+  - max_factor
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.random_saturation
+package: mxnet
+target: random_saturation
+title: mxnet.ndarray.image.random_saturation
+version: 1.6.0

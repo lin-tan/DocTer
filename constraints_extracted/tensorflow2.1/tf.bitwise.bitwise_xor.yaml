@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.bitwise.bitwise_xor
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `int8`, `int16`, `int32`,
+      `int64`, `uint8`, `uint16`, `uint32`, `uint64`.'
+    dtype:
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint16
+    - tf.uint32
+    - tf.uint64
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor`. Must have the same type as `x`.
+    dtype:
+    - dtype:&x
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/bitwise/bitwise_xor
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: bitwise_xor
+title: tf.bitwise.bitwise_xor
+version: 2.1.0

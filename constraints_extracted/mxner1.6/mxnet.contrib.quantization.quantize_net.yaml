@@ -1,0 +1,105 @@
+constraints:
+  calib_data:
+    default: None
+    descp: A iterable data loading object.
+    doc_dtype: mx.io.DataIter or gluon.DataLoader
+  calib_mode:
+    default: none
+    descp: If calib_mode='none', no calibration will be used and the thresholds for
+      requantization after the corresponding layers will be calculated at runtime
+      by calling min and max operators. The quantized models generated in this mode
+      are normally 10-20% slower than those with calibrations during inference. If
+      calib_mode='naive', the min and max values of the layer outputs from a calibration
+      dataset will be directly taken as the thresholds for quantization. If calib_mode='entropy'
+      (default mode), the thresholds for quantization will be derived such that the
+      KL divergence between the distributions of FP32 layer outputs and quantized
+      layer outputs is minimized based upon the calibration dataset.
+    doc_dtype: str
+    dtype:
+    - string
+  ctx:
+    default: cpu(0)
+    descp: Defines the device that users want to run forward propagation on the calibration
+      dataset for collecting layer output statistics. Currently, only supports single
+      context.
+    doc_dtype: Context
+  data_shapes:
+    default: None
+    descp: List of DataDesc, required if calib_data is not provided
+    doc_dtype: list
+    structure:
+    - list
+  exclude_layers:
+    default: None
+    descp: A list of strings representing the names of the symbols that users want
+      to excluding
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  exclude_layers_match:
+    default: None
+    descp: A list of strings wildcard matching the names of the symbols that users
+      want to excluding from being quantized.
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  exclude_operators:
+    default: None
+    descp: A list of strings representing the names of the operators that users want
+      to excluding
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  logger:
+    default: <moduleloggingfrom/work/conda_env/lib/python3.8/logging/__init__.py>
+    descp: A logging object for printing information during the process of quantization.
+    doc_dtype: Object
+  network:
+    descp: Defines the structure of a neural network for FP32 data types.
+    doc_dtype: Gluon HybridBlock
+  num_calib_examples:
+    default: None
+    descp: The maximum number of examples that user would like to use for calibration.
+      If not provided, the whole calibration dataset will be used.
+    doc_dtype: int or None
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  quantized_dtype:
+    default: auto
+    descp: The quantized destination type for input data. Currently support 'int8'
+      , 'uint8' and 'auto'. 'auto' means automatically select output type according
+      to calibration result. Default value is 'int8'.
+    doc_dtype: str
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - quantized_dtype
+  - exclude_layers
+  - exclude_layers_match
+  - exclude_operators
+  - calib_data
+  - data_shapes
+  - calib_mode
+  - num_calib_examples
+  - ctx
+  - logger
+  required:
+  - network
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/quantization/index.html#mxnet.contrib.quantization.quantize_net
+package: mxnet
+target: quantize_net
+title: mxnet.contrib.quantization.quantize_net
+version: 1.6.0

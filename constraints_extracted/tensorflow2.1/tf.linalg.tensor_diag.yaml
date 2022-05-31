@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.diag
+- tf.compat.v1.linalg.tensor_diag
+constraints:
+  diagonal:
+    descp: 'A `Tensor`. Must be one of the following types: `bfloat16`, `half`, `float32`,
+      `float64`, `int32`, `int64`, `complex64`, `complex128`. Rank k tensor where
+      k is at most 1.'
+    dtype:
+    - tf.bfloat16
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - diagonal
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/tensor_diag
+outputs: A `Tensor`. Has the same type as `diagonal`.
+package: tensorflow
+target: tensor_diag
+title: tf.linalg.tensor_diag
+version: 2.1.0

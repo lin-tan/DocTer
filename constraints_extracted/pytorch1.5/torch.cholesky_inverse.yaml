@@ -1,0 +1,33 @@
+constraints:
+  input:
+    descp: the input 2-D tensor u , a upper or lower triangular Cholesky factor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor for inv
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  upper:
+    default: 'False'
+    descp: whether to return a lower (default) or upper triangular matrix
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+inputs:
+  optional:
+  - upper
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.cholesky_inverse
+package: torch
+ret_type: Tensor
+target: cholesky_inverse
+title: torch.cholesky_inverse
+version: 1.5.0

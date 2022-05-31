@@ -1,0 +1,39 @@
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation. Defaults to "assert_type"
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  tf_type:
+    descp: A tensorflow type (`dtypes.float32`, `tf.int64`, `dtypes.bool`, etc).
+    dtype:
+    - tf.bool
+    - tf.float32
+    - tf.int64
+exceptions:
+- TypeError: If the tensor's data type doesn't match `tf_type`.
+inputs:
+  optional:
+  - message
+  - name
+  required:
+  - tensor
+  - tf_type
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_type
+package: tensorflow
+target: assert_type
+title: tf.debugging.assert_type
+version: 2.1.0

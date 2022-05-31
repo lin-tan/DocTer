@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.searchsorted
+constraints:
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  out_type:
+    default: tf.dtypes.int32
+    descp: The output type (`int32` or `int64`).  Default is `tf.int32`.
+    dtype:
+    - tf.dtype
+    - tf.int32
+  side:
+    default: left
+    descp: '''left'' or ''right''; ''left'' corresponds to lower_bound and ''right''
+      to upper_bound.'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sorted_sequence:
+    descp: N-D `Tensor` containing a sorted sequence.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  values:
+    descp: N-D `Tensor` containing the search values.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If the last dimension of `sorted_sequence >= 2^31-1` elements.         If
+    the total size of values exceeds `2^31 - 1` elements.         If the first `N-1`
+    dimensions of the two tensors don't match.
+inputs:
+  optional:
+  - side
+  - out_type
+  - name
+  required:
+  - sorted_sequence
+  - values
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/searchsorted
+outputs: An N-D `Tensor` the size of values containing the result of applying either
+  lower_bound or upper_bound (depending on side) to each value.  The result is not
+  a global index to the entire `Tensor`, but the index in the last dimension.
+package: tensorflow
+target: searchsorted
+title: tf.searchsorted
+version: 2.1.0

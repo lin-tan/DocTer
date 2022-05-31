@@ -1,0 +1,77 @@
+aliases:
+- tf.keras.layers.AvgPool3D
+- tf.compat.v1.keras.layers.AveragePooling3D
+- tf.compat.v1.keras.layers.AvgPool3D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      spatial_dim1, spatial_dim2, spatial_dim3, channels)`while `channels_first` corresponds
+      to inputs with shape`(batch, channels, spatial_dim1, spatial_dim2, spatial_dim3)`.
+      It defaults to the `image_data_format` value found in your Keras config file
+      at `~/.keras/keras.json`. If you never set it, then it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+  padding:
+    default: valid
+    descp: One of `"valid"` or `"same"` (case-insensitive).
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  pool_size:
+    default: (2, 2, 2)
+    descp: tuple of 3 integers, factors by which to downscale (dim1, dim2, dim3).`(2,
+      2, 2)` will halve the size of the 3D input in each dimension.
+    dtype:
+    - int
+    ndim:
+    - '3'
+    shape:
+    - '[2,2,2]'
+    - '[dim1,dim2,dim3]'
+    structure:
+    - tuple
+  strides:
+    default: None
+    descp: tuple of 3 integers, or None. Strides values.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    - '3'
+    shape:
+    - '[3]'
+    structure:
+    - tuple
+dependency:
+- dim3
+- dim2
+- dim1
+inputs:
+  optional:
+  - pool_size
+  - strides
+  - padding
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/AveragePooling3D
+package: tensorflow
+target: AveragePooling3D
+title: tf.keras.layers.AveragePooling3D
+version: 2.1.0

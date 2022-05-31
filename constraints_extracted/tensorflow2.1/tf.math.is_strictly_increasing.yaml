@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.debugging.is_strictly_increasing
+- tf.compat.v1.is_strictly_increasing
+- tf.compat.v1.math.is_strictly_increasing
+constraints:
+  name:
+    default: None
+    descp: A name for this operation (optional). Defaults to "is_strictly_increasing"
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: Numeric `Tensor`.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: if `x` is not a numeric tensor.
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/is_strictly_increasing
+outputs: Boolean `Tensor`, equal to `True` iff `x` is strictly increasing.
+package: tensorflow
+target: is_strictly_increasing
+title: tf.math.is_strictly_increasing
+version: 2.1.0

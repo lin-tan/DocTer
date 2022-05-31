@@ -1,0 +1,160 @@
+aliases:
+- tf.keras.layers.Convolution2D
+- tf.compat.v1.keras.layers.Conv2D
+- tf.compat.v1.keras.layers.Convolution2D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  activation:
+    default: None
+    descp: 'Activation function to use. If you don''t specify anything, no activation
+      is applied (ie. "linear" activation: `a(x) = x`).'
+  activity_regularizer:
+    default: None
+    descp: Regularizer function applied to the output of the layer (its "activation")..
+  bias_constraint:
+    default: None
+    descp: Constraint function applied to the bias vector.
+    structure:
+    - list
+  bias_initializer:
+    default: zeros
+    descp: Initializer for the bias vector.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  bias_regularizer:
+    default: None
+    descp: Regularizer function applied to the bias vector.
+    structure:
+    - list
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      height, width, channels)` while `channels_first`corresponds to inputs with shape`(batch,
+      channels, height, width)`. It defaults to the `image_data_format` value found
+      in your Keras config file at `~/.keras/keras.json`. If you never set it, then
+      it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+  dilation_rate:
+    default: (1, 1)
+    descp: an integer or tuple/list of 2 integers, specifying the dilation rate to
+      use for dilated convolution. Can be a single integer to specify the same value
+      for all spatial dimensions. Currently, specifying any `dilation_rate` value
+      != 1 is incompatible with specifying any stride value != 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - list
+    - tuple
+  filters:
+    descp: Integer, the dimensionality of the output space (i.e. the number of output
+      filters in the convolution).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  kernel_constraint:
+    default: None
+    descp: Constraint function applied to the kernel matrix.
+  kernel_initializer:
+    default: glorot_uniform
+    descp: Initializer for the `kernel` weights matrix.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  kernel_regularizer:
+    default: None
+    descp: Regularizer function applied to the `kernel` weights matrix.
+  kernel_size:
+    descp: An integer or tuple/list of 2 integers, specifying the height and width
+      of the 2D convolution window. Can be a single integer to specify the same value
+      for all spatial dimensions.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - list
+    - tuple
+  padding:
+    default: valid
+    descp: one of `"valid"` or `"same"` (case-insensitive).
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  strides:
+    default: (1, 1)
+    descp: An integer or tuple/list of 2 integers, specifying the strides of the convolution
+      along the height and width. Can be a single integer to specify the same value
+      for all spatial dimensions. Specifying any stride value != 1 is incompatible
+      with specifying any `dilation_rate` value != 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - list
+    - tuple
+  use_bias:
+    default: 'True'
+    descp: Boolean, whether the layer uses a bias vector.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - list
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilation_rate
+  - activation
+  - use_bias
+  - kernel_initializer
+  - bias_initializer
+  - kernel_regularizer
+  - bias_regularizer
+  - activity_regularizer
+  - kernel_constraint
+  - bias_constraint
+  - '**kwargs'
+  required:
+  - filters
+  - kernel_size
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Conv2D
+package: tensorflow
+target: Conv2D
+title: tf.keras.layers.Conv2D
+version: 2.1.0

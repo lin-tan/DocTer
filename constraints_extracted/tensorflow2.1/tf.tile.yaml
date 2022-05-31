@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.manip.tile
+- tf.compat.v1.tile
+constraints:
+  input:
+    descp: A `Tensor`. 1-D or higher.
+    tensor_t:
+    - tf.tensor
+  multiples:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. 1-D.
+      Length must be the same as the number of dimensions in `input`'
+    dtype:
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+  - multiples
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/tile
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: tile
+title: tf.tile
+version: 2.1.0

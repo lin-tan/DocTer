@@ -1,0 +1,49 @@
+constraints:
+  axis:
+    default: None
+    descp: The dimensions to reduce; list or scalar. If `None` (the default), reduces
+      all dimensions.
+    ndim:
+    - '0'
+    structure:
+    - list
+  keepdims:
+    default: None
+    descp: If true, retain reduced dimensions with length 1.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_is_sparse:
+    default: 'False'
+    descp: If true, returns a `SparseTensor` instead of a dense`Tensor` (the default).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  sp_input:
+    descp: The SparseTensor to reduce. Should have numeric type.
+    dtype:
+    - numeric
+    tensor_t:
+    - SparseTensor
+inputs:
+  optional:
+  - axis
+  - keepdims
+  - output_is_sparse
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/reduce_sum
+outputs: The reduced Tensor or the reduced SparseTensor if `output_is_sparse` is True.
+package: tensorflow
+target: reduce_sum
+title: tf.sparse.reduce_sum
+version: 2.1.0

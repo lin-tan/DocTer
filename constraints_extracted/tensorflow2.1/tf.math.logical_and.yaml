@@ -1,0 +1,36 @@
+aliases:
+- tf.logical_and
+- tf.compat.v1.logical_and
+- tf.compat.v1.math.logical_and
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor` of type `bool`.
+    dtype:
+    - tf.bool
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor` of type `bool`.
+    dtype:
+    - tf.bool
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/logical_and
+outputs: A `Tensor` of type `bool`.
+package: tensorflow
+target: logical_and
+title: tf.math.logical_and
+version: 2.1.0

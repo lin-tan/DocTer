@@ -1,0 +1,21 @@
+constraints:
+  filename:
+    descp: Path to the file.
+    doc_dtype: str
+    dtype:
+    - string
+  sha1_hash:
+    descp: Expected sha1 hash in hexadecimal digits.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - filename
+  - sha1_hash
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/utils/index.html#mxnet.gluon.utils.check_sha1
+package: mxnet
+target: check_sha1
+title: mxnet.gluon.utils.check_sha1
+version: 1.6.0

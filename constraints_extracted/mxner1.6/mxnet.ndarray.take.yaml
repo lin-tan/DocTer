@@ -1,0 +1,64 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  a:
+    default: None
+    descp: The input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  axis:
+    default: _Null
+    descp: The axis of input array to be taken.For input tensor of rank r, it could
+      be in the range of [-r, r-1]
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  indices:
+    default: None
+    descp: The indices of the values to be extracted.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mode:
+    default: _Null
+    descp: Specify how out-of-bound indices bahave. Default is "clip". "clip" means
+      clip to the range. So, if all indices mentioned are too large, they are replaced
+      by the index that addresses the last element along an axis. "wrap" means to
+      wrap around. "raise" means to raise an error when index out of range.
+    doc_dtype: '{''clip'', ''raise'', ''wrap''},optional, default=''clip'''
+    enum:
+    - clip
+    - raise
+    - wrap
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - a
+  - indices
+  - axis
+  - mode
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.take
+package: mxnet
+target: take
+title: mxnet.ndarray.take
+version: 1.6.0

@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.keras.layers.Cropping1D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  cropping:
+    default: (1, 1)
+    descp: Int or tuple of int (length 2) How many units should be trimmed off at
+      the beginning and end of the cropping dimension (axis 1). If a single int is
+      provided, the same value will be used for both.
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional:
+  - cropping
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Cropping1D
+package: tensorflow
+target: Cropping1D
+title: tf.keras.layers.Cropping1D
+version: 2.1.0

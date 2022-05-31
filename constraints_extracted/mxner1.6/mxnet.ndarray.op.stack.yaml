@@ -1,0 +1,38 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: List of arrays to stack
+    doc_dtype: NDArray[]
+    structure:
+    - list
+    - ndarray
+  axis:
+    default: None
+    descp: The axis in the result array along which the input arrays are stacked.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - axis
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.stack
+package: mxnet
+target: stack
+title: mxnet.ndarray.op.stack
+version: 1.6.0

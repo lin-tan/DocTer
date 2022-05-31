@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.keras.backend.gradients
+constraints:
+  loss:
+    descp: Scalar tensor to minimize.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  variables:
+    descp: List of variables.
+inputs:
+  optional: []
+  required:
+  - loss
+  - variables
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/gradients
+outputs: A gradients tensor.
+package: tensorflow
+target: gradients
+title: tf.keras.backend.gradients
+version: 2.1.0

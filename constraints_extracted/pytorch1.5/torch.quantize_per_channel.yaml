@@ -1,0 +1,58 @@
+constraints:
+  axis:
+    descp: dimension on which apply per-channel quantization
+    doc_dtype: int
+    dtype:
+    - int
+  dtype:
+    descp: 'the desired data type of returned tensor. Has to be one of the quantized
+      dtypes: `torch.quint8`, `torch.qint8`, `torch.qint32`'
+    doc_dtype: '`torch.dtype`'
+    dtype:
+    - torch.dtype
+    - torch.int32
+    - torch.int8
+    - torch.uint8
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: float tensor to quantize
+    doc_dtype: Tensor
+    dtype:
+    - torch.float32
+    tensor_t:
+    - torch.tensor
+  scales:
+    descp: float 1D tensor of scales to use, size should match `input.size(axis)`
+    doc_dtype: Tensor
+    dtype:
+    - torch.bool
+    - torch.float32
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  zero_points:
+    descp: integer 1D tensor of offset to use, size should match `input.size(axis)`
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - input
+  - scales
+  - zero_points
+  - axis
+  - dtype
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.quantize_per_channel
+package: torch
+ret_type: Tensor
+target: quantize_per_channel
+title: torch.quantize_per_channel
+version: 1.5.0

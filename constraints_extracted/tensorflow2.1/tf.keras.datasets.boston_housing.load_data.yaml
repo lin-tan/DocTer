@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.keras.datasets.boston_housing.load_data
+constraints:
+  path:
+    default: boston_housing.npz
+    descp: path where to cache the dataset locally (relative to ~/.keras/datasets).
+  seed:
+    default: '113'
+    descp: Random seed for shuffling the data before computing the test split.
+    dtype:
+    - int
+  test_split:
+    default: '0.2'
+    descp: fraction of the data to reserve as test set.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - path
+  - test_split
+  - seed
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/datasets/boston_housing/load_data
+outputs: 'Tuple of Numpy arrays: `(x_train, y_train), (x_test, y_test)`.'
+package: tensorflow
+target: load_data
+title: tf.keras.datasets.boston_housing.load_data
+version: 2.1.0

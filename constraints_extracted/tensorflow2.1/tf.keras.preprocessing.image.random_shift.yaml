@@ -1,0 +1,62 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.image.random_shift
+constraints:
+  channel_axis:
+    default: '0'
+    descp: Index of axis for channels in the input tensor.
+    dtype:
+    - int
+  col_axis:
+    default: '2'
+    descp: Index of axis for columns in the input tensor.
+    dtype:
+    - int
+  cval:
+    default: '0.0'
+    descp: Value used for points outside the boundaries     of the input if `mode='constant'`.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  fill_mode:
+    default: nearest
+    descp: Points outside the boundaries of the input     are filled according to
+      the given mode     (one of `{'constant', 'nearest', 'reflect', 'wrap'}`).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  hrg:
+    descp: Height shift range, as a float fraction of the height.
+  interpolation_order:
+    default: '1'
+    descp: int, order of spline interpolation.     see `ndimage.interpolation.affine_transform``
+    dtype:
+    - int
+  row_axis:
+    default: '1'
+    descp: Index of axis for rows in the input tensor.
+    dtype:
+    - int
+  wrg:
+    descp: Width shift range, as a float fraction of the width.
+  x:
+    descp: Input tensor. Must be 3D.
+inputs:
+  optional:
+  - row_axis
+  - col_axis
+  - channel_axis
+  - fill_mode
+  - cval
+  - interpolation_order
+  required:
+  - x
+  - wrg
+  - hrg
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/image/random_shift
+outputs: '`Shifted Numpy image tensor.`'
+package: tensorflow
+target: random_shift
+title: tf.keras.preprocessing.image.random_shift
+version: 2.1.0

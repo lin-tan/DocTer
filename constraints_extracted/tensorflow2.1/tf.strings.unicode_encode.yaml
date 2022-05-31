@@ -1,0 +1,53 @@
+aliases:
+- tf.compat.v1.strings.unicode_encode
+constraints:
+  errors:
+    default: replace
+    descp: 'Specifies the response when an invalid codepoint is encountered (optional).
+      One of:     * `''replace''`: Replace invalid codepoint with the       `replacement_char`.
+      (default)     * `''ignore''`: Skip invalid codepoints.     * `''strict''`: Raise
+      an exception for any invalid codepoint.'
+    dtype:
+    - tf.string
+    enum:
+    - replace
+    ndim:
+    - '0'
+  input:
+    descp: An `N+1` dimensional potentially ragged integer tensor with shape`[D1...DN,
+      num_chars]`.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_encoding:
+    descp: Unicode encoding that should be used to encode each codepoint sequence.  Can
+      be `"UTF-8"`, `"UTF-16-BE"`, or `"UTF-32-BE"`.
+  replacement_char:
+    default: '65533'
+    descp: The replacement character codepoint to be used in place of any invalid
+      input when `errors='replace'`. Any valid unicode codepoint may be used. The
+      default value is the default unicode replacement character which is 0xFFFD (U+65533).
+    dtype:
+    - int
+inputs:
+  optional:
+  - errors
+  - replacement_char
+  - name
+  required:
+  - input
+  - output_encoding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/unicode_encode
+outputs: A `N` dimensional `string` tensor with shape `[D1...DN]`.
+package: tensorflow
+target: unicode_encode
+title: tf.strings.unicode_encode
+version: 2.1.0

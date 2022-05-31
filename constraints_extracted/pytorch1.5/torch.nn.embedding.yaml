@@ -1,0 +1,86 @@
+check_nan: true
+constraints:
+  _weight:
+    default: None
+    descp: ''
+  embedding_dim:
+    descp: the size of each embedding vector
+    doc_dtype: int
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  max_norm:
+    default: None
+    descp: If given, each embedding vector with norm larger than `max_norm` is renormalized
+      to have norm `max_norm`.
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+  norm_type:
+    default: '2.0'
+    descp: The p of the p-norm to compute for the `max_norm` option. Default `2`.
+    doc_dtype: float, optional
+    dtype:
+    - int
+    - torch.bool
+    - torch.float32
+    ndim:
+    - '0'
+  num_embeddings:
+    descp: size of the dictionary of embeddings
+    doc_dtype: int
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - dict
+  padding_idx:
+    default: None
+    descp: If given, pads the output with the embedding vector at `padding_idx` (initialized
+      to zeros) whenever it encounters the index.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    structure:
+    - list
+  scale_grad_by_freq:
+    default: 'False'
+    descp: If given, this will scale gradients by the inverse of frequency of the
+      words in the mini-batch. Default `False`.
+    doc_dtype: boolean, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  sparse:
+    default: 'False'
+    descp: If `True`, gradient w.r.t. `weight` matrix will be a sparse tensor. See
+      Notes for more details regarding sparse gradients.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - padding_idx
+  - max_norm
+  - norm_type
+  - scale_grad_by_freq
+  - sparse
+  - _weight
+  required:
+  - num_embeddings
+  - embedding_dim
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Embedding
+package: torch
+target: Embedding
+title: torch.nn.Embedding
+version: 1.5.0

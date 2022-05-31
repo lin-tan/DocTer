@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  layout:
+    default: NCDHW
+    descp: Dimension ordering of data and out ('NCDHW' or 'NDHWC'). 'N', 'C', 'H',
+      'W', 'D' stands for batch, channel, height, width and depth dimensions respectively.
+      padding is applied on 'D', 'H' and 'W' dimension.
+    doc_dtype: str, default 'NCDHW'
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - layout
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.GlobalAvgPool3D
+package: mxnet
+target: GlobalAvgPool3D
+title: mxnet.gluon.nn.GlobalAvgPool3D
+version: 1.6.0

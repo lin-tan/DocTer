@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.keras.backend.set_floatx
+constraints:
+  value:
+    descp: 'String; ''float16'', ''float32'', or ''float64''. Example: `python from
+      keras import backend as K K.floatx() >>> ''float32'' K.set_floatx(''float16'')
+      K.floatx() >>> ''float16''`'
+    dtype:
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.string
+    enum:
+    - String
+    - float16
+    - float32
+    - float64
+exceptions:
+- ValueError: In case of invalid value.
+inputs:
+  optional: []
+  required:
+  - value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/set_floatx
+package: tensorflow
+target: set_floatx
+title: tf.keras.backend.set_floatx
+version: 2.1.0

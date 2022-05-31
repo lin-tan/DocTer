@@ -1,0 +1,74 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  A:
+    default: None
+    descp: Tensor of lower triangular matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  B:
+    default: None
+    descp: Tensor of matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  alpha:
+    default: _Null
+    descp: Scalar factor to be applied to the result.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  lower:
+    default: _Null
+    descp: True if the triangular matrix is lower triangular, false if it is upper
+      triangular.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rightside:
+    default: _Null
+    descp: Multiply triangular matrix from the right to non-triangular one.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  transpose:
+    default: _Null
+    descp: Use transposed of the triangular matrix
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - A
+  - B
+  - transpose
+  - rightside
+  - lower
+  - alpha
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/linalg/index.html#mxnet.ndarray.linalg.trsm
+package: mxnet
+target: trsm
+title: mxnet.ndarray.linalg.trsm
+version: 1.6.0

@@ -1,0 +1,63 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: _Null
+    descp: The variance scaling parameter \(lpha\) in the LRN expression.
+    doc_dtype: float, optional, default=9.99999975e-05
+    dtype:
+    - float
+    ndim:
+    - '0'
+  beta:
+    default: _Null
+    descp: The power parameter \(eta\) in the LRN expression.
+    doc_dtype: float, optional, default=0.75
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input data to LRN
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  knorm:
+    default: _Null
+    descp: The parameter \(k\) in the LRN expression.
+    doc_dtype: float, optional, default=2
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  nsize:
+    default: _Null
+    descp: normalization window width in elements.
+    doc_dtype: int (non-negative), required
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - alpha
+  - beta
+  - knorm
+  - nsize
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.LRN
+package: mxnet
+target: LRN
+title: mxnet.ndarray.op.LRN
+version: 1.6.0

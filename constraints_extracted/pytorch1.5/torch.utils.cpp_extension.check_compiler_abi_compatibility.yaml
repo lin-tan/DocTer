@@ -1,0 +1,16 @@
+constraints:
+  compiler:
+    descp: The compiler executable name to check (e.g. `g++`). Must be executable
+      in a shell process.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - compiler
+link: https://pytorch.org/docs/1.5.0/cpp_extension.html#torch.utils.cpp_extension.check_compiler_abi_compatibility
+package: torch
+target: check_compiler_abi_compatibility
+title: torch.utils.cpp_extension.check_compiler_abi_compatibility
+version: 1.5.0

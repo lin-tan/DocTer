@@ -1,0 +1,32 @@
+constraints:
+  mean:
+    default: '0.0'
+    descp: the mean for all distributions
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  std:
+    descp: the tensor of per-element standard deviations
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - mean
+  - out
+  required:
+  - std
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.normal
+package: torch
+ret_type: Tensor
+target: normal
+title: torch.normal
+version: 1.5.0

@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.broadcast_static_shape
+constraints:
+  shape_x:
+    descp: A `TensorShape`
+    ndim:
+    - '0'
+  shape_y:
+    descp: A `TensorShape`
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If the two shapes can not be broadcasted.
+inputs:
+  optional: []
+  required:
+  - shape_x
+  - shape_y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/broadcast_static_shape
+outputs: A `TensorShape` representing the broadcasted shape.
+package: tensorflow
+target: broadcast_static_shape
+title: tf.broadcast_static_shape
+version: 2.1.0

@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.keras.backend.softmax
+constraints:
+  axis:
+    default: '-1'
+    descp: The dimension softmax would be performed on. The default is -1 which indicates
+      the last dimension.
+    dtype:
+    - int
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/softmax
+outputs: A tensor.
+package: tensorflow
+target: softmax
+title: tf.keras.backend.softmax
+version: 2.1.0

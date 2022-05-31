@@ -1,0 +1,20 @@
+constraints:
+  module:
+    descp: input module
+  qconfig_dict:
+    default: None
+    descp: dictionary that maps from name or type of submodule to quantization configuration,
+      qconfig applies to all submodules of a given module unless qconfig for the submodules
+      are specified (when the submodule already has qconfig attribute)
+    structure:
+    - dict
+inputs:
+  optional:
+  - qconfig_dict
+  required:
+  - module
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.quantization.propagate_qconfig_
+package: torch
+target: propagate_qconfig_
+title: torch.quantization.propagate_qconfig_
+version: 1.5.0

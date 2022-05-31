@@ -1,0 +1,43 @@
+check_nan: true
+constraints:
+  dim:
+    default: '1'
+    descp: 'Dimension of vectors. Default: 1'
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+  eps:
+    default: 1e-8
+    descp: 'Small value to avoid division by zero. Default: 1e-8'
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  x1:
+    descp: First input.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  x2:
+    descp: Second input (of size matching x1).
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dim
+  - eps
+  required:
+  - x1
+  - x2
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.cosine_similarity
+package: torch
+ret_type: Tensor
+target: cosine_similarity
+title: torch.nn.functional.cosine_similarity
+version: 1.5.0

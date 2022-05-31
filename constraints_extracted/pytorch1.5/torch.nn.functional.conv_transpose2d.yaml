@@ -1,0 +1,100 @@
+check_nan: true
+constraints:
+  bias:
+    default: None
+    descp: 'optional bias of shape (out _channels) . Default: None'
+    ndim:
+    - '1'
+    shape:
+    - '[out_channels]'
+  dilation:
+    default: '1'
+    descp: 'the spacing between kernel elements. Can be a single number or a tuple
+      `(dH, dW)`. Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  groups:
+    default: '1'
+    descp: 'split input into groups, in _channels  should be divisible by the number
+      of groups. Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  input:
+    descp: 'input tensor of shape (minibatch , in _channels , iH , iW) '
+    ndim:
+    - '4'
+    shape:
+    - '[minibatch,in_channels,ih,iw]'
+    tensor_t:
+    - torch.tensor
+  output_padding:
+    default: '0'
+    descp: 'additional size added to one side of each dimension in the output shape.
+      Can be a single number or a tuple `(out_padH, out_padW)`. Default: 0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  padding:
+    default: '0'
+    descp: '`dilation * (kernel_size - 1) - padding` zero-padding will be added to
+      both sides of each dimension in the input. Can be a single number or a tuple
+      `(padH, padW)`. Default: 0'
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  stride:
+    default: '1'
+    descp: 'the stride of the convolving kernel. Can be a single number or a tuple
+      `(sH, sW)`. Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  weight:
+    descp: 'filters of shape (in _channels ,  out _channels/groups , kH , kW) '
+dependency:
+- ih
+- in_channels
+- iw
+- out_channels
+- minibatch
+inputs:
+  optional:
+  - bias
+  - stride
+  - padding
+  - output_padding
+  - groups
+  - dilation
+  required:
+  - input
+  - weight
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.conv_transpose2d
+package: torch
+ret_type: Tensor
+target: conv_transpose2d
+title: torch.nn.functional.conv_transpose2d
+version: 1.5.0

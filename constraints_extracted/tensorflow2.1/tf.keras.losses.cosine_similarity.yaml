@@ -1,0 +1,29 @@
+aliases:
+- tf.losses.cosine_similarity
+- tf.compat.v1.keras.losses.cosine
+- tf.compat.v1.keras.losses.cosine_proximity
+- tf.compat.v1.keras.losses.cosine_similarity
+- tf.compat.v1.keras.metrics.cosine
+- tf.compat.v1.keras.metrics.cosine_proximity
+constraints:
+  axis:
+    default: '-1'
+    descp: Axis along which to determine similarity.
+    dtype:
+    - int
+  y_pred:
+    descp: Tensor of predicted targets.
+  y_true:
+    descp: Tensor of true targets.
+inputs:
+  optional:
+  - axis
+  required:
+  - y_true
+  - y_pred
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/losses/cosine_similarity
+outputs: Cosine similarity tensor.
+package: tensorflow
+target: cosine_similarity
+title: tf.keras.losses.cosine_similarity
+version: 2.1.0

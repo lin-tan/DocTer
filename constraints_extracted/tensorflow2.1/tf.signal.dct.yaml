@@ -1,0 +1,57 @@
+aliases:
+- tf.compat.v1.signal.dct
+- tf.compat.v1.spectral.dct
+constraints:
+  axis:
+    default: '-1'
+    descp: For future expansion. The axis to compute the DCT along. Must be `-1`.
+    dtype:
+    - int
+  input:
+    descp: A `[..., samples]` `float32`/`float64` `Tensor` containing the signals
+      to take the DCT of.
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  n:
+    default: None
+    descp: The length of the transform. If length is less than sequence length, only
+      the first n elements of the sequence are considered for the DCT. If n is greater
+      than the sequence length, zeros are padded and then the DCT is computed as usual.
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  norm:
+    default: None
+    descp: The normalization to apply. `None` for no normalization or `'ortho'`for
+      orthonormal normalization.
+  type:
+    default: '2'
+    descp: The DCT type to perform. Must be 1, 2 or 3.
+    dtype:
+    - int
+exceptions:
+- ValueError: If `type` is not `1`, `2` or `3`, `axis` is not `-1`, `n` is not `None`
+    or greater than 0, or `norm` is not `None` or `'ortho'`.
+- ValueError: If `type` is `1` and `norm` is `ortho`.
+inputs:
+  optional:
+  - type
+  - n
+  - axis
+  - norm
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/dct
+outputs: A `[..., samples]` `float32`/`float64` `Tensor` containing the DCT of`input`.
+package: tensorflow
+target: dct
+title: tf.signal.dct
+version: 2.1.0

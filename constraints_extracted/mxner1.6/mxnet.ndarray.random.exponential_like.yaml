@@ -1,0 +1,39 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lam:
+    default: _Null
+    descp: Lambda parameter (rate) of the exponential distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - lam
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.exponential_like
+package: mxnet
+target: exponential_like
+title: mxnet.ndarray.random.exponential_like
+version: 1.6.0

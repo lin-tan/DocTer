@@ -1,0 +1,58 @@
+aliases:
+- tf.compat.v1.one_hot
+constraints:
+  axis:
+    default: None
+    descp: 'The axis to fill (default: -1, a new inner-most axis).'
+    dtype:
+    - int
+  depth:
+    descp: A scalar defining the depth of the one hot dimension.
+  dtype:
+    default: None
+    descp: The data type of the output tensor.
+    dtype:
+    - tf.dtype
+  indices:
+    descp: A `Tensor` of indices.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  off_value:
+    default: None
+    descp: 'A scalar defining the value to fill in output when `indices[j] != i`.
+      (default: 0)'
+    dtype:
+    - int
+  on_value:
+    default: None
+    descp: 'A scalar defining the value to fill in output when `indices[j] = i`. (default:
+      1)'
+    dtype:
+    - int
+exceptions:
+- TypeError: If dtype of either `on_value` or `off_value` don't match `dtype`
+- TypeError: If dtype of `on_value` and `off_value` don't match one another
+inputs:
+  optional:
+  - on_value
+  - off_value
+  - axis
+  - dtype
+  - name
+  required:
+  - indices
+  - depth
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/one_hot
+outputs:
+- output: The one-hot tensor.
+package: tensorflow
+target: one_hot
+title: tf.one_hot
+version: 2.1.0

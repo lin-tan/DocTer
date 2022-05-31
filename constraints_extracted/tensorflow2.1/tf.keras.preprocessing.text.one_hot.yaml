@@ -1,0 +1,36 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.text.one_hot
+constraints:
+  filters:
+    default: '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n'
+    descp: 'list (or concatenation) of characters to filter out, such as     punctuation.
+      Default: ``!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\t\n``,     includes basic punctuation,
+      tabs, and newlines.'
+  lower:
+    default: 'True'
+    descp: boolean. Whether to set the text to lowercase.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  n:
+    descp: int. Size of vocabulary.
+  split:
+    default: ' '
+    descp: str. Separator for word splitting.`
+  text:
+    descp: Input text (string).
+inputs:
+  optional:
+  - filters
+  - lower
+  - split
+  required:
+  - text
+  - n
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/text/one_hot
+outputs: '`List of integers in [1, n]. Each integer encodes a word (unicity non-guaranteed).`'
+package: tensorflow
+target: one_hot
+title: tf.keras.preprocessing.text.one_hot
+version: 2.1.0

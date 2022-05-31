@@ -1,0 +1,40 @@
+aliases:
+- tf.compat.v1.shape_n
+constraints:
+  input:
+    descp: A list of at least 1 `Tensor` object with the same type.
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  out_type:
+    default: tf.dtypes.int32
+    descp: The specified output type of the operation (`int32` or `int64`). Defaults
+      to `tf.int32`(optional).
+    dtype:
+    - tf.dtype
+    - tf.int32
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - out_type
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/shape_n
+outputs: A list with the same length as `input` of `Tensor` objects with   type `out_type`.
+package: tensorflow
+target: shape_n
+title: tf.shape_n
+version: 2.1.0

@@ -1,0 +1,96 @@
+aliases:
+- tf.compat.v1.quantization.quantize_and_dequantize
+constraints:
+  axis:
+    default: None
+    descp: Integer. If specified, refers to a dimension of the input tensor, such
+      that quantization will be per slice along that dimension.
+    tensor_t:
+    - tf.tensor
+  input:
+    descp: A `Tensor` to quantize and dequantize.
+    tensor_t:
+    - tf.tensor
+  input_max:
+    descp: If range_given=True, the maximum input value that needs to be represented
+      in the quantized representation. If axis is specified, this should be a vector
+      of maximum values for each slice along axis.
+    ndim:
+    - '0'
+    structure:
+    - list
+  input_min:
+    descp: If range_given=True, the minimum input value, that needs to be represented
+      in the quantized representation. If axis is specified, this should be a vector
+      of minimum values for each slice along axis.
+    ndim:
+    - '0'
+    structure:
+    - list
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  narrow_range:
+    default: 'False'
+    descp: If true, then the absolute value of the quantized minimum value is the
+      same as the quantized maximum value, instead of 1 greater. i.e. for 8 bit quantization,
+      the minimum value is -127 instead of -128.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  num_bits:
+    default: '8'
+    descp: The bitwidth of the quantization.
+    dtype:
+    - int
+  range_given:
+    default: 'False'
+    descp: If true use `input_min` and `input_max` for the range of the input, otherwise
+      determine min and max from the input `Tensor`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  round_mode:
+    default: HALF_TO_EVEN
+    descp: Rounding mode when rounding from float values to quantized ones. one of
+      ['HALF_TO_EVEN', 'HALF_UP']
+    dtype:
+    - tf.string
+    enum:
+    - HALF_TO_EVEN
+    - HALF_UP
+    ndim:
+    - '0'
+  signed_input:
+    default: 'True'
+    descp: True if the quantization is signed or unsigned.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - signed_input
+  - num_bits
+  - range_given
+  - round_mode
+  - name
+  - narrow_range
+  - axis
+  required:
+  - input
+  - input_min
+  - input_max
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/quantization/quantize_and_dequantize
+outputs: A `Tensor`. Each element is the result of quantizing and dequantizing the
+  corresponding element of `input`.
+package: tensorflow
+target: quantize_and_dequantize
+title: tf.quantization.quantize_and_dequantize
+version: 2.1.0

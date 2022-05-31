@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.autograph.set_verbosity
+constraints:
+  alsologtostdout:
+    default: 'False'
+    descp: bool, whether to also output log messages to `sys.stdout`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  level:
+    descp: int, the verbosity level; larger values specify increased verbosity; 0
+      means no logging. When reporting bugs, it is recommended to set this value to
+      a larger number, like 10.
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - alsologtostdout
+  required:
+  - level
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/autograph/set_verbosity
+package: tensorflow
+target: set_verbosity
+title: tf.autograph.set_verbosity
+version: 2.1.0

@@ -1,0 +1,63 @@
+constraints:
+  ctx:
+    default: None
+    descp: ''
+  data_init:
+    default: None
+    descp: ''
+  density:
+    default: None
+    descp: should be between 0 and 1
+    doc_dtype: float, optional
+    dtype:
+    - float
+  distribution:
+    default: None
+    descp: 'valid values: "uniform" or "powerlaw"'
+    doc_dtype: str, optional
+    dtype:
+    - string
+  dtype:
+    default: None
+    descp: default value is None
+    doc_dtype: numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+  modifier_func:
+    default: None
+    descp: ''
+  rsp_indices:
+    default: None
+    descp: ''
+  shape:
+    descp: ''
+    doc_dtype: list or tuple
+    structure:
+    - list
+    - tuple
+  shuffle_csr_indices:
+    default: 'False'
+    descp: ''
+  stype:
+    descp: 'valid values: "csr" or "row_sparse"'
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - density
+  - dtype
+  - distribution
+  - data_init
+  - rsp_indices
+  - modifier_func
+  - shuffle_csr_indices
+  - ctx
+  required:
+  - shape
+  - stype
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.rand_sparse_ndarray
+package: mxnet
+target: rand_sparse_ndarray
+title: mxnet.test_utils.rand_sparse_ndarray
+version: 1.6.0

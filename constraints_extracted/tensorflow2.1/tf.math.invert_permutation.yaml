@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.invert_permutation
+- tf.compat.v1.math.invert_permutation
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. 1-D.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/invert_permutation
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: invert_permutation
+title: tf.math.invert_permutation
+version: 2.1.0

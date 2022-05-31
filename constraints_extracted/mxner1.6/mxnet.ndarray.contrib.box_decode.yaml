@@ -1,0 +1,91 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  anchors:
+    default: None
+    descp: (1, N, 4) encoded in corner or center
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  clip:
+    default: _Null
+    descp: If larger than 0, bounding box target will be clipped to this value.
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: (B, N, 4) predicted bbox offset
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  format:
+    default: _Null
+    descp: The box encoding type. "corner" means boxes are encoded as [xmin, ymin,
+      xmax, ymax], "center" means boxes are encodes as [x, y, width, height].
+    doc_dtype: '{''center'', ''corner''},optional, default=''center'''
+    enum:
+    - center
+    - corner
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  std0:
+    default: _Null
+    descp: value to be divided from the 1st encoded values
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  std1:
+    default: _Null
+    descp: value to be divided from the 2nd encoded values
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  std2:
+    default: _Null
+    descp: value to be divided from the 3rd encoded values
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  std3:
+    default: _Null
+    descp: value to be divided from the 4th encoded values
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - anchors
+  - std0
+  - std1
+  - std2
+  - std3
+  - clip
+  - format
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.box_decode
+package: mxnet
+target: box_decode
+title: mxnet.ndarray.contrib.box_decode
+version: 1.6.0

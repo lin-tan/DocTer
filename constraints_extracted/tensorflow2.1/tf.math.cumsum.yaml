@@ -1,0 +1,70 @@
+aliases:
+- tf.cumsum
+- tf.compat.v1.cumsum
+- tf.compat.v1.math.cumsum
+constraints:
+  axis:
+    default: '0'
+    descp: 'A `Tensor` of type `int32` (default: 0). Must be in the range`[-rank(x),
+      rank(x))`.'
+    dtype:
+    - int
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  exclusive:
+    default: 'False'
+    descp: If `True`, perform exclusive cumsum.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  reverse:
+    default: 'False'
+    descp: 'A `bool` (default: False).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `float64`,`int64`,
+      `int32`, `uint8`, `uint16`, `int16`, `int8`, `complex64`,`complex128`, `qint8`,
+      `quint8`, `qint32`, `half`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.qint32
+    - tf.qint8
+    - tf.quint8
+    - tf.uint16
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - exclusive
+  - reverse
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/cumsum
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: cumsum
+title: tf.math.cumsum
+version: 2.1.0

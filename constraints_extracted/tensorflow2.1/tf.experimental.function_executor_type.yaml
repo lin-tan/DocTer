@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.experimental.function_executor_type
+constraints:
+  executor_type:
+    descp: a string for the name of the executor to be used to execute functions defined
+      by tf.contrib.eager.defun.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional: []
+  required:
+  - executor_type
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/experimental/function_executor_type
+outputs: Context manager for setting the executor of eager defined functions.
+package: tensorflow
+target: function_executor_type
+title: tf.experimental.function_executor_type
+version: 2.1.0

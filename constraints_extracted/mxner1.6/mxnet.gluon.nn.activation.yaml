@@ -1,0 +1,20 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  activation:
+    descp: Name of activation function to use. See `Activation()` for available choices.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - activation
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Activation
+package: mxnet
+target: Activation
+title: mxnet.gluon.nn.Activation
+version: 1.6.0

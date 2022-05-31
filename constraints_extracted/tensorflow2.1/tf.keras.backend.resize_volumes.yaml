@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.keras.backend.resize_volumes
+constraints:
+  data_format:
+    descp: One of `"channels_first"`, `"channels_last"`.
+    enum:
+    - channels_first
+    - channels_last
+  depth_factor:
+    descp: Positive integer.
+  height_factor:
+    descp: Positive integer.
+  width_factor:
+    descp: Positive integer.
+  x:
+    descp: Tensor or variable to resize.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if `data_format` is neither`channels_last` or `channels_first`.
+inputs:
+  optional: []
+  required:
+  - x
+  - depth_factor
+  - height_factor
+  - width_factor
+  - data_format
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/resize_volumes
+outputs: A tensor.
+package: tensorflow
+target: resize_volumes
+title: tf.keras.backend.resize_volumes
+version: 2.1.0

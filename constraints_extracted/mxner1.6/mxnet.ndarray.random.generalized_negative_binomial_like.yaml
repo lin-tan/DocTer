@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: _Null
+    descp: Alpha (dispersion) parameter of the negative binomial distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mu:
+    default: _Null
+    descp: Mean of the negative binomial distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - mu
+  - alpha
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.generalized_negative_binomial_like
+package: mxnet
+target: generalized_negative_binomial_like
+title: mxnet.ndarray.random.generalized_negative_binomial_like
+version: 1.6.0

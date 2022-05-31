@@ -1,0 +1,53 @@
+constraints:
+  data:
+    descp: A `Tensor` representing pixel data with shape `[k, h, w, c]`, where `k`
+      is the number of images, `h` and `w` are the height and width of the images,
+      and `c` is the number of channels, which should be 1, 2, 3, or 4 (grayscale,
+      grayscale with alpha, RGB, RGBA). Any of the dimensions may be statically unknown
+      (i.e., `None`). Floating point data will be clipped to the range [0,1).
+  description:
+    default: None
+    descp: Optional long-form description for this summary, as a constant `str`. Markdown
+      is supported. Defaults to empty.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  max_outputs:
+    default: '3'
+    descp: Optional `int` or rank-0 integer `Tensor`. At most this many images will
+      be emitted at each step. When more than`max_outputs` many images are provided,
+      the first `max_outputs` many images will be used and the rest silently discarded.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  name:
+    descp: A name for this summary. The summary tag used for TensorBoard will be this
+      name prefixed by any active name scopes.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  step:
+    default: None
+    descp: Explicit `int64`-castable monotonic step value for this summary. If omitted,
+      this defaults to `tf.summary.experimental.get_step()`, which must not be None.
+exceptions:
+- ValueError: if a default writer exists, but no step was provided and`tf.summary.experimental.get_step()`
+    is None.
+inputs:
+  optional:
+  - step
+  - max_outputs
+  - description
+  required:
+  - name
+  - data
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/summary/image
+outputs: True on success, or false if no summary was emitted because no default summary
+  writer was available.
+package: tensorflow
+target: image
+title: tf.summary.image
+version: 2.1.0

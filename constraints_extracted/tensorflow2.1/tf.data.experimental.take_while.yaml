@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.data.experimental.take_while
+constraints:
+  predicate:
+    descp: A function that maps a nested structure of tensors (having shapes and types
+      defined by `self.output_shapes` and `self.output_types`) to a scalar `tf.bool`
+      tensor.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - predicate
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/take_while
+outputs: A `Dataset` transformation function, which can be passed to`tf.data.Dataset.apply`.
+package: tensorflow
+target: take_while
+title: tf.data.experimental.take_while
+version: 2.1.0

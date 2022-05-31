@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  lhs:
+    descp: First array in modulo.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array in modulo. The arrays to be taken modulo. If `lhs.shape !=
+      rhs.shape`, they must be broadcastable to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.modulo
+package: mxnet
+target: modulo
+title: mxnet.ndarray.modulo
+version: 1.6.0

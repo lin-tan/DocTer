@@ -1,0 +1,87 @@
+aliases:
+- tf.compat.v1.strings.unicode_transcode
+constraints:
+  errors:
+    default: replace
+    descp: 'An optional `string` from: `"strict", "replace", "ignore"`. Defaults to
+      `"replace"`. Error handling policy when there is invalid formatting found in
+      the input. The value of ''strict'' will cause the operation to produce a InvalidArgument
+      error on any invalid input formatting. A value of ''replace'' (the default)
+      will cause the operation to replace any invalid formatting in the input with
+      the`replacement_char` codepoint. A value of ''ignore'' will cause the operation
+      to skip any invalid formatting in the input and produce no corresponding output
+      character.'
+    dtype:
+    - tf.string
+    enum:
+    - replace
+    ndim:
+    - '0'
+  input:
+    descp: A `Tensor` of type `string`. The text to be processed. Can have any shape.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  input_encoding:
+    descp: 'A `string`. Text encoding of the input strings. This is any of the encodings
+      supported by ICU ucnv algorithmic converters. Examples: `"UTF-16", "US ASCII",
+      "UTF-8"`.'
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_encoding:
+    descp: 'A `string` from: `"UTF-8", "UTF-16-BE", "UTF-32-BE"`. The unicode encoding
+      to use in the output. Must be one of`"UTF-8", "UTF-16-BE", "UTF-32-BE"`. Multi-byte
+      encodings will be big-endian.'
+    dtype:
+    - tf.string
+    enum:
+    - 16-BE
+    - 32-BE
+    - 8-BE
+    - UTF
+  replace_control_characters:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. Whether to replace the C0 control
+      characters (00-1F) with the`replacement_char`. Default is false.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  replacement_char:
+    default: '65533'
+    descp: An optional `int`. Defaults to `65533`. The replacement character codepoint
+      to be used in place of any invalid formatting in the input when `errors='replace'`.
+      Any valid unicode codepoint may be used. The default value is the default unicode
+      replacement character is 0xFFFD or U+65533.)Note that for UTF-8, passing a replacement
+      character expressible in 1 byte, such as ' ', will preserve string alignment
+      to the source since invalid bytes will be replaced with a 1-byte replacement.
+      For UTF-16-BE and UTF-16-LE, any 1 or 2 byte replacement character will preserve
+      byte alignment to the source.
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - errors
+  - replacement_char
+  - replace_control_characters
+  - name
+  required:
+  - input
+  - input_encoding
+  - output_encoding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/unicode_transcode
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: unicode_transcode
+title: tf.strings.unicode_transcode
+version: 2.1.0

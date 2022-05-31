@@ -1,0 +1,68 @@
+aliases:
+- tf.compat.v1.debugging.experimental.enable_dump_debug_info
+constraints:
+  circular_buffer_size:
+    default: '1000'
+    descp: Size of the circular buffers for execution events. These circular buffers
+      are designed to reduce the overhead of debugging dumping. They hold the most
+      recent debug events concerning eager execution of ops and `tf.function`s and
+      traces of tensor values computed inside`tf.function`s. They are written to the
+      file system only when the proper flushing method is called (see description
+      of return values below). Expected to be an integer. If <= 0, the circular-buffer
+      behavior will be disabled, i.e., the execution debug events will be written
+      to the file writers in the same way as non-execution events such as op creations
+      and source-file snapshots.
+    dtype:
+    - int
+  dump_root:
+    descp: The directory path where the dumping information will be written.
+  op_regex:
+    default: None
+    descp: 'Dump data from only the tensors from op types that matches to the regular
+      expression (through Python''s `re.match()`). "Op type" refers to the names of
+      the TensorFlow operations (e.g., "MatMul", "LogSoftmax"), which may repeat in
+      a TensorFlow function. It does not refer to the names of nodes (e.g., "dense/MatMul",
+      "dense_1/MatMul_1") which are unique within a function.<ul><li>Example 1: Dump
+      tensor data from only MatMul and Relu ops`op_regex="^(MatMul|Relu)$"`.'
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  tensor_debug_mode:
+    default: DEFAULT_TENSOR_DEBUG_MODE
+    descp: 'Debug mode for tensor values, as a string. The currently supported options
+      are: "NO_TENSOR": (Default) Only traces the execution of ops'' output tensors,
+      while not dumping the value of the ops'' output tensors or any form of concise
+      summary of them. '
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor_dtypes:
+    default: None
+    descp: 'Dump data from only the tensors of which the specified dtypes. This optional
+      argument can be in any of the following format:<ul><li>a list or tuple of `DType`
+      objects or strings that can be converted to `DType` objects via `tf.as_dtype()`.
+      Examples:'
+    dtype:
+    - tf.string
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - tensor_debug_mode
+  - circular_buffer_size
+  - op_regex
+  - tensor_dtypes
+  required:
+  - dump_root
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/experimental/enable_dump_debug_info
+outputs: A DebugEventsWriter instance used by the dumping callback. The caller may
+  use its flushing methods, including `FlushNonExecutionFiles()` and`FlushExecutionFiles()`.
+package: tensorflow
+target: enable_dump_debug_info
+title: tf.debugging.experimental.enable_dump_debug_info
+version: 2.1.0

@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.keras.layers.Flatten
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      ..., channels)` while `channels_first` corresponds to inputs with shape `(batch,
+      channels, ...)`. It defaults to the `image_data_format` value found in your
+      Keras config file at `~/.keras/keras.json`. If you never set it, then it will
+      be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Flatten
+package: tensorflow
+target: Flatten
+title: tf.keras.layers.Flatten
+version: 2.1.0

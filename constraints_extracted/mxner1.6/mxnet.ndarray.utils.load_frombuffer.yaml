@@ -1,0 +1,15 @@
+constraints:
+  buf:
+    descp: Buffer containing contents of a file as a string or bytes.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - buf
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/utils/index.html#mxnet.ndarray.utils.load_frombuffer
+package: mxnet
+target: load_frombuffer
+title: mxnet.ndarray.utils.load_frombuffer
+version: 1.6.0

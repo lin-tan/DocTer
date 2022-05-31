@@ -1,0 +1,60 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: A ndarray/symbol of type float32
+    doc_dtype: NDArray
+    dtype:
+    - numpy.float32
+    structure:
+    - ndarray
+  max_calib_range:
+    default: _Null
+    descp: The maximum scalar value in the form of float32. If present, it will be
+      used to quantize the fp32 data into int8 or uint8.
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  min_calib_range:
+    default: _Null
+    descp: The minimum scalar value in the form of float32. If present, it will be
+      used to quantize the fp32 data into int8 or uint8.
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_type:
+    default: _Null
+    descp: Output data type. auto can be specified to automatically determine output
+      type according to min_calib_range.
+    doc_dtype: '{''auto'', ''int8'', ''uint8''},optional, default=''int8'''
+    enum:
+    - auto
+    - int8
+    - uint8
+inputs:
+  optional:
+  - data
+  - out_type
+  - min_calib_range
+  - max_calib_range
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.quantize_v2
+package: mxnet
+target: quantize_v2
+title: mxnet.ndarray.contrib.quantize_v2
+version: 1.6.0

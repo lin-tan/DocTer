@@ -1,0 +1,21 @@
+constraints:
+  device:
+    default: None
+    descp: selected device. Returns the currently selected `Stream` for the current
+      device, given by `current_device()`, if `device` is `None` (default).
+    doc_dtype: torch.device or int, optional
+    dtype:
+    - int
+    enum:
+    - None
+    - Stream
+    - device
+inputs:
+  optional:
+  - device
+  required: []
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.current_stream
+package: torch
+target: current_stream
+title: torch.cuda.current_stream
+version: 1.5.0

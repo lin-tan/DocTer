@@ -1,0 +1,27 @@
+constraints:
+  clip_value:
+    descp: 'maximum allowed value of the gradients. The gradients are clipped in the
+      range   [-clip _value, clip _value  ] '
+    doc_dtype: float or int
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  parameters:
+    descp: an iterable of Tensors or a single Tensor that will have gradients normalized
+    doc_dtype: Iterable[Tensor] or Tensor
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - parameters
+  - clip_value
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.clip_grad_value_
+package: torch
+target: clip_grad_value_
+title: torch.nn.utils.clip_grad_value_
+version: 1.5.0

@@ -1,0 +1,73 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.sequence.skipgrams
+constraints:
+  categorical:
+    default: 'False'
+    descp: bool. if False, labels will be     integers (eg. `[0, 1, 1 .. ]`),     if
+      `True`, labels will be categorical, e.g.     `[[1,0],[0,1],[0,1] .. ]`.
+    dtype:
+    - int
+    - tf.bool
+    ndim:
+    - '0'
+  negative_samples:
+    default: '1.0'
+    descp: Float >= 0. 0 for no negative (i.e. random) samples.     1 for same number
+      as positive samples.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  sampling_table:
+    default: None
+    descp: 1D array of size `vocabulary_size` where the entry i     encodes the probability
+      to sample a word of rank i.
+    ndim:
+    - '1'
+    structure:
+    - list
+  seed:
+    default: None
+    descp: Random seed.`
+  sequence:
+    descp: A word sequence (sentence), encoded as a list     of word indices (integers).
+      If using a `sampling_table`,     word indices are expected to match the rank     of
+      the words in a reference dataset (e.g. 10 would encode     the 10-th most frequently
+      occurring token).     Note that index 0 is expected to be a non-word and will
+      be skipped.
+  shuffle:
+    default: 'True'
+    descp: Whether to shuffle the word couples before returning them.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  vocabulary_size:
+    descp: Int, maximum possible word index + 1
+  window_size:
+    default: '4'
+    descp: Int, size of sampling windows (technically half-window).     The window
+      of a word `w_i` will be     `[i - window_size, i + window_size+1]`.
+    dtype:
+    - int
+    - tf.float16
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - window_size
+  - negative_samples
+  - shuffle
+  - categorical
+  - sampling_table
+  - seed
+  required:
+  - sequence
+  - vocabulary_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/sequence/skipgrams
+outputs:
+- labels: where `couples` are int pairs and     `labels` are either 0 or 1.`
+package: tensorflow
+target: skipgrams
+title: tf.keras.preprocessing.sequence.skipgrams
+version: 2.1.0

@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.io.matching_files
+- tf.compat.v1.matching_files
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pattern:
+    descp: A `Tensor` of type `string`. Shell wildcard pattern(s). Scalar or vector
+      of type string.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - pattern
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/matching_files
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: matching_files
+title: tf.io.matching_files
+version: 2.1.0

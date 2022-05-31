@@ -1,0 +1,28 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: ''
+  output_size:
+    default: None
+    descp: the target output size (single integer or double-integer tuple)
+  return_indices:
+    default: None
+    descp: 'whether to return pooling indices. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - output_size
+  - return_indices
+  required:
+  - '*args'
+  - '**kwargs'
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.adaptive_max_pool2d
+package: torch
+target: adaptive_max_pool2d
+title: torch.nn.functional.adaptive_max_pool2d
+version: 1.5.0

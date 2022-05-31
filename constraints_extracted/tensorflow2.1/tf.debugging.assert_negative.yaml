@@ -1,0 +1,43 @@
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional).  Defaults to "assert_negative".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  summarize:
+    default: None
+    descp: Print this many entries of each tensor.
+  x:
+    descp: Numeric `Tensor`.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+exceptions:
+- InvalidArgumentError: if the check can be performed immediately and`x[i] < 0` is
+    False. The check can be performed immediately during eager execution or if `x`
+    is statically known.
+inputs:
+  optional:
+  - message
+  - summarize
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_negative
+outputs: Op raising `InvalidArgumentError` unless `x` is all negative. This can be   used
+  with `tf.control_dependencies` inside of `tf.function`s to block   followup computation
+  until the check has executed.
+package: tensorflow
+target: assert_negative
+title: tf.debugging.assert_negative
+version: 2.1.0

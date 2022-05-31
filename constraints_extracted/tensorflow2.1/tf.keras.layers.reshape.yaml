@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.layers.Reshape
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  target_shape:
+    descp: Target shape. Tuple of integers, does not include the samples dimension
+      (batch size).
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional:
+  - '**kwargs'
+  required:
+  - target_shape
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Reshape
+package: tensorflow
+target: Reshape
+title: tf.keras.layers.Reshape
+version: 2.1.0

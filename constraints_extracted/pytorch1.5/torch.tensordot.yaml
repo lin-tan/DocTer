@@ -1,0 +1,37 @@
+constraints:
+  a:
+    descp: Left tensor to contract
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  b:
+    descp: Right tensor to contract
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  dims:
+    default: '2'
+    descp: number of dimensions to contract or explicit lists of dimensions for `a`
+      and `b` respectively
+    doc_dtype: int or tuple of two lists of python:integers
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+    - tuple
+inputs:
+  optional:
+  - dims
+  required:
+  - a
+  - b
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.tensordot
+package: torch
+target: tensordot
+title: torch.tensordot
+version: 1.5.0

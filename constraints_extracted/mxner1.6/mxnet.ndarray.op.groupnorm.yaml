@@ -1,0 +1,74 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  beta:
+    default: None
+    descp: beta array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  data:
+    default: None
+    descp: Input data
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  eps:
+    default: _Null
+    descp: An epsilon parameter to prevent division by 0.
+    doc_dtype: float, optional, default=9.99999975e-06
+    dtype:
+    - float
+    ndim:
+    - '0'
+  gamma:
+    default: None
+    descp: gamma array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  num_groups:
+    default: _Null
+    descp: Total number of groups.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_mean_var:
+    default: _Null
+    descp: Output the mean and std calculated along the given axis.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - gamma
+  - beta
+  - num_groups
+  - eps
+  - output_mean_var
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.GroupNorm
+package: mxnet
+target: GroupNorm
+title: mxnet.ndarray.op.GroupNorm
+version: 1.6.0

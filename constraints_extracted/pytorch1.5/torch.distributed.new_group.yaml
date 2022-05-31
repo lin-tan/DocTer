@@ -1,0 +1,40 @@
+constraints:
+  backend:
+    default: None
+    descp: The backend to use. Depending on build-time configurations, valid values
+      are `gloo` and `nccl`. By default uses the same backend as the global group.
+      This field should be given as a lowercase string (e.g., `"gloo"`), which can
+      also be accessed via `Backend` attributes (e.g., `Backend.GLOO`).
+    doc_dtype: str or Backend, optional
+    dtype:
+    - string
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+  ranks:
+    default: None
+    descp: List of ranks of group members.
+    doc_dtype: list[int]
+    structure:
+    - list
+  timeout:
+    default: datetime.timedelta(0,1800)
+    descp: Timeout for operations executed against the process group. Default value
+      equals 30 minutes. This is only applicable for the `gloo` backend.
+    doc_dtype: timedelta, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - ranks
+  - timeout
+  - backend
+  required: []
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.new_group
+package: torch
+target: new_group
+title: torch.distributed.new_group
+version: 1.5.0

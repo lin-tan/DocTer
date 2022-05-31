@@ -1,0 +1,31 @@
+constraints:
+  name:
+    default: None
+    descp: A name prefix for the returned tensors (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  out_type:
+    default: tf.dtypes.string
+    descp: The `dtype` to use for serialization.
+    dtype:
+    - tf.dtype
+    - tf.string
+  sp_input:
+    descp: The input `SparseTensor`.
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - out_type
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/serialize_sparse
+outputs: A 3-vector (1-D `Tensor`), with each column representing the serialized`SparseTensor`'s
+  indices, values, and shape (respectively).
+package: tensorflow
+target: serialize_sparse
+title: tf.io.serialize_sparse
+version: 2.1.0

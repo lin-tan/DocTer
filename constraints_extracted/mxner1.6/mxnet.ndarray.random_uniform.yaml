@@ -1,0 +1,72 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: _Null
+    descp: Context of output, in format [cpu|gpu|cpu_pinned](n). Only used for imperative
+      calls.
+    doc_dtype: string, optional, default=''
+    dtype:
+    - string
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred. Defaults to float32
+      if not defined (dtype=None).
+    doc_dtype: '{''None'', ''float16'', ''float32'', ''float64''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+  high:
+    default: _Null
+    descp: Upper bound of the distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  low:
+    default: _Null
+    descp: Lower bound of the distribution.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape of the output.
+    doc_dtype: Shape(tuple), optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - low
+  - high
+  - shape
+  - ctx
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.random_uniform
+package: mxnet
+target: random_uniform
+title: mxnet.ndarray.random_uniform
+version: 1.6.0

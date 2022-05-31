@@ -1,0 +1,68 @@
+aliases:
+- tf.compat.v1.signal.inverse_stft
+constraints:
+  fft_length:
+    default: None
+    descp: An integer scalar `Tensor`. The size of the FFT that produced`stfts`. If
+      not provided, uses the smallest power of 2 enclosing`frame_length`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  frame_length:
+    descp: An integer scalar `Tensor`. The window length in samples.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  frame_step:
+    descp: An integer scalar `Tensor`. The number of samples to step.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  stfts:
+    descp: A `complex64`/`complex128` `[..., frames, fft_unique_bins]``Tensor` of
+      STFT bins representing a batch of `fft_length`-point STFTs where `fft_unique_bins`
+      is `fft_length // 2 + 1`
+  window_fn:
+    default: tf.signal.hann_window
+    descp: A callable that takes a window length and a `dtype` keyword argument and
+      returns a `[window_length]` `Tensor` of samples in the provided datatype. If
+      set to `None`, no windowing is used.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `stfts` is not at least rank 2, `frame_length` is not scalar,`frame_step`
+    is not scalar, or `fft_length` is not scalar.
+inputs:
+  optional:
+  - fft_length
+  - window_fn
+  - name
+  required:
+  - stfts
+  - frame_length
+  - frame_step
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/inverse_stft
+outputs: A `[..., samples]` `Tensor` of `float32`/`float64` signals representing the
+  inverse STFT for each input STFT in `stfts`.
+package: tensorflow
+target: inverse_stft
+title: tf.signal.inverse_stft
+version: 2.1.0

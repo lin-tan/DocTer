@@ -1,0 +1,59 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.image.load_img
+constraints:
+  color_mode:
+    default: rgb
+    descp: 'One of "grayscale", "rgb", "rgba". Default: "rgb".     The desired image
+      format.'
+    dtype:
+    - tf.string
+    enum:
+    - rgb
+    - rgba
+    ndim:
+    - '0'
+  grayscale:
+    default: 'False'
+    descp: DEPRECATED use `color_mode="grayscale"`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  interpolation:
+    default: nearest
+    descp: Interpolation method used to resample the image if the     target size
+      is different from that of the loaded image.     Supported methods are "nearest",
+      "bilinear", and "bicubic".     If PIL version 1.1.3 or newer is installed, "lanczos"
+      is also     supported. If PIL version 3.4.0 or newer is installed, "box" and     "hamming"
+      are also supported. By default, "nearest" is used.`
+    dtype:
+    - tf.string
+    enum:
+    - nearest
+    ndim:
+    - '0'
+  path:
+    descp: Path to image file.
+  target_size:
+    default: None
+    descp: Either `None` (default to original size)     or tuple of ints `(img_height,
+      img_width)`.
+    dtype:
+    - int
+exceptions:
+- ImportError: if PIL is not available.
+- ValueError: if interpolation method is not supported.`
+inputs:
+  optional:
+  - grayscale
+  - color_mode
+  - target_size
+  - interpolation
+  required:
+  - path
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/image/load_img
+outputs: '`A PIL Image instance.`'
+package: tensorflow
+target: load_img
+title: tf.keras.preprocessing.image.load_img
+version: 2.1.0

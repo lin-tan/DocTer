@@ -1,0 +1,25 @@
+aliases:
+- tf.as_dtype
+- tf.compat.v1.as_dtype
+- tf.compat.v1.dtypes.as_dtype
+constraints:
+  type_value:
+    descp: A value that can be converted to a `tf.DType` object. This may currently
+      be a `tf.DType` object, a `DataType`enum, a string type name, or a `numpy.dtype`.
+    dtype:
+    - tf.dtype
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `type_value` cannot be converted to a `DType`.
+inputs:
+  optional: []
+  required:
+  - type_value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/dtypes/as_dtype
+outputs: A `DType` corresponding to `type_value`.
+package: tensorflow
+target: as_dtype
+title: tf.dtypes.as_dtype
+version: 2.1.0

@@ -1,0 +1,45 @@
+aliases:
+- tf.compat.v1.ragged.map_flat_values
+constraints:
+  '**kwargs':
+    descp: Keyword arguments for `op`.
+  '*args':
+    descp: Arguments for `op`.
+  op:
+    descp: The operation that should be applied to the RaggedTensor `flat_values`.`op`
+      is typically an element-wise operation (such as math_ops.add), but any operation
+      that preserves the size of the outermost dimension can be used.  I.e., `shape[0]`
+      of the value returned by `op` must match`shape[0]` of the `RaggedTensor`s' `flat_values`
+      tensors.
+    enum:
+    - RaggedTensor
+    - '[0]'
+    - match
+    - must
+    - returned
+    - shape
+    - the
+    - value
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[0]'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If args contains no `RaggedTensors`, or if the `nested_splits`of the
+    input `RaggedTensor`s are not identical.
+inputs:
+  optional: []
+  required:
+  - op
+  - '*args'
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ragged/map_flat_values
+outputs: A `RaggedTensor` whose `ragged_rank` matches the `ragged_rank` of all input
+  `RaggedTensor`s.
+package: tensorflow
+target: map_flat_values
+title: tf.ragged.map_flat_values
+version: 2.1.0

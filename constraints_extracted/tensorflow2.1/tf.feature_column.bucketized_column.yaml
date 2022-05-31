@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.feature_column.bucketized_column
+constraints:
+  boundaries:
+    descp: A sorted list or tuple of floats specifying the boundaries.
+    dtype:
+    - float
+    structure:
+    - list
+    - tuple
+  source_column:
+    descp: A one-dimensional dense column which is generated with`numeric_column`.
+exceptions:
+- ValueError: If `source_column` is not a numeric column, or if it is not one-dimensional.
+- ValueError: If `boundaries` is not a sorted list or tuple.
+inputs:
+  optional: []
+  required:
+  - source_column
+  - boundaries
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/bucketized_column
+outputs: A `BucketizedColumn`.
+package: tensorflow
+target: bucketized_column
+title: tf.feature_column.bucketized_column
+version: 2.1.0

@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.image.sobel_edges
+constraints:
+  image:
+    descp: Image tensor with shape [batch_size, h, w, d] and type float32 or float64.  The
+      image(s) must be 2x2 or larger.
+    dtype:
+    - tf.float32
+    - tf.float64
+    ndim:
+    - '4'
+    shape:
+    - '[batch_size,h,w,d]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- batch_size
+- h
+- w
+- d
+inputs:
+  optional: []
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/sobel_edges
+outputs: Tensor holding edge maps for each channel. Returns a tensor with shape [batch_size,
+  h, w, d, 2] where the last two dimensions hold [[dy[0], dx[0]], [dy[1], dx[1]],
+  ..., [dy[d-1], dx[d-1]]] calculated using the Sobel filter.
+package: tensorflow
+target: sobel_edges
+title: tf.image.sobel_edges
+version: 2.1.0

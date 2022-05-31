@@ -1,0 +1,151 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  count_include_pad:
+    default: _Null
+    descp: Only used for AvgPool, specify whether to count padding elements for averagecalculation.
+      For example, with a 5*5 kernel on a 3*3 corner of a image,the sum of the 9 valid
+      elements will be divided by 25 if this is set to true,or it will be divided
+      by 9 if this is set to false. Defaults to true.
+    doc_dtype: boolean or None, optional, default=None
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  cudnn_off:
+    default: _Null
+    descp: Turn off cudnn pooling and use MXNet pooling operator.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  global_pool:
+    default: _Null
+    descp: Ignore kernel size, do global pooling based on current input feature map.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  kernel:
+    default: _Null
+    descp: 'Pooling kernel size: (y, x) or (d, y, x)'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  layout:
+    default: _Null
+    descp: 'Set layout for input and output. Empty for default layout: NCW for 1d,
+      NCHW for 2d and NCDHW for 3d.'
+    doc_dtype: '{None, ''NCDHW'', ''NCHW'', ''NCW'', ''NDHWC'', ''NHWC'', ''NWC''},optional,
+      default=''None'''
+    enum:
+    - NCDHW
+    - NCHW
+    - NCW
+    - NDHWC
+    - NHWC
+    - NWC
+    - None
+  max_data:
+    default: None
+    descp: Maximum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  min_data:
+    default: None
+    descp: Minimum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  p_value:
+    default: _Null
+    descp: Value of p for Lp pooling, can be 1 or 2, required for Lp Pooling.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+  pad:
+    default: _Null
+    descp: 'Pad for pooling: (y, x) or (d, y, x). Defaults to no padding.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  pool_type:
+    default: _Null
+    descp: Pooling type to be applied.
+    doc_dtype: '{''avg'', ''lp'', ''max'', ''sum''},optional, default=''max'''
+    enum:
+    - avg
+    - max
+    - sum
+  pooling_convention:
+    default: _Null
+    descp: Pooling convention to be applied.
+    doc_dtype: '{''full'', ''same'', ''valid''},optional, default=''valid'''
+    enum:
+    - full
+    - same
+    - valid
+  stride:
+    default: _Null
+    descp: 'Stride: for pooling (y, x) or (d, y, x). Defaults to 1 for each dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - min_data
+  - max_data
+  - kernel
+  - pool_type
+  - global_pool
+  - cudnn_off
+  - pooling_convention
+  - stride
+  - pad
+  - p_value
+  - count_include_pad
+  - layout
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.quantized_pooling
+package: mxnet
+target: quantized_pooling
+title: mxnet.contrib.ndarray.quantized_pooling
+version: 1.6.0

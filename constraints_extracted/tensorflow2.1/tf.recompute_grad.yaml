@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.recompute_grad
+constraints:
+  f:
+    descp: function `f(*x)` that returns a `Tensor` or sequence of `Tensor` outputs.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - f
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/recompute_grad
+outputs: A function `g` that wraps `f`, but which recomputes `f` on the backwards
+  pass of a gradient call.
+package: tensorflow
+target: recompute_grad
+title: tf.recompute_grad
+version: 2.1.0

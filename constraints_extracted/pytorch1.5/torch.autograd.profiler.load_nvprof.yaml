@@ -1,0 +1,15 @@
+constraints:
+  path:
+    descp: path to nvprof trace
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - path
+link: https://pytorch.org/docs/1.5.0/autograd.html#torch.autograd.profiler.load_nvprof
+package: torch
+target: load_nvprof
+title: torch.autograd.profiler.load_nvprof
+version: 1.5.0

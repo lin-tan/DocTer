@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.linalg.slogdet
+constraints:
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `half`, `float32`, `float64`,
+      `complex64`, `complex128`. Shape is `[N, M, M]`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/slogdet
+outputs: A tuple of `Tensor` objects (sign, log_abs_determinant).
+package: tensorflow
+target: slogdet
+title: tf.linalg.slogdet
+version: 2.1.0

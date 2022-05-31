@@ -1,0 +1,49 @@
+aliases:
+- tf.compat.v1.repeat
+constraints:
+  axis:
+    default: None
+    descp: An int. The axis along which to repeat values. By default (axis=None),
+      use the flattened input array, and return a flat output array.
+    dtype:
+    - int
+    structure:
+    - list
+  input:
+    descp: An `N`-dimensional Tensor.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  repeats:
+    descp: An 1-D `int` Tensor. The number of repetitions for each element. repeats
+      is broadcasted to fit the shape of the given axis. `len(repeats)`must equal
+      `input.shape[axis]` if axis is not None.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - input
+  - repeats
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/repeat
+outputs: A Tensor which has the same shape as `input`, except along the given axis.   If
+  axis is None then the output array is flattened to match the flattened   input array.
+package: tensorflow
+target: repeat
+title: tf.repeat
+version: 2.1.0

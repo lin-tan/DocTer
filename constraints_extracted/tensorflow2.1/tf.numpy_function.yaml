@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.numpy_function
+constraints:
+  Tout:
+    descp: 'A list or tuple of tensorflow data types or a single tensorflow data type
+      if there is only one, indicating what `func` returns. stateful (bool): If True,
+      the function should be considered stateful. If a function is stateless, when
+      given the same input it will return the same output and have no observable side
+      effects. Optimizations such as common subexpression elimination are only performed
+      on stateless operations.'
+    structure:
+    - list
+    - tuple
+  func:
+    descp: 'A Python function, which accepts `numpy.ndarray` objects as arguments
+      and returns a list of `numpy.ndarray` objects (or a single`numpy.ndarray`).
+      This function must accept as many arguments as there are tensors in `inp`, and
+      these argument types will match the corresponding`tf.Tensor` objects in `inp`.
+      The returns `numpy.ndarray`s must match the number and types defined `Tout`.
+      Important Note: Input and output `numpy.ndarray`s of `func` are not guaranteed
+      to be copies. In some cases their underlying memory will be shared with the
+      corresponding TensorFlow tensors. In-place modification or storing `func` input
+      or return values in python datastructures without explicit (np.)copy can have
+      non-deterministic consequences.'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  inp:
+    descp: A list of `tf.Tensor` objects.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: (Optional) A name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - func
+  - inp
+  - Tout
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/numpy_function
+outputs: Single or list of `tf.Tensor` which `func` computes.
+package: tensorflow
+target: numpy_function
+title: tf.numpy_function
+version: 2.1.0

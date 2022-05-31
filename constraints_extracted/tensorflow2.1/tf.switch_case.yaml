@@ -1,0 +1,45 @@
+aliases:
+- tf.compat.v1.switch_case
+constraints:
+  branch_fns:
+    descp: A `dict` mapping `int`s to callables, or a `list` of (`int`, callable)
+      pairs, or simply a list of callables (in which case the index serves as the
+      key). Each callable must return a matching structure of tensors.
+    structure:
+    - dict
+    - list
+  branch_index:
+    descp: An int Tensor specifying which of `branch_fns` should be executed.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  default:
+    default: None
+    descp: Optional callable that returns a structure of tensors.
+  name:
+    default: switch_case
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `branch_fns` is not a list/dictionary.
+- TypeError: If `branch_fns` is a list but does not contain 2-tuples or        callables.
+- TypeError: If `fns[i]` is not callable for any i, or `default` is not        callable.
+inputs:
+  optional:
+  - default
+  - name
+  required:
+  - branch_index
+  - branch_fns
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/switch_case
+outputs: The tensors returned by the callable identified by `branch_index`, or those
+  returned by `default` if no key matches and `default` was provided, or those returned
+  by the max-keyed `branch_fn` if no `default` is provided.
+package: tensorflow
+target: switch_case
+title: tf.switch_case
+version: 2.1.0

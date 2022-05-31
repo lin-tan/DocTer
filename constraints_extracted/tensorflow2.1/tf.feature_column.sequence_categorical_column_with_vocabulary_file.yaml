@@ -1,0 +1,67 @@
+aliases:
+- tf.compat.v1.feature_column.sequence_categorical_column_with_vocabulary_file
+constraints:
+  default_value:
+    default: None
+    descp: The integer ID value to return for out-of-vocabulary feature values, defaults
+      to `-1`. This can not be specified with a positive`num_oov_buckets`.
+    ndim:
+    - '0'
+  dtype:
+    default: tf.dtypes.string
+    descp: The type of features. Only string and integer types are supported.
+    dtype:
+    - tf.dtype
+    - tf.string
+  key:
+    descp: A unique string identifying the input feature.
+    dtype:
+    - tf.string
+  num_oov_buckets:
+    default: '0'
+    descp: Non-negative integer, the number of out-of-vocabulary buckets. All out-of-vocabulary
+      inputs will be assigned IDs in the range`[vocabulary_size, vocabulary_size+num_oov_buckets)`
+      based on a hash of the input value. A positive `num_oov_buckets` can not be
+      specified with`default_value`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  vocabulary_file:
+    descp: The vocabulary file name.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  vocabulary_size:
+    default: None
+    descp: Number of the elements in the vocabulary. This must be no greater than
+      length of `vocabulary_file`, if less than length, later values are ignored.
+      If None, it is set to the length of `vocabulary_file`.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+exceptions:
+- ValueError: '`vocabulary_file` is missing or cannot be opened.'
+- ValueError: '`vocabulary_size` is missing or < 1.'
+- ValueError: '`num_oov_buckets` is a negative integer.'
+- ValueError: '`num_oov_buckets` and `default_value` are both specified.'
+- ValueError: '`dtype` is neither string nor integer.'
+inputs:
+  optional:
+  - vocabulary_size
+  - num_oov_buckets
+  - default_value
+  - dtype
+  required:
+  - key
+  - vocabulary_file
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/sequence_categorical_column_with_vocabulary_file
+outputs: A `SequenceCategoricalColumn`.
+package: tensorflow
+target: sequence_categorical_column_with_vocabulary_file
+title: tf.feature_column.sequence_categorical_column_with_vocabulary_file
+version: 2.1.0

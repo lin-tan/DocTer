@@ -1,0 +1,47 @@
+aliases:
+- tf.compat.v1.linalg.pinv
+constraints:
+  a:
+    descp: (Batch of) `float`-like matrix-shaped `Tensor`(s) which are to be pseudo-inverted.
+  name:
+    default: None
+    descp: 'Python `str` prefixed to ops created by this function. Default value:
+      ''pinv''.'
+    dtype:
+    - tf.string
+    enum:
+    - pinv
+  rcond:
+    default: None
+    descp: '`Tensor` of small singular value cutoffs.  Singular values smaller (in
+      modulus) than `rcond` * largest_singular_value (again, in modulus) are set to
+      zero. Must broadcast against `tf.shape(a)[:-2]`. Default value: `10. * max(num_rows,
+      num_cols) * np.finfo(a.dtype).eps`.'
+    dtype:
+    - int
+  validate_args:
+    default: 'False'
+    descp: 'When `True`, additional assertions might be embedded in the graph. Default
+      value: `False` (i.e., no graph assertions are added).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: if input `a` does not have `float`-like `dtype`.
+- ValueError: if input `a` has fewer than 2 dimensions.
+inputs:
+  optional:
+  - rcond
+  - validate_args
+  - name
+  required:
+  - a
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/pinv
+outputs:
+- a_pinv: (Batch of) pseudo-inverse of input `a`. Has same shape as `a` except rightmost
+    two dimensions are transposed.
+package: tensorflow
+target: pinv
+title: tf.linalg.pinv
+version: 2.1.0

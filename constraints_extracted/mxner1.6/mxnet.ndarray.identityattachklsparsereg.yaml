@@ -1,0 +1,58 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  momentum:
+    default: _Null
+    descp: The momentum for running average
+    doc_dtype: float, optional, default=0.899999976
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  penalty:
+    default: _Null
+    descp: The tradeoff parameter for the sparseness penalty
+    doc_dtype: float, optional, default=0.00100000005
+    dtype:
+    - float
+    ndim:
+    - '0'
+  sparseness_target:
+    default: _Null
+    descp: The sparseness target
+    doc_dtype: float, optional, default=0.100000001
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - sparseness_target
+  - penalty
+  - momentum
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.IdentityAttachKLSparseReg
+package: mxnet
+target: IdentityAttachKLSparseReg
+title: mxnet.ndarray.IdentityAttachKLSparseReg
+version: 1.6.0

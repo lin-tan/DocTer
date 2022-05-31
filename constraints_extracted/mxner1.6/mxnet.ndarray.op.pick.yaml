@@ -1,0 +1,70 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: int or None. The axis to picking the elements. Negative values means indexing
+      from right to left. If is None, the elements in the index w.r.t the flattened
+      input will be picked.
+    doc_dtype: int or None, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  index:
+    default: None
+    descp: The index array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  keepdims:
+    default: _Null
+    descp: If true, the axis where we pick the elements is left in the result as dimension
+      with size one.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  mode:
+    default: _Null
+    descp: Specify how out-of-bound indices behave. Default is "clip". "clip" means
+      clip to the range. So, if all indices mentioned are too large, they are replaced
+      by the index that addresses the last element along an axis.  "wrap" means to
+      wrap around.
+    doc_dtype: '{''clip'', ''wrap''},optional, default=''clip'''
+    enum:
+    - clip
+    - wrap
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - index
+  - axis
+  - keepdims
+  - mode
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.pick
+package: mxnet
+target: pick
+title: mxnet.ndarray.op.pick
+version: 1.6.0

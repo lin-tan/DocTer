@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  layout:
+    default: NCHW
+    descp: Dimension ordering of data and out ('NCHW' or 'NHWC'). 'N', 'C', 'H', 'W'
+      stands for batch, channel, height, and width dimensions respectively. padding
+      is applied on 'H' and 'W' dimension.
+    doc_dtype: str, default 'NCHW'
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - layout
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.GlobalMaxPool2D
+package: mxnet
+target: GlobalMaxPool2D
+title: mxnet.gluon.nn.GlobalMaxPool2D
+version: 1.6.0

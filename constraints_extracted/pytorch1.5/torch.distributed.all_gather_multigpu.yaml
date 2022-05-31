@@ -1,0 +1,41 @@
+constraints:
+  async_op:
+    default: 'False'
+    descp: Whether this op should be an async op
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  group:
+    default: <objectobject>
+    descp: The process group to work on
+    doc_dtype: ProcessGroup, optional
+  input_tensor_list:
+    descp: List of tensors(on different GPUs) to be broadcast from current process.
+      Note that `len(input_tensor_list)` needs to be the same for all the distributed
+      processes calling this function.
+    doc_dtype: List[Tensor]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  output_tensor_lists:
+    descp: ''
+    doc_dtype: List[List[Tensor]]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - group
+  - async_op
+  required:
+  - output_tensor_lists
+  - input_tensor_list
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.all_gather_multigpu
+package: torch
+target: all_gather_multigpu
+title: torch.distributed.all_gather_multigpu
+version: 1.5.0

@@ -1,0 +1,28 @@
+check_nan: true
+constraints:
+  decoder_layer:
+    descp: an instance of the TransformerDecoderLayer() class (required).
+  norm:
+    default: None
+    descp: the layer normalization component (optional).
+  num_layers:
+    descp: the number of sub-decoder-layers in the decoder (required).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - norm
+  required:
+  - decoder_layer
+  - num_layers
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.TransformerDecoder
+package: torch
+target: TransformerDecoder
+title: torch.nn.TransformerDecoder
+version: 1.5.0

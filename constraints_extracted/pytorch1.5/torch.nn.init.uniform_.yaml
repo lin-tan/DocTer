@@ -1,0 +1,28 @@
+constraints:
+  a:
+    default: '0.0'
+    descp: the lower bound of the uniform distribution
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  b:
+    default: '1.0'
+    descp: the upper bound of the uniform distribution
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  tensor:
+    descp: an n-dimensional torch.Tensor
+inputs:
+  optional:
+  - a
+  - b
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.uniform_
+package: torch
+target: uniform_
+title: torch.nn.init.uniform_
+version: 1.5.0

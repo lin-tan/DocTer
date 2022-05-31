@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.math.bessel_i0e
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `bfloat16`, `half`, `float32`,
+      `float64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/bessel_i0e
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: bessel_i0e
+title: tf.math.bessel_i0e
+version: 2.1.0

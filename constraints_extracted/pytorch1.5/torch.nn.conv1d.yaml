@@ -1,0 +1,108 @@
+check_nan: true
+constraints:
+  bias:
+    default: 'True'
+    descp: 'If `True`, adds a learnable bias to the output. Default: `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  dilation:
+    default: '1'
+    descp: 'Spacing between kernel elements. Default: 1'
+    doc_dtype: int or tuple, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  groups:
+    default: '1'
+    descp: 'Number of blocked connections from input channels to output channels.
+      Default: 1'
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  in_channels:
+    descp: Number of channels in the input image
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  kernel_size:
+    descp: Size of the convolving kernel
+    doc_dtype: int or tuple
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  out_channels:
+    descp: Number of channels produced by the convolution
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  padding:
+    default: '0'
+    descp: 'Zero-padding added to both sides of the input. Default: 0'
+    doc_dtype: int or tuple, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  padding_mode:
+    default: zeros
+    descp: '`''zeros''`, `''reflect''`, `''replicate''` or `''circular''`. Default:
+      `''zeros''`'
+    doc_dtype: string, optional
+    dtype:
+    - string
+  stride:
+    default: '1'
+    descp: 'Stride of the convolution. Default: 1'
+    doc_dtype: int or tuple, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - stride
+  - padding
+  - dilation
+  - groups
+  - bias
+  - padding_mode
+  required:
+  - in_channels
+  - out_channels
+  - kernel_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Conv1d
+package: torch
+target: Conv1d
+title: torch.nn.Conv1d
+version: 1.5.0

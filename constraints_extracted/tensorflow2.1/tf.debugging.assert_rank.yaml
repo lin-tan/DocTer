@@ -1,0 +1,47 @@
+aliases:
+- tf.assert_rank
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional). Defaults to "assert_rank".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  rank:
+    descp: Scalar integer `Tensor`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: '`Tensor`.'
+exceptions:
+- InvalidArgumentError: if the check can be performed immediately and`x` does not
+    have rank `rank`. The check can be performed immediately during eager execution
+    or if the shape of `x` is statically known.
+inputs:
+  optional:
+  - message
+  - name
+  required:
+  - x
+  - rank
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_rank
+outputs: Op raising `InvalidArgumentError` unless `x` has specified rank. If static
+  checks determine `x` has correct rank, a `no_op` is returned. This can be used with
+  `tf.control_dependencies` inside of `tf.function`s to block followup computation
+  until the check has executed.
+package: tensorflow
+target: assert_rank
+title: tf.debugging.assert_rank
+version: 2.1.0

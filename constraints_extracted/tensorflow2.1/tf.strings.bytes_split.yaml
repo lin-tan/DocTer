@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.strings.bytes_split
+constraints:
+  input:
+    descp: 'A string `Tensor` or `RaggedTensor`: the strings to split.  Must have
+      a statically known rank (`N`).'
+    dtype:
+    - tf.string
+    enum:
+    - RaggedTensor
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/bytes_split
+outputs: 'A `RaggedTensor` of rank `N+1`: the bytes that make up the source strings.'
+package: tensorflow
+target: bytes_split
+title: tf.strings.bytes_split
+version: 2.1.0

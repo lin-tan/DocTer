@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.nn.collapse_repeated
+check_nan: true
+constraints:
+  labels:
+    descp: Tensor of shape [batch, max value in seq_length]
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for this `Op`. Defaults to "collapse_repeated_labels".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seq_length:
+    descp: Tensor of shape [batch], sequence length of each batch element.
+    ndim:
+    - '1'
+    shape:
+    - '[batch]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+dependency:
+- batch
+inputs:
+  optional:
+  - name
+  required:
+  - labels
+  - seq_length
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/collapse_repeated
+outputs: A tuple `(collapsed_labels, new_seq_length)` where
+package: tensorflow
+target: collapse_repeated
+title: tf.nn.collapse_repeated
+version: 2.1.0

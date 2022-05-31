@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.py_function
+constraints:
+  Tout:
+    descp: A list or tuple of tensorflow data types or a single tensorflow data type
+      if there is only one, indicating what `func` returns; an empty list if no value
+      is returned (i.e., if the return value is `None`).
+  func:
+    descp: A Python function which accepts a list of `Tensor` objects having element
+      types that match the corresponding `tf.Tensor` objects in `inp`and returns a
+      list of `Tensor` objects (or a single `Tensor`, or `None`) having element types
+      that match the corresponding values in `Tout`.
+  inp:
+    descp: A list of `Tensor` objects.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - func
+  - inp
+  - Tout
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/py_function
+outputs: A list of `Tensor` or a single `Tensor` which `func` computes; an empty list
+  if `func` returns None.
+package: tensorflow
+target: py_function
+title: tf.py_function
+version: 2.1.0

@@ -1,0 +1,77 @@
+constraints:
+  aggregation_method:
+    default: None
+    descp: Specifies the method used to combine gradient terms. Accepted values are
+      constants defined in the class `AggregationMethod`.
+  gate_gradients:
+    default: 'False'
+    descp: If True, add a tuple around the gradients returned for an operations.  This
+      avoids some race conditions.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - tuple
+  grad_ys:
+    default: None
+    descp: Optional. A `Tensor` or list of tensors the same size as`ys` and holding
+      the gradients computed for each y in `ys`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: gradients
+    descp: Optional name to use for grouping all the gradient ops together. defaults
+      to 'gradients'.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  stop_gradients:
+    default: None
+    descp: Optional. A `Tensor` or list of tensors not to differentiate through.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  unconnected_gradients:
+    default: tf.UnconnectedGradients.NONE
+    descp: Optional. Specifies the gradient value returned when the given input tensors
+      are unconnected. Accepted values are constants defined in the class `tf.UnconnectedGradients`
+      and the default value is`none`.
+  xs:
+    descp: A `Tensor` or list of tensors to be used for differentiation.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  ys:
+    descp: A `Tensor` or list of tensors to be differentiated.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+exceptions:
+- LookupError: if one of the operations between `x` and `y` does not have a registered
+    gradient function.
+- ValueError: if the arguments are invalid.
+- RuntimeError: if called in Eager mode.
+inputs:
+  optional:
+  - grad_ys
+  - name
+  - gate_gradients
+  - aggregation_method
+  - stop_gradients
+  - unconnected_gradients
+  required:
+  - ys
+  - xs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/gradients
+outputs: A list of `sum(dy/dx)` for each x in `xs`.
+package: tensorflow
+target: gradients
+title: tf.gradients
+version: 2.1.0

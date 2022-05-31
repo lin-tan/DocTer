@@ -1,0 +1,70 @@
+aliases:
+- tf.compat.v1.image.ssim_multiscale
+constraints:
+  filter_sigma:
+    default: '1.5'
+    descp: Default value 1.5 (width of gaussian filter).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  filter_size:
+    default: '11'
+    descp: Default value 11 (size of gaussian filter).
+    dtype:
+    - int
+  img1:
+    descp: First image batch.
+  img2:
+    descp: Second image batch. Must have the same rank as img1.
+  k1:
+    default: '0.01'
+    descp: Default value 0.01
+    dtype:
+    - float
+    ndim:
+    - '0'
+  k2:
+    default: '0.03'
+    descp: Default value 0.03 (SSIM is less sensitivity to K2 for lower values, so
+      it would be better if we taken the values in range of 0< K2 <0.4).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  max_val:
+    descp: The dynamic range of the images (i.e., the difference between the maximum
+      the and minimum allowed values).
+  power_factors:
+    default: _MSSSIM_WEIGHTS
+    descp: Iterable of weights for each of the scales. The number of scales used is
+      the length of the list. Index 0 is the unscaled resolution's weight and each
+      increasing scale corresponds to the image being downsampled by 2.  Defaults
+      to (0.0448, 0.2856, 0.3001, 0.2363, 0.1333), which are the values obtained in
+      the original paper.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+inputs:
+  optional:
+  - power_factors
+  - filter_size
+  - filter_sigma
+  - k1
+  - k2
+  required:
+  - img1
+  - img2
+  - max_val
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/ssim_multiscale
+outputs: 'A tensor containing an MS-SSIM value for each image in batch.  The values
+  are in range [0, 1].  Returns a tensor with shape: broadcast(img1.shape[:-3], img2.shape[:-3]).'
+package: tensorflow
+target: ssim_multiscale
+title: tf.image.ssim_multiscale
+version: 2.1.0

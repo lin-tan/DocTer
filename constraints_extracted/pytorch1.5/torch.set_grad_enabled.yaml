@@ -1,0 +1,16 @@
+constraints:
+  mode:
+    descp: Flag whether to enable grad (`True`), or disable (`False`). This can be
+      used to conditionally enable gradients.
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+inputs:
+  optional: []
+  required:
+  - mode
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.set_grad_enabled
+package: torch
+target: set_grad_enabled
+title: torch.set_grad_enabled
+version: 1.5.0

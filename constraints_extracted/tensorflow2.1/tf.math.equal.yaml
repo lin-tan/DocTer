@@ -1,0 +1,35 @@
+aliases:
+- tf.equal
+- tf.compat.v1.equal
+- tf.compat.v1.math.equal
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `tf.Tensor` or `tf.SparseTensor` or `tf.IndexedSlices`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  y:
+    descp: A `tf.Tensor` or `tf.SparseTensor` or `tf.IndexedSlices`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+exceptions: '`tf.errors.InvalidArgumentError`: If shapes of arguments are incompatible'
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/equal
+outputs: A `tf.Tensor` of type bool with the same size as that of x or y.
+package: tensorflow
+target: equal
+title: tf.math.equal
+version: 2.1.0

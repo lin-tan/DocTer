@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.keras.backend.random_uniform_variable
+constraints:
+  dtype:
+    default: None
+    descp: String, dtype of returned Keras variable.
+  high:
+    descp: Float, upper boundary of the output interval.
+  low:
+    descp: Float, lower boundary of the output interval.
+  name:
+    default: None
+    descp: String, name of returned Keras variable.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: Integer, random seed.
+  shape:
+    descp: Tuple of integers, shape of returned Keras variable.
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional:
+  - dtype
+  - name
+  - seed
+  required:
+  - shape
+  - low
+  - high
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/random_uniform_variable
+outputs: A Keras variable, filled with drawn samples.
+package: tensorflow
+target: random_uniform_variable
+title: tf.keras.backend.random_uniform_variable
+version: 2.1.0

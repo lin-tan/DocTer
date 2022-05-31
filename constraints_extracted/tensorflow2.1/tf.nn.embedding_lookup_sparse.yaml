@@ -1,0 +1,69 @@
+check_nan: true
+constraints:
+  combiner:
+    default: None
+    descp: A string specifying the reduction op. Currently "mean", "sqrtn" and "sum"
+      are supported. "sum" computes the weighted sum of the embedding results for
+      each row. "mean" is the weighted sum divided by the total weight. "sqrtn" is
+      the weighted sum divided by the square root of the sum of the squares of the
+      weights.
+  max_norm:
+    default: None
+    descp: If not `None`, each embedding is clipped if its l2-norm is larger than
+      this value, before combining.
+  name:
+    default: None
+    descp: Optional name for the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  params:
+    descp: A single tensor representing the complete embedding tensor, or a list of
+      P tensors all of same shape except for the first dimension, representing sharded
+      embedding tensors.  Alternatively, a`PartitionedVariable`, created by partitioning
+      along dimension 0. Each element must be appropriately sized for `"div"` `partition_strategy`.
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  sp_ids:
+    descp: N x M `SparseTensor` of int64 ids where N is typically batch size and M
+      is arbitrary.
+    dtype:
+    - tf.int64
+    tensor_t:
+    - SparseTensor
+  sp_weights:
+    descp: either a `SparseTensor` of float / double weights, or `None` to indicate
+      all weights should be taken to be 1. If specified, `sp_weights`must have exactly
+      the same shape and indices as `sp_ids`.
+    dtype:
+    - float
+    - tf.float64
+    tensor_t:
+    - SparseTensor
+exceptions:
+- TypeError: If `sp_ids` is not a `SparseTensor`, or if `sp_weights` is neither `None`
+    nor `SparseTensor`.
+- ValueError: If `combiner` is not one of {"mean", "sqrtn", "sum"}.
+inputs:
+  optional:
+  - combiner
+  - max_norm
+  - name
+  required:
+  - params
+  - sp_ids
+  - sp_weights
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/embedding_lookup_sparse
+outputs: A dense tensor representing the combined embeddings for the sparse ids. For
+  each row in the dense tensor represented by `sp_ids`, the op looks up the embeddings
+  for all ids in that row, multiplies them by the corresponding weight, and combines
+  these embeddings as specified.
+package: tensorflow
+target: embedding_lookup_sparse
+title: tf.nn.embedding_lookup_sparse
+version: 2.1.0

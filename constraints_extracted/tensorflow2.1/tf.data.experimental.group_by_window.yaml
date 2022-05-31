@@ -1,0 +1,50 @@
+aliases:
+- tf.compat.v1.data.experimental.group_by_window
+constraints:
+  key_func:
+    descp: A function mapping a nested structure of tensors (having shapes and types
+      defined by `self.output_shapes` and`self.output_types`) to a scalar `tf.int64`
+      tensor.
+    dtype:
+    - tf.int64
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  reduce_func:
+    descp: A function mapping a key and a dataset of up to `window_size`consecutive
+      elements matching that key to another dataset.
+  window_size:
+    default: None
+    descp: A `tf.int64` scalar `tf.Tensor`, representing the number of consecutive
+      elements matching the same key to combine in a single batch, which will be passed
+      to `reduce_func`. Mutually exclusive with`window_size_func`.
+    dtype:
+    - int
+    - tf.int64
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  window_size_func:
+    default: None
+    descp: A function mapping a key to a `tf.int64` scalar`tf.Tensor`, representing
+      the number of consecutive elements matching the same key to combine in a single
+      batch, which will be passed to`reduce_func`. Mutually exclusive with `window_size`.
+exceptions:
+- ValueError: if neither or both of {`window_size`, `window_size_func`} are passed.
+inputs:
+  optional:
+  - window_size
+  - window_size_func
+  required:
+  - key_func
+  - reduce_func
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/group_by_window
+outputs: A `Dataset` transformation function, which can be passed to`tf.data.Dataset.apply`.
+package: tensorflow
+target: group_by_window
+title: tf.data.experimental.group_by_window
+version: 2.1.0

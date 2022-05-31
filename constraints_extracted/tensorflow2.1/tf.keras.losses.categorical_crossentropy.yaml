@@ -1,0 +1,40 @@
+aliases:
+- tf.keras.metrics.categorical_crossentropy
+- tf.losses.categorical_crossentropy
+- tf.metrics.categorical_crossentropy
+- tf.compat.v1.keras.losses.categorical_crossentropy
+- tf.compat.v1.keras.metrics.categorical_crossentropy
+constraints:
+  from_logits:
+    default: 'False'
+    descp: Whether `y_pred` is expected to be a logits tensor. By default, we assume
+      that `y_pred` encodes a probability distribution.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  label_smoothing:
+    default: '0'
+    descp: Float in [0, 1]. If > `0` then smooth the labels.
+    dtype:
+    - float
+    - int
+  y_pred:
+    descp: tensor of predicted targets.
+  y_true:
+    descp: tensor of true targets.
+inputs:
+  optional:
+  - from_logits
+  - label_smoothing
+  required:
+  - y_true
+  - y_pred
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/losses/categorical_crossentropy
+outputs: Categorical crossentropy loss value.
+package: tensorflow
+target: categorical_crossentropy
+title: tf.keras.losses.categorical_crossentropy
+version: 2.1.0

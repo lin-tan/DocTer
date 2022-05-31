@@ -1,0 +1,46 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data to the function.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  grad_scale:
+    default: _Null
+    descp: Scale the gradient by a float factor
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  label:
+    default: None
+    descp: Input label to the function.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - label
+  - grad_scale
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.LogisticRegressionOutput
+package: mxnet
+target: LogisticRegressionOutput
+title: mxnet.ndarray.sparse.LogisticRegressionOutput
+version: 1.6.0

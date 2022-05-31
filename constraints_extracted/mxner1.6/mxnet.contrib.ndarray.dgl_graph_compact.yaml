@@ -1,0 +1,41 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*graph_data':
+    descp: Input graphs and input vertex Ids.
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  graph_sizes:
+    descp: the number of vertices in each graph.
+    doc_dtype: tuple of <long>, required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  return_mapping:
+    descp: Return mapping of vid and eid between the subgraph and the parent graph.
+    doc_dtype: boolean, required
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - out
+  required:
+  - '*graph_data'
+  - '**kwargs'
+  - return_mapping
+  - graph_sizes
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.dgl_graph_compact
+package: mxnet
+target: dgl_graph_compact
+title: mxnet.contrib.ndarray.dgl_graph_compact
+version: 1.6.0

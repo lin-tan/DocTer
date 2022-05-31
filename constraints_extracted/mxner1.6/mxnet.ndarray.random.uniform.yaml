@@ -1,0 +1,70 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: None
+    descp: Device context of output. Default is current context. Overridden by low.context
+      when low is an NDArray.
+    doc_dtype: Context, optional
+  dtype:
+    default: _Null
+    descp: Data type of output samples. Default is 'float32'
+    doc_dtype: '{''float16'', ''float32'', ''float64''}, optional'
+  high:
+    default: '1'
+    descp: Upper boundary of the output interval. All values generated will be less
+      than high. The default value is 1.0.
+    doc_dtype: float or NDArray, optional
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  low:
+    default: '0'
+    descp: Lower boundary of the output interval. All values generated will be greater
+      than or equal to low. The default value is 0.
+    doc_dtype: float or NDArray, optional
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: Store output to an existing NDArray.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: The number of samples to draw. If shape is, e.g., (m, n) and low and high
+      are scalars, output shape will be (m, n). If low and high are NDArrays with
+      shape, e.g., (x, y), then output will have shape (x, y, m, n), where m*n samples
+      are drawn for each [low, high) pair.
+    doc_dtype: int or tuple of ints, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - low
+  - high
+  - shape
+  - dtype
+  - ctx
+  - out
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.uniform
+package: mxnet
+target: uniform
+title: mxnet.ndarray.random.uniform
+version: 1.6.0

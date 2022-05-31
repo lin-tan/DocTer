@@ -1,0 +1,58 @@
+constraints:
+  checkpoint_format:
+    default: checkpoint
+    descp: Sets the format of the checkpoint saved by the estimator when training.
+      May be `saver` or `checkpoint`, depending on whether to save checkpoints from
+      `tf.compat.v1.train.Saver` or `tf.train.Checkpoint`. The default is `checkpoint`.
+      Estimators use name-based `tf.train.Saver`checkpoints, while Keras models use
+      object-based checkpoints from`tf.train.Checkpoint`. Currently, saving object-based
+      checkpoints from`model_to_estimator` is only supported by Functional and Sequential
+      models.
+    dtype:
+    - tf.string
+    enum:
+    - checkpoint
+    ndim:
+    - '0'
+  config:
+    default: None
+    descp: '`RunConfig` to config `Estimator`.'
+  custom_objects:
+    default: None
+    descp: Dictionary for custom objects.
+    structure:
+    - dict
+  keras_model:
+    default: None
+    descp: A compiled Keras model object. This argument is mutually exclusive with
+      `keras_model_path`.
+  keras_model_path:
+    default: None
+    descp: Path to a compiled Keras model saved on disk, in HDF5 format, which can
+      be generated with the `save()` method of a Keras model. This argument is mutually
+      exclusive with `keras_model`.
+  model_dir:
+    default: None
+    descp: Directory to save `Estimator` model parameters, graph, summary files for
+      TensorBoard, etc.
+exceptions:
+- ValueError: if neither keras_model nor keras_model_path was given.
+- ValueError: if both keras_model and keras_model_path was given.
+- ValueError: if the keras_model_path is a GCS URI.
+- ValueError: if keras_model has not been compiled.
+- ValueError: if an invalid checkpoint_format was given.
+inputs:
+  optional:
+  - keras_model
+  - keras_model_path
+  - custom_objects
+  - model_dir
+  - config
+  - checkpoint_format
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/estimator/model_to_estimator
+outputs: An Estimator from given keras model.
+package: tensorflow
+target: model_to_estimator
+title: tf.keras.estimator.model_to_estimator
+version: 2.1.0

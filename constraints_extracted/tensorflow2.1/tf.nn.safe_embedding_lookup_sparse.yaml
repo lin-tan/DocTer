@@ -1,0 +1,81 @@
+check_nan: true
+constraints:
+  combiner:
+    default: mean
+    descp: A string specifying how to combine embedding results for each entry. Currently
+      "mean", "sqrtn" and "sum" are supported, with "mean" the default.
+    dtype:
+    - tf.string
+    enum:
+    - mean
+    - sqrtn
+    - sum
+    ndim:
+    - '0'
+  default_id:
+    default: None
+    descp: The id to use for an entry with no features.
+  embedding_weights:
+    descp: A list of `P` float `Tensor`s or values representing partitioned embedding
+      `Tensor`s.  Alternatively, a `PartitionedVariable`created by partitioning along
+      dimension 0.  The total unpartitioned shape should be `[e_0, e_1, ..., e_m]`,
+      where `e_0` represents the vocab size and `e_1, ..., e_m` are the embedding
+      dimensions.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  max_norm:
+    default: None
+    descp: If not `None`, all embeddings are l2-normalized to max_norm before combining.
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sparse_ids:
+    descp: '`SparseTensor` of shape `[d_0, d_1, ..., d_n]` containing the ids. `d_0`
+      is typically batch size.'
+    ndim:
+    - '>=3'
+    shape:
+    - '[d_0,d_1,...,d_n]'
+    tensor_t:
+    - SparseTensor
+  sparse_weights:
+    default: None
+    descp: '`SparseTensor` of same shape as `sparse_ids`, containing float weights
+      corresponding to `sparse_ids`, or `None` if all weights are be assumed to be
+      1.0.'
+    dtype:
+    - float
+    tensor_t:
+    - SparseTensor
+dependency:
+- d_0
+- d_1
+- d_n
+exceptions:
+- ValueError: if `embedding_weights` is empty.
+inputs:
+  optional:
+  - sparse_weights
+  - combiner
+  - default_id
+  - max_norm
+  - name
+  required:
+  - embedding_weights
+  - sparse_ids
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/safe_embedding_lookup_sparse
+outputs: Dense `Tensor` of shape `[d_0, d_1, ..., d_{n-1}, e_1, ..., e_m]`.
+package: tensorflow
+target: safe_embedding_lookup_sparse
+title: tf.nn.safe_embedding_lookup_sparse
+version: 2.1.0

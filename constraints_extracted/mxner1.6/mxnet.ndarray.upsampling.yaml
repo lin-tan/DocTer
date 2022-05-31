@@ -1,0 +1,69 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: Array of tensors to upsample. For bilinear upsampling, there should be
+      2 inputs - 1 data and 1 weight.
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  multi_input_mode:
+    default: None
+    descp: How to handle multiple input. concat means concatenate upsampled images
+      along the channel dimension. sum means add all images together, only available
+      for nearest neighbor upsampling.
+    doc_dtype: '{''concat'', ''sum''},optional, default=''concat'''
+    enum:
+    - concat
+    - sum
+  num_filter:
+    default: None
+    descp: Input filter. Only used by bilinear sample_type.Since bilinear upsampling
+      uses deconvolution, num_filters is set to the number of channels.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - boolean
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  sample_type:
+    descp: upsampling method
+    doc_dtype: '{''bilinear'', ''nearest''}, required'
+  scale:
+    descp: Up sampling scale
+    doc_dtype: int, required
+    dtype:
+    - int
+  workspace:
+    default: None
+    descp: Tmp workspace for deconvolution (MB)
+    doc_dtype: long (non-negative), optional, default=512
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - num_filter
+  - multi_input_mode
+  - workspace
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+  - scale
+  - sample_type
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.UpSampling
+package: mxnet
+target: UpSampling
+title: mxnet.ndarray.UpSampling
+version: 1.6.0

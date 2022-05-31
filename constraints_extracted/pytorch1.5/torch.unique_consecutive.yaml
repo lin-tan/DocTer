@@ -1,0 +1,50 @@
+constraints:
+  dim:
+    default: None
+    descp: 'the dimension to apply unique. If `None`, the unique of the flattened
+      input is returned. default: `None`'
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    enum:
+    - None
+    ndim:
+    - '0'
+  input:
+    descp: the input tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  return_counts:
+    default: 'False'
+    descp: Whether to also return the counts for each unique element.
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  return_inverse:
+    default: 'False'
+    descp: Whether to also return the indices for where elements in the original input
+      ended up in the returned unique list.
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    structure:
+    - list
+inputs:
+  optional:
+  - return_inverse
+  - return_counts
+  - dim
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.unique_consecutive
+package: torch
+target: unique_consecutive
+title: torch.unique_consecutive
+version: 1.5.0

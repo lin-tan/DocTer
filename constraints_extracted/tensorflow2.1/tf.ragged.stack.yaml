@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.ragged.stack
+constraints:
+  axis:
+    default: '0'
+    descp: 'A python integer, indicating the dimension along which to stack. (Note:
+      Unlike `tf.stack`, the `axis` parameter must be statically known.) Negative
+      values are supported only if the rank of at least one`values` value is statically
+      known.'
+    dtype:
+    - int
+  name:
+    default: None
+    descp: A name prefix for the returned tensor (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    descp: A list of `tf.Tensor` or `tf.RaggedTensor`.  May not be empty. All`values`
+      must have the same rank and the same dtype; but unlike`tf.stack`, they can have
+      arbitrary dimension sizes.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `values` is empty, if `axis` is out of bounds or if the input tensors
+    have different ranks.
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - values
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ragged/stack
+outputs: A `RaggedTensor` with rank `R+1`.`result.ragged_rank=1+max(axis, max(rt.ragged_rank
+  for rt in values]))`.
+package: tensorflow
+target: stack
+title: tf.ragged.stack
+version: 2.1.0

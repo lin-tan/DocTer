@@ -1,0 +1,82 @@
+check_nan: true
+constraints:
+  ceil_mode:
+    default: 'False'
+    descp: 'when True, will use ceil instead of floor in the formula to compute the
+      output shape. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  count_include_pad:
+    default: 'True'
+    descp: 'when True, will include the zero-padding in the averaging calculation.
+      Default: `True`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  divisor_override:
+    default: None
+    descp: 'if specified, it will be used as divisor, otherwise size of the pooling
+      region will be used. Default: None'
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+  input:
+    descp: 'input tensor (minibatch , in _channels , iH , iW) '
+    tensor_t:
+    - torch.tensor
+  kernel_size:
+    descp: size of the pooling region. Can be a single number or a tuple (kH, kW)
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  padding:
+    default: '0'
+    descp: 'implicit zero paddings on both sides of the input. Can be a single number
+      or a tuple (padH, padW). Default: 0'
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  stride:
+    default: None
+    descp: 'stride of the pooling operation. Can be a single number or a tuple (sH,
+      sW). Default: `kernel_size`'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - stride
+  - padding
+  - ceil_mode
+  - count_include_pad
+  - divisor_override
+  required:
+  - input
+  - kernel_size
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.avg_pool2d
+package: torch
+ret_type: Tensor
+target: avg_pool2d
+title: torch.nn.functional.avg_pool2d
+version: 1.5.0

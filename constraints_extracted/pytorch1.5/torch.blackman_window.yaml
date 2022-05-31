@@ -1,0 +1,74 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if `None`, uses a global
+      default (see `torch.set_default_tensor_type()`). Only floating point types are
+      supported.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  layout:
+    default: torch.strided
+    descp: the desired layout of returned window tensor. Only `torch.strided` (dense
+      layout) is supported.
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  periodic:
+    default: 'True'
+    descp: If True, returns a window to be used as periodic function. If False, return
+      a symmetric window.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  window_length:
+    descp: the size of returned window
+    doc_dtype: int
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - periodic
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  required:
+  - window_length
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.blackman_window
+package: torch
+ret_type: Tensor
+target: blackman_window
+title: torch.blackman_window
+version: 1.5.0

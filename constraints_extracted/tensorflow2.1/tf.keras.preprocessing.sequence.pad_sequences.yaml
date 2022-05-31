@@ -1,0 +1,62 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.sequence.pad_sequences
+constraints:
+  dtype:
+    default: int32
+    descp: Type of the output sequences.     To pad sequences with variable length
+      strings, you can use `object`.
+    dtype:
+    - tf.string
+  maxlen:
+    default: None
+    descp: Int, maximum length of all sequences.
+  padding:
+    default: pre
+    descp: 'String, ''pre'' or ''post'':     pad either before or after each sequence.'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - list
+  sequences:
+    descp: List of lists, where each element is a sequence.
+    structure:
+    - list
+  truncating:
+    default: pre
+    descp: 'String, ''pre'' or ''post'':     remove values from sequences larger than     `maxlen`,
+      either at the beginning or at the end of the sequences.'
+    dtype:
+    - tf.string
+    enum:
+    - post
+    - pre
+    ndim:
+    - '0'
+  value:
+    default: '0.0'
+    descp: Float or String, padding value.`
+    dtype:
+    - float
+    ndim:
+    - '0'
+exceptions:
+- ValueError: In case of invalid values for `truncating` or `padding`,     or in case
+    of invalid shape for a `sequences` entry.`
+inputs:
+  optional:
+  - maxlen
+  - dtype
+  - padding
+  - truncating
+  - value
+  required:
+  - sequences
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/sequence/pad_sequences
+outputs:
+- x: Numpy array with shape `(len(sequences), maxlen)``
+package: tensorflow
+target: pad_sequences
+title: tf.keras.preprocessing.sequence.pad_sequences
+version: 2.1.0

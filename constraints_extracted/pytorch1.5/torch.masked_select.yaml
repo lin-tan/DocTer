@@ -1,0 +1,31 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  mask:
+    descp: the tensor containing the binary mask to index with
+    doc_dtype: BoolTensor
+    dtype:
+    - torch.bool
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - mask
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.masked_select
+package: torch
+ret_type: Tensor
+target: masked_select
+title: torch.masked_select
+version: 1.5.0

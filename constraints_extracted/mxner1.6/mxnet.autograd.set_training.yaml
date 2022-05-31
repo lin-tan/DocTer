@@ -1,0 +1,15 @@
+constraints:
+  train_mode:
+    descp: ''
+    doc_dtype: bool
+    dtype:
+    - boolean
+inputs:
+  optional: []
+  required:
+  - train_mode
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/autograd/index.html#mxnet.autograd.set_training
+package: mxnet
+target: set_training
+title: mxnet.autograd.set_training
+version: 1.6.0

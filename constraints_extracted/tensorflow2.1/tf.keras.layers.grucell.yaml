@@ -1,0 +1,170 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  activation:
+    default: tanh
+    descp: 'Activation function to use. Default: hyperbolic tangent (`tanh`). If you
+      pass None, no activation is applied (ie. "linear" activation: `a(x) = x`).'
+    dtype:
+    - tf.string
+    enum:
+    - tanh
+    ndim:
+    - '0'
+  bias_constraint:
+    default: None
+    descp: Constraint function applied to the bias vector. Default:`None`.
+    enum:
+    - None
+    structure:
+    - list
+  bias_initializer:
+    default: zeros
+    descp: 'Initializer for the bias vector. Default: `zeros`.'
+    dtype:
+    - tf.string
+    enum:
+    - zeros
+    ndim:
+    - '0'
+  bias_regularizer:
+    default: None
+    descp: Regularizer function applied to the bias vector. Default:`None`.
+    enum:
+    - None
+    structure:
+    - list
+  dropout:
+    default: '0.0'
+    descp: 'Float between 0 and 1. Fraction of the units to drop for the linear transformation
+      of the inputs. Default: 0.'
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+  implementation:
+    default: '2'
+    descp: 'Implementation mode, either 1 or 2. Mode 1 will structure its operations
+      as a larger number of smaller dot products and additions, whereas mode 2 (default)
+      will batch them into fewer, larger operations. These modes will have different
+      performance profiles on different hardware and for different applications. Default:
+      2.'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  kernel_constraint:
+    default: None
+    descp: 'Constraint function applied to the `kernel` weights matrix. Default: `None`.'
+    enum:
+    - None
+  kernel_initializer:
+    default: glorot_uniform
+    descp: Initializer for the `kernel` weights matrix, used for the linear transformation
+      of the inputs. Default:`glorot_uniform`.
+    dtype:
+    - tf.string
+    enum:
+    - glorot_uniform
+    ndim:
+    - '0'
+  kernel_regularizer:
+    default: None
+    descp: 'Regularizer function applied to the `kernel` weights matrix. Default:
+      `None`.'
+    enum:
+    - None
+  recurrent_activation:
+    default: sigmoid
+    descp: 'Activation function to use for the recurrent step. Default: sigmoid (`sigmoid`).
+      If you pass `None`, no activation is applied (ie. "linear" activation: `a(x)
+      = x`).'
+    dtype:
+    - tf.string
+    enum:
+    - sigmoid
+    ndim:
+    - '0'
+  recurrent_constraint:
+    default: None
+    descp: 'Constraint function applied to the `recurrent_kernel`weights matrix. Default:
+      `None`.'
+    enum:
+    - None
+  recurrent_dropout:
+    default: '0.0'
+    descp: 'Float between 0 and 1. Fraction of the units to drop for the linear transformation
+      of the recurrent state. Default: 0.'
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+  recurrent_initializer:
+    default: orthogonal
+    descp: 'Initializer for the `recurrent_kernel`weights matrix, used for the linear
+      transformation of the recurrent state. Default: `orthogonal`.'
+    dtype:
+    - tf.string
+    enum:
+    - orthogonal
+    ndim:
+    - '0'
+  recurrent_regularizer:
+    default: None
+    descp: 'Regularizer function applied to the`recurrent_kernel` weights matrix.
+      Default: `None`.'
+    enum:
+    - None
+  reset_after:
+    default: 'True'
+    descp: GRU convention (whether to apply reset gate after or before matrix multiplication).
+      False = "before", True = "after" (default and CuDNN compatible).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  units:
+    descp: Positive integer, dimensionality of the output space.
+  use_bias:
+    default: 'True'
+    descp: Boolean, (default `True`), whether the layer uses a bias vector.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - list
+inputs:
+  optional:
+  - activation
+  - recurrent_activation
+  - use_bias
+  - kernel_initializer
+  - recurrent_initializer
+  - bias_initializer
+  - kernel_regularizer
+  - recurrent_regularizer
+  - bias_regularizer
+  - kernel_constraint
+  - recurrent_constraint
+  - bias_constraint
+  - dropout
+  - recurrent_dropout
+  - implementation
+  - reset_after
+  - '**kwargs'
+  required:
+  - units
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/GRUCell
+outputs: List of mask tensor, generated or cached mask based on context.
+package: tensorflow
+target: GRUCell
+title: tf.keras.layers.GRUCell
+version: 2.1.0

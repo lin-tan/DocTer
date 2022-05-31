@@ -1,0 +1,126 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  beta1:
+    default: _Null
+    descp: The decay rate for the 1st moment estimates.
+    doc_dtype: float, optional, default=0.899999976
+    dtype:
+    - float
+    ndim:
+    - '0'
+  beta2:
+    default: _Null
+    descp: The decay rate for the 2nd moment estimates.
+    doc_dtype: float, optional, default=0.999000013
+    dtype:
+    - float
+    ndim:
+    - '0'
+  clip_gradient:
+    default: _Null
+    descp: Clip gradient to the range of [-clip_gradient, clip_gradient] If clip_gradient
+      <= 0, gradient clipping is turned off. grad = max(min(grad, clip_gradient),
+      -clip_gradient).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  epsilon:
+    default: _Null
+    descp: A small constant for numerical stability.
+    doc_dtype: float, optional, default=9.99999994e-09
+    dtype:
+    - float
+    ndim:
+    - '0'
+  grad:
+    default: None
+    descp: Gradient
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lazy_update:
+    default: _Null
+    descp: If true, lazy updates are applied if gradient's stype is row_sparse and
+      all of w, m and v have the same stype
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  lr:
+    default: _Null
+    descp: Learning rate
+    doc_dtype: float, required
+    dtype:
+    - float
+  mean:
+    default: None
+    descp: Moving mean
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: _Null
+    descp: Rescale gradient to grad = rescale_grad*grad.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  var:
+    default: None
+    descp: Moving variance
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  wd:
+    default: _Null
+    descp: Weight decay augments the objective function with a regularization term
+      that penalizes large weights. The penalty scales with the square of the magnitude
+      of each weight.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  weight:
+    default: None
+    descp: Weight
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - weight
+  - grad
+  - mean
+  - var
+  - lr
+  - beta1
+  - beta2
+  - epsilon
+  - wd
+  - rescale_grad
+  - clip_gradient
+  - lazy_update
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.adam_update
+package: mxnet
+target: adam_update
+title: mxnet.ndarray.sparse.adam_update
+version: 1.6.0

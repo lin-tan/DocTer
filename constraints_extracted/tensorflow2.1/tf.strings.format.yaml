@@ -1,0 +1,57 @@
+aliases:
+- tf.compat.v1.strings.format
+constraints:
+  inputs:
+    descp: A list of `Tensor` objects, or a single Tensor. The list of tensors to
+      format into the template string. If a solitary tensor is passed in, the input
+      tensor will automatically be wrapped as a list.
+    dtype:
+    - tf.string
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  placeholder:
+    default: '{}'
+    descp: An optional `string`. Defaults to `{}`. At each placeholder occurring in
+      the template, a subsequent tensor will be inserted.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  summarize:
+    default: '3'
+    descp: An optional `int`. Defaults to `3`. When formatting the tensors, show the
+      first and last `summarize`entries of each tensor dimension (recursively). If
+      set to -1, all elements of the tensor will be shown.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  template:
+    descp: A string template to format tensor values into.
+exceptions:
+- ValueError: if the number of placeholders does not match the number of inputs.
+inputs:
+  optional:
+  - placeholder
+  - summarize
+  - name
+  required:
+  - template
+  - inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/format
+outputs: A scalar `Tensor` of type `string`.
+package: tensorflow
+target: format
+title: tf.strings.format
+version: 2.1.0

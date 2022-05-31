@@ -1,0 +1,121 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  grad_scale:
+    default: _Null
+    descp: Scales the gradient by a float factor.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  ignore_label:
+    default: _Null
+    descp: The instances whose labels == ignore_label will be ignored during backward,
+      if use_ignore is set to `true`).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - boolean
+    - float
+    ndim:
+    - '0'
+  label:
+    default: None
+    descp: Ground truth label.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  multi_output:
+    default: _Null
+    descp: If set to `true`, the softmax function will be computed along axis `1`.
+      This is applied when the shape of input array differs from the shape of label
+      array.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  normalization:
+    default: _Null
+    descp: Normalizes the gradient.
+    doc_dtype: '{''batch'', ''null'', ''valid''},optional, default=''null'''
+    enum:
+    - batch
+    - 'null'
+    - valid
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_grad:
+    default: _Null
+    descp: Multiplies gradient with output gradient element-wise.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  preserve_shape:
+    default: _Null
+    descp: If set to `true`, the softmax function will be computed along the last
+      axis (`-1`).
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  smooth_alpha:
+    default: _Null
+    descp: Constant for computing a label smoothed version of cross-entropyfor the
+      backwards pass.  This constant gets subtracted from theone-hot encoding of the
+      gold label and distributed uniformly toall other labels.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  use_ignore:
+    default: _Null
+    descp: If set to `true`, the ignore_label value will not contribute to the backward
+      gradient.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    - numeric
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - label
+  - grad_scale
+  - ignore_label
+  - multi_output
+  - use_ignore
+  - preserve_shape
+  - normalization
+  - out_grad
+  - smooth_alpha
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.SoftmaxOutput
+package: mxnet
+target: SoftmaxOutput
+title: mxnet.ndarray.SoftmaxOutput
+version: 1.6.0

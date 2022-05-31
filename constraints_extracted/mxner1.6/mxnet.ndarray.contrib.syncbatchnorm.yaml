@@ -1,0 +1,121 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  beta:
+    default: None
+    descp: beta array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  data:
+    default: None
+    descp: Input data to batch normalization
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  eps:
+    default: _Null
+    descp: Epsilon to prevent div 0
+    doc_dtype: float, optional, default=0.00100000005
+    dtype:
+    - float
+    ndim:
+    - '0'
+  fix_gamma:
+    default: _Null
+    descp: Fix gamma while training
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  gamma:
+    default: None
+    descp: gamma array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  key:
+    default: _Null
+    descp: Hash key for synchronization, please set the same hash key for same layer,
+      Block.prefix is typically used as in `gluon.nn.contrib.SyncBatchNorm`.
+    doc_dtype: string, required
+    dtype:
+    - string
+  momentum:
+    default: _Null
+    descp: Momentum for moving average
+    doc_dtype: float, optional, default=0.899999976
+    dtype:
+    - float
+    ndim:
+    - '0'
+  moving_mean:
+    default: None
+    descp: running mean of input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  moving_var:
+    default: None
+    descp: running variance of input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  ndev:
+    default: _Null
+    descp: The count of GPU devices
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_mean_var:
+    default: _Null
+    descp: Output All,normal mean and var
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  use_global_stats:
+    default: _Null
+    descp: Whether use global moving statistics instead of local batch-norm. This
+      will force change batch-norm into a scale shift operator.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - gamma
+  - beta
+  - moving_mean
+  - moving_var
+  - eps
+  - momentum
+  - fix_gamma
+  - use_global_stats
+  - output_mean_var
+  - ndev
+  - key
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.SyncBatchNorm
+package: mxnet
+target: SyncBatchNorm
+title: mxnet.ndarray.contrib.SyncBatchNorm
+version: 1.6.0

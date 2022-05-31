@@ -1,0 +1,35 @@
+constraints:
+  max_norm:
+    descp: max norm of the gradients
+    doc_dtype: float or int
+    dtype:
+    - int
+    - torch.float32
+  norm_type:
+    default: '2'
+    descp: type of the used p-norm. Can be `'inf'` for infinity norm.
+    doc_dtype: float or int
+    dtype:
+    - int
+    - torch.dtype
+    - torch.float32
+    ndim:
+    - '0'
+  parameters:
+    descp: an iterable of Tensors or a single Tensor that will have gradients normalized
+    doc_dtype: Iterable[Tensor] or Tensor
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - norm_type
+  required:
+  - parameters
+  - max_norm
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.clip_grad_norm_
+package: torch
+target: clip_grad_norm_
+title: torch.nn.utils.clip_grad_norm_
+version: 1.5.0

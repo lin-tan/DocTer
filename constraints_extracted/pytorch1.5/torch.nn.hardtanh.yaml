@@ -1,0 +1,45 @@
+check_nan: true
+constraints:
+  inplace:
+    default: 'False'
+    descp: 'can optionally do the operation in-place. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  max_val:
+    default: '1.0'
+    descp: 'maximum value of the linear region range. Default: 1'
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  max_value:
+    default: None
+    descp: ''
+  min_val:
+    default: '-1.0'
+    descp: 'minimum value of the linear region range. Default: -1'
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  min_value:
+    default: None
+    descp: ''
+inputs:
+  optional:
+  - min_val
+  - max_val
+  - inplace
+  - min_value
+  - max_value
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Hardtanh
+package: torch
+target: Hardtanh
+title: torch.nn.Hardtanh
+version: 1.5.0

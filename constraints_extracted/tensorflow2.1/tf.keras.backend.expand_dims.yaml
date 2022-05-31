@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.expand_dims
+constraints:
+  axis:
+    default: '-1'
+    descp: Position where to add a new axis.
+    dtype:
+    - int
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/expand_dims
+outputs: A tensor with expanded dimensions.
+package: tensorflow
+target: expand_dims
+title: tf.keras.backend.expand_dims
+version: 2.1.0

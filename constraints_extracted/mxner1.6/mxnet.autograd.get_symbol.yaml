@@ -1,0 +1,15 @@
+constraints:
+  x:
+    descp: Array representing the head of computation graph.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - x
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/autograd/index.html#mxnet.autograd.get_symbol
+package: mxnet
+target: get_symbol
+title: mxnet.autograd.get_symbol
+version: 1.6.0

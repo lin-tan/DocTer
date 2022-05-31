@@ -1,0 +1,75 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  bias:
+    default: None
+    descp: Bias parameter.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  flatten:
+    default: _Null
+    descp: Whether to collapse all but the first axis of the input data tensor.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    tensor_t:
+    - tensor
+  name:
+    default: None
+    descp: ''
+  no_bias:
+    default: _Null
+    descp: Whether to disable bias parameter.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_hidden:
+    default: _Null
+    descp: Number of hidden nodes of the output.
+    doc_dtype: int, required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  weight:
+    default: None
+    descp: Weight matrix.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - weight
+  - bias
+  - num_hidden
+  - no_bias
+  - flatten
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.FullyConnected
+package: mxnet
+target: FullyConnected
+title: mxnet.ndarray.sparse.FullyConnected
+version: 1.6.0

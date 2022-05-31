@@ -1,0 +1,47 @@
+check_nan: true
+constraints:
+  dim:
+    default: '-1'
+    descp: 'A dimension along which softmax will be computed. Default: -1.'
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  eps:
+    default: 1e-10
+    descp: ''
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  hard:
+    default: 'False'
+    descp: if `True`, the returned samples will be discretized as one-hot vectors,
+      but will be differentiated as if it is the soft sample in autograd
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  logits:
+    descp: '[ u2026, num_features] unnormalized log probabilities'
+  tau:
+    default: '1'
+    descp: non-negative scalar temperature
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - tau
+  - hard
+  - eps
+  - dim
+  required:
+  - logits
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.gumbel_softmax
+package: torch
+target: gumbel_softmax
+title: torch.nn.functional.gumbel_softmax
+version: 1.5.0

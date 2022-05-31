@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.image.random_hue
+constraints:
+  image:
+    descp: RGB image or images. Size of the last dimension must be 3.
+  max_delta:
+    descp: float.  Maximum value for the random delta.
+  seed:
+    default: None
+    descp: An operation-specific seed. It will be used in conjunction with the graph-level
+      seed to determine the real seeds that will be used in this operation. Please
+      see the documentation of set_random_seed for its interaction with the graph-level
+      random seed.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if `max_delta` is invalid.
+inputs:
+  optional:
+  - seed
+  required:
+  - image
+  - max_delta
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/random_hue
+outputs: Adjusted image(s), same shape and DType as `image`.
+package: tensorflow
+target: random_hue
+title: tf.image.random_hue
+version: 2.1.0

@@ -1,0 +1,27 @@
+check_nan: true
+constraints:
+  dim:
+    default: '-1'
+    descp: 'dimension on which to split the input. Default: -1'
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: input tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dim
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.glu
+package: torch
+ret_type: Tensor
+target: glu
+title: torch.nn.functional.glu
+version: 1.5.0

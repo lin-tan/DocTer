@@ -1,0 +1,52 @@
+check_nan: true
+constraints:
+  activation:
+    default: relu
+    descp: the activation function of intermediate layer, relu or gelu (default=relu).
+    dtype:
+    - string
+  d_model:
+    descp: the number of expected features in the input (required).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+  dim_feedforward:
+    default: '2048'
+    descp: the dimension of the feedforward network model (default=2048).
+    dtype:
+    - int
+    ndim:
+    - '0'
+  dropout:
+    default: '0.1'
+    descp: the dropout value (default=0.1).
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  nhead:
+    descp: the number of heads in the multiheadattention models (required).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - dim_feedforward
+  - dropout
+  - activation
+  required:
+  - d_model
+  - nhead
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.TransformerDecoderLayer
+package: torch
+target: TransformerDecoderLayer
+title: torch.nn.TransformerDecoderLayer
+version: 1.5.0

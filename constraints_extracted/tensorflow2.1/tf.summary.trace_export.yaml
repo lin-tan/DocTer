@@ -1,0 +1,29 @@
+constraints:
+  name:
+    descp: A name for the summary to be written.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  profiler_outdir:
+    default: None
+    descp: Output directory for profiler. It is required when profiler is enabled
+      when trace was started. Otherwise, it is ignored.
+  step:
+    default: None
+    descp: Explicit `int64`-castable monotonic step value for this summary. If omitted,
+      this defaults to `tf.summary.experimental.get_step()`, which must not be None.
+exceptions:
+- ValueError: if a default writer exists, but no step was provided and`tf.summary.experimental.get_step()`
+    is None.
+inputs:
+  optional:
+  - step
+  - profiler_outdir
+  required:
+  - name
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/summary/trace_export
+package: tensorflow
+target: trace_export
+title: tf.summary.trace_export
+version: 2.1.0

@@ -1,0 +1,19 @@
+constraints:
+  profile_process:
+    default: worker
+    descp: whether to profile kvstore server or worker. server can only be profiled
+      when kvstore is of type dist. if this is not passed, defaults to worker
+    doc_dtype: string
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - profile_process
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/profiler/index.html#mxnet.profiler.resume
+package: mxnet
+target: resume
+title: mxnet.profiler.resume
+version: 1.6.0

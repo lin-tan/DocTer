@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.data.experimental.copy_to_device
+constraints:
+  source_device:
+    default: /cpu:0
+    descp: The original device on which `input_dataset` will be placed.
+  target_device:
+    descp: The name of a device to which elements will be copied.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - source_device
+  required:
+  - target_device
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/copy_to_device
+outputs: A `Dataset` transformation function, which can be passed to`tf.data.Dataset.apply`.
+package: tensorflow
+target: copy_to_device
+title: tf.data.experimental.copy_to_device
+version: 2.1.0

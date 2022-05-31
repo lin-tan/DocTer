@@ -1,0 +1,56 @@
+aliases:
+- tf.compat.v1.feature_column.sequence_numeric_column
+constraints:
+  default_value:
+    default: '0.0'
+    descp: A single value compatible with `dtype` that is used for padding the sparse
+      data into a dense `Tensor`.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  dtype:
+    default: tf.dtypes.float32
+    descp: The type of values.
+    dtype:
+    - tf.dtype
+    - tf.float32
+  key:
+    descp: A unique string identifying the input features.
+    dtype:
+    - tf.string
+  normalizer_fn:
+    default: None
+    descp: 'If not `None`, a function that can be used to normalize the value of the
+      tensor after `default_value` is applied for parsing. Normalizer function takes
+      the input `Tensor` as its argument, and returns the output `Tensor`. (e.g. lambda
+      x: (x - 3.0) / 4.2). Please note that even though the most common use case of
+      this function is normalization, it can be used for any kind of Tensorflow transformations.'
+    ndim:
+    - '0'
+  shape:
+    default: (1,)
+    descp: The shape of the input data per sequence id. E.g. if `shape=(2,)`, each
+      example must contain `2 * sequence_length` values.
+    dtype:
+    - int
+exceptions:
+- TypeError: if any dimension in shape is not an int.
+- ValueError: if any dimension in shape is not a positive integer.
+- ValueError: if `dtype` is not convertible to `tf.float32`.
+inputs:
+  optional:
+  - shape
+  - default_value
+  - dtype
+  - normalizer_fn
+  required:
+  - key
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/sequence_numeric_column
+outputs: A `SequenceNumericColumn`.
+package: tensorflow
+target: sequence_numeric_column
+title: tf.feature_column.sequence_numeric_column
+version: 2.1.0

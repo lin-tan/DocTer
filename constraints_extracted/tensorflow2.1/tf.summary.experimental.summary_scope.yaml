@@ -1,0 +1,29 @@
+constraints:
+  default_name:
+    default: summary
+    descp: Optional; if provided, used as default name of the summary.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    descp: string name for the summary.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    default: None
+    descp: Optional; passed as `values` parameter to name_scope.
+inputs:
+  optional:
+  - default_name
+  - values
+  required:
+  - name
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/summary/experimental/summary_scope
+outputs: A tuple `(tag, scope)` as described above.
+package: tensorflow
+target: summary_scope
+title: tf.summary.experimental.summary_scope
+version: 2.1.0

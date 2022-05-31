@@ -1,0 +1,40 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  init_output:
+    default: _Null
+    descp: Initialize output to 1.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - init_output
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.all_finite
+package: mxnet
+target: all_finite
+title: mxnet.ndarray.all_finite
+version: 1.6.0

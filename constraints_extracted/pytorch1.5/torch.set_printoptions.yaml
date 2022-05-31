@@ -1,0 +1,70 @@
+constraints:
+  edgeitems:
+    default: None
+    descp: Number of array items in summary at beginning and end of each dimension
+      (default = 3).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  linewidth:
+    default: None
+    descp: The number of characters per line for the purpose of inserting line breaks
+      (default = 80). Thresholded matrices will ignore this parameter.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  precision:
+    default: None
+    descp: Number of digits of precision for floating point output (default = 4).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  profile:
+    default: None
+    descp: Sane defaults for pretty printing. Can override with any of the above options.
+      (any one of default, short, full)
+  sci_mode:
+    default: None
+    descp: Enable (True) or disable (False) scientific notation. If None (default)
+      is specified, the value is defined by _Formatter
+    ndim:
+    - '0'
+  threshold:
+    default: None
+    descp: Total number of array elements which trigger summarization rather than
+      full repr (default = 1000).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+inputs:
+  optional:
+  - precision
+  - threshold
+  - edgeitems
+  - linewidth
+  - profile
+  - sci_mode
+  required: []
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.set_printoptions
+package: torch
+target: set_printoptions
+title: torch.set_printoptions
+version: 1.5.0

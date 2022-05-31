@@ -1,0 +1,123 @@
+check_nan: true
+constraints:
+  data_format:
+    default: NHWC
+    descp: A string. 'NHWC' and 'NCHW' are supported.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  dilations:
+    default: None
+    descp: An int or list of `ints` that has length `1`, `2` or `4`, defaults to 1.
+      The dilation factor for each dimension of`input`. If a single value is given
+      it is replicated in the `H` and `W` dimension. By default the `N` and `C` dimensions
+      are set to 1. If set to k > 1, there will be k-1 skipped cells between each
+      filter element on that dimension. The dimension order is determined by the value
+      of `data_format`, see above for details. Dilations in the batch and depth dimensions
+      if a 4-d tensor must be 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    - '4'
+    shape:
+    - '[1]'
+    - '[2]'
+    - '[4]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  filters:
+    descp: A 4-D `Tensor` with the same type as `input` and shape `[height, width,
+      output_channels, in_channels]`.  `filter`'s `in_channels` dimension must match
+      that of `input`.
+    dtype:
+    - dtype:&input
+    ndim:
+    - '4'
+    shape:
+    - '[height,width,output_channels,in_channels]'
+    tensor_t:
+    - tf.tensor
+  input:
+    descp: A 4-D `Tensor` of type `float` and shape `[batch, height, width, in_channels]`
+      for `NHWC` data format or `[batch, in_channels, height, width]` for `NCHW` data
+      format.
+    dtype:
+    - float
+    ndim:
+    - '4'
+    shape:
+    - '[batch,height,width,in_channels]'
+    - '[batch,in_channels,height,width]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the returned tensor.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_shape:
+    descp: A 1-D `Tensor` representing the output shape of the deconvolution op.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  padding:
+    default: SAME
+    descp: A string, either `'VALID'` or `'SAME'`. The padding algorithm. See the
+      "returns" section of `tf.nn.convolution` for details.
+    dtype:
+    - tf.string
+    enum:
+    - SAME
+    - VALID
+    ndim:
+    - '0'
+  strides:
+    descp: An int or list of `ints` that has length `1`, `2` or `4`.  The stride of
+      the sliding window for each dimension of `input`. If a single value is given
+      it is replicated in the `H` and `W` dimension. By default the `N` and `C` dimensions
+      are set to 0. The dimension order is determined by the value of `data_format`,
+      see below for details.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    - '[2]'
+    - '[4]'
+    structure:
+    - list
+dependency:
+- height
+- width
+- output_channels
+- batch
+- in_channels
+exceptions:
+- ValueError: If input/output depth does not match `filter`'s shape, or if padding
+    is other than `'VALID'` or `'SAME'`.
+inputs:
+  optional:
+  - padding
+  - data_format
+  - dilations
+  - name
+  required:
+  - input
+  - filters
+  - output_shape
+  - strides
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/conv2d_transpose
+outputs: A `Tensor` with the same type as `input`.
+package: tensorflow
+target: conv2d_transpose
+title: tf.nn.conv2d_transpose
+version: 2.1.0

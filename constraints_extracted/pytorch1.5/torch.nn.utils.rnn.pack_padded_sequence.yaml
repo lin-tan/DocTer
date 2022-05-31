@@ -1,0 +1,43 @@
+constraints:
+  batch_first:
+    default: 'False'
+    descp: if `True`, the input is expected in `B x T x *` format.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  enforce_sorted:
+    default: 'True'
+    descp: 'if `True`, the input is expected to contain sequences sorted by length
+      in a decreasing order. If `False`, the input will get sorted unconditionally.
+      Default: `True`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: padded batch of variable length sequences.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  lengths:
+    descp: list of sequences lengths of each batch element.
+    doc_dtype: Tensor
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - batch_first
+  - enforce_sorted
+  required:
+  - input
+  - lengths
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.rnn.pack_padded_sequence
+package: torch
+target: pack_padded_sequence
+title: torch.nn.utils.rnn.pack_padded_sequence
+version: 1.5.0

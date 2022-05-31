@@ -1,0 +1,35 @@
+check_nan: true
+constraints:
+  axes:
+    default: ()
+    descp: The axes on which dropout mask is shared. If empty, regular dropout is
+      applied.
+    doc_dtype: 'tuple of int, default '
+    dtype:
+    - int
+    structure:
+    - tuple
+  params:
+    default: None
+    descp: ''
+  prefix:
+    default: None
+    descp: ''
+  rate:
+    descp: Percentage of elements to drop out, which is 1 - percentage to retain.
+    doc_dtype: float
+    dtype:
+    - float
+inputs:
+  optional:
+  - axes
+  - prefix
+  - params
+  required:
+  - rate
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/rnn/index.html#mxnet.gluon.rnn.DropoutCell
+package: mxnet
+target: DropoutCell
+title: mxnet.gluon.rnn.DropoutCell
+version: 1.6.0

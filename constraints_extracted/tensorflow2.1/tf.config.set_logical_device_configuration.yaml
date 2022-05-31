@@ -1,0 +1,26 @@
+aliases:
+- tf.config.experimental.set_virtual_device_configuration
+- tf.compat.v1.config.experimental.set_virtual_device_configuration
+- tf.compat.v1.config.set_logical_device_configuration
+constraints:
+  device:
+    descp: The `PhysicalDevice` to configure.
+  logical_devices:
+    descp: (optional) List of `tf.config.LogicalDeviceConfiguration`objects to allocate
+      for the specified `PhysicalDevice`. If None, the default configuration will
+      be used.
+    structure:
+    - list
+exceptions:
+- ValueError: If argument validation fails.
+- RuntimeError: Runtime is already initialized.
+inputs:
+  optional: []
+  required:
+  - device
+  - logical_devices
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/set_logical_device_configuration
+package: tensorflow
+target: set_logical_device_configuration
+title: tf.config.set_logical_device_configuration
+version: 2.1.0

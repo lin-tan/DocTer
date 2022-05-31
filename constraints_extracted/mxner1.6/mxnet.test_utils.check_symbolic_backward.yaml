@@ -1,0 +1,109 @@
+constraints:
+  atol:
+    default: None
+    descp: ''
+  aux_states:
+    default: None
+    descp: ''
+    doc_dtype: list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  ctx:
+    default: None
+    descp: Running context.
+    doc_dtype: Context, optional
+  dtype:
+    default: <classnumpy.float32>
+    descp: Datatype for mx.nd.array.
+    doc_dtype: np.float16 or np.float32 or np.float64
+    dtype:
+    - numpy.float16
+    - numpy.float32
+    - numpy.float64
+  equal_nan:
+    default: 'False'
+    descp: if True, nan is a valid value for checking equivalency (ie nan == nan)
+    doc_dtype: Boolean
+    dtype:
+    - boolean
+  expected:
+    descp: 'expected gradient values   if type is list of np.ndarrayContains arrays
+      corresponding to exe.grad_arrays   '
+    doc_dtype: list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  grad_req:
+    default: write
+    descp: Gradient requirements. 'write', 'add' or 'null'.
+    doc_dtype: str or list of str or dict of str to str, optional
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - dict
+    - list
+  grad_stypes:
+    default: None
+    descp: dictionary of mapping argument name to stype for the gradient
+    doc_dtype: dict of str->str
+    dtype:
+    - string
+    structure:
+    - dict
+  location:
+    descp: 'The evaluation point   if type is list of np.ndarrayContains all the NumPy
+      arrays corresponding to `mx.sym.list_arguments`.   '
+    doc_dtype: list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  out_grads:
+    descp: 'NumPys arrays corresponding to sym.outputs for incomming gradient.   if
+      type is list of np.ndarrayContains arrays corresponding to `exe.outputs`.   '
+    doc_dtype: None or list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  rtol:
+    default: 1e-05
+    descp: ''
+    ndim:
+    - '0'
+  sym:
+    descp: output symbol
+    doc_dtype: Symbol
+inputs:
+  optional:
+  - rtol
+  - atol
+  - aux_states
+  - grad_req
+  - ctx
+  - grad_stypes
+  - equal_nan
+  - dtype
+  required:
+  - sym
+  - location
+  - out_grads
+  - expected
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.check_symbolic_backward
+package: mxnet
+target: check_symbolic_backward
+title: mxnet.test_utils.check_symbolic_backward
+version: 1.6.0

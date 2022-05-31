@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.keras.backend.one_hot
+constraints:
+  indices:
+    descp: nD integer tensor of shape`(batch_size, dim1, dim2, ... dim(n-1))`
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  num_classes:
+    descp: Integer, number of classes to consider.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional: []
+  required:
+  - indices
+  - num_classes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/one_hot
+outputs: (n + 1)D one hot representation of the input with shape `(batch_size, dim1,
+  dim2, ... dim(n-1), num_classes)`
+package: tensorflow
+target: one_hot
+title: tf.keras.backend.one_hot
+version: 2.1.0

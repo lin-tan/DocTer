@@ -1,0 +1,76 @@
+aliases:
+- tf.compat.v1.nn.atrous_conv2d
+check_nan: true
+constraints:
+  filters:
+    descp: A 4-D `Tensor` with the same type as `value` and shape`[filter_height,
+      filter_width, in_channels, out_channels]`. `filters`'`in_channels` dimension
+      must match that of `value`. Atrous convolution is equivalent to standard convolution
+      with upsampled filters with effective height `filter_height + (filter_height
+      - 1) * (rate - 1)` and effective width `filter_width + (filter_width - 1) *
+      (rate - 1)`, produced by inserting `rate - 1` zeros along consecutive elements
+      across the`filters`' spatial dimensions.
+    dtype:
+    - dtype:&value
+    ndim:
+    - '4'
+    shape:
+    - '[filter_height,filter_width,in_channels,out_channels]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the returned tensor.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    descp: A string, either `'VALID'` or `'SAME'`. The padding algorithm.
+    dtype:
+    - tf.string
+    enum:
+    - SAME
+    - VALID
+    ndim:
+    - '0'
+  rate:
+    descp: A positive int32. The stride with which we sample input values across the
+      `height` and `width` dimensions. Equivalently, the rate by which we upsample
+      the filter values by inserting zeros across the `height` and`width` dimensions.
+      In the literature, the same parameter is sometimes called `input stride` or
+      `dilation`.
+    dtype:
+    - tf.int32
+  value:
+    descp: A 4-D `Tensor` of type `float`. It needs to be in the default "NHWC" format.
+      Its shape is `[batch, in_height, in_width, in_channels]`.
+    dtype:
+    - float
+    ndim:
+    - '4'
+    tensor_t:
+    - tf.tensor
+dependency:
+- filter_width
+- in_channels
+- filter_height
+- out_channels
+exceptions:
+- ValueError: If input/output depth does not match `filters`' shape, or if padding
+    is other than `'VALID'` or `'SAME'`.
+inputs:
+  optional:
+  - name
+  required:
+  - value
+  - filters
+  - rate
+  - padding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/atrous_conv2d
+outputs: 'A `Tensor` with the same type as `value`. Output shape with `''VALID''`
+  padding is:'
+package: tensorflow
+target: atrous_conv2d
+title: tf.nn.atrous_conv2d
+version: 2.1.0

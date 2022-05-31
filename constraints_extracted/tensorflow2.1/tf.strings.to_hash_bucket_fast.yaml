@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.string_to_hash_bucket_fast
+- tf.compat.v1.strings.to_hash_bucket_fast
+constraints:
+  input:
+    descp: A `Tensor` of type `string`. The strings to assign a hash bucket.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_buckets:
+    descp: An `int` that is `>= 1`. The number of buckets.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+  - num_buckets
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/to_hash_bucket_fast
+outputs: A `Tensor` of type `int64`.
+package: tensorflow
+target: to_hash_bucket_fast
+title: tf.strings.to_hash_bucket_fast
+version: 2.1.0

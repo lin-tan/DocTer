@@ -1,0 +1,35 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: _Null
+    descp: The lighting alphas for the R, G, B channels.
+    doc_dtype: tuple of <float>, required
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - alpha
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.adjust_lighting
+package: mxnet
+target: adjust_lighting
+title: mxnet.ndarray.image.adjust_lighting
+version: 1.6.0

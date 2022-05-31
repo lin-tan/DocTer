@@ -1,0 +1,51 @@
+aliases:
+- tf.compat.v1.clip_by_norm
+constraints:
+  axes:
+    default: None
+    descp: A 1-D (vector) `Tensor` of type int32 containing the dimensions to use
+      for computing the L2-norm. If `None` (the default), uses all dimensions.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[tensor]'
+    - '[vector]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  clip_norm:
+    descp: A 0-D (scalar) `Tensor` > 0. A maximum clipping value.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  t:
+    descp: A `Tensor` or `IndexedSlices`.
+    tensor_t:
+    - tf.tensor
+dependency:
+- tensor
+- vector
+exceptions:
+- ValueError: If the clip_norm tensor is not a 0-D scalar tensor.
+- TypeError: If dtype of the input is not a floating point or complex type.
+inputs:
+  optional:
+  - axes
+  - name
+  required:
+  - t
+  - clip_norm
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/clip_by_norm
+outputs: A clipped `Tensor` or `IndexedSlices`.
+package: tensorflow
+target: clip_by_norm
+title: tf.clip_by_norm
+version: 2.1.0

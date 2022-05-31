@@ -1,0 +1,60 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: None
+    descp: Alpha (shape) parameters of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  beta:
+    default: None
+    descp: Beta (scale) parameters of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred. Defaults to float32
+      if not defined (dtype=None).
+    doc_dtype: '{''None'', ''float16'', ''float32'', ''float64''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape to be sampled from each random distribution.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - alpha
+  - beta
+  - shape
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.sample_gamma
+package: mxnet
+target: sample_gamma
+title: mxnet.ndarray.sample_gamma
+version: 1.6.0

@@ -1,0 +1,61 @@
+aliases:
+- tf.linalg.tensordot
+- tf.compat.v1.linalg.tensordot
+- tf.compat.v1.tensordot
+constraints:
+  a:
+    descp: '`Tensor` of type `float32` or `float64`.'
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  axes:
+    descp: Either a scalar `N`, or a list or an `int32` `Tensor` of shape [2, k].
+      If axes is a scalar, sum over the last N axes of a and the first N axes of b
+      in order. If axes is a list or `Tensor` the first and second row contain the
+      set of unique integers specifying axes along which the contraction is computed,
+      for `a` and `b`, respectively. The number of axes for `a` and`b` must be equal.
+      If `axes=0`, computes the outer product between `a` and`b`.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    - '2'
+    range:
+    - '[0,inf)'
+    shape:
+    - '[2,k]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  b:
+    descp: '`Tensor` with the same type as `a`.'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+dependency:
+- k
+exceptions:
+- ValueError: If the shapes of `a`, `b`, and `axes` are incompatible.
+- IndexError: If the values in axes exceed the rank of the corresponding tensor.
+inputs:
+  optional:
+  - name
+  required:
+  - a
+  - b
+  - axes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/tensordot
+outputs: A `Tensor` with the same type as `a`.
+package: tensorflow
+target: tensordot
+title: tf.tensordot
+version: 2.1.0

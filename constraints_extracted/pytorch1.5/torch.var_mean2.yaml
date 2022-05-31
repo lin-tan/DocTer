@@ -1,0 +1,46 @@
+constraints:
+  dim:
+    descp: the dimension or dimensions to reduce.
+    doc_dtype: int or tuple of python:ints
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - tuple
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  keepdim:
+    default: 'False'
+    descp: whether the output tensor has `dim` retained or not.
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  unbiased:
+    default: 'True'
+    descp: whether to use the unbiased estimation or not
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - keepdim
+  - unbiased
+  required:
+  - input
+  - dim
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.var_mean
+package: torch
+ret_type: (Tensor, Tensor)
+target: var_mean
+title: torch.var_mean
+version: 1.5.0

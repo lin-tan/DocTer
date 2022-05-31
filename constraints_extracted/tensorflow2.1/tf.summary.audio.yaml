@@ -1,0 +1,86 @@
+constraints:
+  data:
+    descp: A `Tensor` representing audio data with shape `[k, t, c]`, where `k` is
+      the number of audio clips, `t` is the number of frames, and `c` is the number
+      of channels. Elements should be floating-point values in `[-1.0, 1.0]`. Any
+      of the dimensions may be statically unknown (i.e., `None`).
+    ndim:
+    - '0'
+    - '3'
+    range:
+    - '[0,inf)'
+    shape:
+    - '[k,t,c]'
+    tensor_t:
+    - tf.tensor
+  description:
+    default: None
+    descp: Optional long-form description for this summary, as a constant `str`. Markdown
+      is supported. Defaults to empty.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  encoding:
+    default: None
+    descp: Optional constant `str` for the desired encoding. Only "wav" is currently
+      supported, but this is not guaranteed to remain the default, so if you want
+      "wav" in particular, set this explicitly.
+    dtype:
+    - tf.string
+  max_outputs:
+    default: '3'
+    descp: Optional `int` or rank-0 integer `Tensor`. At most this many audio clips
+      will be emitted at each step. When more than`max_outputs` many clips are provided,
+      the first `max_outputs`many clips will be used and the rest silently discarded.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  name:
+    descp: A name for this summary. The summary tag used for TensorBoard will be this
+      name prefixed by any active name scopes.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sample_rate:
+    descp: An `int` or rank-0 `int32` `Tensor` that represents the sample rate, in
+      Hz. Must be positive.
+    dtype:
+    - int
+    - tf.int32
+    ndim:
+    - '1'
+    shape:
+    - '[0]'
+    tensor_t:
+    - tf.tensor
+  step:
+    default: None
+    descp: Explicit `int64`-castable monotonic step value for this summary. If omitted,
+      this defaults to `tf.summary.experimental.get_step()`, which must not be None.
+dependency:
+- t
+- k
+- c
+exceptions:
+- ValueError: if a default writer exists, but no step was provided and`tf.summary.experimental.get_step()`
+    is None.
+inputs:
+  optional:
+  - step
+  - max_outputs
+  - encoding
+  - description
+  required:
+  - name
+  - data
+  - sample_rate
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/summary/audio
+outputs: True on success, or false if no summary was emitted because no default summary
+  writer was available.
+package: tensorflow
+target: audio
+title: tf.summary.audio
+version: 2.1.0

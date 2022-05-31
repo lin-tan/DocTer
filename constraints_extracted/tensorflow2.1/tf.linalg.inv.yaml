@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.linalg.inv
+- tf.compat.v1.matrix_inverse
+constraints:
+  adjoint:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `float64`, `float32`,
+      `half`, `complex64`, `complex128`. Shape is `[..., M, M]`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - adjoint
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/inv
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: inv
+title: tf.linalg.inv
+version: 2.1.0

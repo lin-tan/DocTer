@@ -1,0 +1,35 @@
+constraints:
+  generator:
+    descp: The generator function. It's expected to generate N i.i.d samples by calling
+      generator(N).
+    doc_dtype: function
+  mu:
+    descp: ''
+    doc_dtype: float
+    dtype:
+    - float
+  nsamples:
+    default: '1000000'
+    descp: ''
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  sigma:
+    descp: ''
+    doc_dtype: float
+    dtype:
+    - float
+inputs:
+  optional:
+  - nsamples
+  required:
+  - generator
+  - mu
+  - sigma
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.mean_check
+package: mxnet
+target: mean_check
+title: mxnet.test_utils.mean_check
+version: 1.6.0

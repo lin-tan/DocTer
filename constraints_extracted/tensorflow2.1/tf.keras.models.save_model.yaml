@@ -1,0 +1,56 @@
+aliases:
+- tf.compat.v1.keras.models.save_model
+constraints:
+  filepath:
+    descp: 'One of the following: String, path where to save the model`h5py.File`
+      object where to save the model '
+    dtype:
+    - tf.string
+  include_optimizer:
+    default: 'True'
+    descp: If True, save optimizer's state together.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  model:
+    descp: Keras model instance to be saved.
+  options:
+    default: None
+    descp: Optional `tf.saved_model.SaveOptions` object that specifies options for
+      saving to SavedModel.
+  overwrite:
+    default: 'True'
+    descp: Whether we should overwrite any existing model at the target location,
+      or instead ask the user with a manual prompt.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  save_format:
+    default: None
+    descp: Either 'tf' or 'h5', indicating whether to save the model to Tensorflow
+      SavedModel or HDF5. Defaults to 'tf' in TF 2.X, and 'h5' in TF 1.X.
+    ndim:
+    - '0'
+  signatures:
+    default: None
+    descp: Signatures to save with the SavedModel. Applicable to the 'tf' format only.
+      Please see the `signatures` argument in`tf.saved_model.save` for details.
+exceptions:
+- ImportError: If save format is hdf5, and h5py is not available.
+inputs:
+  optional:
+  - overwrite
+  - include_optimizer
+  - save_format
+  - signatures
+  - options
+  required:
+  - model
+  - filepath
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/models/save_model
+package: tensorflow
+target: save_model
+title: tf.keras.models.save_model
+version: 2.1.0

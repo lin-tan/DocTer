@@ -1,0 +1,38 @@
+aliases:
+- tf.compat.v1.sparse.to_indicator
+- tf.compat.v1.sparse_to_indicator
+constraints:
+  name:
+    default: None
+    descp: A name prefix for the returned tensors (optional)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: A `SparseTensor` with `values` property of type `int32` or`int64`.
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - SparseTensor
+  vocab_size:
+    descp: A scalar int64 Tensor (or Python int) containing the new size of the last
+      dimension, `all(0 <= sp_input.values < vocab_size)`.
+    dtype:
+    - int
+    - tf.int64
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - name
+  required:
+  - sp_input
+  - vocab_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/to_indicator
+outputs: A dense bool indicator tensor representing the indices with specified value.
+package: tensorflow
+target: to_indicator
+title: tf.sparse.to_indicator
+version: 2.1.0

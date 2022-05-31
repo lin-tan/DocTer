@@ -1,0 +1,15 @@
+constraints:
+  is_recording:
+    descp: ''
+    doc_dtype: bool
+    dtype:
+    - boolean
+inputs:
+  optional: []
+  required:
+  - is_recording
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/autograd/index.html#mxnet.autograd.set_recording
+package: mxnet
+target: set_recording
+title: mxnet.autograd.set_recording
+version: 1.6.0

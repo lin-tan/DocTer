@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.keras.backend.permute_dimensions
+constraints:
+  pattern:
+    descp: A tuple of dimension indices, e.g. `(0, 2, 1)`.
+    structure:
+    - tuple
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - pattern
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/permute_dimensions
+outputs: A tensor.
+package: tensorflow
+target: permute_dimensions
+title: tf.keras.backend.permute_dimensions
+version: 2.1.0

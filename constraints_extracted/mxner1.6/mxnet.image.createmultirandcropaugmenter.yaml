@@ -1,0 +1,83 @@
+constraints:
+  area_range:
+    default: (0.05,1.0)
+    descp: The cropped area of the image must contain a fraction of the supplied image
+      within in this range.
+    doc_dtype: tuple of floats or list of tuple of floats, default=(0.05, 1.0
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+    - tuple
+  aspect_ratio_range:
+    default: (0.75,1.33)
+    descp: The cropped area of the image must have an aspect ratio = width / height
+      within this range.
+    doc_dtype: tuple of floats or list of tuple of floats, default=(0.75, 1.33
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+    - tuple
+  max_attempts:
+    default: '50'
+    descp: Number of attempts at generating a cropped/padded region of the image of
+      the specified constraints. After max_attempts failures, return the original
+      image.
+    doc_dtype: int or list of int, default=50
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  min_eject_coverage:
+    default: '0.3'
+    descp: The minimum coverage of cropped sample w.r.t its original size. With this
+      constraint, objects that have marginal area after crop will be discarded.
+    doc_dtype: float or list of float, default=0.3
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+  min_object_covered:
+    default: '0.1'
+    descp: The cropped area of the image must contain at least this fraction of any
+      bounding box supplied. The value of this parameter should be non-negative. In
+      the case of 0, the cropped area does not need to overlap any of the bounding
+      boxes supplied.
+    doc_dtype: float or list of float, default=0.1
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+  skip_prob:
+    default: '0'
+    descp: ''
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - min_object_covered
+  - aspect_ratio_range
+  - area_range
+  - min_eject_coverage
+  - max_attempts
+  - skip_prob
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/image/index.html#mxnet.image.CreateMultiRandCropAugmenter
+package: mxnet
+target: CreateMultiRandCropAugmenter
+title: mxnet.image.CreateMultiRandCropAugmenter
+version: 1.6.0

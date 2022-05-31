@@ -1,0 +1,22 @@
+constraints:
+  argnum:
+    default: None
+    descp: The index of argument to calculate gradient for.
+    doc_dtype: an int or a list of int
+    dtype:
+    - int
+    structure:
+    - list
+  func:
+    descp: The forward (loss) function.
+    doc_dtype: a python function
+inputs:
+  optional:
+  - argnum
+  required:
+  - func
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/autograd/index.html#mxnet.contrib.autograd.grad_and_loss
+package: mxnet
+target: grad_and_loss
+title: mxnet.contrib.autograd.grad_and_loss
+version: 1.6.0

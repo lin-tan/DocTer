@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.strings.regex_full_match
+constraints:
+  input:
+    descp: A `Tensor` of type `string`. A string tensor of the text to be processed.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pattern:
+    descp: A `Tensor` of type `string`. A scalar string tensor containing the regular
+      expression to match the input.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - input
+  - pattern
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/regex_full_match
+outputs: A `Tensor` of type `bool`.
+package: tensorflow
+target: regex_full_match
+title: tf.strings.regex_full_match
+version: 2.1.0

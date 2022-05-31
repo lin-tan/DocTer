@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.manip.reshape
+- tf.compat.v1.reshape
+constraints:
+  name:
+    default: None
+    descp: Optional string. A name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  shape:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. Defines
+      the shape of the output tensor.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  tensor:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/reshape
+outputs: A `Tensor`. Has the same type as `tensor`.
+package: tensorflow
+target: reshape
+title: tf.reshape
+version: 2.1.0

@@ -1,0 +1,71 @@
+check_nan: true
+constraints:
+  beta:
+    descp: A 1D beta Tensor with size matching the last dimension of t. An offset
+      to be added to the normalized tensor.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  gamma:
+    descp: A 1D gamma Tensor with size matching the last dimension of t. If "scale_after_normalization"
+      is true, this tensor will be multiplied with the normalized tensor.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  input:
+    descp: A 4D input Tensor.
+    ndim:
+    - '4'
+    tensor_t:
+    - tf.tensor
+  mean:
+    descp: A 1D mean Tensor with size matching the last dimension of t. This is the
+      first output from tf.nn.moments, or a saved moving average thereof.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  scale_after_normalization:
+    descp: A bool indicating whether the resulted tensor needs to be multiplied with
+      gamma.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  variance:
+    descp: A 1D variance Tensor with size matching the last dimension of t. This is
+      the second output from tf.nn.moments, or a saved moving average thereof.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  variance_epsilon:
+    descp: A small float number to avoid dividing by 0.
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+  - mean
+  - variance
+  - beta
+  - gamma
+  - variance_epsilon
+  - scale_after_normalization
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/batch_norm_with_global_normalization
+outputs: A batch-normalized `t`.
+package: tensorflow
+target: batch_norm_with_global_normalization
+title: tf.nn.batch_norm_with_global_normalization
+version: 2.1.0

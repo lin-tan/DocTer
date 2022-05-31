@@ -1,0 +1,43 @@
+aliases:
+- tf.compat.v1.estimator.experimental.build_raw_supervised_input_receiver_fn
+constraints:
+  default_batch_size:
+    default: None
+    descp: the number of query examples expected per batch. Leave unset for variable
+      batch size (recommended).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  features:
+    descp: a dict of string to `Tensor` or `Tensor`.
+    dtype:
+    - tf.string
+    structure:
+    - dict
+    tensor_t:
+    - tf.tensor
+  labels:
+    descp: a dict of string to `Tensor` or `Tensor`.
+    dtype:
+    - tf.string
+    structure:
+    - dict
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if features and labels have overlapping keys.
+inputs:
+  optional:
+  - default_batch_size
+  required:
+  - features
+  - labels
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/estimator/experimental/build_raw_supervised_input_receiver_fn
+outputs: A supervised_input_receiver_fn.
+package: tensorflow
+target: build_raw_supervised_input_receiver_fn
+title: tf.estimator.experimental.build_raw_supervised_input_receiver_fn
+version: 2.1.0

@@ -1,0 +1,41 @@
+constraints:
+  batch_axis:
+    default: '0'
+    descp: The axis along which to slice.
+    doc_dtype: int, default 0
+    dtype:
+    - int
+    ndim:
+    - '0'
+  ctx_list:
+    descp: A list of Contexts.
+    doc_dtype: list of Context
+    structure:
+    - list
+  data:
+    descp: A batch of data.
+    doc_dtype: NDArray or ndarray
+    structure:
+    - ndarray
+  even_split:
+    default: 'True'
+    descp: Whether to force all slices to have the same number of elements.
+    doc_dtype: bool, default True
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - batch_axis
+  - even_split
+  required:
+  - data
+  - ctx_list
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/utils/index.html#mxnet.gluon.utils.split_and_load
+package: mxnet
+target: split_and_load
+title: mxnet.gluon.utils.split_and_load
+version: 1.6.0

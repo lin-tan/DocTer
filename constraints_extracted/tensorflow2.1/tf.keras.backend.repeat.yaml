@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.keras.backend.repeat
+constraints:
+  n:
+    descp: Python integer, number of times to repeat.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - n
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/repeat
+outputs: A tensor.
+package: tensorflow
+target: repeat
+title: tf.keras.backend.repeat
+version: 2.1.0

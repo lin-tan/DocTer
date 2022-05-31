@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  lhs:
+    descp: First array to be compared.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array to be compared. If `lhs.shape != rhs.shape`, they must be
+      broadcastable to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.greater_equal
+package: mxnet
+target: greater_equal
+title: mxnet.ndarray.greater_equal
+version: 1.6.0

@@ -1,0 +1,22 @@
+constraints:
+  '**kwargs':
+    descp: Parameters for the optimizer.
+    doc_dtype: dict
+    structure:
+    - dict
+  name:
+    descp: Name of the optimizer. Should be the name of a subclass of Optimizer. Case
+      insensitive.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - name
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/optimizer/index.html#mxnet.optimizer.create
+package: mxnet
+target: create
+title: mxnet.optimizer.create
+version: 1.6.0

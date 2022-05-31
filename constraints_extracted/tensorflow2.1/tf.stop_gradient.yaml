@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.stop_gradient
+constraints:
+  input:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/stop_gradient
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: stop_gradient
+title: tf.stop_gradient
+version: 2.1.0

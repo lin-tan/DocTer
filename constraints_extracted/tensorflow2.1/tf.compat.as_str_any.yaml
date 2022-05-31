@@ -1,0 +1,17 @@
+aliases:
+- tf.compat.v1.compat.as_str_any
+constraints:
+  value:
+    descp: A object that can be converted to `str`.
+    dtype:
+    - tf.string
+inputs:
+  optional: []
+  required:
+  - value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/compat/as_str_any
+outputs: A `str` object.
+package: tensorflow
+target: as_str_any
+title: tf.compat.as_str_any
+version: 2.1.0

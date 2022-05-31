@@ -1,0 +1,32 @@
+constraints:
+  diagonal:
+    default: '0'
+    descp: the diagonal to consider
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - diagonal
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.triu
+package: torch
+ret_type: Tensor
+target: triu
+title: torch.triu
+version: 1.5.0

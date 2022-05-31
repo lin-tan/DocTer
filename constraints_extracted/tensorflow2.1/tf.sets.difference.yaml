@@ -1,0 +1,49 @@
+aliases:
+- tf.compat.v1.sets.difference
+- tf.compat.v1.sets.set_difference
+constraints:
+  a:
+    descp: '`Tensor` or `SparseTensor` of the same type as `b`. If sparse, indices
+      must be sorted in row-major order.'
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  aminusb:
+    default: 'True'
+    descp: Whether to subtract `b` from `a`, vs vice versa.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  b:
+    descp: '`Tensor` or `SparseTensor` of the same type as `a`. If sparse, indices
+      must be sorted in row-major order.'
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  validate_indices:
+    default: 'True'
+    descp: Whether to validate the order and range of sparse indices in `a` and `b`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If inputs are invalid types, or if `a` and `b` have different types.
+- ValueError: If `a` is sparse and `b` is dense.
+- errors_impl.InvalidArgumentError: If the shapes of `a` and `b` do not match in any
+    dimension other than the last dimension.
+inputs:
+  optional:
+  - aminusb
+  - validate_indices
+  required:
+  - a
+  - b
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sets/difference
+outputs: A `SparseTensor` whose shape is the same rank as `a` and `b`, and all but
+  the last dimension the same. Elements along the last dimension contain the differences.
+package: tensorflow
+target: difference
+title: tf.sets.difference
+version: 2.1.0

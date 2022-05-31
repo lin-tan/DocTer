@@ -1,0 +1,68 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: None
+    descp: Device context of output. Default is current context. Overridden by loc.context
+      when loc is an NDArray.
+    doc_dtype: Context, optional
+  dtype:
+    default: _Null
+    descp: Data type of output samples. Default is 'float32'
+    doc_dtype: '{''float16'', ''float32'', ''float64''}, optional'
+  loc:
+    default: '0'
+    descp: Mean (centre) of the distribution.
+    doc_dtype: float or NDArray, optional
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: Store output to an existing NDArray.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  scale:
+    default: '1'
+    descp: Standard deviation (spread or width) of the distribution.
+    doc_dtype: float or NDArray, optional
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: The number of samples to draw. If shape is, e.g., (m, n) and loc and scale
+      are scalars, output shape will be (m, n). If loc and scale are NDArrays with
+      shape, e.g., (x, y), then output will have shape (x, y, m, n), where m*n samples
+      are drawn for each [loc, scale) pair.
+    doc_dtype: int or tuple of ints, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - loc
+  - scale
+  - shape
+  - dtype
+  - ctx
+  - out
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.normal
+package: mxnet
+target: normal
+title: mxnet.ndarray.random.normal
+version: 1.6.0

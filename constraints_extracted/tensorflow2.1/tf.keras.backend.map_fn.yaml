@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.keras.backend.map_fn
+constraints:
+  dtype:
+    default: None
+    descp: Output data type.
+  elems:
+    descp: tensor
+  fn:
+    descp: Callable that will be called upon each element in elems
+  name:
+    default: None
+    descp: A string name for the map node in the graph
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  - dtype
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/map_fn
+outputs: Tensor with dtype `dtype`.
+package: tensorflow
+target: map_fn
+title: tf.keras.backend.map_fn
+version: 2.1.0

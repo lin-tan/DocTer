@@ -1,0 +1,35 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  stype:
+    default: _Null
+    descp: Output storage type.
+    doc_dtype: '{''csr'', ''default'', ''row_sparse''}, required'
+inputs:
+  optional:
+  - data
+  - stype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.cast_storage
+package: mxnet
+target: cast_storage
+title: mxnet.ndarray.sparse.cast_storage
+version: 1.6.0

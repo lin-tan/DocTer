@@ -1,0 +1,31 @@
+constraints:
+  delta:
+    default: '0.001'
+    descp: (optional) perturbation used to compute numeric Jacobian.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  f:
+    descp: the function.
+  x:
+    descp: a list arguments for the function
+exceptions:
+- ValueError: If result is empty but the gradient is nonzero.
+- ValueError: If x is not list, but any other type.
+inputs:
+  optional:
+  - delta
+  required:
+  - f
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/test/compute_gradient
+outputs: A pair of lists, where the first is a list of 2-d numpy arrays representing
+  the theoretical Jacobians for each argument, and the second list is the numerical
+  ones. Each 2-d array has "x_size" rows and "y_size" columns where "x_size" is the
+  number of elements in the corresponding argument and "y_size" is the number of elements
+  in f(x).
+package: tensorflow
+target: compute_gradient
+title: tf.test.compute_gradient
+version: 2.1.0

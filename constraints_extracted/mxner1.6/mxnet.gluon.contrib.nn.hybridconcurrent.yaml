@@ -1,0 +1,28 @@
+check_nan: true
+constraints:
+  axis:
+    default: '-1'
+    descp: The axis on which to concatenate the outputs.
+    doc_dtype: int, default -1
+    dtype:
+    - int
+    ndim:
+    - '0'
+  params:
+    default: None
+    descp: ''
+  prefix:
+    default: None
+    descp: ''
+inputs:
+  optional:
+  - axis
+  - prefix
+  - params
+  required: []
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/contrib/index.html#mxnet.gluon.contrib.nn.HybridConcurrent
+package: mxnet
+target: HybridConcurrent
+title: mxnet.gluon.contrib.nn.HybridConcurrent
+version: 1.6.0

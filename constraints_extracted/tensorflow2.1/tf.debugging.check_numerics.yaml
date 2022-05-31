@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.check_numerics
+- tf.compat.v1.debugging.check_numerics
+constraints:
+  message:
+    descp: A `string`. Prefix of the error message.
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: 'A `Tensor`. Must be one of the following types: `bfloat16`, `half`, `float32`,
+      `float64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+  - message
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/check_numerics
+outputs: A `Tensor`. Has the same type as `tensor`.
+package: tensorflow
+target: check_numerics
+title: tf.debugging.check_numerics
+version: 2.1.0

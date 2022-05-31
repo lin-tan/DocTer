@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: _Null
+    descp: Alpha parameter (shape) of the gamma distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  beta:
+    default: _Null
+    descp: Beta parameter (scale) of the gamma distribution.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - alpha
+  - beta
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.gamma_like
+package: mxnet
+target: gamma_like
+title: mxnet.ndarray.random.gamma_like
+version: 1.6.0

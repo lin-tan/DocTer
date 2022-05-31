@@ -1,0 +1,80 @@
+aliases:
+- tf.compat.v1.random.uniform
+- tf.compat.v1.random_uniform
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: 'The type of the output: `float16`, `float32`, `float64`, `int32`, or `int64`.'
+    dtype:
+    - tf.dtype
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+  maxval:
+    default: None
+    descp: A Tensor or Python value of type `dtype`, broadcastable with`minval`. The
+      upper bound on the range of random values to generate (exclusive). Defaults
+      to 1 if `dtype` is floating point.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  minval:
+    default: '0'
+    descp: A Tensor or Python value of type `dtype`, broadcastable with`maxval`. The
+      lower bound on the range of random values to generate (inclusive).  Defaults
+      to 0.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: A Python integer. Used in combination with `tf.random.set_seed` to create
+      a reproducible sequence of tensors across multiple calls.
+    dtype:
+    - int
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  shape:
+    descp: A 1-D integer Tensor or Python array. The shape of the output tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `dtype` is integral and `maxval` is not specified.
+inputs:
+  optional:
+  - minval
+  - maxval
+  - dtype
+  - seed
+  - name
+  required:
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/uniform
+outputs: A tensor of the specified shape filled with random uniform values.
+package: tensorflow
+target: uniform
+title: tf.random.uniform
+version: 2.1.0

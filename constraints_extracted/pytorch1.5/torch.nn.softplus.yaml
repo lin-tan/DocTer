@@ -1,0 +1,27 @@
+check_nan: true
+constraints:
+  beta:
+    default: '1'
+    descp: 'the  beta  value for the Softplus formulation. Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  threshold:
+    default: '20'
+    descp: 'values above this revert to a linear function. Default: 20'
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - beta
+  - threshold
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Softplus
+package: torch
+target: Softplus
+title: torch.nn.Softplus
+version: 1.5.0

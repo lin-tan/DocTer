@@ -1,0 +1,18 @@
+constraints:
+  condition:
+    descp: can be True, False, a bool Tensor, or a callable providing such.
+    dtype:
+    - tf.bool
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - condition
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/summary/record_if
+outputs: Returns a context manager that sets this value on enter and restores the
+  previous value on exit.
+package: tensorflow
+target: record_if
+title: tf.summary.record_if
+version: 2.1.0

@@ -1,0 +1,45 @@
+check_nan: true
+constraints:
+  ctx:
+    default: None
+    descp: Device context (default is the current default context).
+    doc_dtype: Context, optional
+  dtype:
+    default: <classnumpy.float32>
+    descp: The data type of the returned NDArray. The default datatype is float32.
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: The output NDArray (default is None).
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    descp: The shape of the new array.
+    doc_dtype: int or tuple of int
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+  val:
+    descp: Fill value.
+    doc_dtype: scalar
+inputs:
+  optional:
+  - ctx
+  - dtype
+  - out
+  required:
+  - shape
+  - val
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.full
+package: mxnet
+target: full
+title: mxnet.ndarray.full
+version: 1.6.0

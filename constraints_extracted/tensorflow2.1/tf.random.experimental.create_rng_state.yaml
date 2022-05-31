@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.random.experimental.create_rng_state
+constraints:
+  algorithm:
+    descp: an integer representing the RNG algorithm.
+    dtype:
+    - int
+  seed:
+    descp: an integer or 1-D tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - seed
+  - algorithm
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/experimental/create_rng_state
+outputs: a 1-D tensor whose size depends on the algorithm.
+package: tensorflow
+target: create_rng_state
+title: tf.random.experimental.create_rng_state
+version: 2.1.0

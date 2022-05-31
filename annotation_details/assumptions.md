@@ -1,0 +1,15 @@
+- "number of...": non-negative 0-dimensional integer
+- "shape of...": non-negative 1-dimensional integer
+- "name of...": string
+- "size/length/stride of...":  non-negative integer
+- "width/height of ...": non_negative, numeric type
+- "axis of... ": 0-dimentional integer
+- "axes of...": integer
+- "index of ... ": 0-dimensional integer
+- "indices of ... ": integer
+- "id(s) of... ": non-negative integer 
+- "dimension(s) of ..." integer
+- probability/learning rate: 0-dimensional floating point value between 0 and 1
+- Other rate: numeric
+- max/min value,  mean/variance/deviation/weight decay/weight/matrix/mat: numeric
+

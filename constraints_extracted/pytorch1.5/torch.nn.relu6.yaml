@@ -1,0 +1,19 @@
+check_nan: true
+constraints:
+  inplace:
+    default: 'False'
+    descp: 'can optionally do the operation in-place. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - inplace
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.ReLU6
+package: torch
+target: ReLU6
+title: torch.nn.ReLU6
+version: 1.5.0

@@ -1,0 +1,59 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  Inputs:
+    default: None
+    descp: ''
+  Output:
+    default: None
+    descp: ''
+  dtype:
+    default: float32
+    descp: Data type of output embeddings.
+    doc_dtype: str or np.dtype, default 'float32'
+    dtype:
+    - numpy.dtype
+    - numpy.float32
+    - string
+  input_dim:
+    descp: Size of the vocabulary, i.e. maximum integer index + 1.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  output_dim:
+    descp: Dimension of the dense embedding.
+    doc_dtype: int
+    dtype:
+    - int
+  sparse_grad:
+    default: 'False'
+    descp: If True, gradient w.r.t. weight will be a 'row_sparse' NDArray.
+    doc_dtype: bool
+    dtype:
+    - boolean
+    structure:
+    - ndarray
+  weight_initializer:
+    default: None
+    descp: Initializer for the embeddings matrix.
+    doc_dtype: Initializer
+inputs:
+  optional:
+  - dtype
+  - weight_initializer
+  - sparse_grad
+  - Inputs
+  - Output
+  required:
+  - input_dim
+  - output_dim
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Embedding
+package: mxnet
+target: Embedding
+title: mxnet.gluon.nn.Embedding
+version: 1.6.0

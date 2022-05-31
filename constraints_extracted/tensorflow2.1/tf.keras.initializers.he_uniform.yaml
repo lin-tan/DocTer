@@ -1,0 +1,18 @@
+aliases:
+- tf.initializers.he_uniform
+constraints:
+  seed:
+    default: None
+    descp: A Python integer. Used to seed the random generator.
+    dtype:
+    - int
+inputs:
+  optional:
+  - seed
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/initializers/he_uniform
+outputs: An initializer.
+package: tensorflow
+target: he_uniform
+title: tf.keras.initializers.he_uniform
+version: 2.1.0

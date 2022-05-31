@@ -1,0 +1,77 @@
+check_nan: true
+constraints:
+  h2h_bias_initializer:
+    default: zeros
+    descp: Initializer for the bias vector.
+    doc_dtype: str or Initializer, default 'zeros'
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - list
+  h2h_weight_initializer:
+    default: None
+    descp: Initializer for the recurrent weights matrix, used for the linear transformation
+      of the recurrent state.
+    doc_dtype: str or Initializer
+    dtype:
+    - string
+  hidden_size:
+    descp: Number of units in output symbol.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  i2h_bias_initializer:
+    default: zeros
+    descp: Initializer for the bias vector.
+    doc_dtype: str or Initializer, default 'zeros'
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - list
+  i2h_weight_initializer:
+    default: None
+    descp: Initializer for the input weights matrix, used for the linear transformation
+      of the inputs.
+    doc_dtype: str or Initializer
+    dtype:
+    - string
+  input_size:
+    default: '0'
+    descp: ''
+    ndim:
+    - '0'
+  params:
+    default: None
+    descp: Container for weight sharing between cells. Created if None.
+    doc_dtype: Parameter or None, default None
+  prefix:
+    default: None
+    descp: prefix for name of Block`s (and name of weight if params is `None).
+    doc_dtype: str, default `'gru_'`
+    dtype:
+    - string
+inputs:
+  optional:
+  - i2h_weight_initializer
+  - h2h_weight_initializer
+  - i2h_bias_initializer
+  - h2h_bias_initializer
+  - input_size
+  - prefix
+  - params
+  required:
+  - hidden_size
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/rnn/index.html#mxnet.gluon.rnn.GRUCell
+package: mxnet
+target: GRUCell
+title: mxnet.gluon.rnn.GRUCell
+version: 1.6.0

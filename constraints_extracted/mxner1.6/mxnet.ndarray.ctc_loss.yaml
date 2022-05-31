@@ -1,0 +1,89 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  blank_label:
+    default: _Null
+    descp: Set the label that is reserved for blank label.If "first", 0-th label is
+      reserved, and label values for tokens in the vocabulary are between `1` and
+      `alphabet_size-1`, and the padding mask is `-1`. If "last", last label value
+      `alphabet_size-1` is reserved for blank label instead, and label values for
+      tokens in the vocabulary are between `0` and `alphabet_size-2`, and the padding
+      mask is `0`.
+    doc_dtype: '{''first'', ''last''},optional, default=''first'''
+    enum:
+    - first
+    - last
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  data_lengths:
+    default: None
+    descp: Lengths of data for each of the samples. Only required when use_data_lengths
+      is true.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  label:
+    default: None
+    descp: Ground-truth labels for the loss.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  label_lengths:
+    default: None
+    descp: Lengths of labels for each of the samples. Only required when use_label_lengths
+      is true.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  use_data_lengths:
+    default: _Null
+    descp: Whether the data lenghts are decided by data_lengths. If false, the lengths
+      are equal to the max sequence length.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  use_label_lengths:
+    default: _Null
+    descp: Whether the label lenghts are decided by label_lengths, or derived from
+      padding_mask. If false, the lengths are derived from the first occurrence of
+      the value of padding_mask. The value of padding_mask is `0` when first CTC label
+      is reserved for blank, and `-1` when last label is reserved for blank. See blank_label.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - label
+  - data_lengths
+  - label_lengths
+  - use_data_lengths
+  - use_label_lengths
+  - blank_label
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.ctc_loss
+package: mxnet
+target: ctc_loss
+title: mxnet.ndarray.ctc_loss
+version: 1.6.0

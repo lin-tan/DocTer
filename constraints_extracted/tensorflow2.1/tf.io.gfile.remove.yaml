@@ -1,0 +1,19 @@
+aliases:
+- tf.compat.v1.io.gfile.remove
+constraints:
+  path:
+    descp: string, a path
+    dtype:
+    - tf.string
+exceptions:
+- errors.OpError: Propagates any errors reported by the FileSystem API.  E.g.,`NotFoundError`
+    if the path does not exist.
+inputs:
+  optional: []
+  required:
+  - path
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/remove
+package: tensorflow
+target: remove
+title: tf.io.gfile.remove
+version: 2.1.0

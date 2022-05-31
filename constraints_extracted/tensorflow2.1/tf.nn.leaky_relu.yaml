@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.nn.leaky_relu
+check_nan: true
+constraints:
+  alpha:
+    default: '0.2'
+    descp: Slope of the activation function at x < 0.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  features:
+    descp: 'A `Tensor` representing preactivation values. Must be one of the following
+      types: `float16`, `float32`, `float64`, `int32`, `int64`.'
+    dtype:
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - alpha
+  - name
+  required:
+  - features
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/leaky_relu
+outputs: The activation value.
+package: tensorflow
+target: leaky_relu
+title: tf.nn.leaky_relu
+version: 2.1.0

@@ -1,0 +1,45 @@
+check_nan: true
+constraints:
+  axes:
+    descp: 1-d tensor of int32 values; these are the axes along which to compute mean
+      and variance.
+    dtype:
+    - tf.int32
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  frequency_weights:
+    descp: A tensor of positive weights which can be broadcast with x.
+    tensor_t:
+    - tf.tensor
+  keepdims:
+    default: 'False'
+    descp: Produce moments with the same dimensionality as the input.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: Name used to scope the operation.
+    ndim:
+    - '0'
+  x:
+    descp: A tensor.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - keepdims
+  - name
+  required:
+  - x
+  - axes
+  - frequency_weights
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/weighted_moments
+outputs: 'Two tensors: `weighted_mean` and `weighted_variance`.'
+package: tensorflow
+target: weighted_moments
+title: tf.nn.weighted_moments
+version: 2.1.0

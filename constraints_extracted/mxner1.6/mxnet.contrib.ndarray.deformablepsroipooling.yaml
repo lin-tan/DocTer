@@ -1,0 +1,108 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data to the pooling operator, a 4D Feature maps
+    doc_dtype: Symbol
+  group_size:
+    default: _Null
+    descp: fix group size
+    doc_dtype: int, required
+    dtype:
+    - int
+  name:
+    default: None
+    descp: ''
+  no_trans:
+    default: _Null
+    descp: Whether to disable trans parameter.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_dim:
+    default: _Null
+    descp: fix output dim
+    doc_dtype: int, required
+    dtype:
+    - int
+  part_size:
+    default: _Null
+    descp: fix part size
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  pooled_size:
+    default: _Null
+    descp: fix pooled size
+    doc_dtype: int, required
+    dtype:
+    - int
+  rois:
+    default: None
+    descp: Bounding box coordinates, a 2D array of [[batch_index, x1, y1, x2, y2]].
+      (x1, y1) and (x2, y2) are top left and down right corners of designated region
+      of interest. batch_index indicates the index of corresponding image in the input
+      data
+    doc_dtype: Symbol
+    structure:
+    - ndarray
+  sample_per_part:
+    default: _Null
+    descp: fix samples per part
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  spatial_scale:
+    default: _Null
+    descp: Ratio of input feature map height (or w) to raw image height (or w). Equals
+      the reciprocal of total stride in convolutional layers
+    doc_dtype: float, required
+    dtype:
+    - float
+  trans:
+    default: None
+    descp: transition parameter
+    doc_dtype: Symbol
+  trans_std:
+    default: _Null
+    descp: fix transition std
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - rois
+  - trans
+  - spatial_scale
+  - output_dim
+  - group_size
+  - pooled_size
+  - part_size
+  - sample_per_part
+  - trans_std
+  - no_trans
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.DeformablePSROIPooling
+package: mxnet
+target: DeformablePSROIPooling
+title: mxnet.contrib.ndarray.DeformablePSROIPooling
+version: 1.6.0

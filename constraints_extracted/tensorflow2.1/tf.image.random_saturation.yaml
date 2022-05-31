@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.image.random_saturation
+constraints:
+  image:
+    descp: RGB image or images. Size of the last dimension must be 3.
+  lower:
+    descp: float.  Lower bound for the random saturation factor.
+  seed:
+    default: None
+    descp: An operation-specific seed. It will be used in conjunction with the graph-level
+      seed to determine the real seeds that will be used in this operation. Please
+      see the documentation of set_random_seed for its interaction with the graph-level
+      random seed.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  upper:
+    descp: float.  Upper bound for the random saturation factor.
+exceptions:
+- ValueError: if `upper <= lower` or if `lower < 0`.
+inputs:
+  optional:
+  - seed
+  required:
+  - image
+  - lower
+  - upper
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/random_saturation
+outputs: Adjusted image(s), same shape and DType as `image`.
+package: tensorflow
+target: random_saturation
+title: tf.image.random_saturation
+version: 2.1.0

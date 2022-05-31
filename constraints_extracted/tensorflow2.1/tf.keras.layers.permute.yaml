@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.keras.layers.Permute
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  dims:
+    descp: Tuple of integers. Permutation pattern, does not include the samples dimension.
+      Indexing starts at 1. For instance, `(2, 1)` permutes the first and second dimensions
+      of the input.
+    dtype:
+    - int
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - '**kwargs'
+  required:
+  - dims
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Permute
+package: tensorflow
+target: Permute
+title: tf.keras.layers.Permute
+version: 2.1.0

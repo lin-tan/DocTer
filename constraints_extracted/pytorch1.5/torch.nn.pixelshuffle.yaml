@@ -1,0 +1,17 @@
+check_nan: true
+constraints:
+  upscale_factor:
+    descp: factor to increase spatial resolution by
+    doc_dtype: int
+    dtype:
+    - int
+inputs:
+  optional: []
+  required:
+  - upscale_factor
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.PixelShuffle
+package: torch
+target: PixelShuffle
+title: torch.nn.PixelShuffle
+version: 1.5.0

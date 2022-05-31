@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.rank
+constraints:
+  input:
+    descp: A `Tensor` or `SparseTensor`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/rank
+outputs: A `Tensor` of type `int32`.
+package: tensorflow
+target: rank
+title: tf.rank
+version: 2.1.0

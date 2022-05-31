@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.NoGradient
+- tf.compat.v1.NotDifferentiable
+- tf.compat.v1.no_gradient
+constraints:
+  op_type:
+    descp: The string type of an operation. This corresponds to the`OpDef.name` field
+      for the proto that defines the operation.
+    dtype:
+    - tf.dtype
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `op_type` is not a string.
+inputs:
+  optional: []
+  required:
+  - op_type
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/no_gradient
+package: tensorflow
+target: no_gradient
+title: tf.no_gradient
+version: 2.1.0

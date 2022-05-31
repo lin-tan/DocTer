@@ -1,0 +1,39 @@
+constraints:
+  dim:
+    default: '-1'
+    descp: The dimension along which to integrate.By default, use the last dimension.
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+  dx:
+    default: '1'
+    descp: The distance between points at which y is sampled.
+    doc_dtype: float
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  y:
+    descp: The values of the function to integrate
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  keyword_only:
+  - dx
+  - dim
+  optional:
+  - dx
+  - dim
+  required:
+  - y
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.trapz
+package: torch
+ret_type: Tensor
+target: trapz
+title: torch.trapz
+version: 1.5.0

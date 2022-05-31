@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.sparse.from_dense
+constraints:
+  name:
+    default: None
+    descp: Optional name for the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: A dense `Tensor` to be converted to a `SparseTensor`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/from_dense
+outputs: The `SparseTensor`.
+package: tensorflow
+target: from_dense
+title: tf.sparse.from_dense
+version: 2.1.0

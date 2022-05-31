@@ -1,0 +1,16 @@
+aliases:
+- tf.compat.v1.keras.mixed_precision.experimental.set_policy
+constraints:
+  policy:
+    descp: A Policy, or a string that will be converted to a Policy..
+    dtype:
+    - tf.string
+inputs:
+  optional: []
+  required:
+  - policy
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/mixed_precision/experimental/set_policy
+package: tensorflow
+target: set_policy
+title: tf.keras.mixed_precision.experimental.set_policy
+version: 2.1.0

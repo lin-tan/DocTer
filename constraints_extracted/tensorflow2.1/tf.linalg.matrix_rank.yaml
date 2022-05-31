@@ -1,0 +1,40 @@
+aliases:
+- tf.compat.v1.linalg.matrix_rank
+constraints:
+  a:
+    descp: (Batch of) `float`-like matrix-shaped `Tensor`(s) which are to be pseudo-inverted.
+  name:
+    default: None
+    descp: 'Python `str` prefixed to ops created by this function. Default value:
+      ''matrix_rank''.'
+    dtype:
+    - tf.string
+    enum:
+    - matrix_rank
+  tol:
+    default: None
+    descp: 'Threshold below which the singular value is counted as ''zero''. Default
+      value: `None` (i.e., `eps * max(rows, cols) * max(singular_val)`).'
+  validate_args:
+    default: 'False'
+    descp: 'When `True`, additional assertions might be embedded in the graph. Default
+      value: `False` (i.e., no graph assertions are added).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - tol
+  - validate_args
+  - name
+  required:
+  - a
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/matrix_rank
+outputs:
+- matrix_rank: (Batch of) `int32` scalars representing the number of non-zero singular
+    values.
+package: tensorflow
+target: matrix_rank
+title: tf.linalg.matrix_rank
+version: 2.1.0

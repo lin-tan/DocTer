@@ -1,0 +1,31 @@
+constraints:
+  loss_scale:
+    default: dynamic
+    descp: Either an int/float, the string `"dynamic"`, or an instance of a`tf.mixed_precision.experimental.LossScale`.
+      The loss scale to use. It is recommended to keep this as its default value of
+      `"dynamic"`, which will adjust the scaling automatically to prevent `Inf` or
+      `NaN` values.
+    dtype:
+    - float
+    - int
+    - tf.string
+    enum:
+    - dynamic
+    ndim:
+    - '0'
+  opt:
+    descp: An instance of a `tf.keras.optimizers.Optimizer`.
+exceptions: '`ValueError` when`mixed_precision_global_state.using_default_mixed_precision_policy`is
+  set to `False` before`tf.train.experimental.enable_mixed_precision_graph_rewrite()`is
+  called.'
+inputs:
+  optional:
+  - loss_scale
+  required:
+  - opt
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/train/experimental/enable_mixed_precision_graph_rewrite
+outputs: A version of `opt` that will use loss scaling to prevent underflow.
+package: tensorflow
+target: enable_mixed_precision_graph_rewrite
+title: tf.train.experimental.enable_mixed_precision_graph_rewrite
+version: 2.1.0

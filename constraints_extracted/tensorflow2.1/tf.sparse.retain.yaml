@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.sparse.retain
+- tf.compat.v1.sparse_retain
+constraints:
+  sp_input:
+    descp: The input `SparseTensor` with `N` non-empty elements.
+    tensor_t:
+    - SparseTensor
+  to_retain:
+    descp: A bool vector of length `N` with `M` true values.
+    dtype:
+    - tf.bool
+    structure:
+    - list
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional: []
+  required:
+  - sp_input
+  - to_retain
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/retain
+outputs: A `SparseTensor` with the same shape as the input and `M` non-empty elements
+  corresponding to the true positions in `to_retain`.
+package: tensorflow
+target: retain
+title: tf.sparse.retain
+version: 2.1.0

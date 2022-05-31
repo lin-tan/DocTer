@@ -1,0 +1,60 @@
+aliases:
+- tf.compat.v1.keras.backend.separable_conv2d
+constraints:
+  data_format:
+    default: None
+    descp: string, `"channels_last"` or `"channels_first"`.
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+  depthwise_kernel:
+    descp: convolution kernel for the depthwise convolution.
+  dilation_rate:
+    default: (1, 1)
+    descp: tuple of integers, dilation rates for the separable convolution.
+    dtype:
+    - int
+    structure:
+    - tuple
+  padding:
+    default: valid
+    descp: string, `"same"` or `"valid"`.
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  pointwise_kernel:
+    descp: kernel for the 1x1 convolution.
+  strides:
+    default: (1, 1)
+    descp: strides tuple (length 2).
+    dtype:
+    - int
+    structure:
+    - tuple
+  x:
+    descp: input tensor
+exceptions:
+- ValueError: if `data_format` is neither `channels_last` or`channels_first`.
+- ValueError: if `strides` is not a tuple of 2 integers.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilation_rate
+  required:
+  - x
+  - depthwise_kernel
+  - pointwise_kernel
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/separable_conv2d
+outputs: Output tensor.
+package: tensorflow
+target: separable_conv2d
+title: tf.keras.backend.separable_conv2d
+version: 2.1.0

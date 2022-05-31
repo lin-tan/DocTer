@@ -1,0 +1,44 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data to the function.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  target_shape:
+    default: _Null
+    descp: Specifies the output shape (H, W). This is required if transformation type
+      is affine. If transformation type is warp, this parameter is ignored.
+    doc_dtype: Shape(tuple), optional, default=[0,0]
+  transform_type:
+    default: _Null
+    descp: The type of transformation. For affine, input data should be an affine
+      matrix of size (batch, 6). For warp, input data should be an optical flow of
+      size (batch, 2, h, w).
+    doc_dtype: '{''affine'', ''warp''}, required'
+inputs:
+  optional:
+  - data
+  - transform_type
+  - target_shape
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.GridGenerator
+package: mxnet
+target: GridGenerator
+title: mxnet.ndarray.GridGenerator
+version: 1.6.0

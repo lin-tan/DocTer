@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.backend.cast_to_floatx
+constraints:
+  x:
+    descp: Numpy array or TensorFlow tensor.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/cast_to_floatx
+outputs: The same array (Numpy array if `x` was a Numpy array, or TensorFlow tensor
+  if `x` was a tensor), cast to its new type.
+package: tensorflow
+target: cast_to_floatx
+title: tf.keras.backend.cast_to_floatx
+version: 2.1.0

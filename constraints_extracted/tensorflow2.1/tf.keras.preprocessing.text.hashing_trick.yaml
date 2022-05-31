@@ -1,0 +1,51 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.text.hashing_trick
+constraints:
+  filters:
+    default: '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n'
+    descp: 'list (or concatenation) of characters to filter out, such as     punctuation.
+      Default: ``!"#$%&()*+,-./:;<=>?@[\]^_`{|}~\t\n``,     includes basic punctuation,
+      tabs, and newlines.'
+  hash_function:
+    default: None
+    descp: defaults to python `hash` function, can be 'md5' or     any function that
+      takes in input a string and returns a int.     Note that 'hash' is not a stable
+      hashing function, so     it is not consistent across different runs, while 'md5'     is
+      a stable hashing function.
+    dtype:
+    - int
+    - tf.string
+    enum:
+    - hash
+    - md5
+    ndim:
+    - '0'
+  lower:
+    default: 'True'
+    descp: boolean. Whether to set the text to lowercase.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  n:
+    descp: Dimension of the hashing space.
+  split:
+    default: ' '
+    descp: str. Separator for word splitting.`
+  text:
+    descp: Input text (string).
+inputs:
+  optional:
+  - hash_function
+  - filters
+  - lower
+  - split
+  required:
+  - text
+  - n
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/text/hashing_trick
+outputs: '`A list of integer word indices (unicity non-guaranteed).`'
+package: tensorflow
+target: hashing_trick
+title: tf.keras.preprocessing.text.hashing_trick
+version: 2.1.0

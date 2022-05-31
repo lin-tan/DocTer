@@ -1,0 +1,55 @@
+aliases:
+- tf.compat.v1.keras.layers.experimental.preprocessing.PreprocessingLayer
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data:
+    default: None
+    descp: The data to train on. It can be passed either as a tf.data Dataset, or
+      as a numpy array.
+    structure:
+    - list
+  dtype:
+    default: None
+    descp: ''
+  dynamic:
+    default: 'False'
+    descp: ''
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  reset_state:
+    default: None
+    descp: 'Optional argument specifying whether to clear the state of the layer at
+      the start of the call to `adapt`, or whether to start from the existing state.
+      This argument may not be relevant to all preprocessing layers: a subclass of
+      PreprocessingLayer may choose to throw if ''reset_state'' is set to False.'
+    ndim:
+    - '0'
+  trainable:
+    default: 'True'
+    descp: ''
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - trainable
+  - name
+  - dtype
+  - dynamic
+  - '**kwargs'
+  - data
+  - reset_state
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/experimental/preprocessing/PreprocessingLayer
+package: tensorflow
+target: PreprocessingLayer
+title: tf.keras.layers.experimental.preprocessing.PreprocessingLayer
+version: 2.1.0

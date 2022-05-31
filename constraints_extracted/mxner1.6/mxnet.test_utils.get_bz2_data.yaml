@@ -1,0 +1,33 @@
+constraints:
+  data_dir:
+    descp: Absolute or relative path of the directory name to store bz2 files
+    doc_dtype: str
+    dtype:
+    - string
+  data_name:
+    descp: Name of the output file in which bz2 contents will be extracted
+    doc_dtype: str
+    dtype:
+    - string
+  data_origin_name:
+    descp: Name of the downloaded b2 file
+    doc_dtype: str
+    dtype:
+    - string
+  url:
+    descp: URL to download data from
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - data_dir
+  - data_name
+  - url
+  - data_origin_name
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.get_bz2_data
+package: mxnet
+target: get_bz2_data
+title: mxnet.test_utils.get_bz2_data
+version: 1.6.0

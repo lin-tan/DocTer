@@ -1,0 +1,17 @@
+aliases:
+- tf.compat.v1.keras.backend.softplus
+constraints:
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/softplus
+outputs: A tensor.
+package: tensorflow
+target: softplus
+title: tf.keras.backend.softplus
+version: 2.1.0

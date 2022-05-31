@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.keras.backend.relu
+constraints:
+  alpha:
+    default: '0.0'
+    descp: A scalar, slope of negative section (default=`0.`).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  max_value:
+    default: None
+    descp: float. Saturation threshold.
+  threshold:
+    default: '0'
+    descp: float. Threshold value for thresholded activation.
+    dtype:
+    - int
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - alpha
+  - max_value
+  - threshold
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/relu
+outputs: A tensor.
+package: tensorflow
+target: relu
+title: tf.keras.backend.relu
+version: 2.1.0

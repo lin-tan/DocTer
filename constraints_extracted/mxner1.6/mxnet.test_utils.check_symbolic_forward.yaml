@@ -1,0 +1,80 @@
+constraints:
+  atol:
+    default: None
+    descp: ''
+  aux_states:
+    default: None
+    descp: 'if type is list of np.ndarrayContains all the NumPy arrays corresponding
+      to sym.list_auxiliary_states   '
+    doc_dtype: list of np.ndarray of dict, optional
+    structure:
+    - dict
+    - list
+    - ndarray
+  ctx:
+    default: None
+    descp: running context
+    doc_dtype: Context, optional
+  dtype:
+    default: <classnumpy.float32>
+    descp: If dtype is "asnumpy" then the mx.nd.array created will have the same type
+      as th numpy array from which it is copied. Otherwise, dtype is the explicit
+      datatype for all mx.nd.array objects created in this function.
+    doc_dtype: '"asnumpy" or np.float16 or np.float32 or np.float64'
+    dtype:
+    - numpy.float16
+    - numpy.float32
+    - numpy.float64
+    structure:
+    - ndarray
+  equal_nan:
+    default: 'False'
+    descp: if True, nan is a valid value for checking equivalency (ie nan == nan)
+    doc_dtype: Boolean
+    dtype:
+    - boolean
+  expected:
+    descp: 'The expected output value   if type is list of np.ndarrayContains arrays
+      corresponding to exe.outputs.   '
+    doc_dtype: list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  location:
+    descp: 'The evaluation point   if type is list of np.ndarrayContains all the numpy
+      arrays corresponding to sym.list_arguments().   '
+    doc_dtype: list of np.ndarray or dict of str to np.ndarray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  rtol:
+    default: '0.0001'
+    descp: ''
+    ndim:
+    - '0'
+  sym:
+    descp: output symbol
+    doc_dtype: Symbol
+inputs:
+  optional:
+  - rtol
+  - atol
+  - aux_states
+  - ctx
+  - equal_nan
+  - dtype
+  required:
+  - sym
+  - location
+  - expected
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.check_symbolic_forward
+package: mxnet
+target: check_symbolic_forward
+title: mxnet.test_utils.check_symbolic_forward
+version: 1.6.0

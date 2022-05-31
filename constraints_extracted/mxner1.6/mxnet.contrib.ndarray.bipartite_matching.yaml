@@ -1,0 +1,59 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  is_ascend:
+    default: _Null
+    descp: Use ascend order for scores instead of descending. Please set threshold
+      accordingly.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  threshold:
+    default: _Null
+    descp: Ignore matching when score < thresh, if is_ascend=false, or ignore score
+      > thresh, if is_ascend=true.
+    doc_dtype: float, required
+    dtype:
+    - float
+  topk:
+    default: _Null
+    descp: Limit the number of matches to topk, set -1 for no limit
+    doc_dtype: int, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - is_ascend
+  - threshold
+  - topk
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.bipartite_matching
+package: mxnet
+target: bipartite_matching
+title: mxnet.contrib.ndarray.bipartite_matching
+version: 1.6.0

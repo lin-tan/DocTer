@@ -1,0 +1,15 @@
+constraints:
+  s:
+    descp: String buffer from `MXRecordIO.read`.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - s
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/recordio/index.html#mxnet.recordio.unpack
+package: mxnet
+target: unpack
+title: mxnet.recordio.unpack
+version: 1.6.0

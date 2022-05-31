@@ -1,0 +1,52 @@
+aliases:
+- tf.compat.v1.io.parse_sequence_example
+constraints:
+  context_features:
+    default: None
+    descp: A `dict` mapping feature keys to `FixedLenFeature` or`VarLenFeature` or
+      `RaggedFeature` values. These features are associated with a `SequenceExample`
+      as a whole.
+    ndim:
+    - '0'
+  example_names:
+    default: None
+    descp: A vector (1-D Tensor) of strings (optional), the name of the serialized
+      protos.
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sequence_features:
+    default: None
+    descp: A `dict` mapping feature keys to`FixedLenSequenceFeature` or `VarLenFeature`
+      or `RaggedFeature` values. These features are associated with data within the
+      `FeatureList` section of the `SequenceExample` proto.
+  serialized:
+    descp: A vector (1-D Tensor) of type string containing binary serialized `SequenceExample`
+      protos.
+    dtype:
+    - tf.string
+    enum:
+    - SequenceExample
+exceptions:
+- ValueError: if any feature is invalid.
+inputs:
+  optional:
+  - context_features
+  - sequence_features
+  - example_names
+  - name
+  required:
+  - serialized
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/parse_sequence_example
+outputs: A tuple of three `dict`s, each mapping keys to `Tensor`s,`SparseTensor`s,
+  and `RaggedTensor`. The first dict contains the context key/values, the second dict
+  contains the feature_list key/values, and the final dict contains the lengths of
+  any dense feature_list features.
+package: tensorflow
+target: parse_sequence_example
+title: tf.io.parse_sequence_example
+version: 2.1.0

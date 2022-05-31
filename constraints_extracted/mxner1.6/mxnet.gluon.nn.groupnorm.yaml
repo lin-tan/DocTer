@@ -1,0 +1,69 @@
+check_nan: true
+constraints:
+  beta_initializer:
+    default: zeros
+    descp: Initializer for the beta weight.
+    doc_dtype: "str or Initializer, default \u2018zeros\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  center:
+    default: 'True'
+    descp: If True, add offset of beta to normalized tensor. If False, beta is ignored.
+    doc_dtype: bool, default True
+    tensor_t:
+    - tensor
+  epsilon:
+    default: 1e-05
+    descp: Small float added to variance to avoid dividing by zero.
+    doc_dtype: float, default 1e-5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  gamma_initializer:
+    default: ones
+    descp: Initializer for the gamma weight.
+    doc_dtype: "str or Initializer, default \u2018ones\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  num_groups:
+    default: '1'
+    descp: Number of groups to separate the channel axis into.
+    doc_dtype: int, default 1
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  params:
+    default: None
+    descp: ''
+  prefix:
+    default: None
+    descp: ''
+  scale:
+    default: 'True'
+    descp: If True, multiply by gamma. If False, gamma is not used.
+    doc_dtype: bool, default True
+inputs:
+  optional:
+  - num_groups
+  - epsilon
+  - center
+  - scale
+  - beta_initializer
+  - gamma_initializer
+  - prefix
+  - params
+  required: []
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.GroupNorm
+package: mxnet
+target: GroupNorm
+title: mxnet.gluon.nn.GroupNorm
+version: 1.6.0

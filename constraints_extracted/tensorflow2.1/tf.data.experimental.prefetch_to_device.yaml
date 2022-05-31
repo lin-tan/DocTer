@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.data.experimental.prefetch_to_device
+constraints:
+  buffer_size:
+    default: None
+    descp: (Optional.) The number of elements to buffer on `device`. Defaults to an
+      automatically chosen value.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  device:
+    descp: A string. The name of a device to which elements will be prefetched.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - buffer_size
+  required:
+  - device
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/prefetch_to_device
+outputs: A `Dataset` transformation function, which can be passed to`tf.data.Dataset.apply`.
+package: tensorflow
+target: prefetch_to_device
+title: tf.data.experimental.prefetch_to_device
+version: 2.1.0

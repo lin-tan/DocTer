@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.utils.to_categorical
+constraints:
+  dtype:
+    default: float32
+    descp: 'The data type expected by the input. Default: `''float32''`.'
+    enum:
+    - float32
+  num_classes:
+    default: None
+    descp: total number of classes.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  y:
+    descp: class vector to be converted into a matrix (integers from 0 to num_classes).
+    structure:
+    - list
+inputs:
+  optional:
+  - num_classes
+  - dtype
+  required:
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/utils/to_categorical
+outputs: A binary matrix representation of the input. The classes axis is placed last.
+package: tensorflow
+target: to_categorical
+title: tf.keras.utils.to_categorical
+version: 2.1.0

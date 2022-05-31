@@ -1,0 +1,34 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: Input data for the custom operator.
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  op_type:
+    default: None
+    descp: Name of the custom operator. This is the name that is passed to mx.operator.register
+      to register the operator.
+    doc_dtype: string
+    dtype:
+    - string
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - op_type
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.Custom
+package: mxnet
+target: Custom
+title: mxnet.ndarray.Custom
+version: 1.6.0

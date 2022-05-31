@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.keras.layers.deserialize
+check_nan: true
+constraints:
+  config:
+    descp: 'dict of the form {''class_name'': str, ''config'': dict}'
+    dtype:
+    - tf.string
+    structure:
+    - dict
+  custom_objects:
+    default: None
+    descp: dict mapping class names (or function names) of custom (non-Keras) objects
+      to class/functions
+inputs:
+  optional:
+  - custom_objects
+  required:
+  - config
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/deserialize
+outputs: Layer instance (may be Model, Sequential, Network, Layer...)
+package: tensorflow
+target: deserialize
+title: tf.keras.layers.deserialize
+version: 2.1.0

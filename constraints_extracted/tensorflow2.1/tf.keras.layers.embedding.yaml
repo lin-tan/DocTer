@@ -1,0 +1,62 @@
+aliases:
+- tf.compat.v1.keras.layers.Embedding
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  activity_regularizer:
+    default: None
+    descp: ''
+  embeddings_constraint:
+    default: None
+    descp: Constraint function applied to the `embeddings` matrix.
+  embeddings_initializer:
+    default: uniform
+    descp: Initializer for the `embeddings` matrix.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  embeddings_regularizer:
+    default: None
+    descp: Regularizer function applied to the `embeddings` matrix.
+  input_dim:
+    descp: int > 0. Size of the vocabulary, i.e. maximum integer index + 1.
+  input_length:
+    default: None
+    descp: Length of input sequences, when it is constant. This argument is required
+      if you are going to connect`Flatten` then `Dense` layers upstream (without it,
+      the shape of the dense outputs cannot be computed).
+  mask_zero:
+    default: 'False'
+    descp: Whether or not the input value 0 is a special "padding" value that should
+      be masked out. This is useful when using recurrent layers which may take variable
+      length input. If this is `True` then all subsequent layers in the model need
+      to support masking or an exception will be raised. If mask_zero is set to True,
+      as a consequence, index 0 cannot be used in the vocabulary (input_dim should
+      equal size of vocabulary + 1).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  output_dim:
+    descp: int >= 0. Dimension of the dense embedding.
+inputs:
+  optional:
+  - embeddings_initializer
+  - embeddings_regularizer
+  - activity_regularizer
+  - embeddings_constraint
+  - mask_zero
+  - input_length
+  - '**kwargs'
+  required:
+  - input_dim
+  - output_dim
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Embedding
+package: tensorflow
+target: Embedding
+title: tf.keras.layers.Embedding
+version: 2.1.0

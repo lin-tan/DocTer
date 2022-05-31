@@ -1,0 +1,79 @@
+constraints:
+  field_delim:
+    default: ','
+    descp: An optional `string`. Defaults to `","`. char delimiter to separate fields
+      in a record.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  na_value:
+    default: ''
+    descp: Additional string to recognize as NA/NaN.
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  record_defaults:
+    descp: A list of `Tensor` objects with specific types. Acceptable types are `float32`,
+      `float64`, `int32`, `int64`, `string`. One tensor per column of the input record,
+      with either a scalar default value for that column or an empty vector if the
+      column is required.
+    dtype:
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  records:
+    descp: A `Tensor` of type `string`. Each string is a record/row in the csv and
+      all records should have the same format.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  select_cols:
+    default: None
+    descp: Optional sorted list of column indices to select. If specified, only this
+      subset of columns will be parsed and returned.
+    structure:
+    - list
+  use_quote_delim:
+    default: 'True'
+    descp: An optional `bool`. Defaults to `True`. If false, treats double quotation
+      marks as regular characters inside of the string fields (ignoring RFC 4180,
+      Section 2, Bullet 5).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If any of the arguments is malformed.
+inputs:
+  optional:
+  - field_delim
+  - use_quote_delim
+  - na_value
+  - select_cols
+  - name
+  required:
+  - records
+  - record_defaults
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_csv
+outputs: A list of `Tensor` objects. Has the same type as `record_defaults`. Each
+  tensor will have the same shape as records.
+package: tensorflow
+target: decode_csv
+title: tf.io.decode_csv
+version: 2.1.0

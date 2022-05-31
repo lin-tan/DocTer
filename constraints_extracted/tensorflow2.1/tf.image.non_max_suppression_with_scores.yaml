@@ -1,0 +1,90 @@
+aliases:
+- tf.compat.v1.image.non_max_suppression_with_scores
+constraints:
+  boxes:
+    descp: A 2-D float `Tensor` of shape `[num_boxes, 4]`.
+    dtype:
+    - float
+    ndim:
+    - '2'
+    shape:
+    - '[num_boxes,4]'
+    tensor_t:
+    - tf.tensor
+  iou_threshold:
+    default: '0.5'
+    descp: A float representing the threshold for deciding whether boxes overlap too
+      much with respect to IOU.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  max_output_size:
+    descp: A scalar integer `Tensor` representing the maximum number of boxes to be
+      selected by non max suppression.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  score_threshold:
+    default: float(-inf)
+    descp: A float representing the threshold for deciding when to remove boxes based
+      on score.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  scores:
+    descp: A 1-D float `Tensor` of shape `[num_boxes]` representing a single score
+      corresponding to each box (each row of boxes).
+    dtype:
+    - float
+    ndim:
+    - '1'
+    shape:
+    - '[num_boxes]'
+    tensor_t:
+    - tf.tensor
+  soft_nms_sigma:
+    default: '0.0'
+    descp: A scalar float representing the Soft NMS sigma parameter; See Bodla et
+      al, https://arxiv.org/abs/1704.04503).  When`soft_nms_sigma=0.0` (which is default),
+      we fall back to standard (hard) NMS.
+    dtype:
+    - float
+    ndim:
+    - '0'
+dependency:
+- num_boxes
+inputs:
+  optional:
+  - iou_threshold
+  - score_threshold
+  - soft_nms_sigma
+  - name
+  required:
+  - boxes
+  - scores
+  - max_output_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/non_max_suppression_with_scores
+outputs:
+- selected_indices: A 1-D integer `Tensor` of shape `[M]` representing the selected
+    indices from the boxes tensor, where `M <= max_output_size`.
+- selected_scores: A 1-D float tensor of shape `[M]` representing the corresponding
+    scores for each selected box, where `M <= max_output_size`. Scores only differ
+    from corresponding input scores when using Soft NMS (i.e. when `soft_nms_sigma>0`)
+package: tensorflow
+target: non_max_suppression_with_scores
+title: tf.image.non_max_suppression_with_scores
+version: 2.1.0

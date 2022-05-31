@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.floordiv
+- tf.compat.v1.math.floordiv
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: '`Tensor` numerator of real numeric type.'
+    dtype:
+    - numeric
+  y:
+    descp: '`Tensor` denominator of real numeric type.'
+    dtype:
+    - numeric
+exceptions:
+- TypeError: If the inputs are complex.
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/floordiv
+outputs: '`x / y` rounded down.'
+package: tensorflow
+target: floordiv
+title: tf.math.floordiv
+version: 2.1.0

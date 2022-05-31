@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.sequence.make_sampling_table
+constraints:
+  sampling_factor:
+    default: 1e-05
+    descp: The sampling factor in the word2vec formula.`
+    dtype:
+    - float
+    ndim:
+    - '0'
+  size:
+    descp: Int, number of possible words to sample.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - sampling_factor
+  required:
+  - size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/sequence/make_sampling_table
+outputs: '`A 1D Numpy array of length `size` where the ith entry is the probability
+  that a word of rank i should be sampled.`'
+package: tensorflow
+target: make_sampling_table
+title: tf.keras.preprocessing.sequence.make_sampling_table
+version: 2.1.0

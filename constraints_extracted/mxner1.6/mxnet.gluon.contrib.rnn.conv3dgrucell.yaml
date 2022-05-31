@@ -1,0 +1,153 @@
+check_nan: true
+constraints:
+  activation:
+    default: tanh
+    descp: Type of activation function used in n_t. If argument type is string, it's
+      equivalent to nn.Activation(act_type=str). See `Activation()` for available
+      choices. Alternatively, other activation blocks such as nn.LeakyReLU can be
+      used.
+    doc_dtype: str or gluon.Block, default 'tanh'
+    dtype:
+    - string
+    ndim:
+    - '0'
+  conv_layout:
+    default: NCDHW
+    descp: Layout for all convolution inputs, outputs and weights. Options are 'NCDHW'
+      and 'NDHWC'.
+    doc_dtype: str, default 'NCDHW'
+    dtype:
+    - string
+    ndim:
+    - '0'
+  h2h_bias_initializer:
+    default: zeros
+    descp: Initializer for the recurrent convolution bias vectors.
+    doc_dtype: str or Initializer, default zeros
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - list
+  h2h_dilate:
+    default: (1,1,1)
+    descp: Recurrent convolution dilate.
+    doc_dtype: int or tuple of int, default (1, 1, 1
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  h2h_kernel:
+    descp: Recurrent convolution kernel sizes. Only odd-numbered sizes are supported.
+    doc_dtype: int or tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+  h2h_weight_initializer:
+    default: None
+    descp: Initializer for the recurrent weights matrix, used for the input convolutions.
+    doc_dtype: str or Initializer
+    dtype:
+    - string
+  hidden_channels:
+    descp: Number of output channels.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  i2h_bias_initializer:
+    default: zeros
+    descp: Initializer for the input convolution bias vectors.
+    doc_dtype: str or Initializer, default zeros
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - list
+  i2h_dilate:
+    default: (1,1,1)
+    descp: Input convolution dilate.
+    doc_dtype: int or tuple of int, default (1, 1, 1
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  i2h_kernel:
+    descp: Input convolution kernel sizes.
+    doc_dtype: int or tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+  i2h_pad:
+    default: (0,0,0)
+    descp: Pad for input convolution.
+    doc_dtype: int or tuple of int, default (0, 0, 0
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  i2h_weight_initializer:
+    default: None
+    descp: Initializer for the input weights matrix, used for the input convolutions.
+    doc_dtype: str or Initializer
+    dtype:
+    - string
+  input_shape:
+    descp: Input tensor shape at each time step for each sample, excluding dimension
+      of the batch size and sequence length. Must be consistent with conv_layout.
+      For example, for layout 'NCDHW' the shape should be (C, D, H, W).
+    doc_dtype: tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+  params:
+    default: None
+    descp: Container for weight sharing between cells. Created if None.
+    doc_dtype: RNNParams, default None
+  prefix:
+    default: None
+    descp: Prefix for name of layers (and name of weight if params is None).
+    doc_dtype: "str, default `'conv_gru_`\u2019"
+    dtype:
+    - string
+inputs:
+  optional:
+  - i2h_pad
+  - i2h_dilate
+  - h2h_dilate
+  - i2h_weight_initializer
+  - h2h_weight_initializer
+  - i2h_bias_initializer
+  - h2h_bias_initializer
+  - conv_layout
+  - activation
+  - prefix
+  - params
+  required:
+  - input_shape
+  - hidden_channels
+  - i2h_kernel
+  - h2h_kernel
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/contrib/index.html#mxnet.gluon.contrib.rnn.Conv3DGRUCell
+package: mxnet
+target: Conv3DGRUCell
+title: mxnet.gluon.contrib.rnn.Conv3DGRUCell
+version: 1.6.0

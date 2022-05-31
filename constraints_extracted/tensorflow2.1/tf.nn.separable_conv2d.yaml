@@ -1,0 +1,78 @@
+check_nan: true
+constraints:
+  data_format:
+    default: None
+    descp: The data format for input. Either "NHWC" (default) or "NCHW".
+    enum:
+    - NCHW
+    - NHWC
+  depthwise_filter:
+    descp: 4-D `Tensor` with shape `[filter_height, filter_width, in_channels, channel_multiplier]`.
+      Contains `in_channels` convolutional filters of depth 1.
+    ndim:
+    - '4'
+    shape:
+    - '[filter_height,filter_width,in_channels,channel_multiplier]'
+    tensor_t:
+    - tf.tensor
+  dilations:
+    default: None
+    descp: 1-D of size 2. The dilation rate in which we sample input values across
+      the `height` and `width` dimensions in atrous convolution. If it is greater
+      than 1, then all values of strides must be 1.
+  input:
+    descp: 4-D `Tensor` with shape according to `data_format`.
+    ndim:
+    - '4'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    descp: A string, either `'VALID'` or `'SAME'`.  The padding algorithm. See the
+      "returns" section of `tf.nn.convolution` for details.
+    dtype:
+    - tf.string
+    enum:
+    - SAME
+    - VALID
+    ndim:
+    - '0'
+  pointwise_filter:
+    descp: 4-D `Tensor` with shape `[1, 1, channel_multiplier * in_channels, out_channels]`.  Pointwise
+      filter to mix channels after`depthwise_filter` has convolved spatially.
+    ndim:
+    - '4'
+    tensor_t:
+    - tf.tensor
+  strides:
+    descp: 1-D of size 4.  The strides for the depthwise convolution for each dimension
+      of `input`.
+dependency:
+- filter_width
+- channel_multiplier
+- in_channels
+- filter_height
+inputs:
+  optional:
+  - data_format
+  - dilations
+  - name
+  required:
+  - input
+  - depthwise_filter
+  - pointwise_filter
+  - strides
+  - padding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/separable_conv2d
+outputs: A 4-D `Tensor` with shape according to 'data_format'. For   example, with
+  data_format="NHWC", shape is [batch, out_height,   out_width, out_channels].
+package: tensorflow
+target: separable_conv2d
+title: tf.nn.separable_conv2d
+version: 2.1.0

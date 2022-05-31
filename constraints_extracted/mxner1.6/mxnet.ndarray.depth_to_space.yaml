@@ -1,0 +1,38 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  block_size:
+    default: _Null
+    descp: Blocks of [block_size. block_size] are moved
+    doc_dtype: int, required
+    dtype:
+    - int
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - block_size
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.depth_to_space
+package: mxnet
+target: depth_to_space
+title: mxnet.ndarray.depth_to_space
+version: 1.6.0

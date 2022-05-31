@@ -1,0 +1,46 @@
+check_nan: true
+constraints:
+  axis:
+    default: '-1'
+    descp: The class dimension. Defaulted to -1 which is the last dimension.
+    dtype:
+    - int
+  labels:
+    descp: Each vector along the class dimension should hold a valid probability distribution
+      e.g. for the case in which labels are of shape`[batch_size, num_classes]`, each
+      row of `labels[i]` must be a valid probability distribution.
+    ndim:
+    - '1'
+    - '2'
+    shape:
+    - '[batch_size,num_classes]'
+    - '[i]'
+  logits:
+    descp: Per-label activations, typically a linear output. These activation energies
+      are interpreted as unnormalized log probabilities.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+dependency:
+- i
+- num_classes
+- batch_size
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - labels
+  - logits
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/softmax_cross_entropy_with_logits
+outputs: A `Tensor` that contains the softmax cross entropy loss. Its type is the
+  same as `logits` and its shape is the same as `labels` except that it does not have
+  the last dimension of `labels`.
+package: tensorflow
+target: softmax_cross_entropy_with_logits
+title: tf.nn.softmax_cross_entropy_with_logits
+version: 2.1.0

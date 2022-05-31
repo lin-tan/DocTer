@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.regularizers.l1
+constraints:
+  l:
+    default: '0.01'
+    descp: Float; L1 regularization factor.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - l
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/regularizers/l1
+outputs: An L1 Regularizer with the given regularization factor.
+package: tensorflow
+target: l1
+title: tf.keras.regularizers.l1
+version: 2.1.0

@@ -1,0 +1,23 @@
+constraints:
+  device:
+    default: cuda
+    descp: 'The device to return the RNG state of. Default: `''cuda''` (i.e., `torch.device(''cuda'')`,
+      the current CUDA device).'
+    doc_dtype: torch.device or int, optional
+    dtype:
+    - int
+    - string
+    - torch.bool
+    enum:
+    - cuda
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - device
+  required: []
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.get_rng_state
+package: torch
+target: get_rng_state
+title: torch.cuda.get_rng_state
+version: 1.5.0

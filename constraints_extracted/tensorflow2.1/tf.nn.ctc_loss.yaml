@@ -1,0 +1,94 @@
+aliases:
+- tf.compat.v1.nn.ctc_loss_v2
+check_nan: true
+constraints:
+  blank_index:
+    default: None
+    descp: (optional) Set the class index to use for the blank label. Negative values
+      will start from num_classes, ie, -1 will reproduce the ctc_loss behavior of
+      using num_classes - 1 for the blank symbol. There is some memory/performance
+      overhead to switching from the default of 0 as an additional shifted copy of
+      the logits may be created.
+  label_length:
+    descp: tensor of shape [batch_size], None if labels is SparseTensor Length of
+      reference label sequence in labels.
+    ndim:
+    - '1'
+    shape:
+    - '[batch_size]'
+    structure:
+    - list
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  labels:
+    descp: tensor of shape [batch_size, max_label_seq_length] or SparseTensor
+    ndim:
+    - '2'
+    shape:
+    - '[batch_size,max_label_seq_length]'
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  logit_length:
+    descp: tensor of shape [batch_size] Length of input sequence in logits.
+    ndim:
+    - '1'
+    shape:
+    - '[batch_size]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  logits:
+    descp: tensor of shape [frames, batch_size, num_labels], if logits_time_major
+      == False, shape is [batch_size, frames, num_labels].
+    ndim:
+    - '3'
+    shape:
+    - '[batch_size,frames,num_labels]'
+    - '[frames,batch_size,num_labels]'
+    tensor_t:
+    - tf.tensor
+  logits_time_major:
+    default: 'True'
+    descp: (optional) If True (default), logits is shaped [time, batch, logits]. If
+      False, shape is [batch, time, logits]
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this `Op`. Defaults to "ctc_loss_dense".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  unique:
+    default: None
+    descp: (optional) Unique label indices as computed by ctc_unique_labels(labels).  If
+      supplied, enable a faster, memory efficient implementation on TPU.
+dependency:
+- frames
+- num_labels
+- batch_size
+- max_label_seq_length
+inputs:
+  optional:
+  - logits_time_major
+  - unique
+  - blank_index
+  - name
+  required:
+  - labels
+  - logits
+  - label_length
+  - logit_length
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/ctc_loss
+outputs:
+- loss: tensor of shape [batch_size], negative log probabilities.
+package: tensorflow
+target: ctc_loss
+title: tf.nn.ctc_loss
+version: 2.1.0

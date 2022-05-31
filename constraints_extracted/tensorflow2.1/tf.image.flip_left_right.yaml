@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.image.flip_left_right
+constraints:
+  image:
+    descp: 4-D Tensor of shape `[batch, height, width, channels]` or 3-D Tensor of
+      shape `[height, width, channels]`.
+    ndim:
+    - '3'
+    - '4'
+    shape:
+    - '[batch,height,width,channels]'
+    - '[height,width,channels]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- batch
+- width
+- channels
+- height
+exceptions:
+- ValueError: if the shape of `image` not supported.
+inputs:
+  optional: []
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/flip_left_right
+outputs: A tensor of the same type and shape as `image`.
+package: tensorflow
+target: flip_left_right
+title: tf.image.flip_left_right
+version: 2.1.0

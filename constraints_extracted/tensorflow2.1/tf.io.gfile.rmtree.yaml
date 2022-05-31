@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.io.gfile.rmtree
+constraints:
+  path:
+    descp: string, a path
+    dtype:
+    - tf.string
+exceptions:
+- errors.OpError: If the operation fails.
+inputs:
+  optional: []
+  required:
+  - path
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/rmtree
+package: tensorflow
+target: rmtree
+title: tf.io.gfile.rmtree
+version: 2.1.0

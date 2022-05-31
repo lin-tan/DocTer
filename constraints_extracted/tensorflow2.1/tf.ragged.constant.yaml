@@ -1,0 +1,71 @@
+aliases:
+- tf.compat.v1.ragged.constant
+constraints:
+  dtype:
+    default: None
+    descp: The type of elements for the returned `RaggedTensor`.  If not specified,
+      then a default is chosen based on the scalar values in`pylist`.
+    dtype:
+    - tf.dtype
+  inner_shape:
+    default: None
+    descp: A tuple of integers specifying the shape for individual inner values in
+      the returned `RaggedTensor`.  Defaults to `()` if `ragged_rank`is not specified.  If
+      `ragged_rank` is specified, then a default is chosen based on the contents of
+      `pylist`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - tuple
+  name:
+    default: None
+    descp: A name prefix for the returned tensor (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pylist:
+    descp: A nested `list`, `tuple` or `np.ndarray`.  Any nested element that is not
+      a `list`, `tuple` or `np.ndarray` must be a scalar value compatible with `dtype`.
+    structure:
+    - list
+    - tuple
+  ragged_rank:
+    default: None
+    descp: 'An integer specifying the ragged rank of the returned`RaggedTensor`.  Must
+      be nonnegative and less than `K`. Defaults to`max(0, K - 1)` if `inner_shape`
+      is not specified.  Defaults to `max(0, K 1 - len(inner_shape))`if`inner_shape`
+      is specified. '
+    dtype:
+    - int
+    ndim:
+    - '0'
+  row_splits_dtype:
+    default: tf.dtypes.int64
+    descp: data type for the constructed `RaggedTensor`'s row_splits. One of `tf.int32`
+      or `tf.int64`.
+    dtype:
+    - tf.dtype
+    - tf.int32
+    - tf.int64
+exceptions:
+- ValueError: If the scalar values in `pylist` have inconsistent nesting depth; or
+    if ragged_rank or inner_shape are incompatible with `pylist`.
+inputs:
+  optional:
+  - dtype
+  - ragged_rank
+  - inner_shape
+  - name
+  - row_splits_dtype
+  required:
+  - pylist
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ragged/constant
+outputs: A potentially ragged tensor with rank `K` and the specified `ragged_rank`,
+  containing the values from `pylist`.
+package: tensorflow
+target: constant
+title: tf.ragged.constant
+version: 2.1.0

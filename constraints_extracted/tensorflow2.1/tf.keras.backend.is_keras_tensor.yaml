@@ -1,0 +1,19 @@
+aliases:
+- tf.compat.v1.keras.backend.is_keras_tensor
+constraints:
+  x:
+    descp: A candidate tensor.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: In case `x` is not a symbolic tensor.
+inputs:
+  optional: []
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/is_keras_tensor
+outputs: 'A boolean: Whether the argument is a Keras tensor.'
+package: tensorflow
+target: is_keras_tensor
+title: tf.keras.backend.is_keras_tensor
+version: 2.1.0

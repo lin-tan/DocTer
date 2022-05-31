@@ -1,0 +1,49 @@
+aliases:
+- tf.compat.v1.keras.layers.Cropping2D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  cropping:
+    default: ((0, 0), (0, 0))
+    descp: 'Int, or tuple of 2 ints, or tuple of 2 tuples of 2 ints. If int: the same
+      symmetric cropping is applied to height and width.If tuple of 2 ints: interpreted
+      as two different symmetric cropping values for height and width:`(symmetric_height_crop,
+      symmetric_width_crop)`.If tuple of 2 tuples of 2 ints: interpreted as`((top_crop,
+      bottom_crop), (left_crop, right_crop))` '
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - tuple
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      height, width, channels)` while `channels_first`corresponds to inputs with shape`(batch,
+      channels, height, width)`. It defaults to the `image_data_format` value found
+      in your Keras config file at `~/.keras/keras.json`. If you never set it, then
+      it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - cropping
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Cropping2D
+package: tensorflow
+target: Cropping2D
+title: tf.keras.layers.Cropping2D
+version: 2.1.0

@@ -1,0 +1,19 @@
+constraints:
+  ctx:
+    descp: Loads the model into one or many context(s).
+    doc_dtype: Context or list of Context
+  model_file:
+    descp: ONNX model file name
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - model_file
+  - ctx
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/onnx/index.html#mxnet.contrib.onnx.import_to_gluon
+package: mxnet
+target: import_to_gluon
+title: mxnet.contrib.onnx.import_to_gluon
+version: 1.6.0

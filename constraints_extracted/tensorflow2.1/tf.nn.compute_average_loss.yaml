@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.nn.compute_average_loss
+check_nan: true
+constraints:
+  global_batch_size:
+    default: None
+    descp: Optional global batch size value. Defaults to (size of first dimension
+      of `losses`) * (number of replicas).
+    enum:
+    - losses
+    ndim:
+    - '0'
+  per_example_loss:
+    descp: Per-example loss.
+  sample_weight:
+    default: None
+    descp: Optional weighting for each example.
+inputs:
+  optional:
+  - sample_weight
+  - global_batch_size
+  required:
+  - per_example_loss
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/compute_average_loss
+outputs: Scalar loss value.
+package: tensorflow
+target: compute_average_loss
+title: tf.nn.compute_average_loss
+version: 2.1.0

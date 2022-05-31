@@ -1,0 +1,42 @@
+aliases:
+- tf.minimum
+- tf.compat.v1.math.minimum
+- tf.compat.v1.minimum
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `bfloat16`, `half`, `float32`,
+      `float64`, `int32`, `int64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor`. Must have the same type as `x`.
+    dtype:
+    - dtype:&x
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/minimum
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: minimum
+title: tf.math.minimum
+version: 2.1.0

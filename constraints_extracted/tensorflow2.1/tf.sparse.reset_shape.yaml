@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.sparse.reset_shape
+- tf.compat.v1.sparse_reset_shape
+constraints:
+  new_shape:
+    default: None
+    descp: None or a vector representing the new shape for the returned`SparseTensor`.
+    structure:
+    - list
+    tensor_t:
+    - SparseTensor
+  sp_input:
+    descp: The input `SparseTensor`.
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+- ValueError: If `new_shape` represents a tensor with a different rank from that of
+    `sp_input` (if shapes are known when graph is constructed).
+- ValueError: If `new_shape` is determined during graph build to have dimension sizes
+    that are too small.
+- OpError: '- If `new_shape` has dimension sizes that are too small. If shapes are
+    not known during graph construction time, and during run time it is found out
+    that the ranks do not match. '
+inputs:
+  optional:
+  - new_shape
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/reset_shape
+outputs: A `SparseTensor` indices and values unchanged from `input_sp`. Its shape
+  is   `new_shape` if that is set. Otherwise it is the tight bounding box of    `input_sp`
+package: tensorflow
+target: reset_shape
+title: tf.sparse.reset_shape
+version: 2.1.0

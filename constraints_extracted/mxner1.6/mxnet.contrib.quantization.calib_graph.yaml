@@ -1,0 +1,43 @@
+constraints:
+  arg_params:
+    descp: ''
+  aux_params:
+    descp: ''
+  calib_mode:
+    default: entropy
+    descp: ''
+    dtype:
+    - string
+    ndim:
+    - '0'
+  collector:
+    descp: ''
+  logger:
+    default: <moduleloggingfrom/work/conda_env/lib/python3.8/logging/__init__.py>
+    descp: A logging object for printing information during the process of quantization.
+    doc_dtype: Object
+  qsym:
+    descp: ''
+  quantized_dtype:
+    default: int8
+    descp: The quantized destination type for input data. Currently support 'int8'
+      , 'uint8' and 'auto'. 'auto' means automatically select output type according
+      to calibration result. Default value is 'int8'.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - calib_mode
+  - quantized_dtype
+  - logger
+  required:
+  - qsym
+  - arg_params
+  - aux_params
+  - collector
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/quantization/index.html#mxnet.contrib.quantization.calib_graph
+package: mxnet
+target: calib_graph
+title: mxnet.contrib.quantization.calib_graph
+version: 1.6.0

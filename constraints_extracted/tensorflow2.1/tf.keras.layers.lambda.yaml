@@ -1,0 +1,49 @@
+aliases:
+- tf.compat.v1.keras.layers.Lambda
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  arguments:
+    default: None
+    descp: 'Optional dictionary of keyword arguments to be passed to the function.
+      Input shape: Arbitrary. Use the keyword argument input_shape (tuple of integers,
+      does not include the samples axis) when using this layer as the first layer
+      in a model. Output shape: Specified by `output_shape` argument'
+    structure:
+    - dict
+  function:
+    descp: The function to be evaluated. Takes input tensor as first argument.
+  mask:
+    default: None
+    descp: Either None (indicating no masking) or a callable with the same signature
+      as the `compute_mask` layer method, or a tensor that will be returned as output
+      mask regardless what the input is.
+    tensor_t:
+    - tf.tensor
+  output_shape:
+    default: None
+    descp: 'Expected output shape from function. This argument can be inferred if
+      not explicitly provided. Can be a tuple or function. If a tuple, it only specifies
+      the first dimension onward; sample dimension is assumed either the same as the
+      input: `output_shape = (input_shape[0], ) + output_shape` or, the input is `None`
+      and the sample dimension is also `None`: `output_shape = (None, ) + output_shape`
+      If a function, it specifies the entire shape as a function of the input shape:
+      `output_shape = f(input_shape)`'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - output_shape
+  - mask
+  - arguments
+  - '**kwargs'
+  required:
+  - function
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Lambda
+package: tensorflow
+target: Lambda
+title: tf.keras.layers.Lambda
+version: 2.1.0

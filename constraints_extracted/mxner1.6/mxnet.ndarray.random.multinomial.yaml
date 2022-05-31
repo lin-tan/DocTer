@@ -1,0 +1,72 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    descp: An n dimensional array whose last dimension has length k, where k is the
+      number of possible outcomes of each multinomial distribution. For example, data
+      with shape (m, n, k) specifies m*n multinomial distributions each with k possible
+      outcomes.
+    doc_dtype: NDArray
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+  dtype:
+    default: int32
+    descp: Data type of the sample output array. The default is int32. Note that the
+      data type of the log likelihood array is the same with that of data.
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+    structure:
+    - ndarray
+  get_prob:
+    default: 'False'
+    descp: If true, a second array containing log likelihood of the drawn samples
+      will also be returned. This is usually used for reinforcement learning, where
+      you can provide reward as head gradient w.r.t. this array to estimate gradient.
+    doc_dtype: bool, optional
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: Store output to an existing NDArray.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: The number of samples to draw from each distribution. If shape is empty
+      one sample will be drawn from each distribution.
+    doc_dtype: int or tuple of ints, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - shape
+  - get_prob
+  - out
+  - dtype
+  required:
+  - data
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.multinomial
+package: mxnet
+target: multinomial
+title: mxnet.ndarray.random.multinomial
+version: 1.6.0

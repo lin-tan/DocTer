@@ -1,0 +1,30 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axes:
+    default: ()
+    descp: The axes on which dropout mask is shared. If empty, regular dropout is
+      applied.
+    doc_dtype: 'tuple of int, default '
+    dtype:
+    - int
+    structure:
+    - tuple
+  rate:
+    descp: Fraction of the input units to drop. Must be a number between 0 and 1.
+    doc_dtype: float
+    dtype:
+    - float
+inputs:
+  optional:
+  - axes
+  required:
+  - rate
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Dropout
+package: mxnet
+target: Dropout
+title: mxnet.gluon.nn.Dropout
+version: 1.6.0

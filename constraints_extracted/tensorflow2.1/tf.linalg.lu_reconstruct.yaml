@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.linalg.lu_reconstruct
+constraints:
+  lower_upper:
+    descp: '`lu` as returned by `tf.linalg.lu`, i.e., if `matmul(P, matmul(L, U))
+      = X` then `lower_upper = L + U - eye`.'
+  name:
+    default: None
+    descp: 'Python `str` name given to ops managed by this object. Default value:
+      `None` (i.e., ''lu_reconstruct'').'
+    dtype:
+    - tf.string
+    enum:
+    - None
+    - lu_reconstruct
+    ndim:
+    - '0'
+  perm:
+    descp: '`p` as returned by `tf.linag.lu`, i.e., if `matmul(P, matmul(L, U)) =
+      X` then `perm = argmax(P)`.'
+  validate_args:
+    default: 'False'
+    descp: 'Python `bool` indicating whether arguments should be checked for correctness.
+      Default value: `False` (i.e., don''t validate arguments).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - validate_args
+  - name
+  required:
+  - lower_upper
+  - perm
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/lu_reconstruct
+outputs:
+- x: The original input to `tf.linalg.lu`, i.e., `x` as in,`lu_reconstruct(*tf.linalg.lu(x))`.
+package: tensorflow
+target: lu_reconstruct
+title: tf.linalg.lu_reconstruct
+version: 2.1.0

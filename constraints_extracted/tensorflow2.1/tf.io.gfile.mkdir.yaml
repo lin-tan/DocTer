@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.io.gfile.mkdir
+constraints:
+  path:
+    descp: string, name of the directory to be created
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- errors.OpError: If the operation fails.
+inputs:
+  optional: []
+  required:
+  - path
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/mkdir
+package: tensorflow
+target: mkdir
+title: tf.io.gfile.mkdir
+version: 2.1.0

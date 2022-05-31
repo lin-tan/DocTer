@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  k:
+    default: _Null
+    descp: Limit of unsuccessful experiments.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  p:
+    default: _Null
+    descp: Failure probability in each experiment.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - k
+  - p
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/random/index.html#mxnet.ndarray.random.negative_binomial_like
+package: mxnet
+target: negative_binomial_like
+title: mxnet.ndarray.random.negative_binomial_like
+version: 1.6.0

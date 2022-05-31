@@ -1,0 +1,33 @@
+constraints:
+  dtype:
+    default: tf.dtypes.int64
+    descp: (Optional.) The data type for counter elements. Defaults to`tf.int64`.
+    dtype:
+    - tf.dtype
+    - tf.int64
+  start:
+    default: '0'
+    descp: (Optional.) The starting value for the counter. Defaults to 0.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  step:
+    default: '1'
+    descp: (Optional.) The step size for the counter. Defaults to 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - start
+  - step
+  - dtype
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/Counter
+outputs: A `Dataset` of scalar `dtype` elements.
+package: tensorflow
+target: Counter
+title: tf.data.experimental.Counter
+version: 2.1.0

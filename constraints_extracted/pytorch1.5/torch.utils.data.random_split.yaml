@@ -1,0 +1,19 @@
+constraints:
+  dataset:
+    descp: Dataset to be split
+    doc_dtype: Dataset
+  lengths:
+    descp: lengths of splits to be produced
+    doc_dtype: sequence
+    structure:
+    - list
+inputs:
+  optional: []
+  required:
+  - dataset
+  - lengths
+link: https://pytorch.org/docs/1.5.0/data.html#torch.utils.data.random_split
+package: torch
+target: random_split
+title: torch.utils.data.random_split
+version: 1.5.0

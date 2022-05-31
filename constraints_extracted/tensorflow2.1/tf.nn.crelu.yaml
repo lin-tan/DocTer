@@ -1,0 +1,39 @@
+check_nan: true
+constraints:
+  axis:
+    default: '-1'
+    descp: The axis that the output values are concatenated along. Default is -1.
+    dtype:
+    - int
+  features:
+    descp: A `Tensor` with type `float`, `double`, `int32`, `int64`, `uint8`,`int16`,
+      or `int8`.
+    dtype:
+    - float
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - features
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/crelu
+outputs: A `Tensor` with the same type as `features`.
+package: tensorflow
+target: crelu
+title: tf.nn.crelu
+version: 2.1.0

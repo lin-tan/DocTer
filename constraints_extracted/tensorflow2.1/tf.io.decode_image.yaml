@@ -1,0 +1,64 @@
+aliases:
+- tf.image.decode_image
+- tf.compat.v1.image.decode_image
+- tf.compat.v1.io.decode_image
+constraints:
+  channels:
+    default: None
+    descp: An optional `int`. Defaults to `0`. Number of color channels for the decoded
+      image.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  contents:
+    descp: 0-D `string`. The encoded image bytes.
+    dtype:
+    - tf.string
+  dtype:
+    default: tf.dtypes.uint8
+    descp: The desired DType of the returned `Tensor`.
+    dtype:
+    - tf.dtype
+    - tf.uint8
+  expand_animations:
+    default: 'True'
+    descp: Controls the shape of the returned op's output. If`True`, the returned
+      op will produce a 3-D tensor for PNG, JPEG, and BMP files; and a 4-D tensor
+      for all GIFs, whether animated or not. If,`False`, the returned op will produce
+      a 3-D tensor for all file types and will truncate animated GIFs to the first
+      frame.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    - '3'
+    - '4'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: On incorrect number of channels.
+inputs:
+  optional:
+  - channels
+  - dtype
+  - name
+  - expand_animations
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_image
+outputs: '`Tensor` with type `dtype` and a 3- or 4-dimensional shape, depending on
+  the file type and the value of the `expand_animations` parameter.'
+package: tensorflow
+target: decode_image
+title: tf.io.decode_image
+version: 2.1.0

@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  params:
+    default: None
+    descp: Container for weight sharing between cells. A new Parameter container is
+      created if params is None.
+    doc_dtype: Parameter or None, default None
+  prefix:
+    default: None
+    descp: Prefix for names of Block`s (this prefix is also used for names of weights
+      if `params is None i.e. if params are being created and not reused)
+    doc_dtype: str, optional
+    dtype:
+    - string
+inputs:
+  optional:
+  - prefix
+  - params
+  required: []
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/rnn/index.html#mxnet.gluon.rnn.RecurrentCell
+package: mxnet
+target: RecurrentCell
+title: mxnet.gluon.rnn.RecurrentCell
+version: 1.6.0

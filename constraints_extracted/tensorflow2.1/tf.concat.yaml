@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.concat
+constraints:
+  axis:
+    descp: 0-D `int32` `Tensor`.  Dimension along which to concatenate. Must be in
+      the range `[-rank(values), rank(values))`. As in Python, indexing for axis is
+      0-based. Positive axis in the rage of `[0, rank(values))` refers to `axis`-th
+      dimension. And negative axis refers to `axis + rank(values)`-th dimension.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: concat
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    descp: A list of `Tensor` objects or a single `Tensor`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - values
+  - axis
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/concat
+outputs: A `Tensor` resulting from concatenation of the input tensors.
+package: tensorflow
+target: concat
+title: tf.concat
+version: 2.1.0

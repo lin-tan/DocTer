@@ -1,0 +1,35 @@
+constraints:
+  a:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  conjugate:
+    default: 'False'
+    descp: Optional bool. Setting it to `True` is mathematically equivalent to tf.math.conj(tf.transpose(input)).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: transpose
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  perm:
+    default: None
+    descp: A permutation of the dimensions of `a`.
+inputs:
+  optional:
+  - perm
+  - conjugate
+  - name
+  required:
+  - a
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/transpose
+outputs: A transposed `Tensor`.
+package: tensorflow
+target: transpose
+title: tf.transpose
+version: 2.1.0

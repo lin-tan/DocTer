@@ -1,0 +1,78 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input array to the embedding operator.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dtype:
+    default: _Null
+    descp: Data type of weight.
+    doc_dtype: '{''float16'', ''float32'', ''float64'', ''int32'', ''int64'', ''int8'',
+      ''uint8''},optional, default=''float32'''
+    enum:
+    - float16
+    - float32
+    - float64
+    - int32
+    - int64
+    - int8
+    - uint8
+  input_dim:
+    default: _Null
+    descp: Vocabulary size of the input indices.
+    doc_dtype: int, required
+    dtype:
+    - int
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_dim:
+    default: _Null
+    descp: Dimension of the embedding vectors.
+    doc_dtype: int, required
+    dtype:
+    - int
+    structure:
+    - list
+  sparse_grad:
+    default: _Null
+    descp: Compute row sparse gradient in the backward calculation. If set to True,
+      the grad's storage type is row_sparse.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  weight:
+    default: None
+    descp: The embedding weight matrix.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - weight
+  - input_dim
+  - output_dim
+  - dtype
+  - sparse_grad
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.Embedding
+package: mxnet
+target: Embedding
+title: mxnet.ndarray.Embedding
+version: 1.6.0

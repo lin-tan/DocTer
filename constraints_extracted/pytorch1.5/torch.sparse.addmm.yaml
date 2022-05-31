@@ -1,0 +1,45 @@
+constraints:
+  alpha:
+    default: '1'
+    descp: multiplier for mat1 @ mat2  ( alpha )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  beta:
+    default: '1'
+    descp: multiplier for `mat` ( beta )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  mat:
+    descp: a dense matrix to be added
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  mat1:
+    descp: a sparse matrix to be multiplied
+    doc_dtype: SparseTensor
+    tensor_t:
+    - SparseTensor
+  mat2:
+    descp: a dense matrix be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - beta
+  - alpha
+  required:
+  - mat
+  - mat1
+  - mat2
+link: https://pytorch.org/docs/1.5.0/sparse.html#torch.sparse.addmm
+package: torch
+target: addmm
+title: torch.sparse.addmm
+version: 1.5.0

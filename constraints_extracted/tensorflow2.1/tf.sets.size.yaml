@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.sets.set_size
+- tf.compat.v1.sets.size
+constraints:
+  a:
+    descp: '`SparseTensor`, with indices sorted in row-major order.'
+    tensor_t:
+    - SparseTensor
+  validate_indices:
+    default: 'True'
+    descp: Whether to validate the order and range of sparse indices in `a`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `a` is an invalid types.
+inputs:
+  optional:
+  - validate_indices
+  required:
+  - a
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sets/size
+outputs: '`int32` `Tensor` of set sizes. For `a` ranked `n`, this is a `Tensor` with
+  rank `n-1`, and the same 1st `n-1` dimensions as `a`. Each value is the number of
+  unique elements in the corresponding `[0...n-1]` dimension of `a`.'
+package: tensorflow
+target: size
+title: tf.sets.size
+version: 2.1.0

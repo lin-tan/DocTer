@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  lhs:
+    descp: First input of the function.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second input of the function. If `lhs.shape != rhs.shape`, they must be
+      broadcastable to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.logical_xor
+package: mxnet
+target: logical_xor
+title: mxnet.ndarray.logical_xor
+version: 1.6.0

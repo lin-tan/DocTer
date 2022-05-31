@@ -1,0 +1,17 @@
+constraints:
+  '*matrices':
+    descp: a sequence of 2 or more 2-D tensors whose product is to be determined.
+    doc_dtype: Tensors...
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - '*matrices'
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.chain_matmul
+package: torch
+target: chain_matmul
+title: torch.chain_matmul
+version: 1.5.0

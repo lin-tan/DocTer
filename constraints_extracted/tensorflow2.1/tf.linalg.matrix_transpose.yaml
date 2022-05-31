@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.linalg.matrix_transpose
+- tf.compat.v1.linalg.transpose
+- tf.compat.v1.matrix_transpose
+constraints:
+  a:
+    descp: A `Tensor` with `rank >= 2`.
+    tensor_t:
+    - tf.tensor
+  conjugate:
+    default: 'False'
+    descp: Optional bool. Setting it to `True` is mathematically equivalent to tf.math.conj(tf.linalg.matrix_transpose(input)).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: matrix_transpose
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If `a` is determined statically to have `rank < 2`.
+inputs:
+  optional:
+  - name
+  - conjugate
+  required:
+  - a
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/matrix_transpose
+outputs: A transposed batch matrix `Tensor`.
+package: tensorflow
+target: matrix_transpose
+title: tf.linalg.matrix_transpose
+version: 2.1.0

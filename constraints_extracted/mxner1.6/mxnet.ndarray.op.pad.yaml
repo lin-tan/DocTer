@@ -1,0 +1,65 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  constant_value:
+    default: _Null
+    descp: The value used for padding when mode is "constant".
+    doc_dtype: double, optional, default=0
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: An n-dimensional input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mode:
+    default: _Null
+    descp: Padding type to use. "constant" pads with constant_value "edge" pads using
+      the edge values of the input array "reflect" pads by reflecting values with
+      respect to the edges.
+    doc_dtype: '{''constant'', ''edge'', ''reflect''}, required'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  pad_width:
+    default: _Null
+    descp: Widths of the padding regions applied to the edges of each axis. It is
+      a tuple of integer padding widths for each axis of the format `(before_1, after_1,
+      ... , before_N, after_N)`. It should be of length `2*N` where `N` is the number
+      of dimensions of the array.This is equivalent to pad_width in numpy.pad, but
+      flattened.
+    doc_dtype: Shape(tuple), required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+    - tuple
+inputs:
+  optional:
+  - data
+  - mode
+  - pad_width
+  - constant_value
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.pad
+package: mxnet
+target: pad
+title: mxnet.ndarray.op.pad
+version: 1.6.0

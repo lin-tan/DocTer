@@ -1,0 +1,28 @@
+constraints:
+  input:
+    descp: the first multiplicand tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  other:
+    descp: the second multiplicand tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - other
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.mul
+package: torch
+target: mul
+title: torch.mul
+version: 1.5.0

@@ -1,0 +1,53 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: The axes to perform the broadcasting.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  size:
+    default: _Null
+    descp: Target sizes of the broadcasting axes.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - axis
+  - size
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.broadcast_axes
+package: mxnet
+target: broadcast_axes
+title: mxnet.ndarray.broadcast_axes
+version: 1.6.0

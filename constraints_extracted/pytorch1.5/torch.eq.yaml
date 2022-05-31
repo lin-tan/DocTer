@@ -1,0 +1,31 @@
+constraints:
+  input:
+    descp: the tensor to compare
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  other:
+    descp: the tensor or value to compare
+    doc_dtype: Tensor or float
+    dtype:
+    - torch.float32
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor. Must be a ByteTensor
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - other
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.eq
+package: torch
+ret_type: Tensor
+target: eq
+title: torch.eq
+version: 1.5.0

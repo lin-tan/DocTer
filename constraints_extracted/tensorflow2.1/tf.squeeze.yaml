@@ -1,0 +1,40 @@
+constraints:
+  axis:
+    default: None
+    descp: An optional list of `ints`. Defaults to `[]`. If specified, only squeezes
+      the dimensions listed. The dimension index starts at 0. It is an error to squeeze
+      a dimension that is not 1. Must be in the range`[-rank(input), rank(input))`.
+      Must be specified if `input` is a`RaggedTensor`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+  input:
+    descp: A `Tensor`. The `input` to squeeze.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: The input cannot be converted to a tensor, or the specified axis cannot
+    be squeezed.
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/squeeze
+outputs: A `Tensor`. Has the same type as `input`. Contains the same data as `input`,
+  but has one or more dimensions of size 1 removed.
+package: tensorflow
+target: squeeze
+title: tf.squeeze
+version: 2.1.0

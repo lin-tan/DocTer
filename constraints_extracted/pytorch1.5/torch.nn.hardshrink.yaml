@@ -1,0 +1,19 @@
+check_nan: true
+constraints:
+  lambd:
+    default: '0.5'
+    descp: 'the  lambda  value for the Hardshrink formulation. Default: 0.5'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - lambd
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Hardshrink
+package: torch
+target: Hardshrink
+title: torch.nn.Hardshrink
+version: 1.5.0

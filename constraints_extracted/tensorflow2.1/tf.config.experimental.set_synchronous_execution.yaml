@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.config.experimental.set_synchronous_execution
+constraints:
+  enable:
+    descp: 'Whether operations should be dispatched synchronously. Valid values: None:
+      sets the system default.True: executes each operation synchronously.False: executes
+      each operation asynchronously. '
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional: []
+  required:
+  - enable
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/experimental/set_synchronous_execution
+package: tensorflow
+target: set_synchronous_execution
+title: tf.config.experimental.set_synchronous_execution
+version: 2.1.0

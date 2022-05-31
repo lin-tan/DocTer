@@ -1,0 +1,49 @@
+aliases:
+- tf.compat.v1.linalg.solve
+- tf.compat.v1.matrix_solve
+constraints:
+  adjoint:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. Boolean indicating whether to
+      solve with `matrix` or its (block-wise) adjoint.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  matrix:
+    descp: 'A `Tensor`. Must be one of the following types: `float64`, `float32`,
+      `half`, `complex64`, `complex128`. Shape is `[..., M, M]`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  rhs:
+    descp: A `Tensor`. Must have the same type as `matrix`. Shape is `[..., M, K]`.
+    dtype:
+    - dtype:&matrix
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - adjoint
+  - name
+  required:
+  - matrix
+  - rhs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/solve
+outputs: A `Tensor`. Has the same type as `matrix`.
+package: tensorflow
+target: solve
+title: tf.linalg.solve
+version: 2.1.0

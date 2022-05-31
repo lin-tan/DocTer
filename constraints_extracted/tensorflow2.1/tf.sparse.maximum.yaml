@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.sparse.maximum
+- tf.compat.v1.sparse_maximum
+constraints:
+  name:
+    default: None
+    descp: optional name of the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_a:
+    descp: a `SparseTensor` operand whose dtype is real, and indices lexicographically
+      ordered.
+  sp_b:
+    descp: the other `SparseTensor` operand with the same requirements (and the same
+      shape).
+inputs:
+  optional:
+  - name
+  required:
+  - sp_a
+  - sp_b
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/maximum
+outputs:
+- output: the output SparseTensor.
+package: tensorflow
+target: maximum
+title: tf.sparse.maximum
+version: 2.1.0

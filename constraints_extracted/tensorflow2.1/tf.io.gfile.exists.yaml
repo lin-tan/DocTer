@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.io.gfile.exists
+constraints:
+  path:
+    descp: string, a path
+    dtype:
+    - tf.string
+exceptions:
+- errors.OpError: Propagates any errors reported by the FileSystem API.
+inputs:
+  optional: []
+  required:
+  - path
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/exists
+outputs: True if the path exists, whether it's a file or a directory. False if the
+  path does not exist and there are no filesystem errors.
+package: tensorflow
+target: exists
+title: tf.io.gfile.exists
+version: 2.1.0

@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.backend.concatenate
+constraints:
+  axis:
+    default: '-1'
+    descp: concatenation axis.
+    dtype:
+    - int
+  tensors:
+    descp: list of tensors to concatenate.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - tensors
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/concatenate
+outputs: A tensor.
+package: tensorflow
+target: concatenate
+title: tf.keras.backend.concatenate
+version: 2.1.0

@@ -1,0 +1,63 @@
+check_nan: true
+constraints:
+  _random_samples:
+    default: None
+    descp: ''
+  kernel_size:
+    descp: the size of the window to take a max over. Can be a single number k (for
+      a square kernel of k x k) or a tuple (kh, kw)
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+  output_ratio:
+    default: None
+    descp: If one wants to have an output size as a ratio of the input size, this
+      option can be given. This has to be a number or tuple in the range (0, 1)
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  output_size:
+    default: None
+    descp: the target output size of the image of the form oH x oW. Can be a tuple
+      (oH, oW) or a single number oH for a square image oH x oH
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  return_indices:
+    default: 'False'
+    descp: 'if `True`, will return the indices along with the outputs. Useful to pass
+      to `nn.MaxUnpool2d()`. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - output_size
+  - output_ratio
+  - return_indices
+  - _random_samples
+  required:
+  - kernel_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.FractionalMaxPool2d
+package: torch
+target: FractionalMaxPool2d
+title: torch.nn.FractionalMaxPool2d
+version: 1.5.0

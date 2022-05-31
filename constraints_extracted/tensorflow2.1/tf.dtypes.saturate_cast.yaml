@@ -1,0 +1,30 @@
+aliases:
+- tf.saturate_cast
+- tf.compat.v1.dtypes.saturate_cast
+- tf.compat.v1.saturate_cast
+constraints:
+  dtype:
+    descp: The desired output `DType`.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  value:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - value
+  - dtype
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/dtypes/saturate_cast
+outputs: '`value` safely cast to `dtype`.'
+package: tensorflow
+target: saturate_cast
+title: tf.dtypes.saturate_cast
+version: 2.1.0

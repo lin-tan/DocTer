@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.grad_pass_through
+constraints:
+  f:
+    descp: function `f(*x)` that returns a `Tensor` or nested structure of `Tensor`outputs.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - f
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/grad_pass_through
+outputs: A function `h(x)` which returns the same values as `f(x)` and whose gradients
+  are the same as those of an identity function.
+package: tensorflow
+target: grad_pass_through
+title: tf.grad_pass_through
+version: 2.1.0

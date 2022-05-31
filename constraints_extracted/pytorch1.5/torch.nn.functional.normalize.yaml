@@ -1,0 +1,50 @@
+check_nan: true
+constraints:
+  dim:
+    default: '1'
+    descp: 'the dimension to reduce. Default: 1'
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  eps:
+    default: 1e-12
+    descp: 'small value to avoid division by zero. Default: 1e-12'
+    doc_dtype: float
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  input:
+    descp: input tensor of any shape
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor. If `out` is used, this operation won't be differentiable.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  p:
+    default: '2'
+    descp: 'the exponent value in the norm formulation. Default: 2'
+    doc_dtype: float
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - p
+  - dim
+  - eps
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.normalize
+package: torch
+target: normalize
+title: torch.nn.functional.normalize
+version: 1.5.0

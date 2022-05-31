@@ -1,0 +1,81 @@
+aliases:
+- tf.compat.v1.signal.stft
+constraints:
+  fft_length:
+    default: None
+    descp: An integer scalar `Tensor`. The size of the FFT to apply. If not provided,
+      uses the smallest power of 2 enclosing `frame_length`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  frame_length:
+    descp: An integer scalar `Tensor`. The window length in samples.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  frame_step:
+    descp: An integer scalar `Tensor`. The number of samples to step.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pad_end:
+    default: 'False'
+    descp: Whether to pad the end of `signals` with zeros when the provided frame
+      length and step produces a frame that lies partially past its end.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  signals:
+    descp: A `[..., samples]` `float32`/`float64` `Tensor` of real-valued signals.
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  window_fn:
+    default: tf.signal.hann_window
+    descp: A callable that takes a window length and a `dtype` keyword argument and
+      returns a `[window_length]` `Tensor` of samples in the provided datatype. If
+      set to `None`, no windowing is used.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `signals` is not at least rank 1, `frame_length` is not scalar, or
+    `frame_step` is not scalar.
+inputs:
+  optional:
+  - fft_length
+  - window_fn
+  - pad_end
+  - name
+  required:
+  - signals
+  - frame_length
+  - frame_step
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/stft
+outputs: A `[..., frames, fft_unique_bins]` `Tensor` of `complex64`/`complex128`STFT
+  values where `fft_unique_bins` is `fft_length // 2 + 1` (the unique components of
+  the FFT).
+package: tensorflow
+target: stft
+title: tf.signal.stft
+version: 2.1.0

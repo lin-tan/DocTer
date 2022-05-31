@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.sparse.expand_dims
+constraints:
+  axis:
+    default: None
+    descp: 0-D (scalar). Specifies the dimension index at which to expand the shape
+      of `input`. Must be in the range `[-rank(sp_input) - 1, rank(sp_input)]`.
+  name:
+    default: None
+    descp: The name of the output `SparseTensor`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: A `SparseTensor`.
+    tensor_t:
+    - SparseTensor
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/expand_dims
+outputs: A `SparseTensor` with the same data as `sp_input`, but its shape has an additional
+  dimension of size 1 added.
+package: tensorflow
+target: expand_dims
+title: tf.sparse.expand_dims
+version: 2.1.0

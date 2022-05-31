@@ -1,0 +1,41 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: ''
+  filename:
+    descp: Name of the image file to be loaded.
+    doc_dtype: str
+    dtype:
+    - string
+  flag:
+    default: None
+    descp: 1 for three channel color output. 0 for grayscale output.
+    doc_dtype: '{0, 1}, default 1'
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: Output buffer. Use None for automatic allocation.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  to_rgb:
+    default: None
+    descp: True for RGB formatted output (MXNet default). False for BGR formatted
+      output (OpenCV default).
+    doc_dtype: bool, default True
+inputs:
+  optional:
+  - flag
+  - to_rgb
+  - out
+  required:
+  - filename
+  - '*args'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/image/index.html#mxnet.image.imread
+package: mxnet
+target: imread
+title: mxnet.image.imread
+version: 1.6.0

@@ -1,0 +1,29 @@
+constraints:
+  force_reload:
+    default: 'False'
+    descp: whether to discard the existing cache and force a fresh download. Default
+      is False.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  github:
+    descp: 'a string with format "repo_owner/repo_name[:tag_name]" with an optional
+      tag/branch. The default branch is master if not specified. Example: ''pytorch/vision[:hub]'''
+    doc_dtype: string
+    dtype:
+    - string
+    ndim:
+    - '0'
+    - '1'
+inputs:
+  optional:
+  - force_reload
+  required:
+  - github
+link: https://pytorch.org/docs/1.5.0/hub.html#torch.hub.list
+package: torch
+target: list
+title: torch.hub.list
+version: 1.5.0

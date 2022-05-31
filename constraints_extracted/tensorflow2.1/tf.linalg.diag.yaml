@@ -1,0 +1,66 @@
+aliases:
+- tf.compat.v1.linalg.diag
+- tf.compat.v1.matrix_diag
+constraints:
+  diagonal:
+    descp: A `Tensor` with `rank k >= 1`.
+    tensor_t:
+    - tf.tensor
+  k:
+    default: '0'
+    descp: Diagonal offset(s). Positive value means superdiagonal, 0 refers to the
+      main diagonal, and negative value means subdiagonals. `k` can be a single integer
+      (for a single diagonal) or a pair of integers specifying the low and high ends
+      of a matrix band. `k[0]` must not be larger than `k[1]`.
+    dtype:
+    - int
+  name:
+    default: diag
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_cols:
+    default: '-1'
+    descp: The number of columns of the output matrix. If it is not provided, the
+      op assumes the output matrix is a square matrix and infers the matrix size from
+      `d_lower`, `d_upper`, and the innermost dimension of `diagonal`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_rows:
+    default: '-1'
+    descp: The number of rows of the output matrix. If it is not provided, the op
+      assumes the output matrix is a square matrix and infers the matrix size from
+      `d_lower`, `d_upper`, and the innermost dimension of `diagonal`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  padding_value:
+    default: '0'
+    descp: The value to fill the area outside the specified diagonal band with. Default
+      is 0.
+    dtype:
+    - int
+inputs:
+  optional:
+  - name
+  - k
+  - num_rows
+  - num_cols
+  - padding_value
+  required:
+  - diagonal
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/diag
+outputs: A Tensor. Has the same type as `diagonal`.
+package: tensorflow
+target: diag
+title: tf.linalg.diag
+version: 2.1.0

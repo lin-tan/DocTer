@@ -1,0 +1,44 @@
+constraints:
+  arg1:
+    descp: The argument to help instantiate the csr matrix. See above for further
+      details.
+    doc_dtype: tuple of int, tuple of array_like, array_like, CSRNDArray, scipy.sparse.csr_matrix,     scipy.sparse.coo_matrix,
+      tuple of int or tuple of array_like
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+  ctx:
+    default: None
+    descp: Device context (default is the current default context).
+    doc_dtype: Context, optional
+  dtype:
+    default: None
+    descp: The data type of the output array.
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+    structure:
+    - ndarray
+  shape:
+    default: None
+    descp: The shape of the csr matrix.
+    doc_dtype: tuple of int, optional
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional:
+  - shape
+  - ctx
+  - dtype
+  required:
+  - arg1
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.csr_matrix
+package: mxnet
+target: csr_matrix
+title: mxnet.ndarray.sparse.csr_matrix
+version: 1.6.0

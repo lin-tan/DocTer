@@ -1,0 +1,47 @@
+constraints:
+  buckets:
+    descp: The buckets to run the chi-square the test. Make sure that the buckets
+      cover the whole range of the distribution. Also, the buckets must be in ascending
+      order and have no intersection
+    doc_dtype: list of tuple or list of number
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+    - tuple
+  generator:
+    descp: A function that is assumed to generate i.i.d samples from a specific distribution.
+      generator(N) should generate N random samples.
+    doc_dtype: function
+  nsamples:
+    default: '1000000'
+    descp: The number of samples to generate for the testing
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  probs:
+    descp: The ground-truth probability of the random value fall in a specific bucket.
+    doc_dtype: list or tuple
+    structure:
+    - list
+    - tuple
+inputs:
+  optional:
+  - nsamples
+  required:
+  - generator
+  - buckets
+  - probs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.chi_square_check
+package: mxnet
+target: chi_square_check
+title: mxnet.test_utils.chi_square_check
+version: 1.6.0

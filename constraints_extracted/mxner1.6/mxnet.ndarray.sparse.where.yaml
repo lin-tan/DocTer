@@ -1,0 +1,44 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  condition:
+    default: None
+    descp: condition array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  x:
+    default: None
+    descp: ''
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  y:
+    default: None
+    descp: ''
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - condition
+  - x
+  - y
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.where
+package: mxnet
+target: where
+title: mxnet.ndarray.sparse.where
+version: 1.6.0

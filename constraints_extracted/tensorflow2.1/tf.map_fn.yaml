@@ -1,0 +1,81 @@
+aliases:
+- tf.compat.v1.map_fn
+constraints:
+  back_prop:
+    default: 'True'
+    descp: (optional) True enables support for back propagation.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  dtype:
+    default: None
+    descp: (optional) The output type(s) of `fn`.  If `fn` returns a structure of
+      Tensors differing from the structure of `elems`, then `dtype` is not optional
+      and must have the same structure as the output of `fn`.
+    tensor_t:
+    - tf.tensor
+  elems:
+    descp: A tensor or (possibly nested) sequence of tensors, each of which will be
+      unpacked along their first dimension.  The nested sequence of the resulting
+      slices will be applied to `fn`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  fn:
+    descp: The callable to be performed.  It accepts one argument, which will have
+      the same (possibly nested) structure as `elems`.  Its output must have the same
+      structure as `dtype` if one is provided, otherwise it must have the same structure
+      as `elems`.
+  infer_shape:
+    default: 'True'
+    descp: (optional) False disables tests for consistent output shapes.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: (optional) Name prefix for the returned tensors.
+  parallel_iterations:
+    default: None
+    descp: (optional) The number of iterations allowed to run in parallel. When graph
+      building, the default value is 10. While executing eagerly, the default value
+      is set to 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  swap_memory:
+    default: 'False'
+    descp: (optional) True enables GPU-CPU memory swapping.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: if `fn` is not callable or the structure of the output of`fn` and `dtype`
+    do not match, or if elems is a SparseTensor.
+- ValueError: if the lengths of the output of `fn` and `dtype` do not match.
+inputs:
+  optional:
+  - dtype
+  - parallel_iterations
+  - back_prop
+  - swap_memory
+  - infer_shape
+  - name
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/map_fn
+outputs: A tensor or (possibly nested) sequence of tensors.  Each tensor packs the
+  results of applying `fn` to tensors unpacked from `elems` along the first dimension,
+  from first to last.
+package: tensorflow
+target: map_fn
+title: tf.map_fn
+version: 2.1.0

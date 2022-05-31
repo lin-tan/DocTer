@@ -1,0 +1,64 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  lhs:
+    default: None
+    descp: First input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lhs_axes:
+    default: _Null
+    descp: Axes to perform broadcast on in the first input array
+    doc_dtype: Shape or None, optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: Second input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  rhs_axes:
+    default: _Null
+    descp: Axes to copy from the second input array
+    doc_dtype: Shape or None, optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - lhs_axes
+  - rhs_axes
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.broadcast_like
+package: mxnet
+target: broadcast_like
+title: mxnet.ndarray.broadcast_like
+version: 1.6.0

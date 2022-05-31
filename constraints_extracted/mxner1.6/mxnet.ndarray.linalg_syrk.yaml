@@ -1,0 +1,51 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  A:
+    default: None
+    descp: Tensor of input matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  alpha:
+    default: _Null
+    descp: Scalar factor to be applied to the result.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  transpose:
+    default: _Null
+    descp: Use transpose of input matrix.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - A
+  - transpose
+  - alpha
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.linalg_syrk
+package: mxnet
+target: linalg_syrk
+title: mxnet.ndarray.linalg_syrk
+version: 1.6.0

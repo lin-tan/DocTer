@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.keras.models.clone_model
+constraints:
+  clone_function:
+    default: None
+    descp: 'Callable to be used to clone each layer in the target model (except `InputLayer`
+      instances). It takes as argument the layer instance to be cloned, and returns
+      the corresponding layer instance to be used in the model copy. If unspecified,
+      this callable defaults to the following serialization/deserialization function:`lambda
+      layer: layer.__class__.from_config(layer.get_config())`. By passing a custom
+      callable, you can customize your copy of the model, e.g. by wrapping certain
+      layers of interest (you might want to replace all `LSTM` instances with equivalent`Bidirectional(LSTM(...))`
+      instances, for example).'
+    ndim:
+    - '0'
+  input_tensors:
+    default: None
+    descp: optional list of input tensors or InputLayer objects to build the model
+      upon. If not provided, placeholders will be created.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  model:
+    descp: Instance of `Model`(could be a functional model or a Sequential model).
+exceptions:
+- ValueError: in case of invalid `model` argument value.
+inputs:
+  optional:
+  - input_tensors
+  - clone_function
+  required:
+  - model
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/models/clone_model
+outputs: An instance of `Model` reproducing the behavior of the original model, on
+  top of new inputs tensors, using newly instantiated weights. The cloned model might
+  behave differently from the original model if a custom clone_function modifies the
+  layer.
+package: tensorflow
+target: clone_model
+title: tf.keras.models.clone_model
+version: 2.1.0

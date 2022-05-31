@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.image.random_contrast
+constraints:
+  image:
+    descp: An image tensor with 3 or more dimensions.
+    tensor_t:
+    - tf.tensor
+  lower:
+    descp: float.  Lower bound for the random contrast factor.
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed. See`tf.compat.v1.set_random_seed`
+      for behavior.
+    dtype:
+    - int
+  upper:
+    descp: float.  Upper bound for the random contrast factor.
+exceptions:
+- ValueError: if `upper <= lower` or if `lower < 0`.
+inputs:
+  optional:
+  - seed
+  required:
+  - image
+  - lower
+  - upper
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/random_contrast
+outputs: The contrast-adjusted image(s).
+package: tensorflow
+target: random_contrast
+title: tf.image.random_contrast
+version: 2.1.0

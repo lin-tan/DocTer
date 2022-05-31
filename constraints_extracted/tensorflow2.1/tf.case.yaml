@@ -1,0 +1,59 @@
+constraints:
+  default:
+    default: None
+    descp: Optional callable that returns a list of tensors.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  exclusive:
+    default: 'False'
+    descp: True iff at most one predicate is allowed to evaluate to `True`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: case
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pred_fn_pairs:
+    descp: List of pairs of a boolean scalar tensor and a callable which returns a
+      list of tensors.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  strict:
+    default: 'False'
+    descp: A boolean that enables/disables 'strict' mode; see above.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `pred_fn_pairs` is not a list/tuple.
+- TypeError: If `pred_fn_pairs` is a list but does not contain 2-tuples.
+- TypeError: If `fns[i]` is not callable for any i, or `default` is not        callable.
+inputs:
+  optional:
+  - default
+  - exclusive
+  - strict
+  - name
+  required:
+  - pred_fn_pairs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/case
+outputs: The tensors returned by the first pair whose predicate evaluated to True,
+  or those returned by `default` if none does.
+package: tensorflow
+target: case
+title: tf.case
+version: 2.1.0

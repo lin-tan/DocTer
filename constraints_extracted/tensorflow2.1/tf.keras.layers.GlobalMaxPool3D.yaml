@@ -1,0 +1,35 @@
+aliases:
+- tf.keras.layers.GlobalMaxPooling3D
+- tf.compat.v1.keras.layers.GlobalMaxPool3D
+- tf.compat.v1.keras.layers.GlobalMaxPooling3D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      spatial_dim1, spatial_dim2, spatial_dim3, channels)`while `channels_first` corresponds
+      to inputs with shape`(batch, channels, spatial_dim1, spatial_dim2, spatial_dim3)`.
+      It defaults to the `image_data_format` value found in your Keras config file
+      at `~/.keras/keras.json`. If you never set it, then it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/GlobalMaxPool3D
+package: tensorflow
+target: GlobalMaxPool3D
+title: tf.keras.layers.GlobalMaxPool3D
+version: 2.1.0

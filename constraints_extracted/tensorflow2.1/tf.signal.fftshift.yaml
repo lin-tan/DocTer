@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.signal.fftshift
+constraints:
+  axes:
+    default: None
+    descp: '`int` or shape `tuple`, optional Axes over which to shift.  Default is
+      None, which shifts all axes.'
+    dtype:
+    - int
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: '`Tensor`, input tensor.'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axes
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/fftshift
+outputs: A `Tensor`, The shifted tensor.
+package: tensorflow
+target: fftshift
+title: tf.signal.fftshift
+version: 2.1.0

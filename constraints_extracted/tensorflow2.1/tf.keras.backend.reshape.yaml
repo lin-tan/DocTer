@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.keras.backend.reshape
+constraints:
+  shape:
+    descp: Target shape tuple.
+    structure:
+    - tuple
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/reshape
+outputs: A tensor.
+package: tensorflow
+target: reshape
+title: tf.keras.backend.reshape
+version: 2.1.0

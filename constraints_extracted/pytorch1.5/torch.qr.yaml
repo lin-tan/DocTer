@@ -1,0 +1,38 @@
+constraints:
+  input:
+    descp: the input tensor of size (*, m, n)  where * is zero or more batch dimensions
+      consisting of matrices of dimension m  times n .
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: tuple of Q and R tensors satisfying `input = torch.matmul(Q, R)`. The dimensions
+      of Q and R are (*, m, k)  and (*, k, n)  respectively, where k =  min(m, n)  if
+      `some:` is `True` and k = m  otherwise.
+    doc_dtype: tuple, optional
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  some:
+    default: 'True'
+    descp: Set to `True` for reduced QR decomposition and `False` for complete QR
+      decomposition.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - some
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.qr
+package: torch
+ret_type: (Tensor, Tensor)
+target: qr
+title: torch.qr
+version: 1.5.0

@@ -1,0 +1,65 @@
+aliases:
+- tf.compat.v1.image.extract_patches
+constraints:
+  images:
+    descp: A 4-D Tensor with shape `[batch, in_rows, in_cols, depth]
+    ndim:
+    - '4'
+    shape:
+    - '[batch,in_rows,in_cols,depth]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    descp: The type of padding algorithm to use.
+    dtype:
+    - tf.dtype
+  rates:
+    descp: 'A 1-D Tensor of length 4. Must be: `[1, rate_rows, rate_cols, 1]`. This
+      is the input stride, specifying how far two consecutive patch samples are in
+      the input. Equivalent to extracting patches with `patch_sizes_eff = patch_sizes
+      + (patch_sizes - 1) * (rates - 1)`, followed by subsampling them spatially by
+      a factor of `rates`. This is equivalent to `rate` in dilated (a.k.a. Atrous)
+      convolutions.'
+    ndim:
+    - '0'
+    - '1'
+    - '4'
+    tensor_t:
+    - tf.tensor
+  sizes:
+    descp: The size of the extracted patches. Must be [1, size_rows, size_cols, 1].
+  strides:
+    descp: 'A 1-D Tensor of length 4. How far the centers of two consecutive patches
+      are in the images. Must be: `[1, stride_rows, stride_cols, 1]`.'
+    ndim:
+    - '1'
+    - '4'
+    tensor_t:
+    - tf.tensor
+dependency:
+- in_rows
+- in_cols
+- batch
+- depth
+inputs:
+  optional:
+  - name
+  required:
+  - images
+  - sizes
+  - strides
+  - rates
+  - padding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/extract_patches
+outputs: A 4-D Tensor of the same type as the input.
+package: tensorflow
+target: extract_patches
+title: tf.image.extract_patches
+version: 2.1.0

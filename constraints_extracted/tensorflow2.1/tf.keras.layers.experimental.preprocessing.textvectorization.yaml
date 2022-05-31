@@ -1,0 +1,116 @@
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data:
+    default: None
+    descp: The data to train on. It can be passed either as a tf.data Dataset, or
+      as a numpy array.
+    structure:
+    - list
+  max_tokens:
+    default: None
+    descp: The maximum size of the vocabulary for this layer. If None, there is no
+      cap on the size of the vocabulary.
+  ngrams:
+    default: None
+    descp: Optional specification for ngrams to create from the possibly-split input
+      text. Values can be None, an integer or tuple of integers; passing an integer
+      will create ngrams up to that integer, and passing a tuple of integers will
+      create ngrams for the specified values in the tuple. Passing None means that
+      no ngrams will be created.
+  output_mode:
+    default: INT
+    descp: 'Optional specification for the output of the layer. Values can be "int",
+      "binary", "count" or "tf-idf", configuring the layer as follows: "int": Outputs
+      integer indices, one integer index per split string   token. "binary": Outputs
+      a single int array per batch, of either vocab_size or   max_tokens size, containing
+      1s in all elements where the token mapped   to that index exists at least once
+      in the batch item. "count": As "binary", but the int array contains a count
+      of the number   of times the token at that index appeared in the batch item.
+      "tf-idf": As "binary", but the TF-IDF algorithm is applied to find the   value
+      in each token slot.'
+    dtype:
+    - int
+    - tf.string
+    enum:
+    - binary
+    - count
+    - int
+    - integer
+    - string
+    - tf-idf
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  output_sequence_length:
+    default: None
+    descp: Only valid in INT mode. If set, the output will have its time dimension
+      padded or truncated to exactly `output_sequence_length`values, resulting in
+      a tensor of shape [batch_size, output_sequence_length] regardless of how many
+      tokens resulted from the splitting step. Defaults to None.
+    ndim:
+    - '0'
+  pad_to_max_tokens:
+    default: 'True'
+    descp: Only valid in  "binary", "count", and "tf-idf" modes. If True, the output
+      will have its feature axis padded to `max_tokens` even if the number of unique
+      tokens in the vocabulary is less than max_tokens, resulting in a tensor of shape
+      [batch_size, max_tokens] regardless of vocabulary size. Defaults to True.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  reset_state:
+    default: None
+    descp: Optional argument specifying whether to clear the state of the layer at
+      the start of the call to `adapt`. This must be True for this layer, which does
+      not support repeated calls to `adapt`.
+    ndim:
+    - '0'
+  split:
+    default: SPLIT_ON_WHITESPACE
+    descp: Optional specification for splitting the input text. Values can be None
+      (no splitting), 'whitespace' (split on ASCII whitespace), or a Callable. The
+      default is 'whitespace'.
+    dtype:
+    - tf.string
+    enum:
+    - whitespace
+    ndim:
+    - '0'
+  standardize:
+    default: LOWER_AND_STRIP_PUNCTUATION
+    descp: Optional specification for standardization to apply to the input text.
+      Values can be None (no standardization), 'lower_and_strip_punctuation' (lowercase
+      and remove punctuation) or a Callable. Default is 'lower_and_strip_punctuation'.
+    dtype:
+    - tf.string
+    enum:
+    - lower_and_strip_punctuation
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If there are too many inputs, the inputs do not match, or input data
+    is missing.
+inputs:
+  optional:
+  - max_tokens
+  - standardize
+  - split
+  - ngrams
+  - output_mode
+  - output_sequence_length
+  - pad_to_max_tokens
+  - '**kwargs'
+  - data
+  - reset_state
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/experimental/preprocessing/TextVectorization
+package: tensorflow
+target: TextVectorization
+title: tf.keras.layers.experimental.preprocessing.TextVectorization
+version: 2.1.0

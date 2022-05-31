@@ -1,0 +1,15 @@
+constraints:
+  tensor:
+    descp: a tensor to be exported
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/dlpack.html#torch.utils.dlpack.to_dlpack
+package: torch
+ret_type: PyCapsule
+target: to_dlpack
+title: torch.utils.dlpack.to_dlpack
+version: 1.5.0

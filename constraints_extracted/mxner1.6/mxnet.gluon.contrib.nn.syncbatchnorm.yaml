@@ -1,0 +1,113 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  beta_initializer:
+    default: zeros
+    descp: Initializer for the beta weight.
+    doc_dtype: "str or Initializer, default \u2018zeros\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  center:
+    default: 'True'
+    descp: If True, add offset of beta to normalized tensor. If False, beta is ignored.
+    doc_dtype: bool, default True
+    tensor_t:
+    - tensor
+  epsilon:
+    default: 1e-05
+    descp: Small float added to variance to avoid dividing by zero.
+    doc_dtype: float, default 1e-5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  gamma_initializer:
+    default: ones
+    descp: Initializer for the gamma weight.
+    doc_dtype: "str or Initializer, default \u2018ones\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  in_channels:
+    default: '0'
+    descp: Number of channels (feature maps) in input data. If not specified, initialization
+      will be deferred to the first time forward is called and in_channels will be
+      inferred from the shape of input data.
+    doc_dtype: int, default 0
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  momentum:
+    default: '0.9'
+    descp: Momentum for the moving average.
+    doc_dtype: float, default 0.9
+    dtype:
+    - float
+    ndim:
+    - '0'
+  num_devices:
+    default: None
+    descp: ''
+    doc_dtype: int, default number of visible GPUs
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  running_mean_initializer:
+    default: zeros
+    descp: Initializer for the running mean.
+    doc_dtype: "str or Initializer, default \u2018zeros\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  running_variance_initializer:
+    default: ones
+    descp: Initializer for the running variance.
+    doc_dtype: "str or Initializer, default \u2018ones\u2019"
+    dtype:
+    - string
+    ndim:
+    - '0'
+  scale:
+    default: 'True'
+    descp: If True, multiply by gamma. If False, gamma is not used. When the next
+      layer is linear (also e.g. nn.relu), this can be disabled since the scaling
+      will be done by the next layer.
+    doc_dtype: bool, default True
+  use_global_stats:
+    default: 'False'
+    descp: If True, use global moving statistics instead of local batch-norm. This
+      will force change batch-norm into a scale shift operator. If False, use local
+      batch-norm.
+    doc_dtype: bool, default False
+inputs:
+  optional:
+  - in_channels
+  - num_devices
+  - momentum
+  - epsilon
+  - center
+  - scale
+  - use_global_stats
+  - beta_initializer
+  - gamma_initializer
+  - running_mean_initializer
+  - running_variance_initializer
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/contrib/index.html#mxnet.gluon.contrib.nn.SyncBatchNorm
+package: mxnet
+target: SyncBatchNorm
+title: mxnet.gluon.contrib.nn.SyncBatchNorm
+version: 1.6.0

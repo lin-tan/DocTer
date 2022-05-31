@@ -1,0 +1,46 @@
+aliases:
+- tf.compat.v1.nn.log_poisson_loss
+check_nan: true
+constraints:
+  compute_full_loss:
+    default: 'False'
+    descp: whether to compute the full loss. If false, a constant term is dropped
+      in favor of more efficient optimization.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  log_input:
+    descp: A `Tensor` of type `float32` or `float64`.
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  targets:
+    descp: A `Tensor` of the same type and shape as `log_input`.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `log_input` and `targets` do not have the same shape.
+inputs:
+  optional:
+  - compute_full_loss
+  - name
+  required:
+  - targets
+  - log_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/log_poisson_loss
+outputs: A `Tensor` of the same shape as `log_input` with the componentwise logistic
+  losses.
+package: tensorflow
+target: log_poisson_loss
+title: tf.nn.log_poisson_loss
+version: 2.1.0

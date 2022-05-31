@@ -1,0 +1,28 @@
+constraints:
+  mean:
+    descp: RGB mean to be subtracted
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  src:
+    descp: Input image
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  std:
+    default: None
+    descp: RGB standard deviation to be divided
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - std
+  required:
+  - src
+  - mean
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/image/index.html#mxnet.image.color_normalize
+package: mxnet
+target: color_normalize
+title: mxnet.image.color_normalize
+version: 1.6.0

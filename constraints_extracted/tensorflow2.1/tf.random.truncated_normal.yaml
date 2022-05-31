@@ -1,0 +1,68 @@
+aliases:
+- tf.compat.v1.random.truncated_normal
+- tf.compat.v1.truncated_normal
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: The type of the output.
+    dtype:
+    - tf.dtype
+    - tf.float32
+  mean:
+    default: '0.0'
+    descp: A 0-D Tensor or Python value of type `dtype`. The mean of the truncated
+      normal distribution.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed for the distribution. See`tf.compat.v1.set_random_seed`for
+      behavior.
+    dtype:
+    - int
+  shape:
+    descp: A 1-D integer Tensor or Python array. The shape of the output tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  stddev:
+    default: '1.0'
+    descp: A 0-D Tensor or Python value of type `dtype`. The standard deviation of
+      the normal distribution, before truncation.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - mean
+  - stddev
+  - dtype
+  - seed
+  - name
+  required:
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/truncated_normal
+outputs: A tensor of the specified shape filled with random truncated normal values.
+package: tensorflow
+target: truncated_normal
+title: tf.random.truncated_normal
+version: 2.1.0

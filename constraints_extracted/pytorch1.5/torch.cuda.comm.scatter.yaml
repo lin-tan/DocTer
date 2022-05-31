@@ -1,0 +1,51 @@
+constraints:
+  chunk_sizes:
+    default: None
+    descp: sizes of chunks to be placed on each device. It should match `devices`
+      in length and sum to `tensor.size(dim)`. If not specified, the tensor will be
+      divided into equal chunks.
+    doc_dtype: Iterable[int], optional
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  devices:
+    descp: iterable of ints, specifying among which devices the tensor should be scattered.
+    doc_dtype: Iterable[int]
+    dtype:
+    - int
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  dim:
+    default: '0'
+    descp: A dimension along which to chunk the tensor.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  streams:
+    default: None
+    descp: ''
+  tensor:
+    descp: tensor to scatter.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - chunk_sizes
+  - dim
+  - streams
+  required:
+  - tensor
+  - devices
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.comm.scatter
+package: torch
+target: scatter
+title: torch.cuda.comm.scatter
+version: 1.5.0

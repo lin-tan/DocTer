@@ -1,0 +1,31 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  max:
+    descp: upper-bound of the range to be clamped to
+    doc_dtype: Number
+  min:
+    descp: lower-bound of the range to be clamped to
+    doc_dtype: Number
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - min
+  - max
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.clamp
+package: torch
+ret_type: Tensor
+target: clamp
+title: torch.clamp
+version: 1.5.0

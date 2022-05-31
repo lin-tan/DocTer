@@ -1,0 +1,84 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if `None`, uses a global
+      default (see `torch.set_default_tensor_type()`).'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  layout:
+    default: None
+    descp: 'the desired layout of returned Tensor. Default: `torch.strided`.'
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  pin_memory:
+    default: 'False'
+    descp: 'If set, returned tensor would be allocated in the pinned memory. Works
+      only for CPU tensors. Default: `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  size:
+    descp: the shape of the output tensor
+    doc_dtype: tuple of python:ints
+    dtype:
+    - int
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  stride:
+    descp: the strides of the output tensor
+    doc_dtype: tuple of python:ints
+    dtype:
+    - int
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  - pin_memory
+  required:
+  - size
+  - stride
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.empty_strided
+package: torch
+ret_type: Tensor
+target: empty_strided
+title: torch.empty_strided
+version: 1.5.0

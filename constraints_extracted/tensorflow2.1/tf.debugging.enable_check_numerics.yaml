@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.debugging.enable_check_numerics
+constraints:
+  path_length_limit:
+    default: '50'
+    descp: Limit to the file path included in the printed stack trace. Applicable
+      only to ops in `tf.function`s (graphs).
+    dtype:
+    - int
+  stack_height_limit:
+    default: '30'
+    descp: Limit to the height of the printed stack trace. Applicable only to ops
+      in `tf.function`s (graphs).
+    dtype:
+    - int
+inputs:
+  optional:
+  - stack_height_limit
+  - path_length_limit
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/enable_check_numerics
+package: tensorflow
+target: enable_check_numerics
+title: tf.debugging.enable_check_numerics
+version: 2.1.0

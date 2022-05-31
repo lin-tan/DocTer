@@ -1,0 +1,95 @@
+constraints:
+  atol:
+    default: 1e-05
+    descp: absolute tolerance
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  eps:
+    default: 1e-06
+    descp: perturbation for finite differences
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  func:
+    descp: a Python function that takes Tensor inputs and returns a Tensor or a tuple
+      of Tensors
+    doc_dtype: function
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  gen_non_contig_grad_outputs:
+    default: 'False'
+    descp: if `grad_outputs` is `None` and `gen_non_contig_grad_outputs` is `True`,
+      the randomly generated gradient outputs are made to be noncontiguous
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  grad_outputs:
+    default: None
+    descp: The gradients with respect to the function's outputs.
+    doc_dtype: tuple of Tensor or Tensor, optional
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  inputs:
+    descp: inputs to the function
+    doc_dtype: tuple of Tensor or Tensor
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  nondet_tol:
+    default: '0.0'
+    descp: tolerance for non-determinism. When running identical inputs through the
+      differentiation, the results must either match exactly (default, 0.0) or be
+      within this tolerance. Note that a small amount of nondeterminism in the gradient
+      will lead to larger inaccuracies in the second derivative.
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  raise_exception:
+    default: 'True'
+    descp: indicating whether to raise an exception if the check fails. The exception
+      gives more information about the exact nature of the failure. This is helpful
+      when debugging gradchecks.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  rtol:
+    default: '0.001'
+    descp: relative tolerance
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - grad_outputs
+  - eps
+  - atol
+  - rtol
+  - gen_non_contig_grad_outputs
+  - raise_exception
+  - nondet_tol
+  required:
+  - func
+  - inputs
+link: https://pytorch.org/docs/1.5.0/autograd.html#torch.autograd.gradgradcheck
+package: torch
+target: gradgradcheck
+title: torch.autograd.gradgradcheck
+version: 1.5.0

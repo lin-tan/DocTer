@@ -1,0 +1,33 @@
+aliases:
+- tf.linalg.eigvals
+constraints:
+  name:
+    default: None
+    descp: string, optional name of the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: '`Tensor` of shape `[..., N, N]`.'
+    ndim:
+    - '>=2'
+    shape:
+    - '[...,n,n]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- n
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/eigvals
+outputs:
+- e: Eigenvalues. Shape is `[..., N]`. The vector `e[..., :]` contains the `N`eigenvalues
+    of `tensor[..., :, :]`.
+package: tensorflow
+target: eigvals
+title: tf.eigvals
+version: 2.1.0

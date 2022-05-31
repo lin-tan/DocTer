@@ -1,0 +1,29 @@
+constraints:
+  profile_process:
+    default: worker
+    descp: whether to profile kvstore server or worker. server can only be profiled
+      when kvstore is of type dist. if this is not passed, defaults to worker
+    doc_dtype: string
+    dtype:
+    - string
+    ndim:
+    - '0'
+  state:
+    default: stop
+    descp: Indicates whether to run the profiler, can be 'stop' or 'run'. Default
+      is stop.
+    doc_dtype: string, optional
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - state
+  - profile_process
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/profiler/index.html#mxnet.profiler.set_state
+package: mxnet
+target: set_state
+title: mxnet.profiler.set_state
+version: 1.6.0

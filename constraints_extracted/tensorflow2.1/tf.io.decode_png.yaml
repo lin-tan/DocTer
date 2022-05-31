@@ -1,0 +1,50 @@
+aliases:
+- tf.image.decode_png
+- tf.compat.v1.image.decode_png
+- tf.compat.v1.io.decode_png
+constraints:
+  channels:
+    default: '0'
+    descp: An optional `int`. Defaults to `0`. Number of color channels for the decoded
+      image.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  contents:
+    descp: A `Tensor` of type `string`. 0-D.  The PNG-encoded image.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  dtype:
+    default: tf.dtypes.uint8
+    descp: 'An optional `tf.DType` from: `tf.uint8, tf.uint16`. Defaults to `tf.uint8`.'
+    dtype:
+    - tf.dtype
+    - tf.uint16
+    - tf.uint8
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - channels
+  - dtype
+  - name
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_png
+outputs: A `Tensor` of type `dtype`.
+package: tensorflow
+target: decode_png
+title: tf.io.decode_png
+version: 2.1.0

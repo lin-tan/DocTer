@@ -1,0 +1,76 @@
+aliases:
+- tf.compat.v1.linalg.matvec
+constraints:
+  a:
+    descp: '`Tensor` of type `float16`, `float32`, `float64`, `int32`, `complex64`,`complex128`
+      and rank > 1.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  a_is_sparse:
+    default: 'False'
+    descp: If `True`, `a` is treated as a sparse matrix.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  adjoint_a:
+    default: 'False'
+    descp: If `True`, `a` is conjugated and transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  b:
+    descp: '`Tensor` with same type as `a` and compatible dimensions.'
+    dtype:
+    - dtype:&a
+    tensor_t:
+    - tf.tensor
+  b_is_sparse:
+    default: 'False'
+    descp: If `True`, `b` is treated as a sparse matrix.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: Name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  transpose_a:
+    default: 'False'
+    descp: If `True`, `a` is transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If transpose_a and adjoint_a are both set to True.
+inputs:
+  optional:
+  - transpose_a
+  - adjoint_a
+  - a_is_sparse
+  - b_is_sparse
+  - name
+  required:
+  - a
+  - b
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/matvec
+outputs: 'A `Tensor` of the same type as `a` and `b` where each inner-most vector
+  is the product of the corresponding matrices in `a` and vectors in `b`, e.g. if
+  all transpose or adjoint attributes are `False`:'
+package: tensorflow
+target: matvec
+title: tf.linalg.matvec
+version: 2.1.0

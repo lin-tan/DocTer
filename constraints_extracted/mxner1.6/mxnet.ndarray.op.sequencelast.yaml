@@ -1,0 +1,59 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: The sequence axis. Only values of 0 and 1 are currently supported.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: n-dimensional input array of the form [max_sequence_length, batch_size,
+      other_feature_dims] where n>2
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  sequence_length:
+    default: None
+    descp: vector of sequence lengths of the form [batch_size]
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+  use_sequence_length:
+    default: _Null
+    descp: If set to true, this layer takes in an extra input parameter sequence_length
+      to specify variable length sequence
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - sequence_length
+  - use_sequence_length
+  - axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.SequenceLast
+package: mxnet
+target: SequenceLast
+title: mxnet.ndarray.op.SequenceLast
+version: 1.6.0

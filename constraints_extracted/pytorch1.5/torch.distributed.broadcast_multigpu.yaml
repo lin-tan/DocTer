@@ -1,0 +1,51 @@
+constraints:
+  async_op:
+    default: 'False'
+    descp: Whether this op should be an async op
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  group:
+    default: <objectobject>
+    descp: The process group to work on
+    doc_dtype: ProcessGroup, optional
+  src:
+    descp: Source rank.
+    doc_dtype: int
+    dtype:
+    - int
+  src_tensor:
+    default: '0'
+    descp: Source tensor rank within `tensor_list`
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  tensor_list:
+    descp: Tensors that participate in the collective operation. If `src` is the rank,
+      then the specified `src_tensor` element of `tensor_list` (`tensor_list[src_tensor]`)
+      will be broadcast to all other tensors (on different GPUs) in the src process
+      and all tensors in `tensor_list` of other non-src processes. You also need to
+      make sure that `len(tensor_list)` is the same for all the distributed processes
+      calling this function.
+    doc_dtype: List[Tensor]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - group
+  - async_op
+  - src_tensor
+  required:
+  - tensor_list
+  - src
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.broadcast_multigpu
+package: torch
+target: broadcast_multigpu
+title: torch.distributed.broadcast_multigpu
+version: 1.5.0

@@ -1,0 +1,15 @@
+constraints:
+  fname:
+    descp: The filename.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - fname
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/utils/index.html#mxnet.ndarray.utils.load
+package: mxnet
+target: load
+title: mxnet.ndarray.utils.load
+version: 1.6.0

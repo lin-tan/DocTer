@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.image.per_image_standardization
+constraints:
+  image:
+    descp: An n-D Tensor with at least 3 dimensions, the last 3 of which are the dimensions
+      of each image.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if the shape of 'image' is incompatible with this function.
+inputs:
+  optional: []
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/per_image_standardization
+outputs: A `Tensor` with same shape and dtype as `image`.
+package: tensorflow
+target: per_image_standardization
+title: tf.image.per_image_standardization
+version: 2.1.0

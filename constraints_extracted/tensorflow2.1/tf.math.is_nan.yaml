@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.debugging.is_nan
+- tf.compat.v1.is_nan
+- tf.compat.v1.math.is_nan
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `bfloat16`, `half`, `float32`,
+      `float64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/is_nan
+outputs: A `Tensor` of type `bool`.
+package: tensorflow
+target: is_nan
+title: tf.math.is_nan
+version: 2.1.0

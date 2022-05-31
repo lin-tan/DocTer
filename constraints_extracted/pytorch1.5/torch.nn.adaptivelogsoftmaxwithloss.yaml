@@ -1,0 +1,62 @@
+check_nan: true
+constraints:
+  cutoffs:
+    descp: Cutoffs used to assign targets to their buckets
+    doc_dtype: Sequence
+    structure:
+    - list
+  div_value:
+    default: '4.0'
+    descp: 'value used as an exponent to compute sizes of the clusters. Default: 4.0'
+    doc_dtype: float, optional
+    dtype:
+    - torch.bool
+    - torch.float32
+    ndim:
+    - '0'
+  head_bias:
+    default: 'False'
+    descp: 'If `True`, adds a bias term to the ''head'' of the adaptive softmax. Default:
+      `False`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    enum:
+    - head
+    ndim:
+    - '0'
+  in_features:
+    descp: Number of features in the input tensor
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - torch.tensor
+  n_classes:
+    descp: Number of classes in the dataset
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - div_value
+  - head_bias
+  required:
+  - in_features
+  - n_classes
+  - cutoffs
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.AdaptiveLogSoftmaxWithLoss
+package: torch
+target: AdaptiveLogSoftmaxWithLoss
+title: torch.nn.AdaptiveLogSoftmaxWithLoss
+version: 1.5.0

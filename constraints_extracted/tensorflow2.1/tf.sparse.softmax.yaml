@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.sparse.softmax
+- tf.compat.v1.sparse_softmax
+constraints:
+  name:
+    default: None
+    descp: optional name of the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: N-D `SparseTensor`, where `N >= 2`.
+    tensor_t:
+    - SparseTensor
+inputs:
+  optional:
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/softmax
+outputs:
+- output: N-D `SparseTensor` representing the results.
+package: tensorflow
+target: softmax
+title: tf.sparse.softmax
+version: 2.1.0

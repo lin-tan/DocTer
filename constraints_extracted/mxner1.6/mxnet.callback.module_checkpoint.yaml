@@ -1,0 +1,35 @@
+constraints:
+  mod:
+    descp: The module to checkpoint.
+    doc_dtype: subclass of BaseModule
+  period:
+    default: '1'
+    descp: How many epochs to wait before checkpointing. Defaults to 1.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  prefix:
+    descp: The file prefix for this checkpoint.
+    doc_dtype: str
+    dtype:
+    - string
+  save_optimizer_states:
+    default: 'False'
+    descp: Indicates whether or not to save optimizer states for continued training.
+    doc_dtype: bool
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - period
+  - save_optimizer_states
+  required:
+  - mod
+  - prefix
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/callback/index.html#mxnet.callback.module_checkpoint
+package: mxnet
+target: module_checkpoint
+title: mxnet.callback.module_checkpoint
+version: 1.6.0

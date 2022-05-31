@@ -1,0 +1,178 @@
+aliases:
+- tf.keras.layers.SeparableConvolution1D
+- tf.compat.v1.keras.layers.SeparableConv1D
+- tf.compat.v1.keras.layers.SeparableConvolution1D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  activation:
+    default: None
+    descp: Activation function. Set it to None to maintain a linear activation.
+  activity_regularizer:
+    default: None
+    descp: Optional regularizer function for the output.
+  bias_constraint:
+    default: None
+    descp: Optional projection function to be applied to the bias after being updated
+      by an `Optimizer`.
+  bias_initializer:
+    default: zeros
+    descp: An initializer for the bias vector. If None, the default initializer will
+      be used.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  bias_regularizer:
+    default: None
+    descp: Optional regularizer for the bias vector.
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      length, channels)` while `channels_first` corresponds to inputs with shape `(batch,
+      channels, length)`.
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+  depth_multiplier:
+    default: '1'
+    descp: The number of depthwise convolution output channels for each input channel.
+      The total number of depthwise convolution output channels will be equal to `num_filters_in
+      * depth_multiplier`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  depthwise_constraint:
+    default: None
+    descp: Optional projection function to be applied to the depthwise kernel after
+      being updated by an `Optimizer` (e.g. used for norm constraints or value constraints
+      for layer weights). The function must take as input the unprojected variable
+      and must return the projected variable (which must have the same shape). Constraints
+      are not safe to use when doing asynchronous distributed training.
+  depthwise_initializer:
+    default: glorot_uniform
+    descp: An initializer for the depthwise convolution kernel.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  depthwise_regularizer:
+    default: None
+    descp: Optional regularizer for the depthwise convolution kernel.
+  dilation_rate:
+    default: '1'
+    descp: A single integer, specifying the dilation rate to use for dilated convolution.
+      Currently, specifying any `dilation_rate` value != 1 is incompatible with specifying
+      any stride value != 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  filters:
+    descp: Integer, the dimensionality of the output space (i.e. the number of filters
+      in the convolution).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  kernel_size:
+    descp: A single integer specifying the spatial dimensions of the filters.
+    dtype:
+    - int
+  name:
+    default: None
+    descp: A string, the name of the layer.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    default: valid
+    descp: One of `"valid"`, `"same"`, or `"causal"` (case-insensitive).
+    dtype:
+    - tf.string
+    enum:
+    - causal
+    - same
+    - valid
+    ndim:
+    - '0'
+  pointwise_constraint:
+    default: None
+    descp: Optional projection function to be applied to the pointwise kernel after
+      being updated by an `Optimizer`.
+  pointwise_initializer:
+    default: glorot_uniform
+    descp: An initializer for the pointwise convolution kernel.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pointwise_regularizer:
+    default: None
+    descp: Optional regularizer for the pointwise convolution kernel.
+  strides:
+    default: '1'
+    descp: A single integer specifying the strides of the convolution. Specifying
+      any `stride` value != 1 is incompatible with specifying any `dilation_rate`
+      value != 1.
+    dtype:
+    - int
+  trainable:
+    default: None
+    descp: Boolean, if `True` the weights of this layer will be marked as trainable
+      (and listed in `layer.trainable_weights`).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  use_bias:
+    default: 'True'
+    descp: Boolean, whether the layer uses a bias.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilation_rate
+  - depth_multiplier
+  - activation
+  - use_bias
+  - depthwise_initializer
+  - pointwise_initializer
+  - bias_initializer
+  - depthwise_regularizer
+  - pointwise_regularizer
+  - bias_regularizer
+  - activity_regularizer
+  - depthwise_constraint
+  - pointwise_constraint
+  - bias_constraint
+  - '**kwargs'
+  - trainable
+  - name
+  required:
+  - filters
+  - kernel_size
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/SeparableConv1D
+package: tensorflow
+target: SeparableConv1D
+title: tf.keras.layers.SeparableConv1D
+version: 2.1.0

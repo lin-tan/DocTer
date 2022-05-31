@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.keras.utils.get_source_inputs
+constraints:
+  layer:
+    default: None
+    descp: Origin layer of the tensor. Will be determined via tensor._keras_history
+      if not provided.
+  node_index:
+    default: None
+    descp: Origin node index of the tensor.
+  tensor:
+    descp: The tensor to start from.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - layer
+  - node_index
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/utils/get_source_inputs
+outputs: List of input tensors.
+package: tensorflow
+target: get_source_inputs
+title: tf.keras.utils.get_source_inputs
+version: 2.1.0

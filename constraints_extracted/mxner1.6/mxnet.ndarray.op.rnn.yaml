@@ -1,0 +1,153 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  bidirectional:
+    default: _Null
+    descp: whether to use bidirectional recurrent layers
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input data to RNN
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lstm_state_clip_max:
+    default: _Null
+    descp: Maximum clip value of LSTM states. This option must be used together with
+      lstm_state_clip_min.
+    doc_dtype: double or None, optional, default=None
+    dtype:
+    - numpy.double
+  lstm_state_clip_min:
+    default: _Null
+    descp: Minimum clip value of LSTM states. This option must be used together with
+      lstm_state_clip_max.
+    doc_dtype: double or None, optional, default=None
+    dtype:
+    - numpy.double
+  lstm_state_clip_nan:
+    default: _Null
+    descp: Whether to stop NaN from propagating in state by clipping it to min/max.
+      If clipping range is not specified, this option is ignored.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  mode:
+    default: _Null
+    descp: the type of RNN to compute
+    doc_dtype: '{''gru'', ''lstm'', ''rnn_relu'', ''rnn_tanh''}, required'
+  name:
+    default: None
+    descp: ''
+  num_layers:
+    default: _Null
+    descp: number of stacked layers
+    doc_dtype: int (non-negative), required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  p:
+    default: _Null
+    descp: drop rate of the dropout on the outputs of each RNN layer, except the last
+      layer.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  parameters:
+    default: None
+    descp: Vector of all RNN trainable parameters concatenated
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  projection_size:
+    default: _Null
+    descp: size of project size
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+  sequence_length:
+    default: None
+    descp: Vector of valid sequence lengths for each element in batch. (Only used
+      if use_sequence_length kwarg is True)
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+  state:
+    default: None
+    descp: initial hidden state of the RNN
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  state_cell:
+    default: None
+    descp: initial cell state for LSTM networks (only for LSTM)
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  state_outputs:
+    default: _Null
+    descp: Whether to have the states as symbol outputs.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  state_size:
+    default: _Null
+    descp: size of the state for each layer
+    doc_dtype: int (non-negative), required
+  use_sequence_length:
+    default: _Null
+    descp: If set to true, this layer takes in an extra input parameter sequence_length
+      to specify variable length sequence
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - parameters
+  - state
+  - state_cell
+  - sequence_length
+  - state_size
+  - num_layers
+  - bidirectional
+  - mode
+  - p
+  - state_outputs
+  - projection_size
+  - lstm_state_clip_min
+  - lstm_state_clip_max
+  - lstm_state_clip_nan
+  - use_sequence_length
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.RNN
+package: mxnet
+target: RNN
+title: mxnet.ndarray.op.RNN
+version: 1.6.0

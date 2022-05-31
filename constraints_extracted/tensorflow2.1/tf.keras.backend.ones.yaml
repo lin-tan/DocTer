@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.keras.backend.ones
+constraints:
+  dtype:
+    default: None
+    descp: String, data type of returned Keras variable.
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: String, name of returned Keras variable.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  shape:
+    descp: Tuple of integers, shape of returned Keras variable.
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional:
+  - dtype
+  - name
+  required:
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/ones
+outputs: A Keras variable, filled with `1.0`. Note that if `shape` was symbolic, we
+  cannot return a variable, and will return a dynamically-shaped tensor instead.
+package: tensorflow
+target: ones
+title: tf.keras.backend.ones
+version: 2.1.0

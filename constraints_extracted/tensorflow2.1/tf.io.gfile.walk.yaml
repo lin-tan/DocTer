@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.io.gfile.walk
+constraints:
+  onerror:
+    default: None
+    descp: optional handler for errors. Should be a function, it will be called with
+      the error as argument. Rethrowing the error aborts the walk. Errors that happen
+      while listing directories are ignored.
+  top:
+    descp: string, a Directory name
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  topdown:
+    default: 'True'
+    descp: bool, Traverse pre order if True, post order if False.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - topdown
+  - onerror
+  required:
+  - top
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/walk
+outputs: 'Each yield is a 3-tuple:  the pathname of a directory, followed by lists
+  of all its subdirectories and leaf files. That is, each yield looks like:`(dirname,
+  [subdirname, subdirname, ...], [filename, filename, ...])`. Each item is a string.'
+package: tensorflow
+target: walk
+title: tf.io.gfile.walk
+version: 2.1.0

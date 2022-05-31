@@ -1,0 +1,88 @@
+aliases:
+- tf.compat.v1.strings.ngrams
+constraints:
+  data:
+    descp: A Tensor or RaggedTensor containing the source data for the ngrams.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: The op name.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  ngram_width:
+    descp: The width(s) of the ngrams to create. If this is a list or tuple, the op
+      will return ngrams of all specified arities in list order. Values must be non-Tensor
+      integers greater than 0.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[0]'
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+  pad_values:
+    default: None
+    descp: A tuple of (left_pad_value, right_pad_value), a single string, or None.
+      If None, no padding will be added; if a single string, then that string will
+      be used for both left and right padding. Values must be Python strings.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - tuple
+  padding_width:
+    default: None
+    descp: 'If set, `padding_width` pad values will be added to both sides of each
+      sequence. Defaults to `ngram_width`-1. Must be greater than (Note that 1-grams
+      are never padded, regardless of this value.) '
+    ndim:
+    - '0'
+  preserve_short_sequences:
+    default: 'False'
+    descp: If true, then ensure that at least one ngram is generated for each input
+      sequence.  In particular, if an input sequence is shorter than `min(ngram_width)
+      + 2*pad_width`, then generate a single ngram containing the entire sequence.  If
+      false, then no ngrams are generated for these short input sequences.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - list
+  separator:
+    default: ' '
+    descp: The separator string used between ngram elements. Must be a string constant,
+      not a Tensor.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: if `pad_values` is set to an invalid type.
+- ValueError: if `pad_values`, `padding_width`, or `ngram_width` is set to an invalid
+    value.
+inputs:
+  optional:
+  - separator
+  - pad_values
+  - padding_width
+  - preserve_short_sequences
+  - name
+  required:
+  - data
+  - ngram_width
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/ngrams
+outputs: A RaggedTensor of ngrams. If `data.shape=[D1...DN, S]`, then`output.shape=[D1...DN,
+  NUM_NGRAMS]`, where`NUM_NGRAMS=S-ngram_width+1+2*padding_width`.
+package: tensorflow
+target: ngrams
+title: tf.strings.ngrams
+version: 2.1.0

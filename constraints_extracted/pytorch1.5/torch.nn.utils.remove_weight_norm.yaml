@@ -1,0 +1,20 @@
+constraints:
+  module:
+    descp: containing module
+    doc_dtype: Module
+  name:
+    default: weight
+    descp: name of weight parameter
+    doc_dtype: str, optional
+    dtype:
+    - string
+inputs:
+  optional:
+  - name
+  required:
+  - module
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.remove_weight_norm
+package: torch
+target: remove_weight_norm
+title: torch.nn.utils.remove_weight_norm
+version: 1.5.0

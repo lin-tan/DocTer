@@ -1,0 +1,43 @@
+check_nan: true
+constraints:
+  base_cell:
+    descp: The cell on which to perform variational dropout.
+    doc_dtype: RecurrentCell
+  drop_inputs:
+    default: '0.0'
+    descp: The dropout rate for inputs. Won't apply dropout if it equals 0.
+    doc_dtype: float, default 0.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  drop_outputs:
+    default: '0.0'
+    descp: The dropout rate for outputs. Won't apply dropout if it equals 0.
+    doc_dtype: float, default 0.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  drop_states:
+    default: '0.0'
+    descp: The dropout rate for state inputs on the first state channel. Won't apply
+      dropout if it equals 0.
+    doc_dtype: float, default 0.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - drop_inputs
+  - drop_states
+  - drop_outputs
+  required:
+  - base_cell
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/contrib/index.html#mxnet.gluon.contrib.rnn.VariationalDropoutCell
+package: mxnet
+target: VariationalDropoutCell
+title: mxnet.gluon.contrib.rnn.VariationalDropoutCell
+version: 1.6.0

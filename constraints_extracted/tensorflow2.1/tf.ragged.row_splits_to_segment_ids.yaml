@@ -1,0 +1,38 @@
+aliases:
+- tf.compat.v1.ragged.row_splits_to_segment_ids
+constraints:
+  name:
+    default: None
+    descp: A name prefix for the returned tensor (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  out_type:
+    default: None
+    descp: The dtype for the return value.  Defaults to `splits.dtype`, or `tf.int64`
+      if `splits` does not have a dtype.
+    ndim:
+    - '0'
+  splits:
+    descp: A sorted 1-D integer Tensor.  `splits[0]` must be zero.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `splits` is invalid.
+inputs:
+  optional:
+  - name
+  - out_type
+  required:
+  - splits
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ragged/row_splits_to_segment_ids
+outputs: A sorted 1-D integer Tensor, with `shape=[splits[-1]]`
+package: tensorflow
+target: row_splits_to_segment_ids
+title: tf.ragged.row_splits_to_segment_ids
+version: 2.1.0

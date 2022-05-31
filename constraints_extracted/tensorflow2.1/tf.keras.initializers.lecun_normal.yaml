@@ -1,0 +1,18 @@
+aliases:
+- tf.initializers.lecun_normal
+constraints:
+  seed:
+    default: None
+    descp: A Python integer. Used to seed the random generator.
+    dtype:
+    - int
+inputs:
+  optional:
+  - seed
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/initializers/lecun_normal
+outputs: An initializer.
+package: tensorflow
+target: lecun_normal
+title: tf.keras.initializers.lecun_normal
+version: 2.1.0

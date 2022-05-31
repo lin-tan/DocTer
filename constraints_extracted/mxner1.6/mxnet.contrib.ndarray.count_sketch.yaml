@@ -1,0 +1,64 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data to the CountSketchOp.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  h:
+    default: None
+    descp: The index vector
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_dim:
+    default: _Null
+    descp: The output dimension.
+    doc_dtype: int, required
+    dtype:
+    - int
+  processing_batch_size:
+    default: _Null
+    descp: How many sketch vectors to process at one time.
+    doc_dtype: int, optional, default='32'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+  s:
+    default: None
+    descp: The sign vector
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+inputs:
+  optional:
+  - data
+  - h
+  - s
+  - out_dim
+  - processing_batch_size
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.count_sketch
+package: mxnet
+target: count_sketch
+title: mxnet.contrib.ndarray.count_sketch
+version: 1.6.0

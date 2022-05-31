@@ -1,0 +1,161 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Specify which shape axis the channel is specified
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  beta:
+    default: None
+    descp: beta.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  cudnn_off:
+    default: _Null
+    descp: Do not select CUDNN operator, if available
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  eps:
+    default: _Null
+    descp: Epsilon to prevent div 0. Must be no less than CUDNN_BN_MIN_EPSILON defined
+      in cudnn.h when using cudnn (usually 1e-5)
+    doc_dtype: double, optional, default=0.0010000000474974513
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  fix_gamma:
+    default: _Null
+    descp: Fix gamma while training
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  gamma:
+    default: None
+    descp: gamma.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  max_calib_range:
+    default: _Null
+    descp: 'The maximum scalar value in the form of float32 obtained through calibration.
+      If present, it will be used to by quantized batch norm op to calculate primitive
+      scale.Note: this calib_range is to calib bn output.'
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  max_data:
+    default: None
+    descp: Maximum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  min_calib_range:
+    default: _Null
+    descp: 'The minimum scalar value in the form of float32 obtained through calibration.
+      If present, it will be used to by quantized batch norm op to calculate primitive
+      scale.Note: this calib_range is to calib bn output.'
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  min_data:
+    default: None
+    descp: Minimum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  momentum:
+    default: _Null
+    descp: Momentum for moving average
+    doc_dtype: float, optional, default=0.899999976
+    dtype:
+    - float
+    ndim:
+    - '0'
+  moving_mean:
+    default: None
+    descp: moving_mean.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  moving_var:
+    default: None
+    descp: moving_var.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_mean_var:
+    default: _Null
+    descp: Output the mean and inverse std
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  use_global_stats:
+    default: _Null
+    descp: Whether use global moving statistics instead of local batch-norm. This
+      will force change batch-norm into a scale shift operator.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - gamma
+  - beta
+  - moving_mean
+  - moving_var
+  - min_data
+  - max_data
+  - eps
+  - momentum
+  - fix_gamma
+  - use_global_stats
+  - output_mean_var
+  - axis
+  - cudnn_off
+  - min_calib_range
+  - max_calib_range
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.quantized_batch_norm
+package: mxnet
+target: quantized_batch_norm
+title: mxnet.contrib.ndarray.quantized_batch_norm
+version: 1.6.0

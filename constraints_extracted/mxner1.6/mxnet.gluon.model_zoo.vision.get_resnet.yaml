@@ -1,0 +1,47 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: cpu(0)
+    descp: The context in which to load the pretrained weights.
+    doc_dtype: Context, default CPU
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_layers:
+    descp: Numbers of layers. Options are 18, 34, 50, 101, 152.
+    doc_dtype: int
+    dtype:
+    - int
+  pretrained:
+    default: 'False'
+    descp: Whether to load the pretrained weights for model.
+    doc_dtype: bool, default False
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  root:
+    default: /home/jenkins_slave/.mxnet/models
+    descp: Location for keeping the model parameters.
+    doc_dtype: str, default $MXNET_HOME/models
+  version:
+    descp: Version of ResNet. Options are 1, 2.
+    doc_dtype: int
+    dtype:
+    - int
+inputs:
+  optional:
+  - pretrained
+  - ctx
+  - root
+  required:
+  - version
+  - num_layers
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/model_zoo/index.html#mxnet.gluon.model_zoo.vision.get_resnet
+package: mxnet
+target: get_resnet
+title: mxnet.gluon.model_zoo.vision.get_resnet
+version: 1.6.0

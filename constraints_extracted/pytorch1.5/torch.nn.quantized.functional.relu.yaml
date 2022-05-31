@@ -1,0 +1,21 @@
+constraints:
+  inplace:
+    default: 'False'
+    descp: perform the computation inplace
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: quantized input
+inputs:
+  optional:
+  - inplace
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.nn.quantized.functional.relu
+package: torch
+ret_type: Tensor
+target: relu
+title: torch.nn.quantized.functional.relu
+version: 1.5.0

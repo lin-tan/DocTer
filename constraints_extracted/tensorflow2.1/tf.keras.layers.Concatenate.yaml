@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.layers.Concatenate
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: standard layer keyword arguments.
+  axis:
+    default: '-1'
+    descp: Axis along which to concatenate.
+    dtype:
+    - int
+inputs:
+  optional:
+  - axis
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Concatenate
+package: tensorflow
+target: Concatenate
+title: tf.keras.layers.Concatenate
+version: 2.1.0

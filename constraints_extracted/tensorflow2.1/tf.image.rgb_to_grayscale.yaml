@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.image.rgb_to_grayscale
+constraints:
+  images:
+    descp: The RGB tensor to convert. Last dimension must have size 3 and should contain
+      RGB values.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - images
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/rgb_to_grayscale
+outputs: The converted grayscale image(s).
+package: tensorflow
+target: rgb_to_grayscale
+title: tf.image.rgb_to_grayscale
+version: 2.1.0

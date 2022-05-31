@@ -1,0 +1,16 @@
+constraints:
+  active:
+    default: 'True'
+    descp: Indicates whether to activate NumPy-shape semantics.
+    doc_dtype: bool
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - active
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/util/index.html#mxnet.util.np_shape
+package: mxnet
+target: np_shape
+title: mxnet.util.np_shape
+version: 1.6.0

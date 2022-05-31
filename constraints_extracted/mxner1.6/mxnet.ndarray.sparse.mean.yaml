@@ -1,0 +1,67 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: 'The axis or axes along which to perform the reduction.  The default, axis=(),
+      will compute over all elements into a scalar array with shape (1,). If axis
+      is int, a reduction is performed on a particular axis. If axis is a tuple of
+      ints, a reduction is performed on all the axes specified in the tuple. If exclude
+      is true, reduction will be performed on the axes that are NOT in axis instead.
+      Negative values means indexing from right to left.  '
+    doc_dtype: Shape or None, optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  exclude:
+    default: _Null
+    descp: Whether to perform reduction on axis that are NOT in axis instead.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  keepdims:
+    default: _Null
+    descp: If this is set to True, the reduced axes are left in the result as dimension
+      with size one.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axis
+  - keepdims
+  - exclude
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.mean
+package: mxnet
+target: mean
+title: mxnet.ndarray.sparse.mean
+version: 1.6.0

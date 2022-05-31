@@ -1,0 +1,70 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  lhs:
+    default: None
+    descp: First input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lhs_begin:
+    default: _Null
+    descp: Defaults to 0. The beginning index along which the lhs dimensions are to
+      be reshaped. Supports negative indices.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+  lhs_end:
+    default: _Null
+    descp: Defaults to None. The ending index along which the lhs dimensions are to
+      be used for reshaping. Supports negative indices.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: Second input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  rhs_begin:
+    default: _Null
+    descp: Defaults to 0. The beginning index along which the rhs dimensions are to
+      be used for reshaping. Supports negative indices.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+  rhs_end:
+    default: _Null
+    descp: Defaults to None. The ending index along which the rhs dimensions are to
+      be used for reshaping. Supports negative indices.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - lhs_begin
+  - lhs_end
+  - rhs_begin
+  - rhs_end
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.reshape_like
+package: mxnet
+target: reshape_like
+title: mxnet.ndarray.reshape_like
+version: 1.6.0

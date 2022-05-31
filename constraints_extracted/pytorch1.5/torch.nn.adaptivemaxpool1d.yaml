@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  output_size:
+    descp: the target output size H
+  return_indices:
+    default: 'False'
+    descp: 'if `True`, will return the indices along with the outputs. Useful to pass
+      to nn.MaxUnpool1d. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - return_indices
+  required:
+  - output_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.AdaptiveMaxPool1d
+package: torch
+target: AdaptiveMaxPool1d
+title: torch.nn.AdaptiveMaxPool1d
+version: 1.5.0

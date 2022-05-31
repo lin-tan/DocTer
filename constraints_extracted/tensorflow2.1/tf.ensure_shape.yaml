@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.ensure_shape
+constraints:
+  name:
+    default: None
+    descp: A name for this operation (optional). Defaults to "EnsureShape".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  shape:
+    descp: A `TensorShape` representing the shape of this tensor, a`TensorShapeProto`,
+      a list, a tuple, or None.
+    ndim:
+    - '0'
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ensure_shape
+outputs: A `Tensor`. Has the same type and contents as `x`. At runtime, raises a`tf.errors.InvalidArgumentError`
+  if `shape` is incompatible with the shape of `x`.
+package: tensorflow
+target: ensure_shape
+title: tf.ensure_shape
+version: 2.1.0

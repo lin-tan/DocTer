@@ -1,0 +1,24 @@
+constraints:
+  destination:
+    default: None
+    descp: 'a device on which the output will be placed (default: current device).'
+    doc_dtype: int, optional
+    dtype:
+    - int
+  inputs:
+    descp: an iterable of tensors to add.
+    doc_dtype: Iterable[Tensor]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - destination
+  required:
+  - inputs
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.comm.reduce_add
+package: torch
+target: reduce_add
+title: torch.cuda.comm.reduce_add
+version: 1.5.0

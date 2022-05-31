@@ -1,0 +1,40 @@
+check_nan: true
+constraints:
+  eps:
+    default: 1e-06
+    descp: 'Small value to avoid division by zero. Default: 1e-6'
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  keepdim:
+    default: 'False'
+    descp: 'Determines whether or not to keep the vector dimension. Default: False'
+    doc_dtype: bool, optional
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+  p:
+    default: '2.0'
+    descp: 'the norm degree. Default: 2'
+    doc_dtype: real
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - p
+  - eps
+  - keepdim
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.PairwiseDistance
+package: torch
+target: PairwiseDistance
+title: torch.nn.PairwiseDistance
+version: 1.5.0

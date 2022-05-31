@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.ragged.boolean_mask
+constraints:
+  data:
+    descp: A potentially ragged tensor.
+    tensor_t:
+    - tf.tensor
+  mask:
+    descp: A potentially ragged boolean tensor.  `mask`'s shape must be a prefix of
+      `data`'s shape.  `rank(mask)` must be known statically.
+    dtype:
+    - tf.bool
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name prefix for the returned tensor (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if `rank(mask)` is not known statically; or if `mask.shape` is not a
+    prefix of `data.shape`.
+inputs:
+  optional:
+  - name
+  required:
+  - data
+  - mask
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/ragged/boolean_mask
+outputs: A potentially ragged tensor that is formed by retaining the elements in`data`
+  where the corresponding value in `mask` is `True`.
+package: tensorflow
+target: boolean_mask
+title: tf.ragged.boolean_mask
+version: 2.1.0

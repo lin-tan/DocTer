@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.audio.encode_wav
+constraints:
+  audio:
+    descp: A `Tensor` of type `float32`. 2-D with shape `[length, channels]`.
+    dtype:
+    - tf.float32
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sample_rate:
+    descp: A `Tensor` of type `int32`. Scalar containing the sample frequency.
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - audio
+  - sample_rate
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/audio/encode_wav
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: encode_wav
+title: tf.audio.encode_wav
+version: 2.1.0

@@ -1,0 +1,28 @@
+check_nan: true
+constraints:
+  data:
+    descp: The data to save.
+    doc_dtype: NDArray, RowSparseNDArray or CSRNDArray,            or list of NDArray,
+      RowSparseNDArray or CSRNDArray,            or dict of str to NDArray, RowSparseNDArray
+      or CSRNDArray
+    dtype:
+    - string
+    structure:
+    - dict
+    - list
+    - ndarray
+  fname:
+    descp: The filename.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - fname
+  - data
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.save
+package: mxnet
+target: save
+title: mxnet.ndarray.save
+version: 1.6.0

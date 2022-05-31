@@ -1,0 +1,132 @@
+constraints:
+  brightness:
+    default: '0'
+    descp: Brightness jittering range (percent)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+  contrast:
+    default: '0'
+    descp: Contrast jittering range (percent)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data_shape:
+    descp: Shape for output data
+    doc_dtype: tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+  hue:
+    default: '0'
+    descp: Hue jittering range (percent)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+  inter_method:
+    default: '2'
+    descp: 'Interpolation method for all resizing operations Possible values: 0: Nearest
+      Neighbors Interpolation. 1: Bilinear interpolation. 2: Bicubic interpolation
+      over 4x4 pixel neighborhood. 3: Area-based (resampling using pixel area relation).
+      It may be a preferred method for image decimation, as it gives moire-free results.
+      But when the image is zoomed, it is similar to the Nearest Neighbors method.
+      (used by default). 4: Lanczos interpolation over 8x8 pixel neighborhood. 9:
+      Cubic for enlarge, area for shrink, bilinear for others 10: Random select from
+      interpolation method metioned above. Note: When shrinking an image, it will
+      generally look best with AREA-based interpolation, whereas, when enlarging an
+      image, it will generally look best with Bicubic (slow) or Bilinear (faster but
+      still looks OK). '
+    doc_dtype: int, default=2(Area-based
+    ndim:
+    - '0'
+  mean:
+    default: None
+    descp: Mean pixel values for [r, g, b]
+    doc_dtype: np.ndarray or None
+  pca_noise:
+    default: '0'
+    descp: Pca noise level (percent)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+  rand_crop:
+    default: 'False'
+    descp: Whether to enable random cropping other than center crop
+    doc_dtype: bool
+    dtype:
+    - boolean
+  rand_gray:
+    default: '0'
+    descp: '[0, 1], probability to convert to grayscale for all channels, the number
+      of channels will not be reduced to 1'
+    doc_dtype: float
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  rand_mirror:
+    default: 'False'
+    descp: Whether to apply horizontal flip to image with probability 0.5
+    doc_dtype: bool
+    dtype:
+    - boolean
+  rand_resize:
+    default: 'False'
+    descp: Whether to enable random sized cropping, require rand_crop to be enabled
+    doc_dtype: bool
+    dtype:
+    - boolean
+  resize:
+    default: '0'
+    descp: Resize shorter edge if larger than 0 at the begining
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  saturation:
+    default: '0'
+    descp: Saturation jittering range (percent)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+  std:
+    default: None
+    descp: Standard deviations for [r, g, b]
+    doc_dtype: np.ndarray or None
+inputs:
+  optional:
+  - resize
+  - rand_crop
+  - rand_resize
+  - rand_mirror
+  - mean
+  - std
+  - brightness
+  - contrast
+  - saturation
+  - hue
+  - pca_noise
+  - rand_gray
+  - inter_method
+  required:
+  - data_shape
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/image/index.html#mxnet.image.CreateAugmenter
+package: mxnet
+target: CreateAugmenter
+title: mxnet.image.CreateAugmenter
+version: 1.6.0

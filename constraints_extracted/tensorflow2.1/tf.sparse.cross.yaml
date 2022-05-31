@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.sparse.cross
+constraints:
+  inputs:
+    descp: An iterable of `Tensor` or `SparseTensor`.
+    structure:
+    - list
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/cross
+outputs: A `SparseTensor` of type `string`.
+package: tensorflow
+target: cross
+title: tf.sparse.cross
+version: 2.1.0

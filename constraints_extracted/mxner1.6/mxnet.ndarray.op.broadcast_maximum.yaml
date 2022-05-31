@@ -1,0 +1,38 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  lhs:
+    default: None
+    descp: First input to the function
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: Second input to the function
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.broadcast_maximum
+package: mxnet
+target: broadcast_maximum
+title: mxnet.ndarray.op.broadcast_maximum
+version: 1.6.0

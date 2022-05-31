@@ -1,0 +1,46 @@
+constraints:
+  batch_axis:
+    default: '0'
+    descp: The axis along which to slice.
+    doc_dtype: int, default 0
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    descp: A batch of data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  even_split:
+    default: 'True'
+    descp: Whether to force all slices to have the same number of elements. If True,
+      an error will be raised when num_slice does not evenly divide data.shape[batch_axis].
+    doc_dtype: bool, default True
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_slice:
+    descp: Number of desired slices.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - batch_axis
+  - even_split
+  required:
+  - data
+  - num_slice
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/utils/index.html#mxnet.gluon.utils.split_data
+package: mxnet
+target: split_data
+title: mxnet.gluon.utils.split_data
+version: 1.6.0

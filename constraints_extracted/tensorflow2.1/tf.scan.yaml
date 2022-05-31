@@ -1,0 +1,92 @@
+aliases:
+- tf.compat.v1.scan
+constraints:
+  back_prop:
+    default: 'True'
+    descp: (optional) True enables support for back propagation.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  elems:
+    descp: A tensor or (possibly nested) sequence of tensors, each of which will be
+      unpacked along their first dimension.  The nested sequence of the resulting
+      slices will be the first argument to `fn`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  fn:
+    descp: The callable to be performed.  It accepts two arguments.  The first will
+      have the same structure as `initializer` if one is provided, otherwise it will
+      have the same structure as `elems`.  The second will have the same (possibly
+      nested) structure as `elems`.  Its output must have the same structure as `initializer`
+      if one is provided, otherwise it must have the same structure as `elems`.
+  infer_shape:
+    default: 'True'
+    descp: (optional) False disables tests for consistent output shapes.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  initializer:
+    default: None
+    descp: (optional) A tensor or (possibly nested) sequence of tensors, initial value
+      for the accumulator, and the expected output type of `fn`.
+    dtype:
+    - tf.dtype
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: (optional) Name prefix for the returned tensors.
+  parallel_iterations:
+    default: '10'
+    descp: (optional) The number of iterations allowed to run in parallel.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  reverse:
+    default: 'False'
+    descp: (optional) True scans the tensor last to first (instead of first to last).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  swap_memory:
+    default: 'False'
+    descp: (optional) True enables GPU-CPU memory swapping.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: if `fn` is not callable or the structure of the output of`fn` and `initializer`
+    do not match.
+- ValueError: if the lengths of the output of `fn` and `initializer`do not match.
+inputs:
+  optional:
+  - initializer
+  - parallel_iterations
+  - back_prop
+  - swap_memory
+  - infer_shape
+  - reverse
+  - name
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/scan
+outputs: A tensor or (possibly nested) sequence of tensors.  Each tensor packs the
+  results of applying `fn` to tensors unpacked from `elems` along the first dimension,
+  and the previous accumulator value(s), from first to last (or last to first, if
+  `reverse=True`).
+package: tensorflow
+target: scan
+title: tf.scan
+version: 2.1.0

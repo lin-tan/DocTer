@@ -1,0 +1,72 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  grad_scale:
+    default: _Null
+    descp: Gradient scale as a supplement to unary and binary operators
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  normalization:
+    default: _Null
+    descp: If this is set to null, the output gradient will not be normalized. If
+      this is set to batch, the output gradient will be divided by the batch size.
+      If this is set to valid, the output gradient will be divided by the number of
+      valid input elements.
+    doc_dtype: '{''batch'', ''null'', ''valid''},optional, default=''null'''
+    dtype:
+    - boolean
+    - int
+    enum:
+    - batch
+    - 'null'
+    - valid
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  valid_thresh:
+    default: _Null
+    descp: clip each element in the array to 0 when it is less than `valid_thresh`.
+      This is used when `normalization` is set to `'valid'`.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - boolean
+    - float
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - grad_scale
+  - valid_thresh
+  - normalization
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.MakeLoss
+package: mxnet
+target: MakeLoss
+title: mxnet.ndarray.op.MakeLoss
+version: 1.6.0

@@ -1,0 +1,57 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  a:
+    default: _Null
+    descp: Coefficient of the quadratic term in the quadratic function.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  b:
+    default: _Null
+    descp: Coefficient of the linear term in the quadratic function.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  c:
+    default: _Null
+    descp: Constant term in the quadratic function.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - a
+  - b
+  - c
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.quadratic
+package: mxnet
+target: quadratic
+title: mxnet.contrib.ndarray.quadratic
+version: 1.6.0

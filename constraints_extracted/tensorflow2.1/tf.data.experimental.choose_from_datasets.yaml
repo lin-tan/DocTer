@@ -1,0 +1,22 @@
+constraints:
+  choice_dataset:
+    descp: A `tf.data.Dataset` of scalar `tf.int64` tensors between`0` and `len(datasets)
+      - 1`.
+  datasets:
+    descp: A list of `tf.data.Dataset` objects with compatible structure.
+    structure:
+    - list
+exceptions:
+- TypeError: If the `datasets` or `choice_dataset` arguments have the wrong type.
+inputs:
+  optional: []
+  required:
+  - datasets
+  - choice_dataset
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/choose_from_datasets
+outputs: A dataset that interleaves elements from `datasets` according to the values
+  of `choice_dataset`.
+package: tensorflow
+target: choose_from_datasets
+title: tf.data.experimental.choose_from_datasets
+version: 2.1.0

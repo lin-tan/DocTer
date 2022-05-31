@@ -1,0 +1,59 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  clip:
+    default: _Null
+    descp: Whether to clip out-of-boundary boxes.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  offsets:
+    default: _Null
+    descp: Priorbox center offsets, y and x respectively
+    doc_dtype: tuple of <float>, optional, default=[0.5,0.5]
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  ratios:
+    default: _Null
+    descp: List of aspect ratios of generated MultiBoxPriores.
+    doc_dtype: tuple of <float>, optional, default=[1]
+  sizes:
+    default: _Null
+    descp: List of sizes of generated MultiBoxPriores.
+    doc_dtype: tuple of <float>, optional, default=[1]
+  steps:
+    default: _Null
+    descp: Priorbox step across y and x, -1 for auto calculation.
+    doc_dtype: tuple of <float>, optional, default=[-1,-1]
+inputs:
+  optional:
+  - data
+  - sizes
+  - ratios
+  - clip
+  - steps
+  - offsets
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.MultiBoxPrior
+package: mxnet
+target: MultiBoxPrior
+title: mxnet.contrib.ndarray.MultiBoxPrior
+version: 1.6.0

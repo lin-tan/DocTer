@@ -1,0 +1,82 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if `None`, uses a global
+      default (see `torch.set_default_tensor_type()`).'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  layout:
+    default: torch.strided
+    descp: 'the desired layout of returned Tensor. Default: `torch.strided`.'
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  m:
+    default: None
+    descp: the number of columns with default being `n`
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  n:
+    descp: the number of rows
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - m
+  - out
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  required:
+  - n
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.eye
+package: torch
+ret_type: Tensor
+target: eye
+title: torch.eye
+version: 1.5.0

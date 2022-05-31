@@ -1,0 +1,26 @@
+constraints:
+  auto_reset:
+    default: 'False'
+    descp: Reset the metric after each log.
+    doc_dtype: bool
+    dtype:
+    - boolean
+  period:
+    descp: The number of batch to log the training evaluation metric.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - auto_reset
+  required:
+  - period
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/callback/index.html#mxnet.callback.log_train_metric
+package: mxnet
+target: log_train_metric
+title: mxnet.callback.log_train_metric
+version: 1.6.0

@@ -1,0 +1,66 @@
+constraints:
+  feature_columns:
+    descp: An iterable containing all feature columns. All items should be instances
+      of classes derived from `_FeatureColumn`.
+    structure:
+    - list
+  label_default:
+    default: None
+    descp: used as label if label_key does not exist in given tf.Example. By default
+      default_value is none, which means`tf.parse_example` will error out if there
+      is any missing label.
+  label_dimension:
+    default: '1'
+    descp: Number of regression targets per example. This is the size of the last
+      dimension of the labels and logits `Tensor` objects (typically, these have shape
+      `[batch_size, label_dimension]`).
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  label_dtype:
+    default: tf.dtypes.float32
+    descp: A `tf.dtype` identifies the type of labels. By default it is`tf.float32`.
+    dtype:
+    - tf.dtype
+    - tf.float32
+  label_key:
+    descp: A string identifying the label. It means tf.Example stores labels with
+      this key.
+  weight_column:
+    default: None
+    descp: A string or a `NumericColumn` created by`tf.feature_column.numeric_column`
+      defining feature column representing weights. It is used to down weight or boost
+      examples during training. It will be multiplied by the loss of the example.
+      If it is a string, it is used as a key to fetch weight tensor from the `features`.
+      If it is a`NumericColumn`, raw tensor is fetched by key `weight_column.key`,
+      then weight_column.normalizer_fn is applied on it to get weight tensor.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If label is used in `feature_columns`.
+- ValueError: If weight_column is used in `feature_columns`.
+- ValueError: If any of the given `feature_columns` is not a `_FeatureColumn`instance.
+- ValueError: If `weight_column` is not a `NumericColumn` instance.
+- ValueError: if label_key is None.
+inputs:
+  optional:
+  - label_dtype
+  - label_default
+  - label_dimension
+  - weight_column
+  required:
+  - feature_columns
+  - label_key
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/estimator/regressor_parse_example_spec
+outputs: A dict mapping each feature key to a `FixedLenFeature` or `VarLenFeature`value.
+package: tensorflow
+target: regressor_parse_example_spec
+title: tf.estimator.regressor_parse_example_spec
+version: 2.1.0

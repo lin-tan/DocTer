@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  inplace:
+    default: 'False'
+    descp: 'can optionally do the operation in-place. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  lower:
+    default: '0.125'
+    descp: 'lower bound of the uniform distribution. Default:  1/8 '
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  upper:
+    default: '0.3333333333333333'
+    descp: 'upper bound of the uniform distribution. Default:  1/3 '
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - lower
+  - upper
+  - inplace
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.RReLU
+package: torch
+target: RReLU
+title: torch.nn.RReLU
+version: 1.5.0

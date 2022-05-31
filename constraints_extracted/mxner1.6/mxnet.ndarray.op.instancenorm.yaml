@@ -1,0 +1,58 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  beta:
+    default: None
+    descp: A vector of length 'channel', which is added to the product of the normalized
+      input and the weight.
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+  data:
+    default: None
+    descp: An n-dimensional input array (n > 2) of the form [batch, channel, spatial_dim1,
+      spatial_dim2, ...].
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  eps:
+    default: _Null
+    descp: An epsilon parameter to prevent division by 0.
+    doc_dtype: float, optional, default=0.00100000005
+    dtype:
+    - float
+    ndim:
+    - '0'
+  gamma:
+    default: None
+    descp: A vector of length 'channel', which multiplies the normalized input.
+    doc_dtype: NDArray
+    structure:
+    - list
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - gamma
+  - beta
+  - eps
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.InstanceNorm
+package: mxnet
+target: InstanceNorm
+title: mxnet.ndarray.op.InstanceNorm
+version: 1.6.0

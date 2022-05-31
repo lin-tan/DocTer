@@ -1,0 +1,51 @@
+aliases:
+- tf.compat.v1.nn.batch_normalization
+check_nan: true
+constraints:
+  mean:
+    descp: A mean `Tensor`.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  offset:
+    descp: An offset `Tensor`, often denoted \(\beta\) in equations, or None. If present,
+      will be added to the normalized tensor.
+    tensor_t:
+    - tf.tensor
+  scale:
+    descp: A scale `Tensor`, often denoted \(\gamma\) in equations, or`None`. If present,
+      the scale is applied to the normalized tensor.
+    tensor_t:
+    - tf.tensor
+  variance:
+    descp: A variance `Tensor`.
+    tensor_t:
+    - tf.tensor
+  variance_epsilon:
+    descp: A small float number to avoid dividing by 0.
+    range:
+    - '[0,inf)'
+  x:
+    descp: Input `Tensor` of arbitrary dimensionality.
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - mean
+  - variance
+  - offset
+  - scale
+  - variance_epsilon
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/batch_normalization
+outputs: Normalized, scaled, offset tensor.
+package: tensorflow
+target: batch_normalization
+title: tf.nn.batch_normalization
+version: 2.1.0

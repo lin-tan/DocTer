@@ -1,0 +1,36 @@
+constraints:
+  dim:
+    default: '-1'
+    descp: The dimension along which to integrate.By default, use the last dimension.
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+  x:
+    descp: The points at which the function y is sampled.If x is not in ascending
+      order, intervals on which it is decreasingcontribute negatively to the estimated
+      integral (i.e., the convention int_a^b f = - int_b^a f is followed).
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  y:
+    descp: The values of the function to integrate
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  keyword_only:
+  - dim
+  optional:
+  - dim
+  required:
+  - y
+  - x
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.trapz
+package: torch
+ret_type: Tensor
+target: trapz
+title: torch.trapz
+version: 1.5.0

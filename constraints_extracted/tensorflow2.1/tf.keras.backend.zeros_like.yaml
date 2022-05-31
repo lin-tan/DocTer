@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.keras.backend.zeros_like
+constraints:
+  dtype:
+    default: None
+    descp: dtype of returned Keras variable.    `None` uses the dtype of `x`.
+  name:
+    default: None
+    descp: name for the variable to create.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: Keras variable or Keras tensor.
+inputs:
+  optional:
+  - dtype
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/zeros_like
+outputs: A Keras variable with the shape of `x` filled with zeros.
+package: tensorflow
+target: zeros_like
+title: tf.keras.backend.zeros_like
+version: 2.1.0

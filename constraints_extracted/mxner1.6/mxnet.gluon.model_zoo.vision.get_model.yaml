@@ -1,0 +1,52 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  classes:
+    default: None
+    descp: Number of classes for the output layer.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  ctx:
+    default: None
+    descp: The context in which to load the pretrained weights.
+    doc_dtype: Context, default CPU
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    descp: Name of the model.
+    doc_dtype: str
+    dtype:
+    - string
+  pretrained:
+    default: None
+    descp: Whether to load the pretrained weights for model.
+    doc_dtype: bool
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  root:
+    default: None
+    descp: Location for keeping the model parameters.
+    doc_dtype: str, default '$MXNET_HOME/models'
+inputs:
+  optional:
+  - pretrained
+  - classes
+  - ctx
+  - root
+  required:
+  - name
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/model_zoo/index.html#mxnet.gluon.model_zoo.vision.get_model
+package: mxnet
+target: get_model
+title: mxnet.gluon.model_zoo.vision.get_model
+version: 1.6.0

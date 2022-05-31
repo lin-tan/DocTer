@@ -1,0 +1,36 @@
+constraints:
+  eigenvectors:
+    default: 'False'
+    descp: '`True` to compute both eigenvalues and eigenvectors; otherwise, only eigenvalues
+      will be computed'
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: the square matrix of shape (n  times n)  for which the eigenvalues and
+      eigenvectors will be computed
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensors
+    doc_dtype: tuple, optional
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - eigenvectors
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.eig
+package: torch
+ret_type: (Tensor, Tensor)
+target: eig
+title: torch.eig
+version: 1.5.0

@@ -1,0 +1,96 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  anchor:
+    default: None
+    descp: Generated anchor boxes.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  cls_pred:
+    default: None
+    descp: Class predictions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  ignore_label:
+    default: _Null
+    descp: Label for ignored anchors.
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  label:
+    default: None
+    descp: Object detection labels.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  minimum_negative_samples:
+    default: _Null
+    descp: Minimum number of negative samples.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  name:
+    default: None
+    descp: ''
+  negative_mining_ratio:
+    default: _Null
+    descp: Max negative to positive samples ratio, use -1 to disable mining
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  negative_mining_thresh:
+    default: _Null
+    descp: Threshold used for negative mining.
+    doc_dtype: float, optional, default=0.5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  overlap_threshold:
+    default: _Null
+    descp: Anchor-GT overlap threshold to be regarded as a positive match.
+    doc_dtype: float, optional, default=0.5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  variances:
+    default: _Null
+    descp: Variances to be encoded in box regression target.
+    doc_dtype: tuple of <float>, optional, default=[0.1,0.1,0.2,0.2]
+inputs:
+  optional:
+  - anchor
+  - label
+  - cls_pred
+  - overlap_threshold
+  - ignore_label
+  - negative_mining_ratio
+  - negative_mining_thresh
+  - minimum_negative_samples
+  - variances
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.MultiBoxTarget
+package: mxnet
+target: MultiBoxTarget
+title: mxnet.ndarray.contrib.MultiBoxTarget
+version: 1.6.0

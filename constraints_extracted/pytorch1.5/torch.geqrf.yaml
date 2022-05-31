@@ -1,0 +1,25 @@
+constraints:
+  input:
+    descp: the input matrix
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tuple of (Tensor, Tensor)
+    doc_dtype: tuple, optional
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.geqrf
+package: torch
+ret_type: (Tensor, Tensor)
+target: geqrf
+title: torch.geqrf
+version: 1.5.0

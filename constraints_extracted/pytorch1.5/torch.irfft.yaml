@@ -1,0 +1,57 @@
+constraints:
+  input:
+    descp: the input tensor of at least `signal_ndim` `+ 1` dimensions
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  normalized:
+    default: 'False'
+    descp: 'controls whether to return normalized results. Default: `False`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  onesided:
+    default: 'True'
+    descp: 'controls whether `input` was halfed to avoid redundancy, e.g., by `rfft()`.
+      Default: `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  signal_ndim:
+    descp: the number of dimensions in each signal. `signal_ndim` can only be 1, 2
+      or 3
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  signal_sizes:
+    default: None
+    descp: 'the size of the original signal (without batch dimension). Default: `None`'
+    doc_dtype: list or `torch.Size`, optional
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+inputs:
+  optional:
+  - normalized
+  - onesided
+  - signal_sizes
+  required:
+  - input
+  - signal_ndim
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.irfft
+package: torch
+ret_type: Tensor
+target: irfft
+title: torch.irfft
+version: 1.5.0

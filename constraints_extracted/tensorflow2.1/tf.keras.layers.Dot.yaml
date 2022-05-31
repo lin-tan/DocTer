@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.keras.layers.Dot
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: Standard layer keyword arguments.
+  axes:
+    descp: Integer or tuple of integers, axis or axes along which to take the dot
+      product.
+    dtype:
+    - int
+    structure:
+    - tuple
+  normalize:
+    default: 'False'
+    descp: Whether to L2-normalize samples along the dot product axis before taking
+      the dot product. If set to True, then the output of the dot product is the cosine
+      proximity between the two samples.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - normalize
+  - '**kwargs'
+  required:
+  - axes
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Dot
+package: tensorflow
+target: Dot
+title: tf.keras.layers.Dot
+version: 2.1.0

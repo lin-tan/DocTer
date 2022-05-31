@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.get_static_value
+constraints:
+  partial:
+    default: 'False'
+    descp: If True, the returned numpy array is allowed to have partially evaluated
+      values. Values that can't be evaluated will be None.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  tensor:
+    descp: The Tensor to be evaluated.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: if tensor is not an ops.Tensor.
+inputs:
+  optional:
+  - partial
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/get_static_value
+outputs: A numpy ndarray containing the constant value of the given `tensor`, or None
+  if it cannot be calculated.
+package: tensorflow
+target: get_static_value
+title: tf.get_static_value
+version: 2.1.0

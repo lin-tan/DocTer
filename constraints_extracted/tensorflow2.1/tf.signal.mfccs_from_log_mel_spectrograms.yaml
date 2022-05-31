@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.signal.mfccs_from_log_mel_spectrograms
+constraints:
+  log_mel_spectrograms:
+    descp: A `[..., num_mel_bins]` `float32`/`float64` `Tensor`of log-magnitude mel-scale
+      spectrograms.
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If `num_mel_bins` is not positive.
+inputs:
+  optional:
+  - name
+  required:
+  - log_mel_spectrograms
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/mfccs_from_log_mel_spectrograms
+outputs: A `[..., num_mel_bins]` `float32`/`float64` `Tensor` of the MFCCs of`log_mel_spectrograms`.
+package: tensorflow
+target: mfccs_from_log_mel_spectrograms
+title: tf.signal.mfccs_from_log_mel_spectrograms
+version: 2.1.0

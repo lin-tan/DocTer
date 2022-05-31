@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.print_tensor
+constraints:
+  message:
+    default: ''
+    descp: Message to print jointly with the tensor.
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: Tensor to print.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - message
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/print_tensor
+outputs: The same tensor `x`, unchanged.
+package: tensorflow
+target: print_tensor
+title: tf.keras.backend.print_tensor
+version: 2.1.0

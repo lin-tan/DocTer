@@ -1,0 +1,51 @@
+aliases:
+- tf.compat.v1.estimator.experimental.stop_if_higher_hook
+constraints:
+  estimator:
+    descp: A `tf.estimator.Estimator` instance.
+  eval_dir:
+    default: None
+    descp: If set, directory containing summary files with eval metrics. By default,
+      `estimator.eval_dir()` will be used.
+  metric_name:
+    descp: '`str`, metric to track. "loss", "accuracy", etc.'
+  min_steps:
+    default: '0'
+    descp: '`int`, stop is never requested if global step is less than this value.
+      Defaults to 0.'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  run_every_secs:
+    default: '60'
+    descp: If specified, calls `should_stop_fn` at an interval of`run_every_secs`
+      seconds. Defaults to 60 seconds. Either this or`run_every_steps` must be set.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  run_every_steps:
+    default: None
+    descp: If specified, calls `should_stop_fn` every`run_every_steps` steps. Either
+      this or `run_every_secs` must be set.
+  threshold:
+    descp: Numeric threshold for the given metric.
+inputs:
+  optional:
+  - eval_dir
+  - min_steps
+  - run_every_secs
+  - run_every_steps
+  required:
+  - estimator
+  - metric_name
+  - threshold
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/estimator/experimental/stop_if_higher_hook
+outputs: An early-stopping hook of type `SessionRunHook` that periodically checks
+  if the given metric is higher than specified threshold and initiates early stopping
+  if true.
+package: tensorflow
+target: stop_if_higher_hook
+title: tf.estimator.experimental.stop_if_higher_hook
+version: 2.1.0

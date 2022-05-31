@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  ceil_mode:
+    default: 'False'
+    descp: when True, will use ceil instead of floor to compute the output shape
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  kernel_size:
+    descp: a single int, the size of the window
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+  norm_type:
+    descp: ''
+  stride:
+    default: None
+    descp: a single int, the stride of the window. Default value is `kernel_size`
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - stride
+  - ceil_mode
+  required:
+  - norm_type
+  - kernel_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.LPPool1d
+package: torch
+target: LPPool1d
+title: torch.nn.LPPool1d
+version: 1.5.0

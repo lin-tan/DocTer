@@ -1,0 +1,58 @@
+constraints:
+  axis:
+    default: None
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. The`axis`
+      in `params` to gather `indices` from. Must be greater than or equal to `batch_dims`.  Defaults
+      to the first non-batch dimension. Supports negative indexes.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  batch_dims:
+    default: '0'
+    descp: An `integer`.  The number of batch dimensions.  Must be less than `rank(indices)`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  indices:
+    descp: 'The index `Tensor`.  Must be one of the following types: `int32`,`int64`.
+      Must be in range `[0, params.shape[axis])`.'
+    dtype:
+    - tf.int32
+    - tf.int64
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  params:
+    descp: The `Tensor` from which to gather values. Must be at least rank`axis +
+      1`.
+    tensor_t:
+    - tf.tensor
+  validate_indices:
+    default: None
+    descp: Deprecated, does nothing.
+inputs:
+  optional:
+  - validate_indices
+  - axis
+  - batch_dims
+  - name
+  required:
+  - params
+  - indices
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/gather
+outputs: A `Tensor`. Has the same type as `params`.
+package: tensorflow
+target: gather
+title: tf.gather
+version: 2.1.0

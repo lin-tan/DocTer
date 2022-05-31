@@ -1,0 +1,28 @@
+aliases:
+- tf.image.is_jpeg
+- tf.compat.v1.image.is_jpeg
+- tf.compat.v1.io.is_jpeg
+constraints:
+  contents:
+    descp: 0-D `string`. The encoded image bytes.
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: A name for the operation (optional)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/is_jpeg
+outputs: A scalar boolean tensor indicating if 'contents' may be a JPEG image. is_jpeg
+  is susceptible to false positives.
+package: tensorflow
+target: is_jpeg
+title: tf.io.is_jpeg
+version: 2.1.0

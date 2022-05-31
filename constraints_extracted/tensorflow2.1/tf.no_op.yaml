@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.no_op
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/no_op
+outputs: The created Operation.
+package: tensorflow
+target: no_op
+title: tf.no_op
+version: 2.1.0

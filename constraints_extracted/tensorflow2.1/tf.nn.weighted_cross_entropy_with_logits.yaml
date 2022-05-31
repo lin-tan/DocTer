@@ -1,0 +1,38 @@
+check_nan: true
+constraints:
+  labels:
+    descp: A `Tensor` of the same type and shape as `logits`.
+    tensor_t:
+    - tf.tensor
+  logits:
+    descp: A `Tensor` of type `float32` or `float64`.
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pos_weight:
+    descp: A coefficient to use on the positive examples.
+exceptions:
+- ValueError: If `logits` and `labels` do not have the same shape.
+inputs:
+  optional:
+  - name
+  required:
+  - labels
+  - logits
+  - pos_weight
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/weighted_cross_entropy_with_logits
+outputs: A `Tensor` of the same shape as `logits` with the componentwise weighted
+  logistic losses.
+package: tensorflow
+target: weighted_cross_entropy_with_logits
+title: tf.nn.weighted_cross_entropy_with_logits
+version: 2.1.0

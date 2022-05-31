@@ -1,0 +1,30 @@
+check_nan: true
+constraints:
+  params:
+    default: None
+    descp: '`ParameterDict` for sharing weights with the new `Block`. For example,
+      if you want `dense1` to share `dense0`''s weights, you can do: dense0 = nn.Dense(20)
+      dense1 = nn.Dense(20, params=dense0.collect_params())   '
+    doc_dtype: ParameterDict or None
+    enum:
+    - Block
+    - ParameterDict
+  prefix:
+    default: None
+    descp: Prefix acts like a name space. All children blocks created in parent block's
+      `name_scope()` will have parent block's prefix in their name. Please refer to
+      naming tutorial for more info on prefix and naming.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - prefix
+  - params
+  required: []
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Block
+package: mxnet
+target: Block
+title: mxnet.gluon.nn.Block
+version: 1.6.0

@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.feature_column.indicator_column
+constraints:
+  categorical_column:
+    descp: A `CategoricalColumn` which is created by`categorical_column_with_*` or
+      `crossed_column` functions.
+    ndim:
+    - '0'
+inputs:
+  optional: []
+  required:
+  - categorical_column
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/indicator_column
+outputs: An `IndicatorColumn`.
+package: tensorflow
+target: indicator_column
+title: tf.feature_column.indicator_column
+version: 2.1.0

@@ -1,0 +1,89 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  clip_gradient:
+    default: _Null
+    descp: Clip gradient to the range of [-clip_gradient, clip_gradient] If clip_gradient
+      <= 0, gradient clipping is turned off. grad = max(min(grad, clip_gradient),
+      -clip_gradient).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  epsilon:
+    default: _Null
+    descp: epsilon
+    doc_dtype: float, optional, default=1.00000001e-07
+    dtype:
+    - float
+    ndim:
+    - '0'
+  grad:
+    default: None
+    descp: Gradient
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  history:
+    default: None
+    descp: History
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lr:
+    default: _Null
+    descp: Learning rate
+    doc_dtype: float, required
+    dtype:
+    - float
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: _Null
+    descp: Rescale gradient to grad = rescale_grad*grad.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  wd:
+    default: _Null
+    descp: weight decay
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  weight:
+    default: None
+    descp: Weight
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - weight
+  - grad
+  - history
+  - lr
+  - epsilon
+  - wd
+  - rescale_grad
+  - clip_gradient
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.adagrad_update
+package: mxnet
+target: adagrad_update
+title: mxnet.ndarray.sparse.adagrad_update
+version: 1.6.0

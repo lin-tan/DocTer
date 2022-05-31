@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.config.experimental.set_device_policy
+constraints:
+  device_policy:
+    descp: 'A device policy. Valid values: None: Switch to a system default.''warn'':
+      Copies the tensors which are not on the right device and logs a warning.''explicit'':
+      Raises an error if the placement is not as required.''silent'': Silently copies
+      the tensors. Note that this may hide performance problems as there is no notification
+      provided when operations are blocked on the tensor being copied between devices.''silent_for_int32'':
+      silently copies `int32` tensors, raising errors on the other ones. '
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If an invalid `device_policy` is passed.
+inputs:
+  optional: []
+  required:
+  - device_policy
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/experimental/set_device_policy
+package: tensorflow
+target: set_device_policy
+title: tf.config.experimental.set_device_policy
+version: 2.1.0

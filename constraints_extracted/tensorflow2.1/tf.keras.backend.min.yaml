@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.backend.min
+constraints:
+  axis:
+    default: None
+    descp: An integer, the axis to find minimum values.
+  keepdims:
+    default: 'False'
+    descp: A boolean, whether to keep the dimensions or not. If `keepdims` is `False`,
+      the rank of the tensor is reduced by 1. If `keepdims` is `True`, the reduced
+      dimension is retained with length 1.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - keepdims
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/min
+outputs: A tensor with minimum values of `x`.
+package: tensorflow
+target: min
+title: tf.keras.backend.min
+version: 2.1.0

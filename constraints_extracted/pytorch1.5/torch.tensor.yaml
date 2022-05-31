@@ -1,0 +1,64 @@
+constraints:
+  data:
+    descp: Initial data for the tensor. Can be a list, tuple, NumPy `ndarray`, scalar,
+      and other types.
+    doc_dtype: array_like
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if `None`, infers data
+      type from `data`.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  pin_memory:
+    default: 'False'
+    descp: 'If set, returned tensor would be allocated in the pinned memory. Works
+      only for CPU tensors. Default: `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dtype
+  - device
+  - requires_grad
+  - pin_memory
+  required:
+  - data
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.tensor
+package: torch
+ret_type: Tensor
+target: tensor
+title: torch.tensor
+version: 1.5.0

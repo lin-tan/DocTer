@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.config.experimental_connect_to_host
+constraints:
+  job_name:
+    default: worker
+    descp: The job name under which the new server will be accessible.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  remote_host:
+    default: None
+    descp: a single or a list the remote server addr in host-port format.
+    structure:
+    - list
+exceptions:
+- ValueError: if remote_host is None.
+inputs:
+  optional:
+  - remote_host
+  - job_name
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/experimental_connect_to_host
+package: tensorflow
+target: experimental_connect_to_host
+title: tf.config.experimental_connect_to_host
+version: 2.1.0

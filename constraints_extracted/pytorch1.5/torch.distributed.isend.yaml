@@ -1,0 +1,35 @@
+constraints:
+  dst:
+    descp: Destination rank.
+    doc_dtype: int
+    dtype:
+    - int
+  group:
+    default: <objectobject>
+    descp: The process group to work on
+    doc_dtype: ProcessGroup, optional
+  tag:
+    default: '0'
+    descp: Tag to match send with remote recv
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  tensor:
+    descp: Tensor to send.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - group
+  - tag
+  required:
+  - tensor
+  - dst
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.isend
+package: torch
+target: isend
+title: torch.distributed.isend
+version: 1.5.0

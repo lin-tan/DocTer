@@ -1,0 +1,26 @@
+constraints:
+  input:
+    descp: The input tensor of size (*, m, n)  where *  is zero or more batch dimensions
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  rcond:
+    default: 1e-15
+    descp: 'A floating point value to determine the cutoff for small singular values.
+      Default: 1e-15'
+    doc_dtype: float
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - rcond
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.pinverse
+package: torch
+ret_type: Tensor
+target: pinverse
+title: torch.pinverse
+version: 1.5.0

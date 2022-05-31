@@ -1,0 +1,15 @@
+constraints:
+  msg:
+    descp: ASCII message to associate with the event.
+    doc_dtype: string
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - msg
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.nvtx.mark
+package: torch
+target: mark
+title: torch.cuda.nvtx.mark
+version: 1.5.0

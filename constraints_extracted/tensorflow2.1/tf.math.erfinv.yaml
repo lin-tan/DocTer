@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.math.erfinv
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: '`Tensor` with type `float` or `double`.'
+    dtype:
+    - float
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/erfinv
+outputs: Inverse error function of `x`.
+package: tensorflow
+target: erfinv
+title: tf.math.erfinv
+version: 2.1.0

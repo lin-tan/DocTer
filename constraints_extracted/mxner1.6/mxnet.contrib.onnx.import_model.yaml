@@ -1,0 +1,15 @@
+constraints:
+  model_file:
+    descp: ONNX model file name
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - model_file
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/onnx/index.html#mxnet.contrib.onnx.import_model
+package: mxnet
+target: import_model
+title: mxnet.contrib.onnx.import_model
+version: 1.6.0

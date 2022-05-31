@@ -1,0 +1,45 @@
+aliases:
+- tf.compat.v1.keras.backend.random_uniform
+constraints:
+  dtype:
+    default: None
+    descp: String, dtype of returned tensor.
+  maxval:
+    default: '1.0'
+    descp: A float, upper boundary of the uniform distribution to draw samples.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  minval:
+    default: '0.0'
+    descp: A float, lower boundary of the uniform distribution to draw samples.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: Integer, random seed.
+  shape:
+    descp: A tuple of integers, the shape of tensor to create.
+    dtype:
+    - int
+    structure:
+    - tuple
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - minval
+  - maxval
+  - dtype
+  - seed
+  required:
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/random_uniform
+outputs: A tensor.
+package: tensorflow
+target: random_uniform
+title: tf.keras.backend.random_uniform
+version: 2.1.0

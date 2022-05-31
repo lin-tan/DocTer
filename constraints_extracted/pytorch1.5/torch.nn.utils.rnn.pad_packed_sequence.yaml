@@ -1,0 +1,43 @@
+constraints:
+  batch_first:
+    default: 'False'
+    descp: if `True`, the output will be in `B x T x *` format.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  padding_value:
+    default: '0.0'
+    descp: values for padded elements.
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  sequence:
+    descp: batch to pad
+    doc_dtype: PackedSequence
+  total_length:
+    default: None
+    descp: if not `None`, the output will be padded to have length `total_length`.
+      This method will throw `ValueError` if `total_length` is less than the max sequence
+      length in `sequence`.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    enum:
+    - None
+    - total_length
+inputs:
+  optional:
+  - batch_first
+  - padding_value
+  - total_length
+  required:
+  - sequence
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.rnn.pad_packed_sequence
+package: torch
+target: pad_packed_sequence
+title: torch.nn.utils.rnn.pad_packed_sequence
+version: 1.5.0

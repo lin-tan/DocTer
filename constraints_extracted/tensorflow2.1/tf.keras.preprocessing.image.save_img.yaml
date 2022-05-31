@@ -1,0 +1,43 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.image.save_img
+constraints:
+  '**kwargs':
+    descp: Additional keyword arguments passed to `PIL.Image.save()`.
+  data_format:
+    default: None
+    descp: Image data format, either "channels_first" or "channels_last".
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+  file_format:
+    default: None
+    descp: Optional file format override. If omitted, the format to use is determined
+      from the filename extension. If a file object was used instead of a filename,
+      this parameter should always be used.
+  path:
+    descp: Path or file object.
+  scale:
+    default: 'True'
+    descp: Whether to rescale image values to be within `[0, 255]`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: Numpy array.
+inputs:
+  optional:
+  - data_format
+  - file_format
+  - scale
+  required:
+  - path
+  - x
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/image/save_img
+package: tensorflow
+target: save_img
+title: tf.keras.preprocessing.image.save_img
+version: 2.1.0

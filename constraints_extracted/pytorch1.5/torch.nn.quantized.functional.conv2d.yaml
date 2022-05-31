@@ -1,0 +1,126 @@
+constraints:
+  bias:
+    descp: non-quantized bias tensor of shape (out _channels) . The tensor type must
+      be torch.float.
+    dtype:
+    - torch.dtype
+    - torch.float32
+    ndim:
+    - '1'
+    shape:
+    - '[out_channels]'
+    tensor_t:
+    - torch.tensor
+  dilation:
+    default: '1'
+    descp: 'the spacing between kernel elements. Can be a single number or a tuple
+      (dH, dW). Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  dtype:
+    default: torch.quint8
+    descp: 'quantization data type to use. Default: `torch.quint8`'
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+  groups:
+    default: '1'
+    descp: 'split input into groups, in _channels  should be divisible by the number
+      of groups. Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  input:
+    descp: 'quantized input tensor of shape (minibatch , in _channels , iH , iW) '
+    ndim:
+    - '4'
+    shape:
+    - '[minibatch,in_channels,ih,iw]'
+    tensor_t:
+    - torch.tensor
+  padding:
+    default: '0'
+    descp: 'implicit paddings on both sides of the input. Can be a single number or
+      a tuple (padH, padW). Default: 0'
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  padding_mode:
+    default: zeros
+    descp: 'the padding mode to use. Only "zeros" is supported for quantized convolution
+      at the moment. Default: "zeros"'
+    dtype:
+    - string
+    - torch.bool
+    ndim:
+    - '0'
+  scale:
+    default: '1.0'
+    descp: 'quantization scale for the output. Default: 1.0'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  stride:
+    default: '1'
+    descp: 'the stride of the convolving kernel. Can be a single number or a tuple
+      (sH, sW). Default: 1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  weight:
+    descp: 'quantized filters of shape (out _channels ,  in _channels/groups , kH
+      , kW) '
+  zero_point:
+    default: '0'
+    descp: 'quantization zero_point for the output. Default: 0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+dependency:
+- ih
+- in_channels
+- iw
+- out_channels
+- minibatch
+inputs:
+  optional:
+  - stride
+  - padding
+  - dilation
+  - groups
+  - padding_mode
+  - scale
+  - zero_point
+  - dtype
+  required:
+  - input
+  - weight
+  - bias
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.nn.quantized.functional.conv2d
+package: torch
+target: conv2d
+title: torch.nn.quantized.functional.conv2d
+version: 1.5.0

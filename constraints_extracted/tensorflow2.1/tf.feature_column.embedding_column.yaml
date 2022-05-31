@@ -1,0 +1,78 @@
+aliases:
+- tf.compat.v1.feature_column.embedding_column
+constraints:
+  categorical_column:
+    descp: A `CategoricalColumn` created by a`categorical_column_with_*` function.
+      This column produces the sparse IDs that are inputs to the embedding lookup.
+    ndim:
+    - '0'
+  ckpt_to_load_from:
+    default: None
+    descp: String representing checkpoint name/pattern from which to restore column
+      weights. Required if `tensor_name_in_ckpt` is not `None`.
+  combiner:
+    default: mean
+    descp: A string specifying how to reduce if there are multiple entries in a single
+      row. Currently 'mean', 'sqrtn' and 'sum' are supported, with 'mean' the default.
+      'sqrtn' often achieves good accuracy, in particular with bag-of-words columns.
+      Each of this can be thought as example level normalizations on the column. For
+      more information, see`tf.embedding_lookup_sparse`.
+    dtype:
+    - tf.string
+    enum:
+    - mean
+    - sqrtn
+    - sum
+    ndim:
+    - '0'
+  dimension:
+    descp: An integer specifying dimension of the embedding, must be > 0.
+  initializer:
+    default: None
+    descp: A variable initializer function to be used in embedding variable initialization.
+      If not specified, defaults to`truncated_normal_initializer` with mean `0.0`
+      and standard deviation `1/sqrt(dimension)`.
+    ndim:
+    - '0'
+  max_norm:
+    default: None
+    descp: If not `None`, embedding values are l2-normalized to this value.
+  tensor_name_in_ckpt:
+    default: None
+    descp: Name of the `Tensor` in `ckpt_to_load_from` from which to restore the column
+      weights. Required if `ckpt_to_load_from` is not`None`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  trainable:
+    default: 'True'
+    descp: Whether or not the embedding is trainable. Default is True.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if `dimension` not > 0.
+- ValueError: if exactly one of `ckpt_to_load_from` and `tensor_name_in_ckpt`is specified.
+- ValueError: if `initializer` is specified and is not callable.
+- RuntimeError: If eager execution is enabled.
+inputs:
+  optional:
+  - combiner
+  - initializer
+  - ckpt_to_load_from
+  - tensor_name_in_ckpt
+  - max_norm
+  - trainable
+  required:
+  - categorical_column
+  - dimension
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/embedding_column
+outputs: '`DenseColumn` that converts from sparse input.'
+package: tensorflow
+target: embedding_column
+title: tf.feature_column.embedding_column
+version: 2.1.0

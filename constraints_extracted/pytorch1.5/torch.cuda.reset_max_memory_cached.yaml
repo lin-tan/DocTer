@@ -1,0 +1,17 @@
+constraints:
+  device:
+    default: None
+    descp: selected device. Returns statistic for the current device, given by `current_device()`,
+      if `device` is `None` (default).
+    doc_dtype: torch.device or int, optional
+    dtype:
+    - int
+inputs:
+  optional:
+  - device
+  required: []
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.reset_max_memory_cached
+package: torch
+target: reset_max_memory_cached
+title: torch.cuda.reset_max_memory_cached
+version: 1.5.0

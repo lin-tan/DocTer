@@ -1,0 +1,49 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: _Null
+    descp: Slope of hard sigmoid
+    doc_dtype: float, optional, default=0.200000003
+    dtype:
+    - float
+    ndim:
+    - '0'
+  beta:
+    default: _Null
+    descp: Bias of hard sigmoid.
+    doc_dtype: float, optional, default=0.5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - alpha
+  - beta
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.hard_sigmoid
+package: mxnet
+target: hard_sigmoid
+title: mxnet.ndarray.hard_sigmoid
+version: 1.6.0

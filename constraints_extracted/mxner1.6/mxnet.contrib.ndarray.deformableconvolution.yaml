@@ -1,0 +1,145 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  bias:
+    default: None
+    descp: Bias parameter.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  data:
+    default: None
+    descp: Input data to the DeformableConvolutionOp.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dilate:
+    default: _Null
+    descp: 'Convolution dilate: (h, w) or (d, h, w). Defaults to 1 for each dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  kernel:
+    default: _Null
+    descp: 'Convolution kernel size: (h, w) or (d, h, w)'
+    doc_dtype: Shape(tuple), required
+  layout:
+    default: _Null
+    descp: 'Set layout for input, output and weight. Empty for default layout: NCW
+      for 1d, NCHW for 2d and NCDHW for 3d.'
+    doc_dtype: '{None, ''NCDHW'', ''NCHW'', ''NCW''},optional, default=''None'''
+    enum:
+    - NCDHW
+    - NCHW
+    - NCW
+    - None
+  name:
+    default: None
+    descp: ''
+  no_bias:
+    default: _Null
+    descp: Whether to disable bias parameter.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_deformable_group:
+    default: _Null
+    descp: Number of deformable group partitions.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_filter:
+    default: _Null
+    descp: Convolution filter(channel) number
+    doc_dtype: int, required
+    dtype:
+    - int
+  num_group:
+    default: _Null
+    descp: Number of group partitions.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  offset:
+    default: None
+    descp: Input offset to the DeformableConvolutionOp.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  pad:
+    default: _Null
+    descp: 'Zero pad for convolution: (h, w) or (d, h, w). Defaults to no padding.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  stride:
+    default: _Null
+    descp: 'Convolution stride: (h, w) or (d, h, w). Defaults to 1 for each dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  weight:
+    default: None
+    descp: Weight matrix.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  workspace:
+    default: _Null
+    descp: Maximum temperal workspace allowed for convolution (MB).
+    doc_dtype: long (non-negative), optional, default=1024
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - offset
+  - weight
+  - bias
+  - kernel
+  - stride
+  - dilate
+  - pad
+  - num_filter
+  - num_group
+  - num_deformable_group
+  - workspace
+  - no_bias
+  - layout
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.DeformableConvolution
+package: mxnet
+target: DeformableConvolution
+title: mxnet.contrib.ndarray.DeformableConvolution
+version: 1.6.0

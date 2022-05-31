@@ -1,0 +1,45 @@
+aliases:
+- tf.compat.v1.audio.decode_wav
+constraints:
+  contents:
+    descp: A `Tensor` of type `string`. The WAV-encoded audio, usually from a file.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  desired_channels:
+    default: '-1'
+    descp: An optional `int`. Defaults to `-1`. Number of sample channels wanted.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  desired_samples:
+    default: '-1'
+    descp: An optional `int`. Defaults to `-1`. Length of audio requested.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - desired_channels
+  - desired_samples
+  - name
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/audio/decode_wav
+outputs: A tuple of `Tensor` objects (audio, sample_rate).
+package: tensorflow
+target: decode_wav
+title: tf.audio.decode_wav
+version: 2.1.0

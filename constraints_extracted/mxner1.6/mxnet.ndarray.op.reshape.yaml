@@ -1,0 +1,74 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data to reshape.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  keep_highest:
+    default: _Null
+    descp: (Deprecated! Use `shape` instead.) Whether keep the highest dim unchanged.If
+      set to true, then the first dim in target_shape is ignored,and always fixed
+      as input
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  reverse:
+    default: _Null
+    descp: If true then the special values are inferred from right to left
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  shape:
+    default: _Null
+    descp: The target shape
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  target_shape:
+    default: _Null
+    descp: (Deprecated! Use `shape` instead.) Target new shape. One and only one dim
+      can be 0, in which case it will be inferred from the rest of dims
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - shape
+  - reverse
+  - target_shape
+  - keep_highest
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.reshape
+package: mxnet
+target: reshape
+title: mxnet.ndarray.op.reshape
+version: 1.6.0

@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.backend.update_add
+constraints:
+  increment:
+    descp: A tensor of same shape as `x`.
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: A Variable.
+inputs:
+  optional: []
+  required:
+  - x
+  - increment
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/update_add
+outputs: The variable `x` updated.
+package: tensorflow
+target: update_add
+title: tf.keras.backend.update_add
+version: 2.1.0

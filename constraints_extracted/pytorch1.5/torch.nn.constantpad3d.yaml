@@ -1,0 +1,26 @@
+check_nan: true
+constraints:
+  padding:
+    descp: the size of the padding. If is int, uses the same padding in all boundaries.
+      If a 6-tuple, uses (padding _left , padding _right , padding _top , padding
+      _bottom , padding _front , padding _back )
+    doc_dtype: int, tuple
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  value:
+    descp: ''
+inputs:
+  optional: []
+  required:
+  - padding
+  - value
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.ConstantPad3d
+package: torch
+target: ConstantPad3d
+title: torch.nn.ConstantPad3d
+version: 1.5.0

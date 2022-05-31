@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.image.adjust_saturation
+constraints:
+  image:
+    descp: RGB image or images. Size of the last dimension must be 3.
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  saturation_factor:
+    descp: float. Factor to multiply the saturation by.
+exceptions:
+- InvalidArgumentError: input must have 3 channels
+inputs:
+  optional:
+  - name
+  required:
+  - image
+  - saturation_factor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/adjust_saturation
+outputs: Adjusted image(s), same shape and DType as `image`.
+package: tensorflow
+target: adjust_saturation
+title: tf.image.adjust_saturation
+version: 2.1.0

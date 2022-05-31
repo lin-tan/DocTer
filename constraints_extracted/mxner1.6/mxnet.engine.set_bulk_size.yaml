@@ -1,0 +1,19 @@
+constraints:
+  size:
+    descp: Maximum number of operators that can be bundled in a bulk.
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional: []
+  required:
+  - size
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/engine/index.html#mxnet.engine.set_bulk_size
+package: mxnet
+target: set_bulk_size
+title: mxnet.engine.set_bulk_size
+version: 1.6.0

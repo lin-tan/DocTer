@@ -1,0 +1,17 @@
+aliases:
+- tf.compat.v1.keras.backend.dtype
+constraints:
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/dtype
+outputs: String, dtype of `x`.
+package: tensorflow
+target: dtype
+title: tf.keras.backend.dtype
+version: 2.1.0

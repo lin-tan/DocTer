@@ -1,0 +1,28 @@
+constraints:
+  sparsity:
+    descp: The fraction of elements in each column to be set to zero
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  std:
+    default: '0.01'
+    descp: the standard deviation of the normal distribution used to generate the
+      non-zero values
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  tensor:
+    descp: an n-dimensional torch.Tensor
+inputs:
+  optional:
+  - std
+  required:
+  - tensor
+  - sparsity
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.sparse_
+package: torch
+target: sparse_
+title: torch.nn.init.sparse_
+version: 1.5.0

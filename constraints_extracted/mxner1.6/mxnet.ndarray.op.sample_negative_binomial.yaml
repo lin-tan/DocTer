@@ -1,0 +1,60 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred. Defaults to float32
+      if not defined (dtype=None).
+    doc_dtype: '{''None'', ''float16'', ''float32'', ''float64''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+  k:
+    default: None
+    descp: Limits of unsuccessful experiments.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  p:
+    default: None
+    descp: Failure probabilities in each experiment.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape to be sampled from each random distribution.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - k
+  - p
+  - shape
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.sample_negative_binomial
+package: mxnet
+target: sample_negative_binomial
+title: mxnet.ndarray.op.sample_negative_binomial
+version: 1.6.0

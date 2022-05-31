@@ -1,0 +1,95 @@
+check_nan: true
+constraints:
+  data_format:
+    default: None
+    descp: A string or None.  Specifies whether the channel dimension of the `input`
+      and output is the last dimension (default, or if `data_format`does not start
+      with "NC"), or the second dimension (if `data_format`starts with "NC").  For
+      N=1, the valid values are "NWC" (default) and "NCW".  For N=2, the valid values
+      are "NHWC" (default) and "NCHW". For N=3, the valid values are "NDHWC" (default)
+      and "NCDHW".
+    dtype:
+    - tf.string
+  dilations:
+    default: None
+    descp: Optional.  Dilation rate.  List of N ints >= 1. Defaults to [1]*N.  If
+      any value of dilation_rate is > 1, then all values of strides must be 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+  input:
+    descp: Tensor of rank N+2, of shape `[batch_size] + input_spatial_shape + [num_channels]`
+      if data_format does not start with "NC" (default), or`[batch_size, num_channels]
+      + input_spatial_shape` if data_format starts with "NC".  Pooling happens over
+      the spatial dimensions only.
+    enum:
+    - data_format
+    - starts
+    - with
+    ndim:
+    - '1'
+    - '2'
+    shape:
+    - '[batch_size,num_channels]'
+    - '[batch_size]'
+    - '[num_channels]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional. Name of the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    default: VALID
+    descp: The padding algorithm, must be "SAME" or "VALID". Defaults to "SAME". See
+      the "returns" section of `tf.nn.convolution` for details.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pooling_type:
+    descp: Specifies pooling operation, must be "AVG" or "MAX".
+  strides:
+    default: None
+    descp: Optional. Sequence of N ints >= 1.  Defaults to [1]*N. If any value of
+      strides is > 1, then all values of dilation_rate must be 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+  window_shape:
+    descp: Sequence of N ints >= 1.
+    dtype:
+    - int
+    structure:
+    - list
+dependency:
+- batch_size
+- num_channels
+exceptions:
+- ValueError: if arguments are invalid.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilations
+  - name
+  required:
+  - input
+  - window_shape
+  - pooling_type
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/pool
+outputs: Tensor of rank N+2, of shape   [batch_size] + output_spatial_shape + [num_channels]
+package: tensorflow
+target: pool
+title: tf.nn.pool
+version: 2.1.0

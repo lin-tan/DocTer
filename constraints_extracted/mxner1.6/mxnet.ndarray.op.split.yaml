@@ -1,0 +1,66 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Axis along which to split.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  num_outputs:
+    default: _Null
+    descp: Number of splits. Note that this should evenly divide the length of the
+      axis.
+    doc_dtype: int, required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  squeeze_axis:
+    default: _Null
+    descp: If true, Removes the axis with length 1 from the shapes of the output arrays.
+      Note that setting squeeze_axis to `true` removes axis with length 1 only along
+      the axis which it is split. Also squeeze_axis can be set to `true` only if `input.shape[axis]
+      == num_outputs`.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - num_outputs
+  - axis
+  - squeeze_axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.split
+package: mxnet
+target: split
+title: mxnet.ndarray.op.split
+version: 1.6.0

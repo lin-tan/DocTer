@@ -1,0 +1,84 @@
+check_nan: true
+constraints:
+  data_format:
+    default: None
+    descp: A string or None.  Specifies whether the channel dimension of the `input`
+      and output is the last dimension (default, or if `data_format`does not start
+      with "NC"), or the second dimension (if `data_format`starts with "NC").  For
+      N=1, the valid values are "NWC" (default) and "NCW".  For N=2, the valid values
+      are "NHWC" (default) and "NCHW". For N=3, the valid values are "NDHWC" (default)
+      and "NCDHW".
+    dtype:
+    - tf.string
+  dilations:
+    default: None
+    descp: Alias of dilation_rate.
+  filters:
+    descp: Alias of filter.
+  input:
+    descp: An (N+2)-D `Tensor` of type `T`, of shape`[batch_size] + input_spatial_shape
+      + [in_channels]` if data_format does not start with "NC" (default), or`[batch_size,
+      in_channels] + input_spatial_shape` if data_format starts with "NC".
+    enum:
+    - data_format
+    - starts
+    - with
+    ndim:
+    - '1'
+    - '2'
+    shape:
+    - '[batch_size,in_channels]'
+    - '[batch_size]'
+    - '[in_channels]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the returned tensor.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding:
+    default: VALID
+    descp: A string, either `"VALID"` or `"SAME"`. The padding algorithm.
+    dtype:
+    - tf.string
+    enum:
+    - SAME
+    - VALID
+    ndim:
+    - '0'
+  strides:
+    default: None
+    descp: Optional.  Sequence of N ints >= 1.  Specifies the output stride. Defaults
+      to [1]*N.  If any value of strides is > 1, then all values of dilation_rate
+      must be 1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+dependency:
+- batch_size
+- in_channels
+exceptions:
+- ValueError: If input/output depth does not match `filters` shape, if padding is
+    other than `"VALID"` or `"SAME"`, or if data_format is invalid.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilations
+  - name
+  required:
+  - input
+  - filters
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/convolution
+outputs: A `Tensor` with the same type as `input` of shape
+package: tensorflow
+target: convolution
+title: tf.nn.convolution
+version: 2.1.0

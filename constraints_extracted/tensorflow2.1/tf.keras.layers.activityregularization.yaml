@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.keras.layers.ActivityRegularization
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  l1:
+    default: '0.0'
+    descp: L1 regularization factor (positive float).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  l2:
+    default: '0.0'
+    descp: L2 regularization factor (positive float).
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - l1
+  - l2
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/ActivityRegularization
+package: tensorflow
+target: ActivityRegularization
+title: tf.keras.layers.ActivityRegularization
+version: 2.1.0

@@ -1,0 +1,36 @@
+constraints:
+  batch_first:
+    default: 'False'
+    descp: output will be in `B x T x *` if True, or in `T x B x *` otherwise
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  padding_value:
+    default: '0'
+    descp: 'value for padded elements. Default: 0.'
+    doc_dtype: float, optional
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  sequences:
+    descp: list of variable length sequences.
+    doc_dtype: list[Tensor]
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - batch_first
+  - padding_value
+  required:
+  - sequences
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.utils.rnn.pad_sequence
+package: torch
+target: pad_sequence
+title: torch.nn.utils.rnn.pad_sequence
+version: 1.5.0

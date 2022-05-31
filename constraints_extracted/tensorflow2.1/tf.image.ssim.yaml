@@ -1,0 +1,55 @@
+aliases:
+- tf.compat.v1.image.ssim
+constraints:
+  filter_sigma:
+    default: '1.5'
+    descp: Default value 1.5 (width of gaussian filter).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  filter_size:
+    default: '11'
+    descp: Default value 11 (size of gaussian filter).
+    dtype:
+    - int
+  img1:
+    descp: First image batch.
+  img2:
+    descp: Second image batch.
+  k1:
+    default: '0.01'
+    descp: Default value 0.01
+    dtype:
+    - float
+    ndim:
+    - '0'
+  k2:
+    default: '0.03'
+    descp: Default value 0.03 (SSIM is less sensitivity to K2 for lower values, so
+      it would be better if we taken the values in range of 0< K2 <0.4).
+    dtype:
+    - float
+    ndim:
+    - '0'
+  max_val:
+    descp: The dynamic range of the images (i.e., the difference between the maximum
+      the and minimum allowed values).
+inputs:
+  optional:
+  - filter_size
+  - filter_sigma
+  - k1
+  - k2
+  required:
+  - img1
+  - img2
+  - max_val
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/ssim
+outputs: 'A tensor containing an SSIM value for each image in batch.  Returned SSIM
+  values are in range (-1, 1], when pixel values are non-negative. Returns a tensor
+  with shape: broadcast(img1.shape[:-3], img2.shape[:-3]).'
+package: tensorflow
+target: ssim
+title: tf.image.ssim
+version: 2.1.0

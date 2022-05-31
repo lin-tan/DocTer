@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.layers.Activation
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  activation:
+    descp: Activation function, such as `tf.nn.relu`, or string name of built-in activation
+      function, such as "relu".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - '**kwargs'
+  required:
+  - activation
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Activation
+package: tensorflow
+target: Activation
+title: tf.keras.layers.Activation
+version: 2.1.0

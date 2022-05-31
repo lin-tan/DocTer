@@ -1,0 +1,15 @@
+constraints:
+  d:
+    descp: path to a local folder to save downloaded models &amp; weights.
+    doc_dtype: string
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - d
+link: https://pytorch.org/docs/1.5.0/hub.html#torch.hub.set_dir
+package: torch
+target: set_dir
+title: torch.hub.set_dir
+version: 1.5.0

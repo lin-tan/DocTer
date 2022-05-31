@@ -1,0 +1,47 @@
+aliases:
+- tf.compat.v1.image.crop_to_bounding_box
+constraints:
+  image:
+    descp: 4-D Tensor of shape `[batch, height, width, channels]` or 3-D Tensor of
+      shape `[height, width, channels]`.
+    ndim:
+    - '3'
+    - '4'
+    shape:
+    - '[batch,height,width,channels]'
+    - '[height,width,channels]'
+    tensor_t:
+    - tf.tensor
+  offset_height:
+    descp: Vertical coordinate of the top-left corner of the result in the input.
+  offset_width:
+    descp: Horizontal coordinate of the top-left corner of the result in the input.
+  target_height:
+    descp: Height of the result.
+  target_width:
+    descp: Width of the result.
+dependency:
+- batch
+- width
+- channels
+- height
+exceptions:
+- ValueError: If the shape of `image` is incompatible with the `offset_*` or`target_*`
+    arguments, or either `offset_height` or `offset_width` is negative, or either
+    `target_height` or `target_width` is not positive.
+inputs:
+  optional: []
+  required:
+  - image
+  - offset_height
+  - offset_width
+  - target_height
+  - target_width
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/crop_to_bounding_box
+outputs: If `image` was 4-D, a 4-D float Tensor of shape`[batch, target_height, target_width,
+  channels]`If `image` was 3-D, a 3-D float Tensor of shape`[target_height, target_width,
+  channels]`
+package: tensorflow
+target: crop_to_bounding_box
+title: tf.image.crop_to_bounding_box
+version: 2.1.0

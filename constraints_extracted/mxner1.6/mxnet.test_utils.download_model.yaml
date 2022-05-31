@@ -1,0 +1,30 @@
+constraints:
+  dst_dir:
+    default: ./
+    descp: Destination Directory to download the model
+    doc_dtype: str
+    dtype:
+    - string
+  meta_info:
+    default: None
+    descp: 'Mapping from model_name to dict of the following structure: {''symbol'':
+      url, ''params'': url}'
+    doc_dtype: dict of dict
+    structure:
+    - dict
+  model_name:
+    descp: Model name to download
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - dst_dir
+  - meta_info
+  required:
+  - model_name
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.download_model
+package: mxnet
+target: download_model
+title: mxnet.test_utils.download_model
+version: 1.6.0

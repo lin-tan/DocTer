@@ -1,0 +1,40 @@
+constraints:
+  axis:
+    default: None
+    descp: A 0-D int Tensor representing the axis in `tensor` to mask from. By default,
+      axis is 0 which will mask from the first dimension. Otherwise K + axis <= N.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  mask:
+    descp: K-D boolean tensor, K <= N and K must be known statically.
+  name:
+    default: boolean_mask
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: N-D tensor.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If shapes do not conform.
+inputs:
+  optional:
+  - axis
+  - name
+  required:
+  - tensor
+  - mask
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/boolean_mask
+outputs: (N-K+1)-dimensional tensor populated by entries in `tensor` corresponding
+  to `True` values in `mask`.
+package: tensorflow
+target: boolean_mask
+title: tf.boolean_mask
+version: 2.1.0

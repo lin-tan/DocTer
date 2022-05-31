@@ -1,0 +1,74 @@
+aliases:
+- tf.keras.layers.MaxPooling2D
+- tf.compat.v1.keras.layers.MaxPool2D
+- tf.compat.v1.keras.layers.MaxPooling2D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      height, width, channels)` while `channels_first`corresponds to inputs with shape`(batch,
+      channels, height, width)`. It defaults to the `image_data_format` value found
+      in your Keras config file at `~/.keras/keras.json`. If you never set it, then
+      it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+  padding:
+    default: valid
+    descp: One of `"valid"` or `"same"` (case-insensitive).
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  pool_size:
+    default: (2, 2)
+    descp: integer or tuple of 2 integers, factors by which to downscale (vertical,
+      horizontal).`(2, 2)` will halve the input in both spatial dimension. If only
+      one integer is specified, the same window length will be used for both dimensions.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - tuple
+  strides:
+    default: None
+    descp: Integer, tuple of 2 integers, or None. Strides values. If None, it will
+      default to `pool_size`.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    - '2'
+    shape:
+    - '[2]'
+    structure:
+    - tuple
+inputs:
+  optional:
+  - pool_size
+  - strides
+  - padding
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/MaxPool2D
+package: tensorflow
+target: MaxPool2D
+title: tf.keras.layers.MaxPool2D
+version: 2.1.0

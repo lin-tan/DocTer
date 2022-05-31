@@ -1,0 +1,23 @@
+constraints:
+  dims:
+    descp: axis to flip on
+    doc_dtype: a list or tuple
+    structure:
+    - list
+    - tuple
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - input
+  - dims
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.flip
+package: torch
+ret_type: Tensor
+target: flip
+title: torch.flip
+version: 1.5.0

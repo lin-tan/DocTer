@@ -1,0 +1,65 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Distribution probabilities. Must sum to one on the last axis.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred.
+    doc_dtype: '{''float16'', ''float32'', ''float64'', ''int32'', ''uint8''},optional,
+      default=''int32'''
+    enum:
+    - float16
+    - float32
+    - float64
+    - int32
+    - uint8
+  get_prob:
+    default: _Null
+    descp: Whether to also return the log probability of sampled result. This is usually
+      used for differentiating through stochastic variables, e.g. in reinforcement
+      learning.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape to be sampled from each random distribution.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - shape
+  - get_prob
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.sample_multinomial
+package: mxnet
+target: sample_multinomial
+title: mxnet.ndarray.sample_multinomial
+version: 1.6.0

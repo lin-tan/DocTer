@@ -1,0 +1,35 @@
+aliases:
+- tf.nn.sigmoid
+- tf.sigmoid
+- tf.compat.v1.math.sigmoid
+- tf.compat.v1.nn.sigmoid
+- tf.compat.v1.sigmoid
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A Tensor with type `float16`, `float32`, `float64`, `complex64`, or`complex128`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/sigmoid
+outputs: A Tensor with the same type as `x`.
+package: tensorflow
+target: sigmoid
+title: tf.math.sigmoid
+version: 2.1.0

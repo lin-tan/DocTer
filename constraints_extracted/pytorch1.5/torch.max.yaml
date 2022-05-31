@@ -1,0 +1,16 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.max
+package: torch
+ret_type: Tensor
+target: max
+title: torch.max
+version: 1.5.0

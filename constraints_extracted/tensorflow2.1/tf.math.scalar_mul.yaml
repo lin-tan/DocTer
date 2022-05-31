@@ -1,0 +1,34 @@
+aliases:
+- tf.scalar_mul
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  scalar:
+    descp: A 0-D scalar `Tensor`. Must have known shape.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: A `Tensor` or `IndexedSlices` to be scaled.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if scalar is not a 0-D `scalar`.
+inputs:
+  optional:
+  - name
+  required:
+  - scalar
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/scalar_mul
+outputs: '`scalar * x` of the same type (`Tensor` or `IndexedSlices`) as `x`.'
+package: tensorflow
+target: scalar_mul
+title: tf.math.scalar_mul
+version: 2.1.0

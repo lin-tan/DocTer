@@ -1,0 +1,35 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: None
+    descp: The context in which to load the pretrained weights.
+    doc_dtype: Context, default CPU
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  pretrained:
+    default: None
+    descp: Whether to load the pretrained weights for model.
+    doc_dtype: bool, default False
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  root:
+    default: None
+    descp: Location for keeping the model parameters.
+    doc_dtype: str, default '$MXNET_HOME/models'
+inputs:
+  optional:
+  - pretrained
+  - ctx
+  - root
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/model_zoo/index.html#mxnet.gluon.model_zoo.vision.squeezenet1_1
+package: mxnet
+target: squeezenet1_1
+title: mxnet.gluon.model_zoo.vision.squeezenet1_1
+version: 1.6.0

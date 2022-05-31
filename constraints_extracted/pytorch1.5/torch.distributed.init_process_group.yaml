@@ -1,0 +1,76 @@
+constraints:
+  backend:
+    descp: The backend to use. Depending on build-time configurations, valid values
+      include `mpi`, `gloo`, and `nccl`. This field should be given as a lowercase
+      string (e.g., `"gloo"`), which can also be accessed via `Backend` attributes
+      (e.g., `Backend.GLOO`). If using multiple processes per machine with `nccl`
+      backend, each process must have exclusive access to every GPU it uses, as sharing
+      GPUs between processes can result in deadlocks.
+    doc_dtype: str or Backend
+    dtype:
+    - string
+    - torch.bool
+    ndim:
+    - '0'
+  group_name:
+    default: ''
+    descp: Group name.
+    doc_dtype: str, optional, deprecated
+    dtype:
+    - string
+  init_method:
+    default: None
+    descp: URL specifying how to initialize the process group. Default is "env://"
+      if no `init_method` or `store` is specified. Mutually exclusive with `store`.
+    doc_dtype: str, optional
+    dtype:
+    - string
+  rank:
+    default: '-1'
+    descp: Rank of the current process. Required if `store` is specified.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  store:
+    default: None
+    descp: Key/value store accessible to all workers, used to exchange connection/address
+      information. Mutually exclusive with `init_method`.
+    doc_dtype: Store, optional
+  timeout:
+    default: datetime.timedelta(0,1800)
+    descp: Timeout for operations executed against the process group. Default value
+      equals 30 minutes. This is applicable for the `gloo` backend. For `nccl`, this
+      is applicable only if the environment variable `NCCL_BLOCKING_WAIT` is set to
+      1.
+    doc_dtype: timedelta, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  world_size:
+    default: '-1'
+    descp: Number of processes participating in the job. Required if `store` is specified.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - init_method
+  - timeout
+  - world_size
+  - rank
+  - store
+  - group_name
+  required:
+  - backend
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.init_process_group
+package: torch
+target: init_process_group
+title: torch.distributed.init_process_group
+version: 1.5.0

@@ -1,0 +1,81 @@
+check_nan: true
+constraints:
+  ceil_mode:
+    default: 'False'
+    descp: 'when True, will use ceil instead of floor to compute the output shape.
+      Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  count_include_pad:
+    default: 'True'
+    descp: 'when True, will include the zero-padding in the averaging calculation.
+      Default: `True`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: 'input tensor of shape (minibatch , in _channels , iW) '
+    ndim:
+    - '3'
+    shape:
+    - '[minibatch,in_channels,iw]'
+    tensor_t:
+    - torch.tensor
+  kernel_size:
+    descp: the size of the window. Can be a single number or a tuple (kW,)
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  padding:
+    default: '0'
+    descp: 'implicit zero paddings on both sides of the input. Can be a single number
+      or a tuple (padW,). Default: 0'
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    - '1'
+    structure:
+    - tuple
+  stride:
+    default: None
+    descp: 'the stride of the window. Can be a single number or a tuple (sW,). Default:
+      `kernel_size`'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+dependency:
+- iw
+- in_channels
+- minibatch
+inputs:
+  optional:
+  - stride
+  - padding
+  - ceil_mode
+  - count_include_pad
+  required:
+  - input
+  - kernel_size
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.avg_pool1d
+package: torch
+ret_type: Tensor
+target: avg_pool1d
+title: torch.nn.functional.avg_pool1d
+version: 1.5.0

@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.train.checkpoints_iterator
+constraints:
+  checkpoint_dir:
+    descp: The directory in which checkpoints are saved.
+  min_interval_secs:
+    default: '0'
+    descp: The minimum number of seconds between yielding checkpoints.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  timeout:
+    default: None
+    descp: The maximum number of seconds to wait between checkpoints. If left as `None`,
+      then the process will wait indefinitely.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  timeout_fn:
+    default: None
+    descp: Optional function to call after a timeout.  If the function returns True,
+      then it means that no new checkpoints will be generated and the iterator will
+      exit.  The function is called with no arguments.
+inputs:
+  optional:
+  - min_interval_secs
+  - timeout
+  - timeout_fn
+  required:
+  - checkpoint_dir
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/train/checkpoints_iterator
+outputs: String paths to latest checkpoint files as they arrive.
+package: tensorflow
+target: checkpoints_iterator
+title: tf.train.checkpoints_iterator
+version: 2.1.0

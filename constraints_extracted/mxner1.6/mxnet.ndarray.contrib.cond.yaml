@@ -1,0 +1,23 @@
+constraints:
+  else_func:
+    descp: The computation to be executed if pred is false.
+    doc_dtype: a Python function.
+  pred:
+    descp: The branch condition.
+    doc_dtype: a MXNet NDArray representing a scalar.
+    structure:
+    - ndarray
+  then_func:
+    descp: The computation to be executed if pred is true.
+    doc_dtype: a Python function.
+inputs:
+  optional: []
+  required:
+  - pred
+  - then_func
+  - else_func
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.cond
+package: mxnet
+target: cond
+title: mxnet.ndarray.contrib.cond
+version: 1.6.0

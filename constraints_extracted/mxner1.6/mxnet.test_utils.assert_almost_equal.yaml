@@ -1,0 +1,69 @@
+constraints:
+  a:
+    descp: ''
+    doc_dtype: np.ndarray or mx.nd.array
+    structure:
+    - ndarray
+  atol:
+    default: None
+    descp: The absolute threshold. Default threshold will be used if set to `None`.
+    doc_dtype: None or float
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  b:
+    descp: ''
+    doc_dtype: np.ndarray or mx.nd.array
+    structure:
+    - ndarray
+  equal_nan:
+    default: 'False'
+    descp: The flag determining how to treat NAN values in comparison
+    doc_dtype: boolean, optional
+    dtype:
+    - boolean
+  mismatches:
+    default: (10,10)
+    descp: Maximum number of mismatches to be printed (mismatches[0]) and determine
+      (mismatches[1])
+    doc_dtype: tuple of mismatches
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  names:
+    default: (a,b)
+    descp: The names used in error message when an exception occurs
+    doc_dtype: tuple of names, optional
+    structure:
+    - tuple
+  rtol:
+    default: None
+    descp: The relative threshold. Default threshold will be used if set to `None`.
+    doc_dtype: None or float
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  use_broadcast:
+    default: 'True'
+    descp: ''
+inputs:
+  optional:
+  - rtol
+  - atol
+  - names
+  - equal_nan
+  - use_broadcast
+  - mismatches
+  required:
+  - a
+  - b
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.assert_almost_equal
+package: mxnet
+target: assert_almost_equal
+title: mxnet.test_utils.assert_almost_equal
+version: 1.6.0

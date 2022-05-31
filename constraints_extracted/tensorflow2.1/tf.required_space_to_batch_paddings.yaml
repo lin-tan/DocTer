@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.required_space_to_batch_paddings
+constraints:
+  base_paddings:
+    default: None
+    descp: Optional int32 Tensor of shape [N, 2].  Specifies the minimum amount of
+      padding to use.  All elements must be >= 0.  If not specified, defaults to 0.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    - '2'
+    shape:
+    - '[n,2]'
+    tensor_t:
+    - tf.tensor
+  block_shape:
+    descp: int32 Tensor of shape [N].
+    dtype:
+    - tf.int32
+    ndim:
+    - '1'
+    shape:
+    - '[n]'
+    tensor_t:
+    - tf.tensor
+  input_shape:
+    descp: int32 Tensor of shape [N].
+    dtype:
+    - tf.int32
+    ndim:
+    - '1'
+    shape:
+    - '[n]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: string.  Optional name prefix.
+dependency:
+- n
+inputs:
+  optional:
+  - base_paddings
+  - name
+  required:
+  - input_shape
+  - block_shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/required_space_to_batch_paddings
+outputs: '(paddings, crops), where:'
+package: tensorflow
+target: required_space_to_batch_paddings
+title: tf.required_space_to_batch_paddings
+version: 2.1.0

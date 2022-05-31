@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.image.random_brightness
+constraints:
+  image:
+    descp: An image or images to adjust.
+  max_delta:
+    descp: float, must be non-negative.
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed. See`tf.compat.v1.set_random_seed`
+      for behavior.
+    dtype:
+    - int
+exceptions:
+- ValueError: if `max_delta` is negative.
+inputs:
+  optional:
+  - seed
+  required:
+  - image
+  - max_delta
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/random_brightness
+outputs: The brightness-adjusted image(s).
+package: tensorflow
+target: random_brightness
+title: tf.image.random_brightness
+version: 2.1.0

@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  output_size:
+    descp: the target output size of the image of the form H x W. Can be a tuple (H,
+      W) or a single H for a square image H x H. H and W can be either a `int`, or
+      `None` which means the size will be the same as that of the input.
+  return_indices:
+    default: 'False'
+    descp: 'if `True`, will return the indices along with the outputs. Useful to pass
+      to nn.MaxUnpool2d. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - return_indices
+  required:
+  - output_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.AdaptiveMaxPool2d
+package: torch
+target: AdaptiveMaxPool2d
+title: torch.nn.AdaptiveMaxPool2d
+version: 1.5.0

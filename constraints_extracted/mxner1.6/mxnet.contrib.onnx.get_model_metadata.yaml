@@ -1,0 +1,15 @@
+constraints:
+  model_file:
+    descp: ONNX model file name
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - model_file
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/onnx/index.html#mxnet.contrib.onnx.get_model_metadata
+package: mxnet
+target: get_model_metadata
+title: mxnet.contrib.onnx.get_model_metadata
+version: 1.6.0

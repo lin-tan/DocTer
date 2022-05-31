@@ -1,0 +1,54 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Axis along which to choose sort the input tensor. If not given, the flattened
+      array is used. Default is -1.
+    doc_dtype: int or None, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  data:
+    default: None
+    descp: The input array
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  is_ascend:
+    default: _Null
+    descp: Whether to sort in ascending or descending order.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axis
+  - is_ascend
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.sort
+package: mxnet
+target: sort
+title: mxnet.ndarray.op.sort
+version: 1.6.0

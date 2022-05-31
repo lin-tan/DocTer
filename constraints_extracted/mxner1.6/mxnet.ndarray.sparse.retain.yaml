@@ -1,0 +1,37 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input array for sparse_retain operator.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  indices:
+    default: None
+    descp: The index array of rows ids that will be retained.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - indices
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.retain
+package: mxnet
+target: retain
+title: mxnet.ndarray.sparse.retain
+version: 1.6.0

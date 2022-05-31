@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dtype:
+    default: _Null
+    descp: Output data type.
+    doc_dtype: '{''float16'', ''float32'', ''float64'', ''int32'', ''int64'', ''int8'',
+      ''uint8''}, required'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.amp_cast
+package: mxnet
+target: amp_cast
+title: mxnet.ndarray.amp_cast
+version: 1.6.0

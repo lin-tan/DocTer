@@ -1,0 +1,25 @@
+constraints:
+  groups:
+    default: '1'
+    descp: 'number of groups in the conv layer (default: 1)'
+    doc_dtype: optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  tensor:
+    descp: a {3, 4, 5}-dimensional torch.Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - groups
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.dirac_
+package: torch
+target: dirac_
+title: torch.nn.init.dirac_
+version: 1.5.0

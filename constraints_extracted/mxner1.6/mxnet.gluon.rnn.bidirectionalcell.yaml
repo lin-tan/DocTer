@@ -1,0 +1,27 @@
+check_nan: true
+constraints:
+  l_cell:
+    descp: Cell for forward unrolling
+    doc_dtype: RecurrentCell
+  output_prefix:
+    default: bi_
+    descp: ''
+    dtype:
+    - string
+    ndim:
+    - '0'
+  r_cell:
+    descp: Cell for backward unrolling
+    doc_dtype: RecurrentCell
+inputs:
+  optional:
+  - output_prefix
+  required:
+  - l_cell
+  - r_cell
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/rnn/index.html#mxnet.gluon.rnn.BidirectionalCell
+package: mxnet
+target: BidirectionalCell
+title: mxnet.gluon.rnn.BidirectionalCell
+version: 1.6.0

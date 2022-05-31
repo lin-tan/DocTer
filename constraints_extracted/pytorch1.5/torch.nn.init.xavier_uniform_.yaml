@@ -1,0 +1,20 @@
+constraints:
+  gain:
+    default: '1.0'
+    descp: an optional scaling factor
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  tensor:
+    descp: an n-dimensional torch.Tensor
+inputs:
+  optional:
+  - gain
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.xavier_uniform_
+package: torch
+target: xavier_uniform_
+title: torch.nn.init.xavier_uniform_
+version: 1.5.0

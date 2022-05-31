@@ -1,0 +1,23 @@
+constraints:
+  devices:
+    descp: an iterable of devices among which to broadcast. Note that it should be
+      like (src, dst1, dst2,  u2026), the first element of which is the source device
+      to broadcast from.
+    doc_dtype: Iterable
+    structure:
+    - list
+  tensor:
+    descp: tensor to broadcast.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - tensor
+  - devices
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.comm.broadcast
+package: torch
+target: broadcast
+title: torch.cuda.comm.broadcast
+version: 1.5.0

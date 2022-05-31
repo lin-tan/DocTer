@@ -1,0 +1,40 @@
+aliases:
+- tf.compat.v1.saved_model.experimental.save
+- tf.compat.v1.saved_model.save
+constraints:
+  export_dir:
+    descp: A directory in which to write the SavedModel.
+  obj:
+    descp: A trackable object to export.
+  options:
+    default: None
+    descp: Optional, `tf.saved_model.SaveOptions` object that specifies options for
+      saving.
+  signatures:
+    default: None
+    descp: Optional, either a `tf.function` with an input signature specified or the
+      result of `f.get_concrete_function` on a`@tf.function`-decorated function `f`,
+      in which case `f` will be used to generate a signature for the SavedModel under
+      the default serving signature key. `signatures` may also be a dictionary, in
+      which case it maps from signature keys to either `tf.function` instances with
+      input signatures or concrete functions. The keys of such a dictionary may be
+      arbitrary strings, but will typically be from the`tf.saved_model.signature_constants`
+      module.
+    dtype:
+    - tf.string
+    structure:
+    - dict
+exceptions:
+- ValueError: If `obj` is not trackable.
+inputs:
+  optional:
+  - signatures
+  - options
+  required:
+  - obj
+  - export_dir
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/saved_model/save
+package: tensorflow
+target: save
+title: tf.saved_model.save
+version: 2.1.0

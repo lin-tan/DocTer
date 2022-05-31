@@ -1,0 +1,54 @@
+constraints:
+  A:
+    descp: the input triangular coefficient matrix of size (*, m, m)  where *  is
+      zero or more batch dimensions
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: multiple right-hand sides of size (*, m, k)  where *  is zero of more batch
+      dimensions (b )
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  transpose:
+    default: 'False'
+    descp: 'whether A  should be transposed before being sent into the solver. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  unitriangular:
+    default: 'False'
+    descp: 'whether A  is unit triangular. If True, the diagonal elements of A  are
+      assumed to be 1 and not referenced from A . Default: `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  upper:
+    default: 'True'
+    descp: 'whether to solve the upper-triangular system of equations (default) or
+      the lower-triangular system of equations. Default: `True`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - upper
+  - transpose
+  - unitriangular
+  required:
+  - input
+  - A
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.triangular_solve
+package: torch
+ret_type: (Tensor, Tensor)
+target: triangular_solve
+title: torch.triangular_solve
+version: 1.5.0

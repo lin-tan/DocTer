@@ -1,0 +1,35 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: List of arrays to concatenate
+    doc_dtype: NDArray[]
+    structure:
+    - list
+    - ndarray
+  dim:
+    default: None
+    descp: the dimension to be concated.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - dim
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.concat
+package: mxnet
+target: concat
+title: mxnet.ndarray.sparse.concat
+version: 1.6.0

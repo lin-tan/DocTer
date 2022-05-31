@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.backend.foldl
+constraints:
+  elems:
+    descp: tensor
+  fn:
+    descp: 'Callable that will be called upon each element in elems and an accumulator,
+      for instance `lambda acc, x: acc + x`'
+  initializer:
+    default: None
+    descp: The first value used (`elems[0]` in case of None)
+  name:
+    default: None
+    descp: A string name for the foldl node in the graph
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - initializer
+  - name
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/foldl
+outputs: Tensor with same type and shape as `initializer`.
+package: tensorflow
+target: foldl
+title: tf.keras.backend.foldl
+version: 2.1.0

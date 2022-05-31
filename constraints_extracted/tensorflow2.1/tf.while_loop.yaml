@@ -1,0 +1,76 @@
+constraints:
+  back_prop:
+    default: 'True'
+    descp: Whether backprop is enabled for this while loop.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  body:
+    descp: A callable that represents the loop body.
+  cond:
+    descp: A callable that represents the termination condition of the loop.
+  loop_vars:
+    descp: A (possibly nested) tuple, namedtuple or list of numpy array,`Tensor`,
+      and `TensorArray` objects.
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+  maximum_iterations:
+    default: None
+    descp: Optional maximum number of iterations of the while loop to run.  If provided,
+      the `cond` output is AND-ed with an additional condition ensuring the number
+      of iterations executed is no greater than`maximum_iterations`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  name:
+    default: None
+    descp: Optional name prefix for the returned tensors.
+  parallel_iterations:
+    default: '10'
+    descp: The number of iterations allowed to run in parallel. It must be a positive
+      integer.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  shape_invariants:
+    default: None
+    descp: The shape invariants for the loop variables.
+  swap_memory:
+    default: 'False'
+    descp: Whether GPU-CPU memory swap is enabled for this loop.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: if `cond` or `body` is not callable.
+- ValueError: if `loop_vars` is empty.
+inputs:
+  optional:
+  - shape_invariants
+  - parallel_iterations
+  - back_prop
+  - swap_memory
+  - maximum_iterations
+  - name
+  required:
+  - cond
+  - body
+  - loop_vars
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/while_loop
+outputs: The output tensors for the loop variables after the loop. The return value   has
+  the same structure as `loop_vars`.
+package: tensorflow
+target: while_loop
+title: tf.while_loop
+version: 2.1.0

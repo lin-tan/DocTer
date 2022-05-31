@@ -1,0 +1,67 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  interp:
+    default: _Null
+    descp: Interpolation method for resizing. By default uses bilinear interpolationOptions
+      are INTER_NEAREST - a nearest-neighbor interpolationINTER_LINEAR - a bilinear
+      interpolationINTER_AREA - resampling using pixel area relationINTER_CUBIC -
+      a bicubic interpolation over 4x4 pixel neighborhoodINTER_LANCZOS4 - a Lanczos
+      interpolation over 8x8 pixel neighborhoodNote that the GPU version only support
+      bilinear interpolation(1) and the result on cpu would be slightly different
+      from gpu.It uses opencv resize function which tend to align center on cpuwhile
+      using contrib.bilinearResize2D which aligns corner on gpu
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  keep_ratio:
+    default: _Null
+    descp: Whether to resize the short edge or both edges to size, if size is give
+      as an integer.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  size:
+    default: _Null
+    descp: Size of new image. Could be (width, height) or (size)
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - data
+  - size
+  - keep_ratio
+  - interp
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.resize
+package: mxnet
+target: resize
+title: mxnet.ndarray.image.resize
+version: 1.6.0

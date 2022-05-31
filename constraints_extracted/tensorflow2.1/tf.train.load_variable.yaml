@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.train.load_variable
+constraints:
+  ckpt_dir_or_file:
+    descp: Directory with checkpoints file or path to checkpoint.
+  name:
+    descp: Name of the variable to return.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional: []
+  required:
+  - ckpt_dir_or_file
+  - name
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/train/load_variable
+outputs: A numpy `ndarray` with a copy of the value of this variable.
+package: tensorflow
+target: load_variable
+title: tf.train.load_variable
+version: 2.1.0

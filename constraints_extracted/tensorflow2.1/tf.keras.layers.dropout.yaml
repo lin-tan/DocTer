@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.keras.layers.Dropout
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  noise_shape:
+    default: None
+    descp: 1D integer tensor representing the shape of the binary dropout mask that
+      will be multiplied with the input. For instance, if your inputs have shape`(batch_size,
+      timesteps, features)` and you want the dropout mask to be the same for all timesteps,
+      you can use `noise_shape=(batch_size, 1, features)`.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  rate:
+    descp: Float between 0 and 1. Fraction of the input units to drop.
+    dtype:
+    - float
+  seed:
+    default: None
+    descp: A Python integer to use as random seed.
+    dtype:
+    - int
+inputs:
+  optional:
+  - noise_shape
+  - seed
+  - '**kwargs'
+  required:
+  - rate
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Dropout
+package: tensorflow
+target: Dropout
+title: tf.keras.layers.Dropout
+version: 2.1.0

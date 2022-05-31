@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.image.image_gradients
+constraints:
+  image:
+    descp: Tensor with shape [batch_size, h, w, d].
+    ndim:
+    - '4'
+    shape:
+    - '[batch_size,h,w,d]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- batch_size
+- h
+- w
+- d
+exceptions:
+- ValueError: If `image` is not a 4D tensor.
+inputs:
+  optional: []
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/image_gradients
+outputs: Pair of tensors (dy, dx) holding the vertical and horizontal image gradients
+  (1-step finite difference).
+package: tensorflow
+target: image_gradients
+title: tf.image.image_gradients
+version: 2.1.0

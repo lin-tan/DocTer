@@ -1,0 +1,21 @@
+constraints:
+  array1:
+    descp: First NDArray to be checked
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  array2:
+    descp: Second NDArray to be checked
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - array1
+  - array2
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.same_array
+package: mxnet
+target: same_array
+title: mxnet.test_utils.same_array
+version: 1.6.0

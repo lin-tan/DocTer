@@ -1,0 +1,66 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: torch.int64
+    descp: 'the desired data type of returned tensor. Default: `torch.int64`.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  layout:
+    default: torch.strided
+    descp: 'the desired layout of returned Tensor. Default: `torch.strided`.'
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  n:
+    descp: the upper bound (exclusive)
+    doc_dtype: int
+    dtype:
+    - int
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  required:
+  - n
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.randperm
+package: torch
+ret_type: LongTensor
+target: randperm
+title: torch.randperm
+version: 1.5.0

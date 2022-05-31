@@ -1,0 +1,32 @@
+check_nan: true
+constraints:
+  num_classes:
+    default: '-1'
+    descp: Total number of classes. If set to -1, the number of classes will be inferred
+      as one greater than the largest class value in the input tensor.
+    doc_dtype: int
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - torch.tensor
+  tensor:
+    descp: class values of any shape.
+    doc_dtype: LongTensor
+    dtype:
+    - torch.int64
+inputs:
+  optional:
+  - num_classes
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.one_hot
+package: torch
+ret_type: LongTensor
+target: one_hot
+title: torch.nn.functional.one_hot
+version: 1.5.0

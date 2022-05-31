@@ -1,0 +1,81 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if None, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if None, infers data
+      type from `values`.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  indices:
+    descp: Initial data for the tensor. Can be a list, tuple, NumPy `ndarray`, scalar,
+      and other types. Will be cast to a `torch.LongTensor` internally. The indices
+      are the coordinates of the non-zero values in the matrix, and thus should be
+      two-dimensional where the first dimension is the number of tensor dimensions
+      and the second dimension is the number of non-zero values.
+    doc_dtype: array_like
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  size:
+    default: None
+    descp: Size of the sparse tensor. If not provided the size will be inferred as
+      the minimum size big enough to hold all non-zero elements.
+    doc_dtype: list, tuple, or `torch.Size`, optional
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - torch.tensor
+  values:
+    descp: Initial values for the tensor. Can be a list, tuple, NumPy `ndarray`, scalar,
+      and other types.
+    doc_dtype: array_like
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - size
+  - dtype
+  - device
+  - requires_grad
+  required:
+  - indices
+  - values
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.sparse_coo_tensor
+package: torch
+ret_type: Tensor
+target: sparse_coo_tensor
+title: torch.sparse_coo_tensor
+version: 1.5.0

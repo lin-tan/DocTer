@@ -1,0 +1,58 @@
+aliases:
+- tf.compat.v1.math.segment_mean
+- tf.compat.v1.segment_mean
+constraints:
+  data:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `float64`,
+      `int32`, `uint8`, `int16`, `int8`, `complex64`, `int64`, `qint8`, `quint8`,
+      `qint32`, `bfloat16`, `uint16`, `complex128`, `half`, `uint32`, `uint64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.qint32
+    - tf.qint8
+    - tf.quint8
+    - tf.uint16
+    - tf.uint32
+    - tf.uint64
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  segment_ids:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. A 1-D
+      tensor whose size is equal to the size of `data`''s first dimension.  Values
+      should be sorted and can be repeated.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - data
+  - segment_ids
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/segment_mean
+outputs: A `Tensor`. Has the same type as `data`.
+package: tensorflow
+target: segment_mean
+title: tf.math.segment_mean
+version: 2.1.0

@@ -1,0 +1,53 @@
+constraints:
+  dirname:
+    default: None
+    descp: output directory name. If None, then guess from fname or use the current
+      directory
+    doc_dtype: str, optional
+    dtype:
+    - string
+  fname:
+    default: None
+    descp: filename of the downloaded file. If None, then will guess a filename from
+      url.
+    doc_dtype: str, optional
+    dtype:
+    - string
+  overwrite:
+    default: 'False'
+    descp: Default is false, which means skipping download if the local file exists.
+      If true, then download the url to overwrite the local file if exists.
+    doc_dtype: bool, optional
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  retries:
+    default: '5'
+    descp: The number of times to attempt the download in case of failure or non 200
+      return codes
+    doc_dtype: integer, default 5
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  url:
+    descp: URL to download
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - fname
+  - dirname
+  - overwrite
+  - retries
+  required:
+  - url
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.download
+package: mxnet
+target: download
+title: mxnet.test_utils.download
+version: 1.6.0

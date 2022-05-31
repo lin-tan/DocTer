@@ -1,0 +1,35 @@
+aliases:
+- tf.linalg.eig
+constraints:
+  name:
+    default: None
+    descp: string, optional name of the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: '`Tensor` of shape `[..., N, N]`. Only the lower triangular part of each
+      inner inner matrix is referenced.'
+    ndim:
+    - '>=2'
+    shape:
+    - '[...,n,n]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- n
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/eig
+outputs:
+- e: Eigenvalues. Shape is `[..., N]`. Sorted in non-decreasing order.
+- v: Eigenvectors. Shape is `[..., N, N]`. The columns of the inner most matrices
+    contain eigenvectors of the corresponding matrices in `tensor`
+package: tensorflow
+target: eig
+title: tf.eig
+version: 2.1.0

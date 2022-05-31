@@ -1,0 +1,23 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.backward_hawkesll
+package: mxnet
+target: backward_hawkesll
+title: mxnet.contrib.ndarray.backward_hawkesll
+version: 1.6.0

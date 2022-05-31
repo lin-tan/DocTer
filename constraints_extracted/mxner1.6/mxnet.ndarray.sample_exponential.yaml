@@ -1,0 +1,53 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred. Defaults to float32
+      if not defined (dtype=None).
+    doc_dtype: '{''None'', ''float16'', ''float32'', ''float64''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+  lam:
+    default: None
+    descp: Lambda (rate) parameters of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape to be sampled from each random distribution.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - lam
+  - shape
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.sample_exponential
+package: mxnet
+target: sample_exponential
+title: mxnet.ndarray.sample_exponential
+version: 1.6.0

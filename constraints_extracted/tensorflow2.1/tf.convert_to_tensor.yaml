@@ -1,0 +1,43 @@
+constraints:
+  dtype:
+    default: None
+    descp: Optional element type for the returned tensor. If missing, the type is
+      inferred from the type of `value`.
+    dtype:
+    - tf.dtype
+  dtype_hint:
+    default: None
+    descp: Optional element type for the returned tensor, used when dtype is None.
+      In some cases, a caller may not have a dtype in mind when converting to a tensor,
+      so dtype_hint can be used as a soft preference. If the conversion to `dtype_hint`
+      is not possible, this argument has no effect.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name to use if a new `Tensor` is created.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  value:
+    descp: An object whose type has a registered `Tensor` conversion function.
+exceptions:
+- TypeError: If no conversion function is registered for `value` to `dtype`.
+- RuntimeError: If a registered conversion function returns an invalid value.
+- ValueError: If the `value` is a tensor not of given `dtype` in graph mode.
+inputs:
+  optional:
+  - dtype
+  - dtype_hint
+  - name
+  required:
+  - value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/convert_to_tensor
+outputs: A `Tensor` based on `value`.
+package: tensorflow
+target: convert_to_tensor
+title: tf.convert_to_tensor
+version: 2.1.0

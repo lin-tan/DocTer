@@ -1,0 +1,21 @@
+constraints:
+  mat1:
+    descp: the first sparse matrix to be multiplied
+    doc_dtype: SparseTensor
+    tensor_t:
+    - SparseTensor
+  mat2:
+    descp: the second dense matrix to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - mat1
+  - mat2
+link: https://pytorch.org/docs/1.5.0/sparse.html#torch.sparse.mm
+package: torch
+target: mm
+title: torch.sparse.mm
+version: 1.5.0

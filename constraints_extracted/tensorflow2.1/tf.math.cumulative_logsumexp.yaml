@@ -1,0 +1,56 @@
+aliases:
+- tf.compat.v1.math.cumulative_logsumexp
+constraints:
+  axis:
+    default: '0'
+    descp: 'A `Tensor` of type `int32` or `int64` (default: 0). Must be in the range
+      `[-rank(x), rank(x))`.'
+    dtype:
+    - int
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  exclusive:
+    default: 'False'
+    descp: If `True`, perform exclusive cumulative log-sum-exp.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  reverse:
+    default: 'False'
+    descp: If `True`, performs the cumulative log-sum-exp in the reverse direction.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `float16`, `float32`,`float64`.'
+    dtype:
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - exclusive
+  - reverse
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/cumulative_logsumexp
+outputs: A `Tensor`. Has the same shape and type as `x`.
+package: tensorflow
+target: cumulative_logsumexp
+title: tf.math.cumulative_logsumexp
+version: 2.1.0

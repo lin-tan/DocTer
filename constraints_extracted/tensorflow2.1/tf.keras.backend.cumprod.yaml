@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.cumprod
+constraints:
+  axis:
+    default: '0'
+    descp: An integer, the axis to compute the product.
+    dtype:
+    - int
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/cumprod
+outputs: A tensor of the cumulative product of values of `x` along `axis`.
+package: tensorflow
+target: cumprod
+title: tf.keras.backend.cumprod
+version: 2.1.0

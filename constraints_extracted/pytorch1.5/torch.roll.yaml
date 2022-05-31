@@ -1,0 +1,42 @@
+constraints:
+  dims:
+    default: None
+    descp: Axis along which to roll
+    doc_dtype: int or tuple of python:ints
+    dtype:
+    - int
+    structure:
+    - tuple
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  shifts:
+    descp: The number of places by which the elements of the tensor are shifted. If
+      shifts is a tuple, dims must be a tuple of the same size, and each dimension
+      will be rolled by the corresponding value
+    doc_dtype: int or tuple of python:ints
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dims
+  required:
+  - input
+  - shifts
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.roll
+package: torch
+ret_type: Tensor
+target: roll
+title: torch.roll
+version: 1.5.0

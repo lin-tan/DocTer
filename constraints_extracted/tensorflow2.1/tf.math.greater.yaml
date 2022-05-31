@@ -1,0 +1,49 @@
+aliases:
+- tf.greater
+- tf.compat.v1.greater
+- tf.compat.v1.math.greater
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `float64`,
+      `int32`, `uint8`, `int16`, `int8`, `int64`, `bfloat16`, `uint16`, `half`, `uint32`,
+      `uint64`.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint16
+    - tf.uint32
+    - tf.uint64
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor`. Must have the same type as `x`.
+    dtype:
+    - dtype:&x
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/greater
+outputs: A `Tensor` of type `bool`.
+package: tensorflow
+target: greater
+title: tf.math.greater
+version: 2.1.0

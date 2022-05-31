@@ -1,0 +1,55 @@
+aliases:
+- tf.compat.v1.keras.backend.conv2d
+constraints:
+  data_format:
+    default: None
+    descp: '`"channels_last"` or `"channels_first"`.'
+  dilation_rate:
+    default: (1,    1)
+    descp: tuple of 2 integers.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - tuple
+  kernel:
+    descp: kernel tensor.
+  padding:
+    default: valid
+    descp: string, `"same"` or `"valid"`.
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  strides:
+    default: (1, 1)
+    descp: strides tuple.
+    dtype:
+    - int
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if `data_format` is neither `channels_last` or`channels_first`.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilation_rate
+  required:
+  - x
+  - kernel
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/conv2d
+outputs: A tensor, result of 2D convolution.
+package: tensorflow
+target: conv2d
+title: tf.keras.backend.conv2d
+version: 2.1.0

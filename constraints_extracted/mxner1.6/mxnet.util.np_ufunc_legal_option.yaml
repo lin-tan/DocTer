@@ -1,0 +1,21 @@
+constraints:
+  key:
+    descp: the key of the ufunc argument.
+    doc_dtype: string
+    dtype:
+    - string
+  value:
+    descp: the value of the ufunc argument.
+    doc_dtype: string
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - key
+  - value
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/util/index.html#mxnet.util.np_ufunc_legal_option
+package: mxnet
+target: np_ufunc_legal_option
+title: mxnet.util.np_ufunc_legal_option
+version: 1.6.0

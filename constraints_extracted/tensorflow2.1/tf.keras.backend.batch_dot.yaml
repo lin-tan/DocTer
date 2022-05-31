@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.keras.backend.batch_dot
+constraints:
+  axes:
+    default: None
+    descp: Tuple or list of integers with target dimensions, or single integer. The
+      sizes of `x.shape[axes[0]]` and `y.shape[axes[1]]` should be equal.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[0]'
+    - '[1]'
+    structure:
+    - list
+    - tuple
+  x:
+    descp: Keras tensor or variable with `ndim >= 2`.
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: Keras tensor or variable with `ndim >= 2`.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axes
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/batch_dot
+outputs: A tensor with shape equal to the concatenation of `x`'s shape (less the dimension
+  that was summed over) and `y`'s shape (less the batch dimension and the dimension
+  that was summed over). If the final rank is 1, we reshape it to `(batch_size, 1)`.
+package: tensorflow
+target: batch_dot
+title: tf.keras.backend.batch_dot
+version: 2.1.0

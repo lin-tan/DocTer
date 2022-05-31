@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  padding:
+    default: '0'
+    descp: An integer padding size
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - padding
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.ReflectionPad2D
+package: mxnet
+target: ReflectionPad2D
+title: mxnet.gluon.nn.ReflectionPad2D
+version: 1.6.0

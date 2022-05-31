@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.datasets.cifar100.load_data
+constraints:
+  label_mode:
+    default: fine
+    descp: one of "fine", "coarse".
+    dtype:
+    - tf.string
+    enum:
+    - coarse
+    - fine
+    ndim:
+    - '0'
+exceptions:
+- ValueError: in case of invalid `label_mode`.
+inputs:
+  optional:
+  - label_mode
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/datasets/cifar100/load_data
+outputs: 'Tuple of Numpy arrays: `(x_train, y_train), (x_test, y_test)`.'
+package: tensorflow
+target: load_data
+title: tf.keras.datasets.cifar100.load_data
+version: 2.1.0

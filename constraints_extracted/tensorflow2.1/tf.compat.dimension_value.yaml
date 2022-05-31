@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.compat.dimension_value
+- tf.compat.v1.dimension_value
+constraints:
+  dimension:
+    descp: Either a `Dimension` instance, an integer, or None.
+    dtype:
+    - int
+inputs:
+  optional: []
+  required:
+  - dimension
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/compat/dimension_value
+outputs: A plain value, i.e. an integer or None.
+package: tensorflow
+target: dimension_value
+title: tf.compat.dimension_value
+version: 2.1.0

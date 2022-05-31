@@ -1,0 +1,56 @@
+aliases:
+- tf.compat.v1.linalg.tridiagonal_matmul
+constraints:
+  diagonals:
+    descp: A `Tensor` or tuple of `Tensor`s describing left-hand sides. The shape
+      depends of `diagonals_format`, see description above. Must be`float32`, `float64`,
+      `complex64`, or `complex128`.
+    structure:
+    - tuple
+    tensor_t:
+    - tf.tensor
+  diagonals_format:
+    default: compact
+    descp: one of `sequence`, or `compact`. Default is `compact`.
+    dtype:
+    - tf.string
+    enum:
+    - compact
+    ndim:
+    - '0'
+    structure:
+    - list
+  name:
+    default: None
+    descp: A name to give this `Op` (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  rhs:
+    descp: A `Tensor` of shape [..., M, N] and with the same dtype as `diagonals`.
+    ndim:
+    - '>=2'
+    shape:
+    - '[...,m,n]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- n
+- m
+exceptions:
+- ValueError: An unsupported type is provided as input, or when the input tensors
+    have incorrect shapes.
+inputs:
+  optional:
+  - diagonals_format
+  - name
+  required:
+  - diagonals
+  - rhs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/tridiagonal_matmul
+outputs: A `Tensor` of shape [..., M, N] containing the result of multiplication.
+package: tensorflow
+target: tridiagonal_matmul
+title: tf.linalg.tridiagonal_matmul
+version: 2.1.0

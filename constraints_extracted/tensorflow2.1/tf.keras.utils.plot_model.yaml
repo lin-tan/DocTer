@@ -1,0 +1,63 @@
+aliases:
+- tf.compat.v1.keras.utils.plot_model
+constraints:
+  dpi:
+    default: '96'
+    descp: Dots per inch.
+    dtype:
+    - int
+  expand_nested:
+    default: 'False'
+    descp: Whether to expand nested models into clusters.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  model:
+    descp: A Keras model instance
+  rankdir:
+    default: TB
+    descp: '`rankdir` argument passed to PyDot, a string specifying the format of
+      the plot: ''TB'' creates a vertical plot; ''LR'' creates a horizontal plot.'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  show_layer_names:
+    default: 'True'
+    descp: whether to display layer names.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  show_shapes:
+    default: 'False'
+    descp: whether to display shape information.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  to_file:
+    default: model.png
+    descp: File name of the plot image.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - to_file
+  - show_shapes
+  - show_layer_names
+  - rankdir
+  - expand_nested
+  - dpi
+  required:
+  - model
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/utils/plot_model
+outputs: A Jupyter notebook Image object if Jupyter is installed. This enables in-line
+  display of the model plots in notebooks.
+package: tensorflow
+target: plot_model
+title: tf.keras.utils.plot_model
+version: 2.1.0

@@ -1,0 +1,22 @@
+aliases:
+- tf.compat.v1.keras.backend.greater_equal
+constraints:
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/greater_equal
+outputs: A bool tensor.
+package: tensorflow
+target: greater_equal
+title: tf.keras.backend.greater_equal
+version: 2.1.0

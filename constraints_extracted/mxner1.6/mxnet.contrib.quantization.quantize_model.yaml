@@ -1,0 +1,131 @@
+constraints:
+  arg_params:
+    descp: Dictionary of name to NDArray.
+    doc_dtype: dict
+    structure:
+    - dict
+    - ndarray
+  aux_params:
+    descp: Dictionary of name to NDArray.
+    doc_dtype: dict
+    structure:
+    - dict
+    - ndarray
+  calib_data:
+    default: None
+    descp: A data iterator initialized by the calibration dataset.
+    doc_dtype: DataIter
+  calib_mode:
+    default: entropy
+    descp: If calib_mode='none', no calibration will be used and the thresholds for
+      requantization after the corresponding layers will be calculated at runtime
+      by calling min and max operators. The quantized models generated in this mode
+      are normally 10-20% slower than those with calibrations during inference. If
+      calib_mode='naive', the min and max values of the layer outputs from a calibration
+      dataset will be directly taken as the thresholds for quantization. If calib_mode='entropy'
+      (default mode), the thresholds for quantization will be derived such that the
+      KL divergence between the distributions of FP32 layer outputs and quantized
+      layer outputs is minimized based upon the calibration dataset.
+    doc_dtype: str
+    dtype:
+    - string
+    ndim:
+    - '0'
+  ctx:
+    default: cpu(0)
+    descp: Defines the device that users want to run forward propagation on the calibration
+      dataset for collecting layer output statistics. Currently, only supports single
+      context.
+    doc_dtype: Context
+  data_names:
+    default: (data,)
+    descp: Data names required for creating a Module object to run forward propagation
+      on the calibration dataset.
+    doc_dtype: a list of strs
+    structure:
+    - list
+  excluded_op_names:
+    default: None
+    descp: A list of strings representing the names of the operators that users want
+      to excluding from being quantized.
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  excluded_sym_names:
+    default: None
+    descp: A list of strings representing the names of the symbols that users want
+      to excluding from being quantized.
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  label_names:
+    default: (softmax_label,)
+    descp: Label names required for creating a Module object to run forward propagation
+      on the calibration dataset.
+    doc_dtype: a list of strs
+    structure:
+    - list
+  logger:
+    default: <moduleloggingfrom/work/conda_env/lib/python3.8/logging/__init__.py>
+    descp: A logging object for printing information during the process of quantization.
+    doc_dtype: Object
+  num_calib_examples:
+    default: None
+    descp: The maximum number of examples that user would like to use for calibration.
+      If not provided, the whole calibration dataset will be used.
+    doc_dtype: int or None
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  quantize_mode:
+    default: smart
+    descp: The mode that quantization pass to apply. Support 'full' and 'smart'. 'full'
+      means quantize all operator if possible. 'smart' means quantization pass will
+      smartly choice which operator should be quantized.
+    doc_dtype: str
+    dtype:
+    - string
+    ndim:
+    - '0'
+  quantized_dtype:
+    default: int8
+    descp: The quantized destination type for input data. Currently support 'int8',
+      'uint8' and 'auto'. 'auto' means automatically select output type according
+      to calibration result. Default value is 'int8'.
+    doc_dtype: str
+    dtype:
+    - string
+  sym:
+    descp: Defines the structure of a neural network for FP32 data types.
+    doc_dtype: str or Symbol
+    dtype:
+    - string
+inputs:
+  optional:
+  - data_names
+  - label_names
+  - ctx
+  - excluded_sym_names
+  - excluded_op_names
+  - calib_mode
+  - calib_data
+  - num_calib_examples
+  - quantized_dtype
+  - quantize_mode
+  - logger
+  required:
+  - sym
+  - arg_params
+  - aux_params
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/quantization/index.html#mxnet.contrib.quantization.quantize_model
+package: mxnet
+target: quantize_model
+title: mxnet.contrib.quantization.quantize_model
+version: 1.6.0

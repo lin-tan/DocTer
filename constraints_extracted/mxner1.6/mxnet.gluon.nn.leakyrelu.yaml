@@ -1,0 +1,20 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    descp: slope coefficient for the negative half axis. Must be >= 0.
+    doc_dtype: float
+    dtype:
+    - float
+inputs:
+  optional: []
+  required:
+  - alpha
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.LeakyReLU
+package: mxnet
+target: LeakyReLU
+title: mxnet.gluon.nn.LeakyReLU
+version: 1.6.0

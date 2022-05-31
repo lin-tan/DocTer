@@ -1,0 +1,94 @@
+constraints:
+  build_directory:
+    default: None
+    descp: ''
+  cpp_sources:
+    descp: A string, or list of strings, containing C++ source code.
+    dtype:
+    - string
+    structure:
+    - list
+  cuda_sources:
+    default: None
+    descp: A string, or list of strings, containing CUDA source code.
+    dtype:
+    - string
+    structure:
+    - list
+  extra_cflags:
+    default: None
+    descp: ''
+  extra_cuda_cflags:
+    default: None
+    descp: ''
+  extra_include_paths:
+    default: None
+    descp: ''
+  extra_ldflags:
+    default: None
+    descp: ''
+  functions:
+    default: None
+    descp: A list of function names for which to generate function bindings. If a
+      dictionary is given, it should map function names to docstrings (which are otherwise
+      just the function names).
+    structure:
+    - dict
+    - list
+  is_python_module:
+    default: 'True'
+    descp: ''
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  name:
+    descp: ''
+  verbose:
+    default: 'False'
+    descp: ''
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  with_cuda:
+    default: None
+    descp: Determines whether CUDA headers and libraries are added to the build. If
+      set to `None` (default), this value is automatically determined based on whether
+      `cuda_sources` is provided. Set it to `True` to force CUDA headers and libraries
+      to be included.
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  with_pytorch_error_handling:
+    default: 'True'
+    descp: Determines whether pytorch error and warning macros are handled by pytorch
+      instead of pybind. To do this, each function `foo` is called via an intermediary
+      `_safe_foo` function. This redirection might cause issues in obscure cases of
+      cpp. This flag should be set to `False` when this redirect causes issues.
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - cuda_sources
+  - functions
+  - extra_cflags
+  - extra_cuda_cflags
+  - extra_ldflags
+  - extra_include_paths
+  - build_directory
+  - verbose
+  - with_cuda
+  - is_python_module
+  - with_pytorch_error_handling
+  required:
+  - name
+  - cpp_sources
+link: https://pytorch.org/docs/1.5.0/cpp_extension.html#torch.utils.cpp_extension.load_inline
+package: torch
+target: load_inline
+title: torch.utils.cpp_extension.load_inline
+version: 1.5.0

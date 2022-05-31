@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.nest.is_nested
+constraints:
+  seq:
+    descp: an input sequence.
+    structure:
+    - list
+inputs:
+  optional: []
+  required:
+  - seq
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nest/is_nested
+outputs: True if the sequence is a not a string and is a collections.abc.Sequence
+  or a dict.
+package: tensorflow
+target: is_nested
+title: tf.nest.is_nested
+version: 2.1.0

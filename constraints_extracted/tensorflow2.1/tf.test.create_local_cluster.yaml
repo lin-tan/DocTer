@@ -1,0 +1,48 @@
+aliases:
+- tf.compat.v1.test.create_local_cluster
+constraints:
+  num_ps:
+    descp: Number of PS servers to start.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_workers:
+    descp: Number of worker servers to start.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  protocol:
+    default: grpc
+    descp: Communication protocol. Allowed values are documented in the documentation
+      of `tf.distribute.Server`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  ps_config:
+    default: None
+    descp: (optional) `tf.ConfigProto` to initialize PS servers.
+  worker_config:
+    default: None
+    descp: (optional) `tf.ConfigProto` to initialize workers. Can be used to instantiate
+      multiple devices etc.
+exceptions:
+- ImportError: if portpicker module was not found at load time
+inputs:
+  optional:
+  - protocol
+  - worker_config
+  - ps_config
+  required:
+  - num_workers
+  - num_ps
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/test/create_local_cluster
+outputs: A tuple `(worker_servers, ps_servers)`.  `worker_servers` is a list of `num_workers`
+  objects of type `tf.distribute.Server` (all running locally); and `ps_servers` is
+  a list of `num_ps` objects of similar type.
+package: tensorflow
+target: create_local_cluster
+title: tf.test.create_local_cluster
+version: 2.1.0

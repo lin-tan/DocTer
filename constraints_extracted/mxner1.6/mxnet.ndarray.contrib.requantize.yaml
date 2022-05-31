@@ -1,0 +1,84 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: A ndarray/symbol of type int32
+    doc_dtype: NDArray
+    dtype:
+    - numpy.int32
+    structure:
+    - ndarray
+  max_calib_range:
+    default: _Null
+    descp: The maximum scalar value in the form of float32 obtained through calibration.
+      If present, it will be used to requantize the int32 data into int8.
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  max_range:
+    default: None
+    descp: The original maximum scalar value in the form of float32 used for quantizing
+      data into int32.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    - numpy.float32
+    - numpy.int32
+    structure:
+    - ndarray
+  min_calib_range:
+    default: _Null
+    descp: The minimum scalar value in the form of float32 obtained through calibration.
+      If present, it will be used to requantize the int32 data into int8.
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+    - numpy.float32
+  min_range:
+    default: None
+    descp: The original minimum scalar value in the form of float32 used for quantizing
+      data into int32.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    - numpy.float32
+    - numpy.int32
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_type:
+    default: _Null
+    descp: Output data type. auto can be specified to automatically determine output
+      type according to min_calib_range.
+    doc_dtype: '{''auto'', ''int8'', ''uint8''},optional, default=''int8'''
+    enum:
+    - auto
+    - int8
+    - uint8
+inputs:
+  optional:
+  - data
+  - min_range
+  - max_range
+  - out_type
+  - min_calib_range
+  - max_calib_range
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.requantize
+package: mxnet
+target: requantize
+title: mxnet.ndarray.contrib.requantize
+version: 1.6.0

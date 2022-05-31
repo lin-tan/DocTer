@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.backend.temporal_padding
+constraints:
+  padding:
+    default: (1, 1)
+    descp: Tuple of 2 integers, how many zeros to add at the start and end of dim
+      1.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    - '[2]'
+    structure:
+    - tuple
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - padding
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/temporal_padding
+outputs: A padded 3D tensor.
+package: tensorflow
+target: temporal_padding
+title: tf.keras.backend.temporal_padding
+version: 2.1.0

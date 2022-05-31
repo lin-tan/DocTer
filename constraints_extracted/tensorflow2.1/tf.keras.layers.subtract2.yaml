@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.keras.layers.subtract
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: Standard layer keyword arguments.
+  inputs:
+    descp: A list of input tensors (exactly 2).
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - inputs
+  - '**kwargs'
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/subtract
+outputs: A tensor, the difference of the inputs.
+package: tensorflow
+target: subtract
+title: tf.keras.layers.subtract
+version: 2.1.0

@@ -1,0 +1,74 @@
+constraints:
+  dim:
+    default: None
+    descp: If it is an int, vector norm will be calculated, if it is 2-tuple of ints,
+      matrix norm will be calculated. If the value is None, matrix norm will be calculated
+      when the input tensor only has two dimensions, vector norm will be calculated
+      when the input tensor only has one dimension. If the input tensor has more than
+      two dimensions, the vector norm will be applied to last dimension.
+    doc_dtype: int, 2-tuple of python:ints, 2-list of python:ints, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. If specified, the input tensor
+      is casted to :attr:''dtype'' while performing the operation. Default: None.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: the input tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  keepdim:
+    default: 'False'
+    descp: 'whether the output tensors have `dim` retained or not. Ignored if `dim`
+      = `None` and `out` = `None`. Default: `False`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    enum:
+    - None
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor. Ignored if `dim` = `None` and `out` = `None`.
+    doc_dtype: Tensor, optional
+    enum:
+    - None
+    - out
+    tensor_t:
+    - torch.tensor
+  p:
+    default: fro
+    descp: ''
+    doc_dtype: int, float, inf, -inf, 'fro', 'nuc', optional
+    dtype:
+    - string
+inputs:
+  optional:
+  - p
+  - dim
+  - keepdim
+  - out
+  - dtype
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.norm
+package: torch
+target: norm
+title: torch.norm
+version: 1.5.0

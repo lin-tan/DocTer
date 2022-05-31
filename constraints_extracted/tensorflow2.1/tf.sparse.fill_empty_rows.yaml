@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.sparse.fill_empty_rows
+- tf.compat.v1.sparse_fill_empty_rows
+constraints:
+  default_value:
+    descp: The value to fill for empty rows, with the same type as`sp_input.`
+  name:
+    default: None
+    descp: A name prefix for the returned tensors (optional)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: A `SparseTensor` with shape `[N, M]`.
+    ndim:
+    - '2'
+    shape:
+    - '[n,m]'
+    tensor_t:
+    - SparseTensor
+dependency:
+- n
+- m
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - name
+  required:
+  - sp_input
+  - default_value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/fill_empty_rows
+outputs:
+- sp_ordered_output: A `SparseTensor` with shape `[N, M]`, and with all empty rows
+    filled in with `default_value`.
+- empty_row_indicator: A bool vector of length `N` indicating whether each input row
+    was empty.
+package: tensorflow
+target: fill_empty_rows
+title: tf.sparse.fill_empty_rows
+version: 2.1.0

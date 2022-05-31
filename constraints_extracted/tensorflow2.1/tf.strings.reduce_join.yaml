@@ -1,0 +1,44 @@
+constraints:
+  axis:
+    default: None
+    descp: Which axis to join along. The default behavior is to join all elements,
+      producing a scalar.
+  inputs:
+    descp: A `tf.string` tensor.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  keepdims:
+    default: 'False'
+    descp: If true, retains reduced dimensions with length 1.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  separator:
+    default: ''
+    descp: a string added between each string being joined.
+    dtype:
+    - tf.string
+inputs:
+  optional:
+  - axis
+  - keepdims
+  - separator
+  - name
+  required:
+  - inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/reduce_join
+outputs: A `tf.string` tensor.
+package: tensorflow
+target: reduce_join
+title: tf.strings.reduce_join
+version: 2.1.0

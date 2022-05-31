@@ -1,0 +1,60 @@
+aliases:
+- tf.compat.v1.quantization.quantized_concat
+- tf.compat.v1.quantized_concat
+constraints:
+  concat_dim:
+    descp: A `Tensor` of type `int32`. 0-D.  The dimension along which to concatenate.  Must
+      be in the range [0, rank(values)).
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  input_maxes:
+    descp: A list with the same length as `values` of `Tensor` objects with type `float32`.
+      The maximum scalar values for each of the input tensors.
+    dtype:
+    - tf.float32
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  input_mins:
+    descp: A list with the same length as `values` of `Tensor` objects with type `float32`.
+      The minimum scalar values for each of the input tensors.
+    dtype:
+    - tf.float32
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    descp: A list of at least 2 `Tensor` objects with the same type. The `N` Tensors
+      to concatenate. Their ranks and types must match, and their sizes must match
+      in all dimensions except `concat_dim`.
+    ndim:
+    - '2'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - concat_dim
+  - values
+  - input_mins
+  - input_maxes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/quantization/quantized_concat
+outputs: A tuple of `Tensor` objects (output, output_min, output_max).
+package: tensorflow
+target: quantized_concat
+title: tf.quantization.quantized_concat
+version: 2.1.0

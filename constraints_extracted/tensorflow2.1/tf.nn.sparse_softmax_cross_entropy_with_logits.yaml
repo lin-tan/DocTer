@@ -1,0 +1,41 @@
+check_nan: true
+constraints:
+  labels:
+    descp: '`Tensor` of shape `[d_0, d_1, ..., d_{r-1}]` (where `r` is rank of`labels`
+      and result) and dtype `int32` or `int64`. Each entry in `labels`must be an index
+      in `[0, num_classes)`. Other values will raise an exception when this op is
+      run on CPU, and return `NaN` for corresponding loss and gradient rows on GPU.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+    - '1'
+    tensor_t:
+    - tf.tensor
+  logits:
+    descp: Unscaled log probabilities of shape `[d_0, d_1, ..., d_{r-1}, num_classes]`
+      and dtype `float16`, `float32`, or `float64`.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If logits are scalars (need to have rank >= 1) or if the rank of the
+    labels is not equal to the rank of the logits minus one.
+inputs:
+  optional:
+  - name
+  required:
+  - labels
+  - logits
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/sparse_softmax_cross_entropy_with_logits
+outputs: A `Tensor` of the same shape as `labels` and of the same type as `logits`with
+  the softmax cross entropy loss.
+package: tensorflow
+target: sparse_softmax_cross_entropy_with_logits
+title: tf.nn.sparse_softmax_cross_entropy_with_logits
+version: 2.1.0

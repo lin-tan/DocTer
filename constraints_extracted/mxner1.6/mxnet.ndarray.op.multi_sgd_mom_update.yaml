@@ -1,0 +1,76 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: Weights, gradients and momentum
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  clip_gradient:
+    default: None
+    descp: Clip gradient to the range of [-clip_gradient, clip_gradient] If clip_gradient
+      <= 0, gradient clipping is turned off. grad = max(min(grad, clip_gradient),
+      -clip_gradient).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  lrs:
+    descp: Learning rates.
+    doc_dtype: tuple of <float>, required
+  momentum:
+    default: None
+    descp: The decay rate of momentum estimates at each epoch.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  num_weights:
+    default: None
+    descp: Number of updated weights.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: None
+    descp: Rescale gradient to grad = rescale_grad*grad.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  wds:
+    descp: Weight decay augments the objective function with a regularization term
+      that penalizes large weights. The penalty scales with the square of the magnitude
+      of each weight.
+    doc_dtype: tuple of <float>, required
+inputs:
+  optional:
+  - momentum
+  - rescale_grad
+  - clip_gradient
+  - num_weights
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+  - lrs
+  - wds
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.multi_sgd_mom_update
+package: mxnet
+target: multi_sgd_mom_update
+title: mxnet.ndarray.op.multi_sgd_mom_update
+version: 1.6.0

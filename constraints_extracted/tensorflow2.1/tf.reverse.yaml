@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.manip.reverse
+- tf.compat.v1.reverse
+- tf.compat.v1.reverse_v2
+constraints:
+  axis:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. 1-D.
+      The indices of the dimensions to reverse. Must be in the range`[-rank(tensor),
+      rank(tensor))`.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: 'A `Tensor`. Must be one of the following types: `uint8`, `int8`, `uint16`,
+      `int16`, `int32`, `int64`, `bool`, `bfloat16`, `half`, `float32`, `float64`,
+      `complex64`, `complex128`, `string`. Up to 8-D.'
+    dtype:
+    - tf.bfloat16
+    - tf.bool
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.string
+    - tf.uint16
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - tensor
+  - axis
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/reverse
+outputs: A `Tensor`. Has the same type as `tensor`.
+package: tensorflow
+target: reverse
+title: tf.reverse
+version: 2.1.0

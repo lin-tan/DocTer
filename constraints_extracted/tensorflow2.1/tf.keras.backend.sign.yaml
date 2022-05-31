@@ -1,0 +1,17 @@
+aliases:
+- tf.compat.v1.keras.backend.sign
+constraints:
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/sign
+outputs: A tensor.
+package: tensorflow
+target: sign
+title: tf.keras.backend.sign
+version: 2.1.0

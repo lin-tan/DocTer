@@ -1,0 +1,19 @@
+constraints:
+  name:
+    default: local
+    descp: The type of KVStore.
+    doc_dtype: '{''local'', ''device'', ''nccl'', ''dist_sync'', ''dist_device_sync'',
+      ''dist_async''}'
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/kvstore/index.html#mxnet.kvstore.create
+package: mxnet
+target: create
+title: mxnet.kvstore.create
+version: 1.6.0

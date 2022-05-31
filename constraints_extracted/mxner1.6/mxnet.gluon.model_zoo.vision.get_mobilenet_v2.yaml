@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: cpu(0)
+    descp: The context in which to load the pretrained weights.
+    doc_dtype: Context, default CPU
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  multiplier:
+    descp: The width multiplier for controling the model size. Only multipliers that
+      are no less than 0.25 are supported. The actual number of channels is equal
+      to the original channel size multiplied by this multiplier.
+    doc_dtype: float
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  pretrained:
+    default: 'False'
+    descp: Whether to load the pretrained weights for model.
+    doc_dtype: bool, default False
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  root:
+    default: /home/jenkins_slave/.mxnet/models
+    descp: Location for keeping the model parameters.
+    doc_dtype: str, default $MXNET_HOME/models
+inputs:
+  optional:
+  - pretrained
+  - ctx
+  - root
+  required:
+  - multiplier
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/gluon/model_zoo/index.html#mxnet.gluon.model_zoo.vision.get_mobilenet_v2
+package: mxnet
+target: get_mobilenet_v2
+title: mxnet.gluon.model_zoo.vision.get_mobilenet_v2
+version: 1.6.0

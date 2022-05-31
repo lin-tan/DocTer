@@ -1,0 +1,40 @@
+aliases:
+- tf.image.extract_jpeg_shape
+- tf.compat.v1.image.extract_jpeg_shape
+- tf.compat.v1.io.extract_jpeg_shape
+constraints:
+  contents:
+    descp: A `Tensor` of type `string`. 0-D. The JPEG-encoded image.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_type:
+    default: tf.dtypes.int32
+    descp: 'An optional `tf.DType` from: `tf.int32, tf.int64`. Defaults to `tf.int32`.
+      (Optional) The output type of the operation (int32 or int64). Defaults to int32.'
+    dtype:
+    - tf.dtype
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - output_type
+  - name
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/extract_jpeg_shape
+outputs: A `Tensor` of type `output_type`.
+package: tensorflow
+target: extract_jpeg_shape
+title: tf.io.extract_jpeg_shape
+version: 2.1.0

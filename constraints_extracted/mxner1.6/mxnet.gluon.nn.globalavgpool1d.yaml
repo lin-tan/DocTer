@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  layout:
+    default: NCW
+    descp: Dimension ordering of data and out ('NCW' or 'NWC'). 'N', 'C', 'W' stands
+      for batch, channel, and width (time) dimensions respectively. padding is applied
+      on 'W' dimension.
+    doc_dtype: str, default 'NCW'
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - layout
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.GlobalAvgPool1D
+package: mxnet
+target: GlobalAvgPool1D
+title: mxnet.gluon.nn.GlobalAvgPool1D
+version: 1.6.0

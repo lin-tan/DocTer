@@ -1,0 +1,86 @@
+constraints:
+  center:
+    default: 'True'
+    descp: 'whether to pad `input` on both sides so that the t -th frame is centered
+      at time t  times hop _length . Default: `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  hop_length:
+    default: None
+    descp: 'the distance between neighboring sliding window frames. Default: `None`
+      (treated as equal to `floor(n_fft / 4)`)'
+    doc_dtype: int, optional
+    dtype:
+    - int
+  input:
+    descp: the input tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  n_fft:
+    descp: size of Fourier transform
+    doc_dtype: int
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+  normalized:
+    default: 'False'
+    descp: 'controls whether to return the normalized STFT results Default: `False`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  onesided:
+    default: 'True'
+    descp: 'controls whether to return half of results to avoid redundancy Default:
+      `True`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.float16
+    ndim:
+    - '0'
+  pad_mode:
+    default: reflect
+    descp: 'controls the padding method used when `center` is `True`. Default: `"reflect"`'
+    doc_dtype: string, optional
+    dtype:
+    - string
+  win_length:
+    default: None
+    descp: 'the size of window frame and STFT filter. Default: `None`  (treated as
+      equal to `n_fft`)'
+    doc_dtype: int, optional
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+  window:
+    default: None
+    descp: 'the optional window function. Default: `None` (treated as window of all
+      1  s)'
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - hop_length
+  - win_length
+  - window
+  - center
+  - pad_mode
+  - normalized
+  - onesided
+  required:
+  - input
+  - n_fft
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.stft
+package: torch
+target: stft
+title: torch.stft
+version: 1.5.0

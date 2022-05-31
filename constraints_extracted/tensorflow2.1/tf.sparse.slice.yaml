@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.sparse.slice
+- tf.compat.v1.sparse_slice
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  size:
+    descp: 1-D. tensor represents the size of the slice.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  sp_input:
+    descp: The `SparseTensor` to split.
+    tensor_t:
+    - SparseTensor
+  start:
+    descp: 1-D. tensor represents the start of the slice.
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - name
+  required:
+  - sp_input
+  - start
+  - size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/slice
+outputs: A `SparseTensor` objects resulting from splicing.
+package: tensorflow
+target: slice
+title: tf.sparse.slice
+version: 2.1.0

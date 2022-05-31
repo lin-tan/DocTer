@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.sparse.reorder
+- tf.compat.v1.sparse_reorder
+constraints:
+  name:
+    default: None
+    descp: A name prefix for the returned tensors (optional)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: The input `SparseTensor`.
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/reorder
+outputs: A `SparseTensor` with the same shape and non-empty values, but in canonical
+  ordering.
+package: tensorflow
+target: reorder
+title: tf.sparse.reorder
+version: 2.1.0

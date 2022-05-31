@@ -1,0 +1,49 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  size:
+    descp: the shape of the output tensor
+    doc_dtype: tuple or ints
+    dtype:
+    - int
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  storage_offset:
+    default: '0'
+    descp: the offset in the underlying storage of the output tensor
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  stride:
+    descp: the stride of the output tensor
+    doc_dtype: tuple or ints
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - storage_offset
+  required:
+  - input
+  - size
+  - stride
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.as_strided
+package: torch
+ret_type: Tensor
+target: as_strided
+title: torch.as_strided
+version: 1.5.0

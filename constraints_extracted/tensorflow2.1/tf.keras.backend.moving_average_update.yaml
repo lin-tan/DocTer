@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.moving_average_update
+constraints:
+  momentum:
+    descp: The moving average momentum.
+  value:
+    descp: A tensor with the same shape as `variable`.
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: A Variable.
+inputs:
+  optional: []
+  required:
+  - x
+  - value
+  - momentum
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/moving_average_update
+outputs: An Operation to update the variable.
+package: tensorflow
+target: moving_average_update
+title: tf.keras.backend.moving_average_update
+version: 2.1.0

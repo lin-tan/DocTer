@@ -1,0 +1,207 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  bias:
+    default: None
+    descp: bias.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  cudnn_off:
+    default: _Null
+    descp: Turn off cudnn for this layer.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  cudnn_tune:
+    default: _Null
+    descp: Whether to pick convolution algo by running performance test.
+    doc_dtype: '{None, ''fastest'', ''limited_workspace'', ''off''},optional, default=''None'''
+    enum:
+    - None
+    - fastest
+    - limited_workspace
+    - 'off'
+  data:
+    default: None
+    descp: Input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dilate:
+    default: _Null
+    descp: 'Convolution dilate: (w,), (h, w) or (d, h, w). Defaults to 1 for each
+      dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  kernel:
+    default: _Null
+    descp: 'Convolution kernel size: (w,), (h, w) or (d, h, w)'
+    doc_dtype: Shape(tuple), required
+  layout:
+    default: _Null
+    descp: 'Set layout for input, output and weight. Empty for default layout: NCW
+      for 1d, NCHW for 2d and NCDHW for 3d.NHWC and NDHWC are only supported on GPU.'
+    doc_dtype: '{None, ''NCDHW'', ''NCHW'', ''NCW'', ''NDHWC'', ''NHWC''},optional,
+      default=''None'''
+    enum:
+    - NCDHW
+    - NCHW
+    - NCW
+    - NDHWC
+    - NHWC
+    - None
+  max_bias:
+    default: None
+    descp: Maximum value of bias.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  max_data:
+    default: None
+    descp: Maximum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  max_weight:
+    default: None
+    descp: Maximum value of weight.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  min_bias:
+    default: None
+    descp: Minimum value of bias.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  min_data:
+    default: None
+    descp: Minimum value of data.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  min_weight:
+    default: None
+    descp: Minimum value of weight.
+    doc_dtype: NDArray
+    dtype:
+    - numeric
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  no_bias:
+    default: _Null
+    descp: Whether to disable bias parameter.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_filter:
+    default: _Null
+    descp: Convolution filter(channel) number
+    doc_dtype: int (non-negative), required
+  num_group:
+    default: _Null
+    descp: Number of group partitions.
+    doc_dtype: int (non-negative), optional, default=1
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  pad:
+    default: _Null
+    descp: 'Zero pad for convolution: (w,), (h, w) or (d, h, w). Defaults to no padding.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  stride:
+    default: _Null
+    descp: 'Convolution stride: (w,), (h, w) or (d, h, w). Defaults to 1 for each
+      dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  weight:
+    default: None
+    descp: weight.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  workspace:
+    default: _Null
+    descp: Maximum temporary workspace allowed (MB) in convolution.This parameter
+      has two usages. When CUDNN is not used, it determines the effective batch size
+      of the convolution kernel. When CUDNN is used, it controls the maximum temporary
+      storage used for tuning the best CUDNN kernel when limited_workspace strategy
+      is used.
+    doc_dtype: long (non-negative), optional, default=1024
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - weight
+  - bias
+  - min_data
+  - max_data
+  - min_weight
+  - max_weight
+  - min_bias
+  - max_bias
+  - kernel
+  - stride
+  - dilate
+  - pad
+  - num_filter
+  - num_group
+  - workspace
+  - no_bias
+  - cudnn_tune
+  - cudnn_off
+  - layout
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.quantized_conv
+package: mxnet
+target: quantized_conv
+title: mxnet.ndarray.contrib.quantized_conv
+version: 1.6.0

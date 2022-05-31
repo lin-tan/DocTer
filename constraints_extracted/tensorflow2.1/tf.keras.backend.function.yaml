@@ -1,0 +1,43 @@
+aliases:
+- tf.compat.v1.keras.backend.function
+constraints:
+  '**kwargs':
+    descp: Passed to `tf.Session.run`.
+  inputs:
+    descp: List of placeholder tensors.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: String, name of function.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  outputs:
+    descp: List of output tensors.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  updates:
+    default: None
+    descp: List of update ops.
+exceptions:
+- ValueError: if invalid kwargs are passed in or if in eager execution.
+inputs:
+  optional:
+  - updates
+  - name
+  required:
+  - inputs
+  - outputs
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/function
+outputs: Output values as Numpy arrays.
+package: tensorflow
+target: function
+title: tf.keras.backend.function
+version: 2.1.0

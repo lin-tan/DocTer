@@ -1,0 +1,17 @@
+aliases:
+- tf.compat.v1.keras.preprocessing.text.tokenizer_from_json
+constraints:
+  json_string:
+    descp: JSON string encoding a tokenizer configuration.`
+    dtype:
+    - tf.string
+inputs:
+  optional: []
+  required:
+  - json_string
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/preprocessing/text/tokenizer_from_json
+outputs: '`A Keras Tokenizer instance`'
+package: tensorflow
+target: tokenizer_from_json
+title: tf.keras.preprocessing.text.tokenizer_from_json
+version: 2.1.0

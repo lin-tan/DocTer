@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  beta:
+    default: '1.0'
+    descp: swish(x) = x * sigmoid(beta*x)
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - beta
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Swish
+package: mxnet
+target: Swish
+title: mxnet.gluon.nn.Swish
+version: 1.6.0

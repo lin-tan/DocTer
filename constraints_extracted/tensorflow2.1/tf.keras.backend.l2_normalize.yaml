@@ -1,0 +1,21 @@
+aliases:
+- tf.compat.v1.keras.backend.l2_normalize
+constraints:
+  axis:
+    default: None
+    descp: axis along which to perform normalization.
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/l2_normalize
+outputs: A tensor.
+package: tensorflow
+target: l2_normalize
+title: tf.keras.backend.l2_normalize
+version: 2.1.0

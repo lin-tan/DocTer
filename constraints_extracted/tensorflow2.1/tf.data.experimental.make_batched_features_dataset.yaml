@@ -1,0 +1,147 @@
+constraints:
+  batch_size:
+    descp: An int representing the number of records to combine in a single batch.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  drop_final_batch:
+    default: 'False'
+    descp: If `True`, and the batch size does not evenly divide the input dataset
+      size, the final smaller batch will be dropped. Defaults to`False`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  features:
+    descp: A `dict` mapping feature keys to `FixedLenFeature` or`VarLenFeature` values.
+      See `tf.io.parse_example`.
+  file_pattern:
+    descp: List of files or patterns of file paths containing`Example` records. See
+      `tf.io.gfile.glob` for pattern rules.
+    structure:
+    - list
+  label_key:
+    default: None
+    descp: (Optional) A string corresponding to the key labels are stored in`tf.Examples`.
+      If provided, it must be one of the `features` key, otherwise results in `ValueError`.
+    dtype:
+    - tf.string
+    enum:
+    - ValueError
+    ndim:
+    - '0'
+  num_epochs:
+    default: None
+    descp: Integer specifying the number of times to read through the dataset. If
+      None, cycles through the dataset forever. Defaults to `None`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  parser_num_threads:
+    default: None
+    descp: Number of threads to use for parsing `Example` tensors into a dictionary
+      of `Feature` tensors. Defaults to `2`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - dict
+    tensor_t:
+    - tf.tensor
+  prefetch_buffer_size:
+    default: None
+    descp: Number of feature batches to prefetch in order to improve performance.
+      Recommended value is the number of batches consumed per training step. Defaults
+      to auto-tune.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  reader:
+    default: None
+    descp: A function or class that can be called with a `filenames` tensor and (optional)
+      `reader_args` and returns a `Dataset` of `Example` tensors. Defaults to `tf.data.TFRecordDataset`.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  reader_args:
+    default: None
+    descp: Additional arguments to pass to the reader class.
+  reader_num_threads:
+    default: None
+    descp: Number of threads used to read `Example` records. If >1, the results will
+      be interleaved. Defaults to `1`.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  shuffle:
+    default: 'True'
+    descp: A boolean, indicates whether the input should be shuffled. Defaults to
+      `True`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  shuffle_buffer_size:
+    default: '10000'
+    descp: Buffer size of the ShuffleDataset. A large capacity ensures better shuffling
+      but would increase memory usage and startup time.
+    dtype:
+    - int
+  shuffle_seed:
+    default: None
+    descp: Randomization seed to use for shuffling.
+  sloppy_ordering:
+    default: 'False'
+    descp: If `True`, reading performance will be improved at the cost of non-deterministic
+      ordering. If `False`, the order of elements produced is deterministic prior
+      to shuffling (elements are still randomized if `shuffle=True`. Note that if
+      the seed is set, then order of elements after shuffling is deterministic). Defaults
+      to `False`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `reader` is a `tf.compat.v1.ReaderBase` subclass.
+- ValueError: If `label_key` is not one of the `features` keys.
+inputs:
+  optional:
+  - reader
+  - label_key
+  - reader_args
+  - num_epochs
+  - shuffle
+  - shuffle_buffer_size
+  - shuffle_seed
+  - prefetch_buffer_size
+  - reader_num_threads
+  - parser_num_threads
+  - sloppy_ordering
+  - drop_final_batch
+  required:
+  - file_pattern
+  - batch_size
+  - features
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/make_batched_features_dataset
+outputs: A dataset of `dict` elements, (or a tuple of `dict` elements and label).
+  Each `dict` maps feature keys to `Tensor` or `SparseTensor` objects.
+package: tensorflow
+target: make_batched_features_dataset
+title: tf.data.experimental.make_batched_features_dataset
+version: 2.1.0

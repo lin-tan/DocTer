@@ -1,0 +1,85 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: ''
+  batch_size:
+    descp: Batch size.
+    doc_dtype: int (non-negative), required
+  ctx:
+    default: None
+    descp: Context data loader optimized for.
+    doc_dtype: '{''cpu'', ''gpu''},optional, default=''gpu'''
+    enum:
+    - cpu
+    - gpu
+  data_csv:
+    descp: The input CSV file or a directory path.
+    doc_dtype: string, required
+    dtype:
+    - string
+  data_shape:
+    descp: The shape of one example.
+    doc_dtype: Shape(tuple), required
+  dtype:
+    default: None
+    descp: Output data type. `None` means no change.
+    doc_dtype: '{None, ''float16'', ''float32'', ''float64'', ''int32'', ''int64'',
+      ''int8'', ''uint8''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+    - int32
+    - int64
+    - int8
+    - uint8
+  label_csv:
+    default: None
+    descp: The input CSV file or a directory path. If NULL, all labels will be returned
+      as 0.
+    doc_dtype: string, optional, default='NULL'
+    dtype:
+    - string
+  label_shape:
+    default: None
+    descp: The shape of one label.
+    doc_dtype: Shape(tuple), optional, default=[1]
+  prefetch_buffer:
+    default: None
+    descp: Maximum number of batches to prefetch.
+    doc_dtype: long (non-negative), optional, default=4
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  round_batch:
+    default: None
+    descp: Whether to use round robin to handle overflow batch or not.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - label_csv
+  - label_shape
+  - round_batch
+  - prefetch_buffer
+  - ctx
+  - dtype
+  required:
+  - '*args'
+  - '**kwargs'
+  - data_csv
+  - data_shape
+  - batch_size
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/io/index.html#mxnet.io.CSVIter
+package: mxnet
+target: CSVIter
+title: mxnet.io.CSVIter
+version: 1.6.0

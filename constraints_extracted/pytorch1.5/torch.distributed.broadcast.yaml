@@ -1,0 +1,36 @@
+constraints:
+  async_op:
+    default: 'False'
+    descp: Whether this op should be an async op
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  group:
+    default: <objectobject>
+    descp: The process group to work on
+    doc_dtype: ProcessGroup, optional
+  src:
+    descp: Source rank.
+    doc_dtype: int
+    dtype:
+    - int
+  tensor:
+    descp: Data to be sent if `src` is the rank of current process, and tensor to
+      be used to save received data otherwise.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - group
+  - async_op
+  required:
+  - tensor
+  - src
+link: https://pytorch.org/docs/1.5.0/distributed.html#torch.distributed.broadcast
+package: torch
+target: broadcast
+title: torch.distributed.broadcast
+version: 1.5.0

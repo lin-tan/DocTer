@@ -1,0 +1,20 @@
+constraints:
+  device_name:
+    descp: The device name to use in the context.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- RuntimeError: If a function is passed in.
+inputs:
+  optional: []
+  required:
+  - device_name
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/device
+outputs: A context manager that specifies the default device to use for newly created
+  ops.
+package: tensorflow
+target: device
+title: tf.device
+version: 2.1.0

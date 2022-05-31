@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.backend.squeeze
+constraints:
+  axis:
+    descp: Axis to drop.
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - axis
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/squeeze
+outputs: A tensor with the same data as `x` but reduced dimensions.
+package: tensorflow
+target: squeeze
+title: tf.keras.backend.squeeze
+version: 2.1.0

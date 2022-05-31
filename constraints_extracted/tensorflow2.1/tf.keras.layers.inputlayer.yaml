@@ -1,0 +1,62 @@
+aliases:
+- tf.compat.v1.keras.layers.InputLayer
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  batch_size:
+    default: None
+    descp: Optional input batch size (integer or None).
+  dtype:
+    default: None
+    descp: Datatype of the input.
+  input_shape:
+    default: None
+    descp: Shape tuple (not including the batch axis), or `TensorShape`instance (not
+      including the batch axis).
+  input_tensor:
+    default: None
+    descp: Optional tensor to use as layer input instead of creating a placeholder.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Name of the layer (string).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  ragged:
+    default: 'False'
+    descp: Boolean, whether the placeholder created is meant to be ragged. In this
+      case, values of 'None' in the 'shape' argument represent ragged dimensions.
+      For more information about RaggedTensors, seehttps://www.tensorflow.org/guide/ragged_tensors
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  sparse:
+    default: 'False'
+    descp: Boolean, whether the placeholder created is meant to be sparse.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - input_shape
+  - batch_size
+  - dtype
+  - input_tensor
+  - sparse
+  - name
+  - ragged
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/InputLayer
+package: tensorflow
+target: InputLayer
+title: tf.keras.layers.InputLayer
+version: 2.1.0

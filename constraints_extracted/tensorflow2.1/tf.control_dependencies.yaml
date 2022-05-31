@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.control_dependencies
+constraints:
+  control_inputs:
+    descp: A list of `Operation` or `Tensor` objects which must be executed or computed
+      before running the operations defined in the context. Can also be `None` to
+      clear the control dependencies. If eager execution is enabled, any callable
+      object in the `control_inputs` list will be called.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - control_inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/control_dependencies
+outputs: A context manager that specifies control dependencies for all operations
+  constructed within the context.
+package: tensorflow
+target: control_dependencies
+title: tf.control_dependencies
+version: 2.1.0

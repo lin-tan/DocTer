@@ -1,0 +1,29 @@
+aliases:
+- tf.image.decode_gif
+- tf.compat.v1.image.decode_gif
+- tf.compat.v1.io.decode_gif
+constraints:
+  contents:
+    descp: A `Tensor` of type `string`. 0-D.  The GIF-encoded image.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - contents
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_gif
+outputs: A `Tensor` of type `uint8`.
+package: tensorflow
+target: decode_gif
+title: tf.io.decode_gif
+version: 2.1.0

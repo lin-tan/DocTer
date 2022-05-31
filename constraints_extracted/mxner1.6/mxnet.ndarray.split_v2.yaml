@@ -1,0 +1,49 @@
+check_nan: true
+constraints:
+  ary:
+    descp: Array to be divided into sub-arrays.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  axis:
+    default: '0'
+    descp: The axis along which to split, default is 0.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  indices_or_sections:
+    descp: If indices_or_sections is an integer, N, the array will be divided into
+      N equal arrays along axis.  If such a split is not possible, an error is raised.
+      If indices_or_sections is a 1-D array of sorted integers, the entries indicate
+      where along axis the array is split.  For example, `[2, 3]` would, for `axis=0`,
+      result in - ary[:2] - ary[2:3] - ary[3:] If an index exceeds the dimension of
+      the array along axis, an empty sub-array is returned correspondingly.
+    doc_dtype: int or tuple of ints
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+  squeeze_axis:
+    default: 'False'
+    descp: Whether to squeeze the axis of sub-arrays or not, only useful when size
+      of the sub-arrays are 1 on the axis. Default is False.
+    doc_dtype: boolean, optional
+    dtype:
+    - boolean
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - axis
+  - squeeze_axis
+  required:
+  - ary
+  - indices_or_sections
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.split_v2
+package: mxnet
+target: split_v2
+title: mxnet.ndarray.split_v2
+version: 1.6.0

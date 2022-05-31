@@ -1,0 +1,135 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  beta1:
+    default: _Null
+    descp: Generally close to 0.5.
+    doc_dtype: float, optional, default=0.600000024
+    dtype:
+    - float
+    ndim:
+    - '0'
+  beta2:
+    default: _Null
+    descp: Generally close to 1.
+    doc_dtype: float, optional, default=0.999000013
+    dtype:
+    - float
+    ndim:
+    - '0'
+  clip_grad:
+    default: _Null
+    descp: Clip gradient to the range of [-clip_gradient, clip_gradient] If clip_gradient
+      <= 0, gradient clipping is turned off. grad = max(min(grad, clip_gradient),
+      -clip_gradient).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  d:
+    default: None
+    descp: Internal state `d_t`
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  epsilon:
+    default: _Null
+    descp: Epsilon to prevent div 0.
+    doc_dtype: double, optional, default=9.9999999392252903e-09
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  grad:
+    default: None
+    descp: Gradient
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lr:
+    default: _Null
+    descp: Learning rate.
+    doc_dtype: float, required
+    dtype:
+    - float
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: _Null
+    descp: Rescale gradient to grad = rescale_grad*grad.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  t:
+    default: _Null
+    descp: Number of update.
+    doc_dtype: int, required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  v:
+    default: None
+    descp: Internal state `v_t`
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  wd:
+    default: _Null
+    descp: Weight decay augments the objective function with a regularization term
+      that penalizes large weights. The penalty scales with the square of the magnitude
+      of each weight.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  weight:
+    default: None
+    descp: Weight
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  z:
+    default: None
+    descp: Internal state `z_t`
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - weight
+  - grad
+  - d
+  - v
+  - z
+  - lr
+  - beta1
+  - beta2
+  - epsilon
+  - t
+  - wd
+  - rescale_grad
+  - clip_grad
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.ftml_update
+package: mxnet
+target: ftml_update
+title: mxnet.ndarray.op.ftml_update
+version: 1.6.0

@@ -1,0 +1,40 @@
+aliases:
+- tf.compat.v1.sparse.cross_hashed
+constraints:
+  hash_key:
+    default: None
+    descp: Integer hash_key that will be used by the `FingerprintCat64`function. If
+      not given, will use a default key.
+  inputs:
+    descp: An iterable of `Tensor` or `SparseTensor`.
+    structure:
+    - list
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_buckets:
+    default: '0'
+    descp: An `int` that is `>= 0`. output = hashed_value%num_buckets if num_buckets
+      > 0 else hashed_value.
+    dtype:
+    - int
+inputs:
+  optional:
+  - num_buckets
+  - hash_key
+  - name
+  required:
+  - inputs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/cross_hashed
+outputs: A `SparseTensor` of type `int64`.
+package: tensorflow
+target: cross_hashed
+title: tf.sparse.cross_hashed
+version: 2.1.0

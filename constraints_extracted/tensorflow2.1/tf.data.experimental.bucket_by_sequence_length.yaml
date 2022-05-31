@@ -1,0 +1,70 @@
+aliases:
+- tf.compat.v1.data.experimental.bucket_by_sequence_length
+constraints:
+  bucket_batch_sizes:
+    descp: '`list<int>`, batch size per bucket. Length should be`len(bucket_boundaries)
+      + 1`.'
+  bucket_boundaries:
+    descp: '`list<int>`, upper length boundaries of the buckets.'
+  drop_remainder:
+    default: 'False'
+    descp: (Optional.) A `tf.bool` scalar `tf.Tensor`, representing whether the last
+      batch should be dropped in the case it has fewer than`batch_size` elements;
+      the default behavior is not to drop the smaller batch.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  element_length_func:
+    descp: function from element in `Dataset` to `tf.int32`, determines the length
+      of the element, which will determine the bucket it goes into.
+    dtype:
+    - tf.int32
+  no_padding:
+    default: 'False'
+    descp: '`bool`, indicates whether to pad the batch features (features need to
+      be either of type `tf.SparseTensor` or of same shape).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  pad_to_bucket_boundary:
+    default: 'False'
+    descp: bool, if `False`, will pad dimensions with unknown size to maximum length
+      in batch. If `True`, will pad dimensions with unknown size to bucket boundary
+      minus 1 (i.e., the maximum length in each bucket), and caller must ensure that
+      the source `Dataset` does not contain any elements with length longer than `max(bucket_boundaries)`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  padded_shapes:
+    default: None
+    descp: Nested structure of `tf.TensorShape` to pass to`tf.data.Dataset.padded_batch`.
+      If not provided, will use`dataset.output_shapes`, which will result in variable
+      length dimensions being padded out to the maximum length in each batch.
+  padding_values:
+    default: None
+    descp: Values to pad with, passed to`tf.data.Dataset.padded_batch`. Defaults to
+      padding with 0.
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if `len(bucket_batch_sizes) != len(bucket_boundaries) + 1`.
+inputs:
+  optional:
+  - padded_shapes
+  - padding_values
+  - pad_to_bucket_boundary
+  - no_padding
+  - drop_remainder
+  required:
+  - element_length_func
+  - bucket_boundaries
+  - bucket_batch_sizes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/bucket_by_sequence_length
+outputs: A `Dataset` transformation function, which can be passed to`tf.data.Dataset.apply`.
+package: tensorflow
+target: bucket_by_sequence_length
+title: tf.data.experimental.bucket_by_sequence_length
+version: 2.1.0

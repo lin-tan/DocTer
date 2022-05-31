@@ -1,0 +1,71 @@
+aliases:
+- tf.linalg.eye
+- tf.compat.v1.eye
+- tf.compat.v1.linalg.eye
+constraints:
+  batch_shape:
+    default: None
+    descp: A list or tuple of Python integers or a 1-D `int32` `Tensor`. If provided,
+      the returned `Tensor` will have leading batch dimensions of this shape.
+    dtype:
+    - int
+    - tf.int32
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+  dtype:
+    default: tf.dtypes.float32
+    descp: The type of an element in the resulting `Tensor`
+    dtype:
+    - tf.dtype
+    - tf.float32
+  name:
+    default: None
+    descp: A name for this `Op`.  Defaults to "eye".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_columns:
+    default: None
+    descp: Optional non-negative `int32` scalar `Tensor` giving the number of columns
+      in each batch matrix.  Defaults to `num_rows`.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  num_rows:
+    descp: Non-negative `int32` scalar `Tensor` giving the number of rows in each
+      batch matrix.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - num_columns
+  - batch_shape
+  - dtype
+  - name
+  required:
+  - num_rows
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/eye
+outputs: A `Tensor` of shape `batch_shape + [num_rows, num_columns]`
+package: tensorflow
+target: eye
+title: tf.eye
+version: 2.1.0

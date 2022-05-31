@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.register_tensor_conversion_function
+constraints:
+  base_type:
+    descp: The base type or tuple of base types for all objects that`conversion_func`
+      accepts.
+    dtype:
+    - tf.dtype
+  conversion_func:
+    descp: A function that converts instances of `base_type` to`Tensor`.
+  priority:
+    default: '100'
+    descp: Optional integer that indicates the priority for applying this conversion
+      function. Conversion functions with smaller priority values run earlier than
+      conversion functions with larger priority values. Defaults to 100.
+    dtype:
+    - int
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If the arguments do not have the appropriate type.
+inputs:
+  optional:
+  - priority
+  required:
+  - base_type
+  - conversion_func
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/register_tensor_conversion_function
+package: tensorflow
+target: register_tensor_conversion_function
+title: tf.register_tensor_conversion_function
+version: 2.1.0

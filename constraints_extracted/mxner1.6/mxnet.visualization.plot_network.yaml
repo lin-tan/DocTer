@@ -1,0 +1,77 @@
+constraints:
+  dtype:
+    default: None
+    descp: Specifies the type of the input tensors. If specified, the visualization
+      will include the type of the tensors between the nodes. dtype is a dictionary
+      mapping input symbol names (str) to the corresponding tensor type (e.g. numpy.float32).
+    doc_dtype: dict, optional
+    dtype:
+    - numpy.float32
+    structure:
+    - dict
+    tensor_t:
+    - tensor
+  hide_weights:
+    default: 'True'
+    descp: If True (default), then inputs with names of form _weight (corresponding
+      to weight tensors) or _bias (corresponding to bias vectors) will be hidden for
+      a cleaner visualization.
+    doc_dtype: bool, optional
+    dtype:
+    - boolean
+  node_attrs:
+    default: '{}'
+    descp: 'Specifies the attributes for nodes in the generated visualization. node_attrs
+      is a dictionary of Graphviz attribute names and values. For example: node_attrs={"shape":"oval","fixedsize":"false"}   will
+      use oval shape for nodes and allow variable sized nodes in the visualization. '
+    doc_dtype: dict, optional
+    dtype:
+    - string
+    ndim:
+    - '0'
+    structure:
+    - dict
+  save_format:
+    default: pdf
+    descp: ''
+    dtype:
+    - string
+    ndim:
+    - '0'
+  shape:
+    default: None
+    descp: Specifies the shape of the input tensors. If specified, the visualization
+      will include the shape of the tensors between the nodes. shape is a dictionary
+      mapping input symbol names (str) to the corresponding tensor shape (tuple).
+    doc_dtype: dict, optional
+    structure:
+    - dict
+    tensor_t:
+    - tensor
+  symbol:
+    descp: A symbol from the computation graph. The generated digraph will visualize
+      the part of the computation graph required to compute symbol.
+    doc_dtype: Symbol
+  title:
+    default: plot
+    descp: Title of the generated visualization.
+    doc_dtype: str, optional
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - title
+  - save_format
+  - shape
+  - dtype
+  - node_attrs
+  - hide_weights
+  required:
+  - symbol
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/visualization/index.html#mxnet.visualization.plot_network
+package: mxnet
+target: plot_network
+title: mxnet.visualization.plot_network
+version: 1.6.0

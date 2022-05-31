@@ -1,0 +1,35 @@
+constraints:
+  head_grads:
+    default: None
+    descp: Gradients with respect to heads.
+    doc_dtype: NDArray or list of NDArray or None
+    structure:
+    - list
+    - ndarray
+  heads:
+    descp: Output NDArray(s)
+    doc_dtype: NDArray or list of NDArray
+    structure:
+    - list
+    - ndarray
+  retain_graph:
+    default: 'False'
+    descp: ''
+  train_mode:
+    default: 'True'
+    descp: Whether to do backward for training or predicting.
+    doc_dtype: bool, optional
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - head_grads
+  - retain_graph
+  - train_mode
+  required:
+  - heads
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/autograd/index.html#mxnet.autograd.backward
+package: mxnet
+target: backward
+title: mxnet.autograd.backward
+version: 1.6.0

@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.signal.idct
+- tf.compat.v1.spectral.idct
+constraints:
+  axis:
+    default: '-1'
+    descp: For future expansion. The axis to compute the DCT along. Must be `-1`.
+    dtype:
+    - int
+  input:
+    descp: A `[..., samples]` `float32`/`float64` `Tensor` containing the signals
+      to take the DCT of.
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  n:
+    default: None
+    descp: For future expansion. The length of the transform. Must be `None`.
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  norm:
+    default: None
+    descp: The normalization to apply. `None` for no normalization or `'ortho'`for
+      orthonormal normalization.
+  type:
+    default: '2'
+    descp: The IDCT type to perform. Must be 1, 2 or 3.
+    dtype:
+    - int
+exceptions:
+- ValueError: If `type` is not `1`, `2` or `3`, `n` is not `None,`axis`is not`-1`,
+    or`norm`is not`None`or`'ortho'`.
+inputs:
+  optional:
+  - type
+  - n
+  - axis
+  - norm
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/idct
+outputs: A `[..., samples]` `float32`/`float64` `Tensor` containing the IDCT of`input`.
+package: tensorflow
+target: idct
+title: tf.signal.idct
+version: 2.1.0

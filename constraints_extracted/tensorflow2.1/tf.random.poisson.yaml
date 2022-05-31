@@ -1,0 +1,58 @@
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: 'The type of the output: `float16`, `float32`, `float64`, `int32` or`int64`.'
+    dtype:
+    - tf.dtype
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+  lam:
+    descp: A Tensor or Python value or N-D array of type `dtype`.`lam` provides the
+      rate parameter(s) describing the poisson distribution(s) to sample.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed for the distributions. See`tf.compat.v1.set_random_seed`for
+      behavior.
+    dtype:
+    - int
+  shape:
+    descp: A 1-D integer Tensor or Python array. The shape of the output samples to
+      be drawn per "rate"-parameterized distribution.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - dtype
+  - seed
+  - name
+  required:
+  - shape
+  - lam
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/poisson
+outputs:
+- samples: a `Tensor` of shape `tf.concat([shape, tf.shape(lam)], axis=0)`with values
+    of type `dtype`.
+package: tensorflow
+target: poisson
+title: tf.random.poisson
+version: 2.1.0

@@ -1,0 +1,31 @@
+constraints:
+  exponent:
+    descp: the exponent tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  self:
+    descp: the scalar base value for the power operation
+    doc_dtype: float
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - out
+  required:
+  - self
+  - exponent
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.pow
+package: torch
+ret_type: Tensor
+target: pow
+title: torch.pow
+version: 1.5.0

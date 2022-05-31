@@ -1,0 +1,48 @@
+constraints:
+  arr:
+    descp: An int32 tensor of non-negative values.
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  dtype:
+    default: tf.dtypes.int32
+    descp: If `weights` is None, determines the type of the output bins.
+    dtype:
+    - tf.dtype
+    - tf.int32
+  maxlength:
+    default: None
+    descp: If given, skips values in `arr` that are equal or greater than`maxlength`,
+      ensuring that the output has length at most `maxlength`.
+    ndim:
+    - '1'
+  minlength:
+    default: None
+    descp: If given, ensures the output has length at least `minlength`, padding with
+      zeros at the end if necessary.
+    ndim:
+    - '1'
+  name:
+    default: None
+    descp: A name scope for the associated operations (optional).
+  weights:
+    default: None
+    descp: If non-None, must be the same shape as arr. For each value in`arr`, the
+      bin will be incremented by the corresponding weight instead of 1.
+exceptions: '`InvalidArgumentError` if negative values are provided as an input.'
+inputs:
+  optional:
+  - weights
+  - minlength
+  - maxlength
+  - dtype
+  - name
+  required:
+  - arr
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/bincount
+outputs: A vector with the same dtype as `weights` or the given `dtype`. The bin values.
+package: tensorflow
+target: bincount
+title: tf.math.bincount
+version: 2.1.0

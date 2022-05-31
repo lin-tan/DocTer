@@ -1,0 +1,117 @@
+aliases:
+- tf.compat.v1.image.combined_non_max_suppression
+constraints:
+  boxes:
+    descp: A 4-D float `Tensor` of shape `[batch_size, num_boxes, q, 4]`. If `q`is
+      1 then same boxes are used for all classes otherwise, if `q` is equal to number
+      of classes, class-specific boxes are used.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    - '4'
+    range:
+    - '[0,inf)'
+    shape:
+    - '[batch_size,num_boxes,q,4]'
+    tensor_t:
+    - tf.tensor
+  clip_boxes:
+    default: 'True'
+    descp: If true, the coordinates of output nmsed boxes will be clipped to [0, 1].
+      If false, output the box coordinates as it is. Defaults to true.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  iou_threshold:
+    default: '0.5'
+    descp: A float representing the threshold for deciding whether boxes overlap too
+      much with respect to IOU.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  max_output_size_per_class:
+    descp: A scalar integer `Tensor` representing the maximum number of boxes to be
+      selected by non max suppression per class
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  max_total_size:
+    descp: A scalar representing maximum number of boxes retained over all classes.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pad_per_class:
+    default: 'False'
+    descp: If false, the output nmsed boxes, scores and classes are padded/clipped
+      to `max_total_size`. If true, the output nmsed boxes, scores and classes are
+      padded to be of length`max_size_per_class`*`num_classes`, unless it exceeds
+      `max_total_size` in which case it is clipped to `max_total_size`. Defaults to
+      false.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  score_threshold:
+    default: float(-inf)
+    descp: A float representing the threshold for deciding when to remove boxes based
+      on score.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  scores:
+    descp: A 3-D float `Tensor` of shape `[batch_size, num_boxes, num_classes]`representing
+      a single score corresponding to each box (each row of boxes).
+    dtype:
+    - float
+    ndim:
+    - '3'
+    shape:
+    - '[batch_size,num_boxes,num_classes]'
+    tensor_t:
+    - tf.tensor
+dependency:
+- num_classes
+- batch_size
+- q
+- num_boxes
+inputs:
+  optional:
+  - iou_threshold
+  - score_threshold
+  - pad_per_class
+  - clip_boxes
+  - name
+  required:
+  - boxes
+  - scores
+  - max_output_size_per_class
+  - max_total_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/combined_non_max_suppression
+outputs: '''nmsed_boxes'': A [batch_size, max_detections, 4] float32 tensor   containing
+  the non-max suppressed boxes. ''nmsed_scores'': A [batch_size, max_detections] float32
+  tensor containing   the scores for the boxes. ''nmsed_classes'': A [batch_size,
+  max_detections] float32 tensor   containing the class for boxes. ''valid_detections'':
+  A [batch_size] int32 tensor indicating the number of   valid detections per batch
+  item. Only the top valid_detections[i] entries   in nms_boxes[i], nms_scores[i]
+  and nms_class[i] are valid. The rest of the   entries are zero paddings.'
+package: tensorflow
+target: combined_non_max_suppression
+title: tf.image.combined_non_max_suppression
+version: 2.1.0

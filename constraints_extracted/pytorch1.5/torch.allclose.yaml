@@ -1,0 +1,49 @@
+constraints:
+  atol:
+    default: 1e-08
+    descp: 'absolute tolerance. Default: 1e-08'
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  equal_nan:
+    default: 'False'
+    descp: 'if `True`, then two `NaN` s will be compared as equal. Default: `False`'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: first tensor to compare
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  other:
+    descp: second tensor to compare
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  rtol:
+    default: 1e-05
+    descp: 'relative tolerance. Default: 1e-05'
+    doc_dtype: float, optional
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - rtol
+  - atol
+  - equal_nan
+  required:
+  - input
+  - other
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.allclose
+package: torch
+ret_type: bool
+target: allclose
+title: torch.allclose
+version: 1.5.0

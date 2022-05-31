@@ -1,0 +1,66 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis1:
+    default: _Null
+    descp: The first axis of the sub-arrays of interest. Ignored when the input is
+      a 1-D array.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  axis2:
+    default: _Null
+    descp: The second axis of the sub-arrays of interest. Ignored when the input is
+      a 1-D array.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  k:
+    default: _Null
+    descp: Diagonal in question. The default is 0. Use k>0 for diagonals above the
+      main diagonal, and k<0 for diagonals below the main diagonal. If input has shape
+      (S0 S1) k must be between -S0 and S1
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - k
+  - axis1
+  - axis2
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.diag
+package: mxnet
+target: diag
+title: mxnet.ndarray.diag
+version: 1.6.0

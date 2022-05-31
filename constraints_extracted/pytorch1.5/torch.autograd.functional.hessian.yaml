@@ -1,0 +1,53 @@
+constraints:
+  create_graph:
+    default: 'False'
+    descp: If `True`, the Hessian will be computed in a differentiable manner. Note
+      that when `strict` is `False`, the result can not require gradients or be disconnected
+      from the inputs. Defaults to `False`.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  func:
+    descp: a Python function that takes Tensor inputs and returns a Tensor with a
+      single element.
+    doc_dtype: function
+    tensor_t:
+    - torch.tensor
+  inputs:
+    descp: inputs to the function `func`.
+    doc_dtype: tuple of Tensors or Tensor
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    structure:
+    - tuple
+    tensor_t:
+    - torch.tensor
+  strict:
+    default: 'False'
+    descp: If `True`, an error will be raised when we detect that there exists an
+      input such that all the outputs are independent of it. If `False`, we return
+      a Tensor of zeros as the hessian for said inputs, which is the expected mathematical
+      value. Defaults to `False`.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - create_graph
+  - strict
+  required:
+  - func
+  - inputs
+link: https://pytorch.org/docs/1.5.0/autograd.html#torch.autograd.functional.hessian
+package: torch
+target: hessian
+title: torch.autograd.functional.hessian
+version: 1.5.0

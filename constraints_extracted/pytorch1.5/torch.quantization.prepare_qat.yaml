@@ -1,0 +1,28 @@
+constraints:
+  inplace:
+    default: 'False'
+    descp: carry out model transformations in-place, the original module is mutated
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  mapping:
+    default: None
+    descp: dictionary that maps float modules to quantized modules to be replaced.
+    dtype:
+    - torch.float32
+    structure:
+    - dict
+  model:
+    descp: input model to be modified in-place
+inputs:
+  optional:
+  - mapping
+  - inplace
+  required:
+  - model
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.quantization.prepare_qat
+package: torch
+target: prepare_qat
+title: torch.quantization.prepare_qat
+version: 1.5.0

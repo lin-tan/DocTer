@@ -1,0 +1,57 @@
+check_nan: true
+constraints:
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  noise_shape:
+    default: None
+    descp: A 1-D `Tensor` of type `int32`, representing the shape for randomly generated
+      keep/drop flags.
+    dtype:
+    - tf.int32
+    ndim:
+    - '0'
+    - '1'
+    tensor_t:
+    - tf.tensor
+  rate:
+    descp: A scalar `Tensor` with the same type as x. The probability that each element
+      is dropped. For example, setting rate=0.1 would drop 10% of input elements.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  seed:
+    default: None
+    descp: A Python integer. Used to create random seeds. See`tf.random.set_seed`
+      for behavior.
+    dtype:
+    - int
+  x:
+    descp: A floating point tensor.
+    dtype:
+    - float
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `rate` is not in `[0, 1)` or if `x` is not a floating point tensor.
+    `rate=1` is disallowed, because theoutput would be all zeros, which is likely
+    not what was intended.
+inputs:
+  optional:
+  - noise_shape
+  - seed
+  - name
+  required:
+  - x
+  - rate
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/dropout
+outputs: A Tensor of the same shape of `x`.
+package: tensorflow
+target: dropout
+title: tf.nn.dropout
+version: 2.1.0

@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.vectorized_map
+constraints:
+  elems:
+    descp: A tensor or (possibly nested) sequence of tensors, each of which will be
+      unpacked along their first dimension. The nested sequence of the resulting slices
+      will be mapped over by `fn`.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  fn:
+    descp: The callable to be performed. It accepts one argument, which will have
+      the same (possibly nested) structure as `elems`, and returns a possibly nested
+      structure of Tensors and Operations, which may be different than the structure
+      of `elems`.
+inputs:
+  optional: []
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/vectorized_map
+outputs: A tensor or (possibly nested) sequence of tensors. Each tensor packs the
+  results of applying fn to tensors unpacked from elems along the first dimension,
+  from first to last.
+package: tensorflow
+target: vectorized_map
+title: tf.vectorized_map
+version: 2.1.0

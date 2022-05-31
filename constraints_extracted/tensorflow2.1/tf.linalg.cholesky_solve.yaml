@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.cholesky_solve
+- tf.compat.v1.linalg.cholesky_solve
+constraints:
+  chol:
+    descp: A `Tensor`.  Must be `float32` or `float64`, shape is `[..., M, M]`. Cholesky
+      factorization of `A`, e.g. `chol = tf.linalg.cholesky(A)`. For that reason,
+      only the lower triangular parts (including the diagonal) of the last two dimensions
+      of `chol` are used.  The strictly upper part is assumed to be zero and not accessed.
+    dtype:
+    - tf.float32
+    - tf.float64
+    enum:
+    - chol
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name to give this `Op`.  Defaults to `cholesky_solve`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  rhs:
+    descp: A `Tensor`, same type as `chol`, shape is `[..., M, K]`.
+    dtype:
+    - dtype:&chol
+inputs:
+  optional:
+  - name
+  required:
+  - chol
+  - rhs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/cholesky_solve
+outputs: Solution to `A x = rhs`, shape `[..., M, K]`.
+package: tensorflow
+target: cholesky_solve
+title: tf.linalg.cholesky_solve
+version: 2.1.0

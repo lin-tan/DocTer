@@ -1,0 +1,29 @@
+constraints:
+  input:
+    descp: the numerator tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  other:
+    descp: the denominator tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - other
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.div
+package: torch
+ret_type: Tensor
+target: div
+title: torch.div
+version: 1.5.0

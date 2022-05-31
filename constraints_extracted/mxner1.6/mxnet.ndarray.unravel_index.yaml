@@ -1,0 +1,44 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Array of flat indices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    default: _Null
+    descp: Shape of the array into which the multi-indices apply.
+    doc_dtype: Shape(tuple), optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - shape
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.unravel_index
+package: mxnet
+target: unravel_index
+title: mxnet.ndarray.unravel_index
+version: 1.6.0

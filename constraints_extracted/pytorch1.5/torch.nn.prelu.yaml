@@ -1,0 +1,33 @@
+check_nan: true
+constraints:
+  init:
+    default: '0.25'
+    descp: 'the initial value of a . Default: 0.25'
+    doc_dtype: float
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  num_parameters:
+    default: '1'
+    descp: 'number of a  to learn. Although it takes an int as input, there is only
+      two values are legitimate: 1, or the number of channels at input. Default: 1'
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - num_parameters
+  - init
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.PReLU
+package: torch
+target: PReLU
+title: torch.nn.PReLU
+version: 1.5.0

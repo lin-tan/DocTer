@@ -1,0 +1,45 @@
+constraints:
+  A:
+    descp: 'the input tensor of size (*, m, n) '
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  center:
+    default: 'True'
+    descp: if True, center the input tensor, otherwise, assume that the input is centered.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  niter:
+    default: '2'
+    descp: the number of subspace iterations to conduct; niter must be a nonnegative
+      integer, and defaults to 2.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  q:
+    default: None
+    descp: a slightly overestimated rank of A . By default, `q = min(6, m, n)`.
+    doc_dtype: int, optional
+    dtype:
+    - int
+inputs:
+  optional:
+  - q
+  - center
+  - niter
+  required:
+  - A
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.pca_lowrank
+package: torch
+target: pca_lowrank
+title: torch.pca_lowrank
+version: 1.5.0

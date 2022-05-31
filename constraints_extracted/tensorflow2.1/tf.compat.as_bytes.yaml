@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.compat.as_bytes
+constraints:
+  bytes_or_text:
+    descp: A `bytearray`, `bytes`, `str`, or `unicode` object.
+    dtype:
+    - tf.string
+  encoding:
+    default: utf-8
+    descp: A string indicating the charset for encoding unicode.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `bytes_or_text` is not a binary or unicode string.
+inputs:
+  optional:
+  - encoding
+  required:
+  - bytes_or_text
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/compat/as_bytes
+outputs: A `bytes` object.
+package: tensorflow
+target: as_bytes
+title: tf.compat.as_bytes
+version: 2.1.0

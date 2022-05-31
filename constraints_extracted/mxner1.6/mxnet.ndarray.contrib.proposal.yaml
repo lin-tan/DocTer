@@ -1,0 +1,122 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  bbox_pred:
+    default: None
+    descp: BBox Predicted deltas from anchors for proposals
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  cls_prob:
+    default: None
+    descp: Score of how likely proposal is object.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  feature_stride:
+    default: _Null
+    descp: The size of the receptive field each unit in the convolution layer of the
+      rpn,for example the product of all stride's prior to this layer.
+    doc_dtype: int, optional, default='16'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  im_info:
+    default: None
+    descp: Image size and scale.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  iou_loss:
+    default: _Null
+    descp: Usage of IoU Loss
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  output_score:
+    default: _Null
+    descp: Add score to outputs
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  ratios:
+    default: _Null
+    descp: Used to generate anchor windows by enumerating ratios
+    doc_dtype: tuple of <float>, optional, default=[0.5,1,2]
+  rpn_min_size:
+    default: _Null
+    descp: Minimum height or width in proposal
+    doc_dtype: int, optional, default='16'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  rpn_post_nms_top_n:
+    default: _Null
+    descp: Number of top scoring boxes to keep after applying NMS to RPN proposals
+    doc_dtype: int, optional, default='300'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  rpn_pre_nms_top_n:
+    default: _Null
+    descp: Number of top scoring boxes to keep before applying NMS to RPN proposals
+    doc_dtype: int, optional, default='6000'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  scales:
+    default: _Null
+    descp: Used to generate anchor windows by enumerating scales
+    doc_dtype: tuple of <float>, optional, default=[4,8,16,32]
+  threshold:
+    default: _Null
+    descp: NMS value, below which to suppress.
+    doc_dtype: float, optional, default=0.699999988
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - cls_prob
+  - bbox_pred
+  - im_info
+  - rpn_pre_nms_top_n
+  - rpn_post_nms_top_n
+  - threshold
+  - rpn_min_size
+  - scales
+  - ratios
+  - feature_stride
+  - output_score
+  - iou_loss
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.Proposal
+package: mxnet
+target: Proposal
+title: mxnet.ndarray.contrib.Proposal
+version: 1.6.0

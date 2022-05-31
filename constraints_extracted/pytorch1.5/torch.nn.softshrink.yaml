@@ -1,0 +1,20 @@
+check_nan: true
+constraints:
+  lambd:
+    default: '0.5'
+    descp: 'the  lambda  (must be no less than zero) value for the Softshrink formulation.
+      Default: 0.5'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - lambd
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.Softshrink
+package: torch
+target: Softshrink
+title: torch.nn.Softshrink
+version: 1.5.0

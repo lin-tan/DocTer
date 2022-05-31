@@ -1,0 +1,134 @@
+constraints:
+  A:
+    descp: 'the input tensor of size (*, m, m) '
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  B:
+    default: None
+    descp: the input tensor of size (*, m, m) . When not specified, B is interpereted
+      as identity matrix.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  X:
+    default: None
+    descp: the input tensor of size (*, m, n)  where k <= n <= m. When specified,
+      it is used as initial approximation of eigenvectors. X must be a dense tensor.
+    doc_dtype: tensor, optional
+    tensor_t:
+    - torch.tensor
+  iK:
+    default: None
+    descp: the input tensor of size (*, m, m) . When specified, it will be used as
+      preconditioner.
+    doc_dtype: tensor, optional
+    tensor_t:
+    - torch.tensor
+  k:
+    default: None
+    descp: the number of requested eigenpairs. Default is the number of X  columns
+      (when specified) or 1.
+    doc_dtype: integer, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+  largest:
+    default: None
+    descp: when True, solve the eigenproblem for the largest eigenvalues. Otherwise,
+      solve the eigenproblem for smallest eigenvalues. Default is True.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  method:
+    default: None
+    descp: select LOBPCG method. See the description of the function above. Default
+      is "ortho".
+    doc_dtype: str, optional
+    dtype:
+    - string
+  n:
+    default: None
+    descp: if X  is not specified then n specifies the size of the generated random
+      approximation of eigenvectors. Default value for n is k. If X  is specifed,
+      the value of n (when specified) must be the number of X  columns.
+    doc_dtype: integer, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+  niter:
+    default: None
+    descp: maximum number of iterations. When reached, the iteration process is hard-stopped
+      and the current approximation of eigenpairs is returned. For infinite iteration
+      but until convergence criteria is met, use -1.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  ortho_bparams:
+    default: None
+    descp: various parameters to LOBPCG algorithm when using method="ortho".
+    doc_dtype: ortho_iparams,
+  ortho_fparams:
+    default: None
+    descp: various parameters to LOBPCG algorithm when using method="ortho".
+    doc_dtype: ortho_iparams,
+  ortho_iparams:
+    default: None
+    descp: ''
+  tol:
+    default: None
+    descp: residual tolerance for stopping criterion. Default is feps ** 0.5 where
+      feps is smallest non-zero floating-point number of the given input tensor A
+      data type.
+    doc_dtype: float, optional
+    dtype:
+    - int
+    - torch.dtype
+    - torch.float32
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - torch.tensor
+  tracker:
+    default: None
+    descp: ''
+    doc_dtype: callable, optional
+inputs:
+  optional:
+  - k
+  - B
+  - X
+  - n
+  - iK
+  - niter
+  - tol
+  - largest
+  - method
+  - tracker
+  - ortho_iparams
+  - ortho_fparams
+  - ortho_bparams
+  required:
+  - A
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.lobpcg
+package: torch
+target: lobpcg
+title: torch.lobpcg
+version: 1.5.0

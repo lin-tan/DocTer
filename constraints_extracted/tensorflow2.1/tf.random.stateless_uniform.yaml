@@ -1,0 +1,75 @@
+aliases:
+- tf.compat.v1.random.stateless_uniform
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: 'The type of the output: `float16`, `float32`, `float64`, `int32`, or`int64`.'
+    dtype:
+    - tf.dtype
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+  maxval:
+    default: None
+    descp: A 0-D Tensor or Python value of type `dtype`. The upper bound on the range
+      of random values to generate.  Defaults to 1 if `dtype` is floating point.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  minval:
+    default: '0'
+    descp: A 0-D Tensor or Python value of type `dtype`. The lower bound on the range
+      of random values to generate.  Defaults to 0.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    descp: A shape [2] integer Tensor of seeds to the random number generator.
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  shape:
+    descp: A 1-D integer Tensor or Python array. The shape of the output tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `dtype` is integral and `maxval` is not specified.
+inputs:
+  optional:
+  - minval
+  - maxval
+  - dtype
+  - name
+  required:
+  - shape
+  - seed
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/stateless_uniform
+outputs: A tensor of the specified shape filled with random uniform values.
+package: tensorflow
+target: stateless_uniform
+title: tf.random.stateless_uniform
+version: 2.1.0

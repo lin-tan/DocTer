@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.mlir.experimental.convert_graph_def
+constraints:
+  graph_def:
+    descp: An object of type graph_pb2.GraphDef or a textual proto representation
+      of a valid GraphDef.
+  pass_pipeline:
+    default: tf-standard-pipeline
+    descp: A textual description of an MLIR Pass Pipeline to run on the module, see
+      MLIR documentation for thetextual pass pipeline syntax.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - pass_pipeline
+  required:
+  - graph_def
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/mlir/experimental/convert_graph_def
+outputs: A textual representation of the MLIR module corresponding to the graphdef.
+  Raises a RuntimeError on error.
+package: tensorflow
+target: convert_graph_def
+title: tf.mlir.experimental.convert_graph_def
+version: 2.1.0

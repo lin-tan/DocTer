@@ -1,0 +1,58 @@
+aliases:
+- tf.compat.v1.keras.layers.Layer
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: Additional keyword arguments.
+  dtype:
+    default: None
+    descp: The dtype of the layer's computations and weights (default of`None` means
+      use `tf.keras.backend.floatx` in TensorFlow 2, or the type of the first input
+      in TensorFlow 1).
+    dtype:
+    - tf.dtype
+  dynamic:
+    default: 'False'
+    descp: Set this to `True` if your layer should only be run eagerly, and should
+      not be used to generate a static computation graph. This would be the case for
+      a Tree-RNN or a recursive network, for example, or generally for any layer that
+      manipulates tensors using Python control flow. If `False`, we assume that the
+      layer can safely be used to generate a static computation graph.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: String name of the layer.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  trainable:
+    default: 'True'
+    descp: Boolean, whether the layer's variables should be trainable.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if the layer's `call` method returns None (an invalid value).
+inputs:
+  deprecated:
+  - inputs
+  optional:
+  - trainable
+  - name
+  - dtype
+  - dynamic
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Layer
+outputs: Output tensor(s).
+package: tensorflow
+target: Layer
+title: tf.keras.layers.Layer
+version: 2.1.0

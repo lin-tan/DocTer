@@ -1,0 +1,27 @@
+constraints:
+  '**inputs':
+    descp: Mapping each input name to a NumPy array.
+    doc_dtype: keyword arguments
+    structure:
+    - ndarray
+  ctx:
+    default: None
+    descp: If `None`, will take the default context.
+    doc_dtype: Context
+  is_train:
+    default: 'False'
+    descp: ''
+  sym:
+    descp: ''
+inputs:
+  optional:
+  - ctx
+  - is_train
+  required:
+  - sym
+  - '**inputs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.simple_forward
+package: mxnet
+target: simple_forward
+title: mxnet.test_utils.simple_forward
+version: 1.6.0

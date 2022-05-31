@@ -1,0 +1,27 @@
+aliases:
+- tf.compat.v1.compat.forward_compatible
+constraints:
+  day:
+    descp: A day (1 <= day <= 31, or 30, or 29, or 28) in month. Must be an`int`.
+  month:
+    descp: A month (1 <= month <= 12) in year. Must be an `int`.
+    dtype:
+    - int
+  year:
+    descp: A year (e.g., 2018). Must be an `int`.
+    dtype:
+    - int
+inputs:
+  optional: []
+  required:
+  - year
+  - month
+  - day
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/compat/forward_compatible
+outputs: True if the caller can expect that serialized TensorFlow graphs produced
+  can be consumed by programs that are compiled with the TensorFlow library source
+  code after (year, month, day).
+package: tensorflow
+target: forward_compatible
+title: tf.compat.forward_compatible
+version: 2.1.0

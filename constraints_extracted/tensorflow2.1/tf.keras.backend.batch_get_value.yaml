@@ -1,0 +1,19 @@
+aliases:
+- tf.compat.v1.keras.backend.batch_get_value
+constraints:
+  tensors:
+    descp: list of ops to run.
+    structure:
+    - list
+exceptions:
+- RuntimeError: If this method is called inside defun.
+inputs:
+  optional: []
+  required:
+  - tensors
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/batch_get_value
+outputs: A list of Numpy arrays.
+package: tensorflow
+target: batch_get_value
+title: tf.keras.backend.batch_get_value
+version: 2.1.0

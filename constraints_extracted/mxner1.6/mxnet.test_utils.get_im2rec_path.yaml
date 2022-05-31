@@ -1,0 +1,18 @@
+constraints:
+  home_env:
+    default: MXNET_HOME
+    descp: Env variable that holds the path to the MXNET folder
+    doc_dtype: str
+    dtype:
+    - string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - home_env
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.get_im2rec_path
+package: mxnet
+target: get_im2rec_path
+title: mxnet.test_utils.get_im2rec_path
+version: 1.6.0

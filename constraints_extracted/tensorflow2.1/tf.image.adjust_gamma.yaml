@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.image.adjust_gamma
+constraints:
+  gain:
+    default: '1'
+    descp: A scalar or tensor. The constant multiplier.
+    dtype:
+    - int
+  gamma:
+    default: '1'
+    descp: A scalar or tensor. Non negative real number.
+    dtype:
+    - int
+  image:
+    descp: RGB image or images to adjust.
+exceptions:
+- ValueError: If gamma is negative.
+inputs:
+  optional:
+  - gamma
+  - gain
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/adjust_gamma
+outputs: A Tensor. A Gamma-adjusted tensor of the same shape and type as `image`.
+package: tensorflow
+target: adjust_gamma
+title: tf.image.adjust_gamma
+version: 2.1.0

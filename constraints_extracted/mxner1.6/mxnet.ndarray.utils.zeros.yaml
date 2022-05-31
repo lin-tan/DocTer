@@ -1,0 +1,43 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: None
+    descp: An optional device context (default is the current default context)
+    doc_dtype: Context, optional
+  dtype:
+    default: None
+    descp: An optional value type (default is float32)
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+  shape:
+    descp: The shape of the empty array
+    doc_dtype: int or tuple of int
+    dtype:
+    - int
+    structure:
+    - ndarray
+    - tuple
+  stype:
+    default: None
+    descp: The storage type of the empty array, such as 'row_sparse', 'csr', etc.
+    doc_dtype: string, optional
+    dtype:
+    - string
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - ctx
+  - dtype
+  - stype
+  required:
+  - shape
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/utils/index.html#mxnet.ndarray.utils.zeros
+package: mxnet
+target: zeros
+title: mxnet.ndarray.utils.zeros
+version: 1.6.0

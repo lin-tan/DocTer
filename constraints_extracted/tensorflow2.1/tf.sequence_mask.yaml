@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.sequence_mask
+constraints:
+  dtype:
+    default: tf.dtypes.bool
+    descp: output type of the resulting tensor.
+    dtype:
+    - tf.bool
+    - tf.dtype
+  lengths:
+    descp: integer tensor, all its values <= maxlen.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  maxlen:
+    default: None
+    descp: scalar integer tensor, size of last dimension of returned tensor. Default
+      is the maximum value in `lengths`.
+  name:
+    default: None
+    descp: name of the op.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if `maxlen` is not a scalar.
+inputs:
+  optional:
+  - maxlen
+  - dtype
+  - name
+  required:
+  - lengths
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sequence_mask
+outputs: A mask tensor of shape `lengths.shape + (maxlen,)`, cast to specified dtype.
+package: tensorflow
+target: sequence_mask
+title: tf.sequence_mask
+version: 2.1.0

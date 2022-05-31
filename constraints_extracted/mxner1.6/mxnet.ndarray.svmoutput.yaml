@@ -1,0 +1,67 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data for SVM transformation.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  label:
+    default: None
+    descp: Class label for the input data.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  margin:
+    default: _Null
+    descp: The loss function penalizes outputs that lie outside this margin. Default
+      margin is 1.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  regularization_coefficient:
+    default: _Null
+    descp: Regularization parameter for the SVM. This balances the tradeoff between
+      coefficient size and error.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  use_linear:
+    default: _Null
+    descp: Whether to use L1-SVM objective. L2-SVM objective is used by default.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - label
+  - margin
+  - regularization_coefficient
+  - use_linear
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.SVMOutput
+package: mxnet
+target: SVMOutput
+title: mxnet.ndarray.SVMOutput
+version: 1.6.0

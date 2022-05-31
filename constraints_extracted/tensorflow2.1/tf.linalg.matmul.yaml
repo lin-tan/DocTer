@@ -1,0 +1,93 @@
+aliases:
+- tf.matmul
+- tf.compat.v1.linalg.matmul
+- tf.compat.v1.matmul
+constraints:
+  a:
+    descp: '`tf.Tensor` of type `float16`, `float32`, `float64`, `int32`,`complex64`,
+      `complex128` and rank > 1.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  a_is_sparse:
+    default: 'False'
+    descp: If `True`, `a` is treated as a sparse matrix.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  adjoint_a:
+    default: 'False'
+    descp: If `True`, `a` is conjugated and transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  adjoint_b:
+    default: 'False'
+    descp: If `True`, `b` is conjugated and transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  b:
+    descp: '`tf.Tensor` with same type and rank as `a`.'
+    tensor_t:
+    - tf.tensor
+  b_is_sparse:
+    default: 'False'
+    descp: If `True`, `b` is treated as a sparse matrix.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: Name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  transpose_a:
+    default: 'False'
+    descp: If `True`, `a` is transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  transpose_b:
+    default: 'False'
+    descp: If `True`, `b` is transposed before multiplication.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If `transpose_a` and `adjoint_a`, or `transpose_b` and`adjoint_b` are
+    both set to `True`.
+inputs:
+  optional:
+  - transpose_a
+  - transpose_b
+  - adjoint_a
+  - adjoint_b
+  - a_is_sparse
+  - b_is_sparse
+  - name
+  required:
+  - a
+  - b
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/matmul
+outputs: 'A `tf.Tensor` of the same type as `a` and `b` where each inner-most matrix
+  is the product of the corresponding matrices in `a` and `b`, e.g. if all transpose
+  or adjoint attributes are `False`:'
+package: tensorflow
+target: matmul
+title: tf.linalg.matmul
+version: 2.1.0

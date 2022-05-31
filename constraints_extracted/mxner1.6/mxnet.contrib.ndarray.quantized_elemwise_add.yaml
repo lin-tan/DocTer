@@ -1,0 +1,65 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  lhs:
+    default: None
+    descp: first input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lhs_max:
+    default: None
+    descp: 4th input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lhs_min:
+    default: None
+    descp: 3rd input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: second input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  rhs_max:
+    default: None
+    descp: 6th input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  rhs_min:
+    default: None
+    descp: 5th input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - lhs_min
+  - lhs_max
+  - rhs_min
+  - rhs_max
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.quantized_elemwise_add
+package: mxnet
+target: quantized_elemwise_add
+title: mxnet.contrib.ndarray.quantized_elemwise_add
+version: 1.6.0

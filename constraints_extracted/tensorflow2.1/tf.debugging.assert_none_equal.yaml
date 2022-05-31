@@ -1,0 +1,46 @@
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional).  Defaults to "assert_none_equal".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  summarize:
+    default: None
+    descp: Print this many entries of each tensor.
+  x:
+    descp: Numeric `Tensor`.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: Numeric `Tensor`, same dtype as and broadcastable to `x`.
+exceptions:
+- InvalidArgumentError: if the check can be performed immediately and`x != y` is False
+    for any pair of elements in `x` and `y`. The check can be performed immediately
+    during eager execution or if `x` and `y` are statically known.
+inputs:
+  optional:
+  - summarize
+  - message
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_none_equal
+outputs: Op that raises `InvalidArgumentError` if `x != y` is ever False. This can   be
+  used with `tf.control_dependencies` inside of `tf.function`s to block   followup
+  computation until the check has executed.
+package: tensorflow
+target: assert_none_equal
+title: tf.debugging.assert_none_equal
+version: 2.1.0

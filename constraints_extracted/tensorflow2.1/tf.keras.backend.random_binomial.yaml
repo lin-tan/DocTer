@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.keras.backend.random_binomial
+constraints:
+  dtype:
+    default: None
+    descp: String, dtype of returned tensor.
+  p:
+    default: '0.0'
+    descp: A float, `0. <= p <= 1`, probability of binomial distribution.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  seed:
+    default: None
+    descp: Integer, random seed.
+  shape:
+    descp: A tuple of integers, the shape of tensor to create.
+    dtype:
+    - int
+    structure:
+    - tuple
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - p
+  - dtype
+  - seed
+  required:
+  - shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/random_binomial
+outputs: A tensor.
+package: tensorflow
+target: random_binomial
+title: tf.keras.backend.random_binomial
+version: 2.1.0

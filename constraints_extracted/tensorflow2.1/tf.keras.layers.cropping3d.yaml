@@ -1,0 +1,51 @@
+aliases:
+- tf.compat.v1.keras.layers.Cropping3D
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  cropping:
+    default: ((1, 1), (1, 1), (1, 1))
+    descp: 'Int, or tuple of 3 ints, or tuple of 3 tuples of 2 ints. If int: the same
+      symmetric cropping is applied to depth, height, and width.If tuple of 3 ints:
+      interpreted as two different symmetric cropping values for depth, height, and
+      width:`(symmetric_dim1_crop, symmetric_dim2_crop, symmetric_dim3_crop)`.If tuple
+      of 3 tuples of 2 ints: interpreted as`((left_dim1_crop, right_dim1_crop), (left_dim2_crop,
+      right_dim2_crop), (left_dim3_crop, right_dim3_crop))` '
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[2]'
+    - '[3]'
+    structure:
+    - tuple
+  data_format:
+    default: None
+    descp: A string, one of `channels_last` (default) or `channels_first`. The ordering
+      of the dimensions in the inputs.`channels_last` corresponds to inputs with shape`(batch,
+      spatial_dim1, spatial_dim2, spatial_dim3, channels)`while `channels_first` corresponds
+      to inputs with shape`(batch, channels, spatial_dim1, spatial_dim2, spatial_dim3)`.
+      It defaults to the `image_data_format` value found in your Keras config file
+      at `~/.keras/keras.json`. If you never set it, then it will be "channels_last".
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - cropping
+  - data_format
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/Cropping3D
+package: tensorflow
+target: Cropping3D
+title: tf.keras.layers.Cropping3D
+version: 2.1.0

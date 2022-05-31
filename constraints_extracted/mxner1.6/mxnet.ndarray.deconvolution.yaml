@@ -1,0 +1,193 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  adj:
+    default: _Null
+    descp: 'Adjustment for output shape: (w,), (h, w) or (d, h, w). If target_shape
+      is set, adj will be ignored and computed accordingly.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  bias:
+    default: None
+    descp: Bias added to the result after the deconvolution operation.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  cudnn_off:
+    default: _Null
+    descp: Turn off cudnn for this layer.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  cudnn_tune:
+    default: _Null
+    descp: Whether to pick convolution algorithm by running performance test.
+    doc_dtype: '{None, ''fastest'', ''limited_workspace'', ''off''},optional, default=''None'''
+    enum:
+    - None
+    - fastest
+    - limited_workspace
+    - 'off'
+  data:
+    default: None
+    descp: Input tensor to the deconvolution operation.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  dilate:
+    default: _Null
+    descp: 'Dilation factor for each dimension of the input: (w,), (h, w) or (d, h,
+      w). Defaults to 1 for each dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  kernel:
+    default: _Null
+    descp: 'Deconvolution kernel size: (w,), (h, w) or (d, h, w). This is same as
+      the kernel size used for the corresponding convolution'
+    doc_dtype: Shape(tuple), required
+  layout:
+    default: _Null
+    descp: Set layout for input, output and weight. Empty for default layout, NCW
+      for 1d, NCHW for 2d and NCDHW for 3d.NHWC and NDHWC are only supported on GPU.
+    doc_dtype: '{None, ''NCDHW'', ''NCHW'', ''NCW'', ''NDHWC'', ''NHWC''},optional,
+      default=''None'''
+    enum:
+    - NCDHW
+    - NCHW
+    - NCW
+    - NDHWC
+    - NHWC
+    - None
+  name:
+    default: None
+    descp: ''
+  no_bias:
+    default: _Null
+    descp: Whether to disable bias parameter.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  num_filter:
+    default: _Null
+    descp: Number of output filters.
+    doc_dtype: int (non-negative), required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_group:
+    default: _Null
+    descp: Number of groups partition.
+    doc_dtype: int (non-negative), optional, default=1
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  pad:
+    default: _Null
+    descp: 'The amount of implicit zero padding added during convolution for each
+      dimension of the input: (w,), (h, w) or (d, h, w). `(kernel-1)/2` is usually
+      a good choice. If target_shape is set, pad will be ignored and a padding that
+      will generate the target shape will be used. Defaults to no padding.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  stride:
+    default: _Null
+    descp: 'The stride used for the corresponding convolution: (w,), (h, w) or (d,
+      h, w). Defaults to 1 for each dimension.'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  target_shape:
+    default: _Null
+    descp: 'Shape of the output tensor: (w,), (h, w) or (d, h, w).'
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  weight:
+    default: None
+    descp: Weights representing the kernel.
+    doc_dtype: NDArray
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  workspace:
+    default: _Null
+    descp: Maximum temporary workspace allowed (MB) in deconvolution.This parameter
+      has two usages. When CUDNN is not used, it determines the effective batch size
+      of the deconvolution kernel. When CUDNN is used, it controls the maximum temporary
+      storage used for tuning the best CUDNN kernel when limited_workspace strategy
+      is used.
+    doc_dtype: long (non-negative), optional, default=512
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - weight
+  - bias
+  - kernel
+  - stride
+  - dilate
+  - pad
+  - adj
+  - target_shape
+  - num_filter
+  - num_group
+  - workspace
+  - no_bias
+  - cudnn_tune
+  - cudnn_off
+  - layout
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.Deconvolution
+package: mxnet
+target: Deconvolution
+title: mxnet.ndarray.Deconvolution
+version: 1.6.0

@@ -1,0 +1,42 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axes:
+    default: _Null
+    descp: Target axis order. By default the axes will be inverted.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  data:
+    default: None
+    descp: Source input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axes
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.transpose
+package: mxnet
+target: transpose
+title: mxnet.ndarray.transpose
+version: 1.6.0

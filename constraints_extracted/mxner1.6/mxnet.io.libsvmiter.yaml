@@ -1,0 +1,103 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: ''
+  batch_size:
+    descp: Batch size.
+    doc_dtype: int (non-negative), required
+  ctx:
+    default: None
+    descp: Context data loader optimized for.
+    doc_dtype: '{''cpu'', ''gpu''},optional, default=''gpu'''
+    enum:
+    - cpu
+    - gpu
+  data_libsvm:
+    descp: The input zero-base indexed LibSVM data file or a directory path.
+    doc_dtype: string, required
+    dtype:
+    - string
+  data_shape:
+    descp: The shape of one example.
+    doc_dtype: Shape(tuple), required
+  dtype:
+    default: None
+    descp: Output data type. `None` means no change.
+    doc_dtype: '{None, ''float16'', ''float32'', ''float64'', ''int32'', ''int64'',
+      ''int8'', ''uint8''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+    - int32
+    - int64
+    - int8
+    - uint8
+  label_libsvm:
+    default: None
+    descp: The input LibSVM label file or a directory path. If NULL, all labels will
+      be read from `data_libsvm`.
+    doc_dtype: string, optional, default='NULL'
+    dtype:
+    - string
+  label_shape:
+    default: None
+    descp: The shape of one label.
+    doc_dtype: Shape(tuple), optional, default=[1]
+  num_parts:
+    default: None
+    descp: partition the data into multiple parts
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  part_index:
+    default: None
+    descp: the index of the part will read
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  prefetch_buffer:
+    default: None
+    descp: Maximum number of batches to prefetch.
+    doc_dtype: long (non-negative), optional, default=4
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  round_batch:
+    default: None
+    descp: Whether to use round robin to handle overflow batch or not.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - label_libsvm
+  - label_shape
+  - num_parts
+  - part_index
+  - round_batch
+  - prefetch_buffer
+  - ctx
+  - dtype
+  required:
+  - '*args'
+  - '**kwargs'
+  - data_libsvm
+  - data_shape
+  - batch_size
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/io/index.html#mxnet.io.LibSVMIter
+package: mxnet
+target: LibSVMIter
+title: mxnet.io.LibSVMIter
+version: 1.6.0

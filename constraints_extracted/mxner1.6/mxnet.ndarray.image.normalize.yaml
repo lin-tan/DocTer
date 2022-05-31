@@ -1,0 +1,44 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input ndarray
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mean:
+    default: _Null
+    descp: Sequence of means for each channel. Default value is 0.
+    doc_dtype: tuple of <float>, optional, default=[0,0,0,0]
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  std:
+    default: _Null
+    descp: Sequence of standard deviations for each channel. Default value is 1.
+    doc_dtype: tuple of <float>, optional, default=[1,1,1,1]
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - mean
+  - std
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.normalize
+package: mxnet
+target: normalize
+title: mxnet.ndarray.image.normalize
+version: 1.6.0

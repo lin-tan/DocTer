@@ -1,0 +1,25 @@
+check_nan: true
+constraints:
+  function:
+    descp: 'Function used in lambda must be one of the following: 1) The name of an
+      operator that is available in both symbol and ndarray. For example: block =
+      HybridLambda(''tanh'')   <ol class="arabic" start="2"> A function that conforms
+      to `def function(F, data, *args)`. For example: block = HybridLambda(lambda
+      F, x: F.LeakyReLU(x, slope=0.1))   '
+    doc_dtype: str or function
+    dtype:
+    - string
+  prefix:
+    default: None
+    descp: ''
+inputs:
+  optional:
+  - prefix
+  required:
+  - function
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.HybridLambda
+package: mxnet
+target: HybridLambda
+title: mxnet.gluon.nn.HybridLambda
+version: 1.6.0

@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.global_norm
+- tf.compat.v1.linalg.global_norm
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  t_list:
+    descp: A tuple or list of mixed `Tensors`, `IndexedSlices`, or None.
+    structure:
+    - list
+    - tuple
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: If `t_list` is not a sequence.
+inputs:
+  optional:
+  - name
+  required:
+  - t_list
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/global_norm
+outputs: A 0-D (scalar) `Tensor` of type `float`.
+package: tensorflow
+target: global_norm
+title: tf.linalg.global_norm
+version: 2.1.0

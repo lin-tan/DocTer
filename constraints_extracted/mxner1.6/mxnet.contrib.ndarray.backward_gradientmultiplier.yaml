@@ -1,0 +1,37 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: source input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  scalar:
+    default: _Null
+    descp: scalar input
+    doc_dtype: float
+    dtype:
+    - float
+inputs:
+  optional:
+  - data
+  - scalar
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.backward_gradientmultiplier
+package: mxnet
+target: backward_gradientmultiplier
+title: mxnet.contrib.ndarray.backward_gradientmultiplier
+version: 1.6.0

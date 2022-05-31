@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.keras.backend.cast
+constraints:
+  dtype:
+    descp: String, either (`'float16'`, `'float32'`, or `'float64'`).
+    dtype:
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.string
+    enum:
+    - String
+    - float16
+    - float32
+    - float64
+    ndim:
+    - '0'
+  x:
+    descp: Keras tensor (or variable).
+inputs:
+  optional: []
+  required:
+  - x
+  - dtype
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/cast
+outputs: Keras tensor with dtype `dtype`.
+package: tensorflow
+target: cast
+title: tf.keras.backend.cast
+version: 2.1.0

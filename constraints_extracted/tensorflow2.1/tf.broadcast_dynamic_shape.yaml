@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.broadcast_dynamic_shape
+constraints:
+  shape_x:
+    descp: A rank 1 integer `Tensor`, representing the shape of x.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  shape_y:
+    descp: A rank 1 integer `Tensor`, representing the shape of y.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - shape_x
+  - shape_y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/broadcast_dynamic_shape
+outputs: A rank 1 integer `Tensor` representing the broadcasted shape.
+package: tensorflow
+target: broadcast_dynamic_shape
+title: tf.broadcast_dynamic_shape
+version: 2.1.0

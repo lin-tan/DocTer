@@ -1,0 +1,37 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  lhs:
+    default: None
+    descp: First input to the function
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: Second input to the function
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.broadcast_minus
+package: mxnet
+target: broadcast_minus
+title: mxnet.ndarray.sparse.broadcast_minus
+version: 1.6.0

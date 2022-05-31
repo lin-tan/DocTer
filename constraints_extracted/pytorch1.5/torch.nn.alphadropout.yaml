@@ -1,0 +1,29 @@
+check_nan: true
+constraints:
+  inplace:
+    default: 'False'
+    descp: If set to `True`, will do this operation in-place
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  p:
+    default: '0.5'
+    descp: 'probability of an element to be dropped. Default: 0.5'
+    doc_dtype: float
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - p
+  - inplace
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.AlphaDropout
+package: torch
+target: AlphaDropout
+title: torch.nn.AlphaDropout
+version: 1.5.0

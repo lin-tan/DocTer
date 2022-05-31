@@ -1,0 +1,39 @@
+constraints:
+  LU_data:
+    descp: the packed LU factorization data
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  LU_pivots:
+    descp: the packed LU factorization pivots
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  unpack_data:
+    default: 'True'
+    descp: flag indicating if the data should be unpacked
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  unpack_pivots:
+    default: 'True'
+    descp: flag indicating if the pivots should be unpacked
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - unpack_data
+  - unpack_pivots
+  required:
+  - LU_data
+  - LU_pivots
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.lu_unpack
+package: torch
+target: lu_unpack
+title: torch.lu_unpack
+version: 1.5.0

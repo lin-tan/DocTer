@@ -1,0 +1,95 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  A:
+    default: None
+    descp: Tensor of input matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  B:
+    default: None
+    descp: Tensor of input matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  C:
+    default: None
+    descp: Tensor of input matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  alpha:
+    default: _Null
+    descp: Scalar factor multiplied with A*B.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  axis:
+    default: _Null
+    descp: Axis corresponding to the matrix rows.
+    doc_dtype: int, optional, default='-2'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  beta:
+    default: _Null
+    descp: Scalar factor multiplied with C.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  transpose_a:
+    default: _Null
+    descp: Multiply with transposed of first input (A).
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  transpose_b:
+    default: _Null
+    descp: Multiply with transposed of second input (B).
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - A
+  - B
+  - C
+  - transpose_a
+  - transpose_b
+  - alpha
+  - beta
+  - axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/linalg/index.html#mxnet.ndarray.linalg.gemm
+package: mxnet
+target: gemm
+title: mxnet.ndarray.linalg.gemm
+version: 1.6.0

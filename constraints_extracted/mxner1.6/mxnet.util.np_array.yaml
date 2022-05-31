@@ -1,0 +1,16 @@
+constraints:
+  active:
+    default: 'True'
+    descp: Indicates whether to activate NumPy-array semantics.
+    doc_dtype: bool
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - active
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/util/index.html#mxnet.util.np_array
+package: mxnet
+target: np_array
+title: mxnet.util.np_array
+version: 1.6.0

@@ -1,0 +1,25 @@
+constraints:
+  size:
+    descp: Size of the crop in (width, height) format.
+    doc_dtype: tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+  src_size:
+    descp: Size of the image in (width, height) format.
+    doc_dtype: tuple of int
+    dtype:
+    - int
+    structure:
+    - tuple
+inputs:
+  optional: []
+  required:
+  - src_size
+  - size
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/image/index.html#mxnet.image.scale_down
+package: mxnet
+target: scale_down
+title: mxnet.image.scale_down
+version: 1.6.0

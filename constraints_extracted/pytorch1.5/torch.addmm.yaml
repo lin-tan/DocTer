@@ -1,0 +1,57 @@
+constraints:
+  alpha:
+    default: '1'
+    descp: multiplier for mat1 @ mat2  ( alpha )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  beta:
+    default: '1'
+    descp: multiplier for `input` ( beta )
+    doc_dtype: Number, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  input:
+    descp: matrix to be added
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  mat1:
+    descp: the first matrix to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  mat2:
+    descp: the second matrix to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  keyword_only:
+  - beta
+  - alpha
+  - out
+  optional:
+  - beta
+  - alpha
+  - out
+  required:
+  - input
+  - mat1
+  - mat2
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.addmm
+package: torch
+ret_type: Tensor
+target: addmm
+title: torch.addmm
+version: 1.5.0

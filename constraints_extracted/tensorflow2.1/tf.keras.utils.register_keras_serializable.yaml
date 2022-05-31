@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.keras.utils.register_keras_serializable
+constraints:
+  name:
+    default: None
+    descp: The name to serialize this class under in this package. If None, the class's
+      name will be used.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  package:
+    default: Custom
+    descp: The package that this class belongs to.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - package
+  - name
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/utils/register_keras_serializable
+outputs: A decorator that registers the decorated class with the passed names.
+package: tensorflow
+target: register_keras_serializable
+title: tf.keras.utils.register_keras_serializable
+version: 2.1.0

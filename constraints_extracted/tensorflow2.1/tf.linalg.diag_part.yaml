@@ -1,0 +1,42 @@
+aliases:
+- tf.compat.v1.linalg.diag_part
+- tf.compat.v1.matrix_diag_part
+constraints:
+  input:
+    descp: A `Tensor` with `rank k >= 2`.
+    tensor_t:
+    - tf.tensor
+  k:
+    default: '0'
+    descp: Diagonal offset(s). Positive value means superdiagonal, 0 refers to the
+      main diagonal, and negative value means subdiagonals. `k` can be a single integer
+      (for a single diagonal) or a pair of integers specifying the low and high ends
+      of a matrix band. `k[0]` must not be larger than `k[1]`.
+    dtype:
+    - int
+  name:
+    default: diag_part
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  padding_value:
+    default: '0'
+    descp: The value to fill the area outside the specified diagonal band with. Default
+      is 0.
+    dtype:
+    - int
+inputs:
+  optional:
+  - name
+  - k
+  - padding_value
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/diag_part
+outputs: A Tensor containing diagonals of `input`. Has the same type as `input`.
+package: tensorflow
+target: diag_part
+title: tf.linalg.diag_part
+version: 2.1.0

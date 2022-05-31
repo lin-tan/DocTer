@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.math.xdivy
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: 'A `Tensor`. Must be one of the following types: `half`, `float32`, `float64`,
+      `complex64`, `complex128`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: A `Tensor`. Must have the same type as `x`.
+    dtype:
+    - dtype:&x
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/xdivy
+outputs: A `Tensor`. Has the same type as `x`.
+package: tensorflow
+target: xdivy
+title: tf.math.xdivy
+version: 2.1.0

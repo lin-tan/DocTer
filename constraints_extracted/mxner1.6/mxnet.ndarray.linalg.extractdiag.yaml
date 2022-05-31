@@ -1,0 +1,40 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  A:
+    default: None
+    descp: Tensor of square matrices
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  offset:
+    default: _Null
+    descp: Offset of the diagonal versus the main diagonal. 0 corresponds to the main
+      diagonal, a negative/positive value to diagonals below/above the main diagonal.
+    doc_dtype: int, optional, default='0'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - A
+  - offset
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/linalg/index.html#mxnet.ndarray.linalg.extractdiag
+package: mxnet
+target: extractdiag
+title: mxnet.ndarray.linalg.extractdiag
+version: 1.6.0

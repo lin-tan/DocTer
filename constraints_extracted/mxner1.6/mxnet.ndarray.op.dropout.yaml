@@ -1,0 +1,70 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axes:
+    default: _Null
+    descp: Axes for variational dropout kernel.
+    doc_dtype: Shape(tuple), optional, default=[]
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  cudnn_off:
+    default: _Null
+    descp: Whether to turn off cudnn in dropout operator. This option is ignored if
+      axes is specified.
+    doc_dtype: boolean or None, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: Input array to which dropout will be applied.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mode:
+    default: _Null
+    descp: Whether to only turn on dropout during training or to also turn on for
+      inference.
+    doc_dtype: '{''always'', ''training''},optional, default=''training'''
+    enum:
+    - always
+    - training
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  p:
+    default: _Null
+    descp: Fraction of the input that gets dropped out during training time.
+    doc_dtype: float, optional, default=0.5
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - p
+  - mode
+  - axes
+  - cudnn_off
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.Dropout
+package: mxnet
+target: Dropout
+title: mxnet.ndarray.op.Dropout
+version: 1.6.0

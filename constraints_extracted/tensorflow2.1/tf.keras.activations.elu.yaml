@@ -1,0 +1,24 @@
+aliases:
+- tf.compat.v1.keras.activations.elu
+constraints:
+  alpha:
+    default: '1.0'
+    descp: A scalar, slope of negative section.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  x:
+    descp: Input tensor.
+inputs:
+  optional:
+  - alpha
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/activations/elu
+outputs: 'The exponential linear activation: `x` if `x > 0` and   `alpha * (exp(x)-1)`
+  if `x < 0`.'
+package: tensorflow
+target: elu
+title: tf.keras.activations.elu
+version: 2.1.0

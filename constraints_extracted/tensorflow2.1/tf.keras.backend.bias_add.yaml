@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.keras.backend.bias_add
+constraints:
+  bias:
+    descp: Bias tensor to add.
+    tensor_t:
+    - tf.tensor
+  data_format:
+    default: None
+    descp: string, `"channels_last"` or `"channels_first"`.
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: 'In one of the two cases below:         1. invalid `data_format` argument.         2.
+    invalid bias shape.            the bias should be either a vector or            a
+    tensor with ndim(x) - 1 dimension'
+inputs:
+  optional:
+  - data_format
+  required:
+  - x
+  - bias
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/bias_add
+outputs: Output tensor.
+package: tensorflow
+target: bias_add
+title: tf.keras.backend.bias_add
+version: 2.1.0

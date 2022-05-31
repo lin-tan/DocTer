@@ -1,0 +1,84 @@
+aliases:
+- tf.compat.v1.strided_slice
+constraints:
+  begin:
+    descp: An `int32` or `int64` `Tensor`.
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  begin_mask:
+    default: '0'
+    descp: An `int32` mask.
+    dtype:
+    - int
+  ellipsis_mask:
+    default: '0'
+    descp: An `int32` mask.
+    dtype:
+    - int
+  end:
+    descp: An `int32` or `int64` `Tensor`.
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  end_mask:
+    default: '0'
+    descp: An `int32` mask.
+    dtype:
+    - int
+  input_:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  new_axis_mask:
+    default: '0'
+    descp: An `int32` mask.
+    dtype:
+    - int
+  shrink_axis_mask:
+    default: '0'
+    descp: An `int32` mask.
+    dtype:
+    - int
+  strides:
+    default: None
+    descp: An `int32` or `int64` `Tensor`.
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  var:
+    default: None
+    descp: The variable corresponding to `input_` or None
+inputs:
+  optional:
+  - strides
+  - begin_mask
+  - end_mask
+  - ellipsis_mask
+  - new_axis_mask
+  - shrink_axis_mask
+  - var
+  - name
+  required:
+  - input_
+  - begin
+  - end
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strided_slice
+outputs: A `Tensor` the same type as `input`.
+package: tensorflow
+target: strided_slice
+title: tf.strided_slice
+version: 2.1.0

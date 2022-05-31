@@ -1,0 +1,32 @@
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation. Defaults to "assert_scalar"
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  tensor:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If the tensor is not scalar (rank 0), or if its shape is unknown.
+inputs:
+  optional:
+  - message
+  - name
+  required:
+  - tensor
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_scalar
+package: tensorflow
+target: assert_scalar
+title: tf.debugging.assert_scalar
+version: 2.1.0

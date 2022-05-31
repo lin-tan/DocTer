@@ -1,0 +1,47 @@
+check_nan: true
+constraints:
+  a:
+    descp: Input data. The histogram is computed over the flattened array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  bins:
+    default: '10'
+    descp: If bins is an int, it defines the number of equal-width bins in the given
+      range (10, by default). If bins is a sequence, it defines the bin edges, including
+      the rightmost edge, allowing for non-uniform bin widths.
+    doc_dtype: int or sequence of scalars
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+  range:
+    default: None
+    descp: The lower and upper range of the bins. If not provided, range is simply
+      (a.min(), a.max()). Values outside the range are ignored. The first element
+      of the range must be less than or equal to the second. range affects the automatic
+      bin computation as well, the range will be equally divided by the number of
+      bins.
+    doc_dtype: float, float), optional
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - bins
+  - range
+  required:
+  - a
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.histogram
+package: mxnet
+target: histogram
+title: mxnet.ndarray.histogram
+version: 1.6.0

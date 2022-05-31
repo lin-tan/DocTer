@@ -1,0 +1,21 @@
+aliases:
+- tf.compat.v1.io.gfile.glob
+constraints:
+  pattern:
+    descp: string or iterable of strings. The glob pattern(s).
+    dtype:
+    - tf.string
+    structure:
+    - list
+exceptions:
+- errors.OpError: If there are filesystem / directory listing errors.
+inputs:
+  optional: []
+  required:
+  - pattern
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/glob
+outputs: A list of strings containing filenames that match the given pattern(s).
+package: tensorflow
+target: glob
+title: tf.io.gfile.glob
+version: 2.1.0

@@ -1,0 +1,28 @@
+aliases:
+- tf.compat.v1.math.real
+- tf.compat.v1.real
+constraints:
+  input:
+    descp: A `Tensor`. Must have numeric type.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/real
+outputs: A `Tensor` of type `float32` or `float64`.
+package: tensorflow
+target: real
+title: tf.math.real
+version: 2.1.0

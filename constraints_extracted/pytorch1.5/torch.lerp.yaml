@@ -1,0 +1,36 @@
+constraints:
+  end:
+    descp: the tensor with the ending points
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: the tensor with the starting points
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  weight:
+    descp: the weight for the interpolation formula
+    doc_dtype: float or tensor
+    dtype:
+    - torch.float32
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - end
+  - weight
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.lerp
+package: torch
+target: lerp
+title: torch.lerp
+version: 1.5.0

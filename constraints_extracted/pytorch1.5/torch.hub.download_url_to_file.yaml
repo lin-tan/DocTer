@@ -1,0 +1,38 @@
+constraints:
+  dst:
+    descp: Full path where object will be saved, e.g. /tmp/temporary_file
+    doc_dtype: string
+    dtype:
+    - string
+  hash_prefix:
+    default: None
+    descp: 'If not None, the SHA256 downloaded file should start with hash_prefix.
+      Default: None'
+    doc_dtype: string, optional
+    dtype:
+    - string
+  progress:
+    default: 'True'
+    descp: 'whether or not to display a progress bar to stderr Default: True'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  url:
+    descp: URL of the object to download
+    doc_dtype: string
+    dtype:
+    - string
+inputs:
+  optional:
+  - hash_prefix
+  - progress
+  required:
+  - url
+  - dst
+link: https://pytorch.org/docs/1.5.0/hub.html#torch.hub.download_url_to_file
+package: torch
+target: download_url_to_file
+title: torch.hub.download_url_to_file
+version: 1.5.0

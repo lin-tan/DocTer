@@ -1,0 +1,35 @@
+constraints:
+  a:
+    descp: ''
+    doc_dtype: np.ndarray
+  atol:
+    default: None
+    descp: The absolute threshold. Default threshold will be used if set to `None`.
+    doc_dtype: None or float
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  b:
+    descp: ''
+    doc_dtype: np.ndarray
+  rtol:
+    default: None
+    descp: The relative threshold. Default threshold will be used if set to `None`.
+    doc_dtype: None or float
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - rtol
+  - atol
+  required:
+  - a
+  - b
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.almost_equal_ignore_nan
+package: mxnet
+target: almost_equal_ignore_nan
+title: mxnet.test_utils.almost_equal_ignore_nan
+version: 1.6.0

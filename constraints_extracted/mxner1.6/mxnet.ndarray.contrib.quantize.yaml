@@ -1,0 +1,54 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: A ndarray/symbol of type float32
+    doc_dtype: NDArray
+    dtype:
+    - numpy.float32
+    structure:
+    - ndarray
+  max_range:
+    default: None
+    descp: The maximum scalar value possibly produced for the input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  min_range:
+    default: None
+    descp: The minimum scalar value possibly produced for the input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_type:
+    default: _Null
+    descp: Output data type.
+    doc_dtype: '{''int8'', ''uint8''},optional, default=''uint8'''
+    enum:
+    - int8
+    - uint8
+inputs:
+  optional:
+  - data
+  - min_range
+  - max_range
+  - out_type
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.quantize
+package: mxnet
+target: quantize
+title: mxnet.ndarray.contrib.quantize
+version: 1.6.0

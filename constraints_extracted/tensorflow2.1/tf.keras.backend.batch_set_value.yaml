@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.backend.batch_set_value
+constraints:
+  tuples:
+    descp: a list of tuples `(tensor, value)`.`value` should be a Numpy array.
+    enum:
+    - value
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - tuples
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/batch_set_value
+package: tensorflow
+target: batch_set_value
+title: tf.keras.backend.batch_set_value
+version: 2.1.0

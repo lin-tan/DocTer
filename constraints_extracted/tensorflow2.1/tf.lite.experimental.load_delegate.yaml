@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.lite.experimental.load_delegate
+constraints:
+  library:
+    descp: Name of shared library containing theTfLiteDelegate.
+    ndim:
+    - '0'
+  options:
+    default: None
+    descp: Dictionary of options that are required to load the delegate. All keys
+      and values in the dictionary should be convertible to str. Consult the documentation
+      of the specific delegate for required and legal options. (default None)
+    dtype:
+    - tf.string
+    structure:
+    - dict
+exceptions:
+- ValueError: Delegate failed to load.
+- RuntimeError: If delegate loading is used on unsupported platform.
+inputs:
+  optional:
+  - options
+  required:
+  - library
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/lite/experimental/load_delegate
+outputs: Delegate object.
+package: tensorflow
+target: load_delegate
+title: tf.lite.experimental.load_delegate
+version: 2.1.0

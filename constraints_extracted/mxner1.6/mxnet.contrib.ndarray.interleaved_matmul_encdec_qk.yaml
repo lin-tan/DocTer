@@ -1,0 +1,48 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  heads:
+    default: _Null
+    descp: Set number of heads
+    doc_dtype: int, required
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  keys_values:
+    default: None
+    descp: Keys and values interleaved
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  queries:
+    default: None
+    descp: Queries
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - queries
+  - keys_values
+  - heads
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.interleaved_matmul_encdec_qk
+package: mxnet
+target: interleaved_matmul_encdec_qk
+title: mxnet.contrib.ndarray.interleaved_matmul_encdec_qk
+version: 1.6.0

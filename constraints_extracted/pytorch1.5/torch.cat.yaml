@@ -1,0 +1,42 @@
+constraints:
+  dim:
+    default: '0'
+    descp: the dimension over which the tensors are concatenated
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  tensors:
+    descp: any python sequence of tensors of the same type. Non-empty tensors provided
+      must have the same shape, except in the cat dimension.
+    doc_dtype: sequence of Tensors
+    dtype:
+    - int
+    - torch.dtype
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dim
+  - out
+  required:
+  - tensors
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.cat
+package: torch
+ret_type: Tensor
+target: cat
+title: torch.cat
+version: 1.5.0

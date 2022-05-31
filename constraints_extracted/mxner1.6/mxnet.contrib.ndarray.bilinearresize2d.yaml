@@ -1,0 +1,98 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: Input data
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  height:
+    default: _Null
+    descp: output height (required, but ignored if scale_height is defined or mode
+      is not "size")
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  like:
+    default: None
+    descp: Resize data to it's shape
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mode:
+    default: _Null
+    descp: resizing mode. "simple" - output height equals parameter "height" if "scale_height"
+      parameter is not defined or input height multiplied by "scale_height" otherwise.
+      Same for width;"odd_scale" - if original height or width is odd, then result
+      height is calculated like result_h = (original_h - 1) * scale + 1; for scale
+      > 1 the result shape would be like if we did deconvolution with kernel = (1,
+      1) and stride = (height_scale, width_scale); and for scale < 1 shape would be
+      like we did convolution with kernel = (1, 1) and stride = (int(1 / height_scale),
+      int( 1/ width_scale);"like" - resize first input to the height and width of
+      second input; "to_even_down" - resize input to nearest lower even height and
+      width (if original height is odd then result height = original height - 1);"to_even_up"
+      - resize input to nearest bigger even height and width (if original height is
+      odd then result height = original height + 1);"to_odd_down" - resize input to
+      nearest odd height and width (if original height is odd then result height =
+      original height - 1);"to_odd_up" - resize input to nearest odd height and width
+      (if original height is odd then result height = original height + 1);
+    doc_dtype: '{''like'', ''odd_scale'', ''size'', ''to_even_down'', ''to_even_up'',
+      ''to_odd_down'', ''to_odd_up''},optional, default=''size'''
+    enum:
+    - odd_scale
+    - size
+    - to_even_down
+    - to_even_up
+    - to_odd_down
+    - to_odd_up
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  scale_height:
+    default: _Null
+    descp: sampling scale of the height (optional, used in modes "scale" and "odd_scale")
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+  scale_width:
+    default: _Null
+    descp: sampling scale of the width (optional, used in modes "scale" and "odd_scale")
+    doc_dtype: float or None, optional, default=None
+    dtype:
+    - float
+  width:
+    default: _Null
+    descp: output width (required, but ignored if scale_width is defined or mode is
+      not "size")
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - like
+  - height
+  - width
+  - scale_height
+  - scale_width
+  - mode
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.BilinearResize2D
+package: mxnet
+target: BilinearResize2D
+title: mxnet.contrib.ndarray.BilinearResize2D
+version: 1.6.0

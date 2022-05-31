@@ -1,0 +1,21 @@
+constraints:
+  generator:
+    default: None
+    descp: a pseudorandom number generator for sampling
+    doc_dtype: '`torch.Generator`, optional'
+  input*:
+    descp: the input tensor containing the rates of the Poisson distribution
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - generator
+  required:
+  - input*
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.poisson
+package: torch
+ret_type: Tensor
+target: poisson
+title: torch.poisson
+version: 1.5.0

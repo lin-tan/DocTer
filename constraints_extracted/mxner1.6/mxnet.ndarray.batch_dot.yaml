@@ -1,0 +1,69 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  forward_stype:
+    default: _Null
+    descp: The desired storage type of the forward output given by user, if thecombination
+      of input storage types and this hint does not matchany implemented ones, the
+      dot operator will perform fallback operationand still produce an output of the
+      desired storage type.
+    doc_dtype: '{None, ''csr'', ''default'', ''row_sparse''},optional, default=''None'''
+    enum:
+    - None
+    - csr
+    - default
+    - row_sparse
+  lhs:
+    default: None
+    descp: The first input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: The second input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  transpose_a:
+    default: _Null
+    descp: If true then transpose the first input before dot.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  transpose_b:
+    default: _Null
+    descp: If true then transpose the second input before dot.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - transpose_a
+  - transpose_b
+  - forward_stype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.batch_dot
+package: mxnet
+target: batch_dot
+title: mxnet.ndarray.batch_dot
+version: 1.6.0

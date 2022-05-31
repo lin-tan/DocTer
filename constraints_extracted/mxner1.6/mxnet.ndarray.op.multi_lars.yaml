@@ -1,0 +1,75 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  eps:
+    default: _Null
+    descp: LARS eps
+    doc_dtype: float, required
+    dtype:
+    - float
+  eta:
+    default: _Null
+    descp: LARS eta
+    doc_dtype: float, required
+    dtype:
+    - float
+  grads_sum_sq:
+    default: None
+    descp: sum of square of gradients arrays
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lrs:
+    default: None
+    descp: Learning rates to scale by LARS coefficient
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: _Null
+    descp: Gradient rescaling factor
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  wds:
+    default: None
+    descp: weight decays
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  weights_sum_sq:
+    default: None
+    descp: sum of square of weights arrays
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lrs
+  - weights_sum_sq
+  - grads_sum_sq
+  - wds
+  - eta
+  - eps
+  - rescale_grad
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.multi_lars
+package: mxnet
+target: multi_lars
+title: mxnet.ndarray.op.multi_lars
+version: 1.6.0

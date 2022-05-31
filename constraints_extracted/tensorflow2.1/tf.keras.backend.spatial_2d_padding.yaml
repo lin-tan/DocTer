@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.keras.backend.spatial_2d_padding
+constraints:
+  data_format:
+    default: None
+    descp: One of `channels_last` or `channels_first`.
+    enum:
+    - channels_first
+    - channels_last
+  padding:
+    default: ((1, 1), (1, 1))
+    descp: Tuple of 2 tuples, padding pattern.
+    structure:
+    - tuple
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if `data_format` is neither`channels_last` or `channels_first`.
+inputs:
+  optional:
+  - padding
+  - data_format
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/spatial_2d_padding
+outputs: A padded 4D tensor.
+package: tensorflow
+target: spatial_2d_padding
+title: tf.keras.backend.spatial_2d_padding
+version: 2.1.0

@@ -1,0 +1,52 @@
+constraints:
+  ascending:
+    default: 'False'
+    descp: whether to sort ascendingly defaults to False
+    doc_dtype: boolean
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  format:
+    default: table
+    descp: whether to return the aggregate stats in table of json format can take
+      'table' or 'json' defaults to 'table'
+    doc_dtype: string
+    dtype:
+    - string
+    ndim:
+    - '0'
+  reset:
+    default: 'False'
+    descp: indicates whether to clean aggeregate statistical data collected up to
+      this point
+    doc_dtype: boolean
+    dtype:
+    - boolean
+  sort_by:
+    default: total
+    descp: can take 'total', 'avg', 'min', 'max', or 'count' by which stat to sort
+      the entries in each category defaults to 'total'
+    doc_dtype: string
+    dtype:
+    - string
+    enum:
+    - avg
+    - count
+    - max
+    - min
+    - total
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - reset
+  - format
+  - sort_by
+  - ascending
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/profiler/index.html#mxnet.profiler.dumps
+package: mxnet
+target: dumps
+title: mxnet.profiler.dumps
+version: 1.6.0

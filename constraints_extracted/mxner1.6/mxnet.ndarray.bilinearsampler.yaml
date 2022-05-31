@@ -1,0 +1,45 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  cudnn_off:
+    default: _Null
+    descp: whether to turn cudnn off
+    doc_dtype: boolean or None, optional, default=None
+    dtype:
+    - boolean
+  data:
+    default: None
+    descp: Input data to the BilinearsamplerOp.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  grid:
+    default: None
+    descp: 'Input grid to the BilinearsamplerOp.grid has two channels: x_src, y_src'
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - grid
+  - cudnn_off
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.BilinearSampler
+package: mxnet
+target: BilinearSampler
+title: mxnet.ndarray.BilinearSampler
+version: 1.6.0

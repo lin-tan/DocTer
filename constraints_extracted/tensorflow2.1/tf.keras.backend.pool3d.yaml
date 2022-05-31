@@ -1,0 +1,74 @@
+aliases:
+- tf.compat.v1.keras.backend.pool3d
+constraints:
+  data_format:
+    default: None
+    descp: string, `"channels_last"` or `"channels_first"`.
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+  padding:
+    default: valid
+    descp: string, `"same"` or `"valid"`.
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  pool_mode:
+    default: max
+    descp: string, `"max"` or `"avg"`.
+    dtype:
+    - tf.string
+    enum:
+    - avg
+    - max
+    ndim:
+    - '0'
+  pool_size:
+    descp: tuple of 3 integers.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[3]'
+    structure:
+    - tuple
+  strides:
+    default: (1, 1, 1)
+    descp: tuple of 3 integers.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[3]'
+    structure:
+    - tuple
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if `data_format` is neither `"channels_last"` or`"channels_first"`.
+- ValueError: if `pool_mode` is neither `"max"` or `"avg"`.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - pool_mode
+  required:
+  - x
+  - pool_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/pool3d
+outputs: A tensor, result of 3D pooling.
+package: tensorflow
+target: pool3d
+title: tf.keras.backend.pool3d
+version: 2.1.0

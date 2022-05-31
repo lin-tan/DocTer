@@ -1,0 +1,31 @@
+constraints:
+  default_val:
+    default: ''
+    descp: Default value returned if the env var doesn't exist
+    doc_dtype: str, optional
+    dtype:
+    - string
+  key:
+    descp: Env var to set
+    doc_dtype: str
+    dtype:
+    - boolean
+    - string
+    ndim:
+    - '0'
+  val:
+    descp: New value assigned to the env var
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - default_val
+  required:
+  - key
+  - val
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.set_env_var
+package: mxnet
+target: set_env_var
+title: mxnet.test_utils.set_env_var
+version: 1.6.0

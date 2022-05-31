@@ -1,0 +1,87 @@
+aliases:
+- tf.as_string
+- tf.compat.v1.as_string
+- tf.compat.v1.dtypes.as_string
+- tf.compat.v1.strings.as_string
+constraints:
+  fill:
+    default: ''
+    descp: An optional `string`. Defaults to `""`. The value to pad if width > -1.  If
+      empty, pads with spaces. Another typical value is '0'.  String cannot be longer
+      than 1 character.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `int8`, `int16`, `int32`,
+      `int64`, `complex64`, `complex128`, `float32`, `float64`, `bool`.'
+    dtype:
+    - tf.bool
+    - tf.complex128
+    - tf.complex64
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  precision:
+    default: '-1'
+    descp: An optional `int`. Defaults to `-1`. The post-decimal precision to use
+      for floating point numbers. Only used if precision > -1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  scientific:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. Use scientific notation for floating
+      point numbers.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  shortest:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. Use shortest representation (either
+      scientific or standard) for floating point numbers.
+    dtype:
+    - float
+    - tf.bool
+    - tf.string
+    ndim:
+    - '0'
+  width:
+    default: '-1'
+    descp: An optional `int`. Defaults to `-1`. Pad pre-decimal numbers to this width.
+      Applies to both floating point and integer numbers. Only used if width > -1.
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - precision
+  - scientific
+  - shortest
+  - width
+  - fill
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/as_string
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: as_string
+title: tf.strings.as_string
+version: 2.1.0

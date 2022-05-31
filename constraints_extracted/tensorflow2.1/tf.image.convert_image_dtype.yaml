@@ -1,0 +1,38 @@
+aliases:
+- tf.compat.v1.image.convert_image_dtype
+constraints:
+  dtype:
+    descp: A `DType` to convert `image` to.
+    ndim:
+    - '0'
+  image:
+    descp: An image.
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  saturate:
+    default: 'False'
+    descp: If `True`, clip the input before casting (if necessary).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- AttributeError: Raises an attribute error when dtype is neither float nor integer
+inputs:
+  optional:
+  - saturate
+  - name
+  required:
+  - image
+  - dtype
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/convert_image_dtype
+outputs: '`image`, converted to `dtype`.'
+package: tensorflow
+target: convert_image_dtype
+title: tf.image.convert_image_dtype
+version: 2.1.0

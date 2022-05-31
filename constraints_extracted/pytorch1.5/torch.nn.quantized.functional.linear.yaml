@@ -1,0 +1,46 @@
+constraints:
+  bias:
+    default: None
+    descp: None or fp32 bias of type torch.float
+    doc_dtype: Tensor
+    dtype:
+    - torch.float32
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: Quantized input of type torch.quint8
+    doc_dtype: Tensor
+    dtype:
+    - torch.uint8
+    tensor_t:
+    - torch.tensor
+  scale:
+    default: None
+    descp: output scale. If None, derived from the input scale
+    doc_dtype: double
+    dtype:
+    - torch.float64
+  weight:
+    descp: Quantized weight of type torch.qint8
+    doc_dtype: Tensor
+    dtype:
+    - torch.int8
+    tensor_t:
+    - torch.tensor
+  zero_point:
+    default: None
+    descp: output zero point. If None, derived from the input zero_point
+    doc_dtype: long
+inputs:
+  optional:
+  - bias
+  - scale
+  - zero_point
+  required:
+  - input
+  - weight
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.nn.quantized.functional.linear
+package: torch
+target: linear
+title: torch.nn.quantized.functional.linear
+version: 1.5.0

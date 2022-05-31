@@ -1,0 +1,19 @@
+constraints:
+  device_id:
+    default: '0'
+    descp: The device id of the device. device_id is not needed for CPU. This is included
+      to make interface compatible with GPU.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - device_id
+  required: []
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/context/index.html#mxnet.context.cpu_pinned
+package: mxnet
+target: cpu_pinned
+title: mxnet.context.cpu_pinned
+version: 1.6.0

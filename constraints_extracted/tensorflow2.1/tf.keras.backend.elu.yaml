@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.backend.elu
+constraints:
+  alpha:
+    default: '1.0'
+    descp: A scalar, slope of negative section.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  x:
+    descp: A tensor or variable to compute the activation function for.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - alpha
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/elu
+outputs: A tensor.
+package: tensorflow
+target: elu
+title: tf.keras.backend.elu
+version: 2.1.0

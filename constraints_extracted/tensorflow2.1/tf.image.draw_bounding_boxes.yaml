@@ -1,0 +1,45 @@
+constraints:
+  boxes:
+    descp: A `Tensor` of type `float32`. 3-D with shape `[batch, num_bounding_boxes,
+      4]` containing bounding boxes.
+    dtype:
+    - tf.float32
+    tensor_t:
+    - tf.tensor
+  colors:
+    descp: A `Tensor` of type `float32`. 2-D. A list of RGBA colors to cycle through
+      for the boxes.
+    dtype:
+    - tf.float32
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  images:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `half`. 4-D
+      with shape `[batch, height, width, depth]`. A batch of images.'
+    dtype:
+    - tf.float16
+    - tf.float32
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - images
+  - boxes
+  - colors
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/draw_bounding_boxes
+outputs: A `Tensor`. Has the same type as `images`.
+package: tensorflow
+target: draw_bounding_boxes
+title: tf.image.draw_bounding_boxes
+version: 2.1.0

@@ -1,0 +1,53 @@
+aliases:
+- tf.compat.v1.linalg.lu_solve
+constraints:
+  lower_upper:
+    descp: '`lu` as returned by `tf.linalg.lu`, i.e., if `matmul(P, matmul(L, U))
+      = X` then `lower_upper = L + U - eye`.'
+  name:
+    default: None
+    descp: 'Python `str` name given to ops managed by this object. Default value:
+      `None` (i.e., ''lu_solve'').'
+    dtype:
+    - tf.string
+    enum:
+    - None
+    - lu_solve
+    ndim:
+    - '0'
+  perm:
+    descp: '`p` as returned by `tf.linag.lu`, i.e., if `matmul(P, matmul(L, U)) =
+      X` then `perm = argmax(P)`.'
+  rhs:
+    descp: 'Matrix-shaped float `Tensor` representing targets for which to solve;`A
+      X = RHS`. To handle vector cases, use: `lu_solve(..., rhs[..., tf.newaxis])[...,
+      0]`.'
+    dtype:
+    - float
+    tensor_t:
+    - tf.tensor
+  validate_args:
+    default: 'False'
+    descp: 'Python `bool` indicating whether arguments should be checked for correctness.
+      Note: this function does not verify the implied matrix is actually invertible,
+      even when `validate_args=True`. Default value: `False` (i.e., don''t validate
+      arguments).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - validate_args
+  - name
+  required:
+  - lower_upper
+  - perm
+  - rhs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/lu_solve
+outputs:
+- x: The `X` in `A @ X = RHS`.
+package: tensorflow
+target: lu_solve
+title: tf.linalg.lu_solve
+version: 2.1.0

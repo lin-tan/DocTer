@@ -1,0 +1,80 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: 'The axis or axes along which to perform the reduction.The default, axis=(),
+      will compute over all elements into a scalar array with shape (1,). If axis
+      is int, a reduction is performed on a particular axis. If axis is a 2-tuple,
+      it specifies the axes that hold 2-D matrices, and the matrix norms of these
+      matrices are computed.   '
+    doc_dtype: Shape or None, optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - tuple
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  keepdims:
+    default: _Null
+    descp: If this is set to True, the reduced axis is left in the result as dimension
+      with size one.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  ord:
+    default: _Null
+    descp: Order of the norm. Currently ord=1 and ord=2 is supported.
+    doc_dtype: int, optional, default='2'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_dtype:
+    default: _Null
+    descp: The data type of the output.
+    doc_dtype: '{None, ''float16'', ''float32'', ''float64'', ''int32'', ''int64'',
+      ''int8''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+    - int32
+    - int64
+    - int8
+inputs:
+  optional:
+  - data
+  - ord
+  - axis
+  - out_dtype
+  - keepdims
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.norm
+package: mxnet
+target: norm
+title: mxnet.ndarray.sparse.norm
+version: 1.6.0

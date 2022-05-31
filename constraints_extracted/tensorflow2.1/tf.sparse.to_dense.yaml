@@ -1,0 +1,43 @@
+aliases:
+- tf.compat.v1.sparse.to_dense
+- tf.compat.v1.sparse_tensor_to_dense
+constraints:
+  default_value:
+    default: None
+    descp: Scalar value to set for indices not specified in`sp_input`.  Defaults to
+      zero.
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name prefix for the returned tensors (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sp_input:
+    descp: The input `SparseTensor`.
+  validate_indices:
+    default: 'True'
+    descp: A boolean value.  If `True`, indices are checked to make sure they are
+      sorted in lexicographic order and that there are no repeats.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- TypeError: If `sp_input` is not a `SparseTensor`.
+inputs:
+  optional:
+  - default_value
+  - validate_indices
+  - name
+  required:
+  - sp_input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/to_dense
+outputs: A dense tensor with shape `sp_input.dense_shape` and values specified by
+  the non-empty values in `sp_input`. Indices not in `sp_input` are assigned`default_value`.
+package: tensorflow
+target: to_dense
+title: tf.sparse.to_dense
+version: 2.1.0

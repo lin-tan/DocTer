@@ -1,0 +1,60 @@
+check_nan: true
+constraints:
+  ceil_mode:
+    default: 'False'
+    descp: when True, will use ceil instead of floor to compute the output shape
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  dilation:
+    default: '1'
+    descp: a parameter that controls the stride of elements in the window
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+  kernel_size:
+    descp: the size of the window to take a max over
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+  padding:
+    default: '0'
+    descp: implicit zero padding to be added on both sides
+    dtype:
+    - int
+    ndim:
+    - '0'
+  return_indices:
+    default: 'False'
+    descp: if `True`, will return the max indices along with the outputs. Useful for
+      `torch.nn.MaxUnpool1d` later
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  stride:
+    default: None
+    descp: the stride of the window. Default value is `kernel_size`
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - stride
+  - padding
+  - dilation
+  - return_indices
+  - ceil_mode
+  required:
+  - kernel_size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.MaxPool1d
+package: torch
+target: MaxPool1d
+title: torch.nn.MaxPool1d
+version: 1.5.0

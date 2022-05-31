@@ -1,0 +1,52 @@
+aliases:
+- tf.compat.v1.manip.roll
+- tf.compat.v1.roll
+constraints:
+  axis:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. Dimension
+      must be 0-D or 1-D. `axis[i]` specifies the dimension that the shift`shift[i]`
+      should occur. If the same axis is referenced more than once, the total shift
+      for that axis will be the sum of all the shifts that belong to that axis.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  input:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  shift:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. Dimension
+      must be 0-D or 1-D. `shift[i]` specifies the number of places by which elements
+      are shifted positively (towards larger indices) along the dimension specified
+      by `axis[i]`. Negative shifts will roll the elements in the opposite direction.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - input
+  - shift
+  - axis
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/roll
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: roll
+title: tf.roll
+version: 2.1.0

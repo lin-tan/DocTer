@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.keras.layers.ELU
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  alpha:
+    default: '1.0'
+    descp: Scale for the negative factor.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - alpha
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/ELU
+package: tensorflow
+target: ELU
+title: tf.keras.layers.ELU
+version: 2.1.0

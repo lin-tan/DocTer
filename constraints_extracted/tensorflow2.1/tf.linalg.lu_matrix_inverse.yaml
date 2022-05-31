@@ -1,0 +1,44 @@
+aliases:
+- tf.compat.v1.linalg.lu_matrix_inverse
+constraints:
+  lower_upper:
+    descp: '`lu` as returned by `tf.linalg.lu`, i.e., if `matmul(P, matmul(L, U))
+      = X` then `lower_upper = L + U - eye`.'
+  name:
+    default: None
+    descp: 'Python `str` name given to ops managed by this object. Default value:
+      `None` (i.e., ''lu_matrix_inverse'').'
+    dtype:
+    - tf.string
+    enum:
+    - None
+    - lu_matrix_inverse
+    ndim:
+    - '0'
+  perm:
+    descp: '`p` as returned by `tf.linag.lu`, i.e., if `matmul(P, matmul(L, U)) =
+      X` then `perm = argmax(P)`.'
+  validate_args:
+    default: 'False'
+    descp: 'Python `bool` indicating whether arguments should be checked for correctness.
+      Note: this function does not verify the implied matrix is actually invertible,
+      even when `validate_args=True`. Default value: `False` (i.e., don''t validate
+      arguments).'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - validate_args
+  - name
+  required:
+  - lower_upper
+  - perm
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/lu_matrix_inverse
+outputs:
+- inv_x: The matrix_inv, i.e.,`tf.matrix_inverse(tf.linalg.lu_reconstruct(lu, perm))`.
+package: tensorflow
+target: lu_matrix_inverse
+title: tf.linalg.lu_matrix_inverse
+version: 2.1.0

@@ -1,0 +1,25 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  unbiased:
+    default: 'True'
+    descp: whether to use the unbiased estimation or not
+    doc_dtype: bool
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - unbiased
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.std
+package: torch
+ret_type: Tensor
+target: std
+title: torch.std
+version: 1.5.0

@@ -1,0 +1,68 @@
+aliases:
+- tf.compat.v1.strings.unicode_decode
+constraints:
+  errors:
+    default: replace
+    descp: 'Specifies the response when an input string can''t be converted using
+      the indicated encoding. One of: `''strict''`: Raise an exception for any illegal
+      substrings.`''replace''`: Replace illegal substrings with `replacement_char`.`''ignore''`:
+      Skip illegal substrings. '
+    dtype:
+    - tf.string
+    enum:
+    - ignore
+    - replace
+    - strict
+    ndim:
+    - '0'
+  input:
+    descp: An `N` dimensional potentially ragged `string` tensor with shape`[D1...DN]`.  `N`
+      must be statically known.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  input_encoding:
+    descp: String name for the unicode encoding that should be used to decode each
+      string.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  replace_control_characters:
+    default: 'False'
+    descp: Whether to replace the C0 control characters`(U+0000 - U+001F)` with the
+      `replacement_char`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  replacement_char:
+    default: '65533'
+    descp: The replacement codepoint to be used in place of invalid substrings in
+      `input` when `errors='replace'`; and in place of C0 control characters in `input`
+      when `replace_control_characters=True`.
+    dtype:
+    - int
+dependency:
+- dn
+- d1
+inputs:
+  optional:
+  - errors
+  - replacement_char
+  - replace_control_characters
+  - name
+  required:
+  - input
+  - input_encoding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/unicode_decode
+outputs: A `N+1` dimensional `int32` tensor with shape `[D1...DN, (num_chars)]`. The
+  returned tensor is a `tf.Tensor` if `input` is a scalar, or a`tf.RaggedTensor` otherwise.
+package: tensorflow
+target: unicode_decode
+title: tf.strings.unicode_decode
+version: 2.1.0

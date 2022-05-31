@@ -1,0 +1,39 @@
+aliases:
+- tf.compat.v1.image.total_variation
+constraints:
+  images:
+    descp: 4-D Tensor of shape `[batch, height, width, channels]` or 3-D Tensor of
+      shape `[height, width, channels]`.
+    ndim:
+    - '3'
+    - '4'
+    shape:
+    - '[batch,height,width,channels]'
+    - '[height,width,channels]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+dependency:
+- batch
+- width
+- channels
+- height
+exceptions:
+- ValueError: if images.shape is not a 3-D or 4-D vector.
+inputs:
+  optional:
+  - name
+  required:
+  - images
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/total_variation
+outputs: The total variation of `images`.
+package: tensorflow
+target: total_variation
+title: tf.image.total_variation
+version: 2.1.0

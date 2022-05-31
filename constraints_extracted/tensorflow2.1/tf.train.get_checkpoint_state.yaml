@@ -1,0 +1,25 @@
+aliases:
+- tf.compat.v1.train.get_checkpoint_state
+constraints:
+  checkpoint_dir:
+    descp: The directory of checkpoints.
+  latest_filename:
+    default: None
+    descp: Optional name of the checkpoint file.  Default to 'checkpoint'.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- ValueError: if the checkpoint read doesn't have model_checkpoint_path set.
+inputs:
+  optional:
+  - latest_filename
+  required:
+  - checkpoint_dir
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/train/get_checkpoint_state
+outputs: A CheckpointState if the state was available, None otherwise.
+package: tensorflow
+target: get_checkpoint_state
+title: tf.train.get_checkpoint_state
+version: 2.1.0

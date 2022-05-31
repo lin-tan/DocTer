@@ -1,0 +1,20 @@
+constraints:
+  nbuckets:
+    descp: size of the buckets
+    doc_dtype: int
+    dtype:
+    - int
+  ppf:
+    descp: The Quantile function that takes a probability and maps it back to a value.
+      It's the inverse of the cdf function
+    doc_dtype: function
+inputs:
+  optional: []
+  required:
+  - ppf
+  - nbuckets
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/test_utils/index.html#mxnet.test_utils.gen_buckets_probs_with_ppf
+package: mxnet
+target: gen_buckets_probs_with_ppf
+title: mxnet.test_utils.gen_buckets_probs_with_ppf
+version: 1.6.0

@@ -1,0 +1,45 @@
+constraints:
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional). Defaults to "assert_rank_in".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  ranks:
+    descp: '`Iterable` of scalar `Tensor` objects.'
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: '`Tensor`.'
+exceptions:
+- InvalidArgumentError: '`x` does not have rank in `ranks`, but the rank cannot be
+    statically determined.'
+- ValueError: If static checks determine `x` has mismatched rank.
+inputs:
+  optional:
+  - message
+  - name
+  required:
+  - x
+  - ranks
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_rank_in
+outputs: Op raising `InvalidArgumentError` unless rank of `x` is in `ranks`. If static
+  checks determine `x` has matching rank, a `no_op` is returned. This can be used
+  with `tf.control_dependencies` inside of `tf.function`s to block followup computation
+  until the check has executed.
+package: tensorflow
+target: assert_rank_in
+title: tf.debugging.assert_rank_in
+version: 2.1.0

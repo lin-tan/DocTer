@@ -1,0 +1,30 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: dict of keyword arguments for base layer.
+  '*args':
+    default: null
+    descp: ''
+  cell:
+    default: None
+    descp: An instance of `RNNCell`.
+  residual_fn:
+    default: None
+    descp: '(Optional) The function to map raw cell inputs and raw cell outputs to
+      the actual cell outputs of the residual network. Defaults to calling nest.map_structure
+      on (lambda i, o: i + o), inputs and outputs.'
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - '*args'
+  - '**kwargs'
+  - cell
+  - residual_fn
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/RNNCellResidualWrapper
+package: tensorflow
+target: RNNCellResidualWrapper
+title: tf.nn.RNNCellResidualWrapper
+version: 2.1.0

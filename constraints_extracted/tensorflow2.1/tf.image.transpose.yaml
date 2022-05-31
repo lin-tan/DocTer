@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.image.transpose
+- tf.compat.v1.image.transpose_image
+constraints:
+  image:
+    descp: 4-D Tensor of shape `[batch, height, width, channels]` or 3-D Tensor of
+      shape `[height, width, channels]`.
+    ndim:
+    - '3'
+    - '4'
+    shape:
+    - '[batch,height,width,channels]'
+    - '[height,width,channels]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for this operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+dependency:
+- batch
+- width
+- channels
+- height
+exceptions:
+- ValueError: if the shape of `image` not supported.
+inputs:
+  optional:
+  - name
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/transpose
+outputs: If `image` was 4-D, a 4-D float Tensor of shape`[batch, width, height, channels]`
+  If `image` was 3-D, a 3-D float Tensor of shape`[width, height, channels]`
+package: tensorflow
+target: transpose
+title: tf.image.transpose
+version: 2.1.0

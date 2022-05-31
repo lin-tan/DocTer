@@ -1,0 +1,36 @@
+aliases:
+- tf.compat.v1.igammac
+- tf.compat.v1.math.igammac
+constraints:
+  a:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `float64`.'
+    dtype:
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor`. Must have the same type as `a`.
+    dtype:
+    - dtype:&a
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - a
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/igammac
+outputs: A `Tensor`. Has the same type as `a`.
+package: tensorflow
+target: igammac
+title: tf.math.igammac
+version: 2.1.0

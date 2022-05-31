@@ -1,0 +1,23 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.backward_index_copy
+package: mxnet
+target: backward_index_copy
+title: mxnet.ndarray.contrib.backward_index_copy
+version: 1.6.0

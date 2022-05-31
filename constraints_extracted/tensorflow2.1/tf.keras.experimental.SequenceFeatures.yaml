@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.keras.experimental.SequenceFeatures
+constraints:
+  '**kwargs':
+    descp: Keyword arguments to construct a layer.
+  feature_columns:
+    descp: 'An iterable of dense sequence columns. Valid columns are `embedding_column`
+      that wraps a `sequence_categorical_column_with_*``sequence_numeric_column`. '
+    ndim:
+    - '0'
+    structure:
+    - list
+  name:
+    default: None
+    descp: Name to give to the SequenceFeatures.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  trainable:
+    default: 'True'
+    descp: Boolean, whether the layer's variables will be updated via gradient descent
+      during training.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If any of the `feature_columns` is not a`SequenceDenseColumn`.
+inputs:
+  optional:
+  - trainable
+  - name
+  required:
+  - feature_columns
+  - '**kwargs'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/experimental/SequenceFeatures
+package: tensorflow
+target: SequenceFeatures
+title: tf.keras.experimental.SequenceFeatures
+version: 2.1.0

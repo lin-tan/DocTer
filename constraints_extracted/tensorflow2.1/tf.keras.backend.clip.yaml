@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.keras.backend.clip
+constraints:
+  max_value:
+    descp: Python float, integer, or tensor.
+    dtype:
+    - float
+    - int
+    tensor_t:
+    - tf.tensor
+  min_value:
+    descp: Python float, integer, or tensor.
+    dtype:
+    - float
+    - int
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - x
+  - min_value
+  - max_value
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/clip
+outputs: A tensor.
+package: tensorflow
+target: clip
+title: tf.keras.backend.clip
+version: 2.1.0

@@ -1,0 +1,50 @@
+constraints:
+  input_shape:
+    descp: Input shape of the model e.g [(1,3,224,224)]
+    doc_dtype: List of tuple
+    structure:
+    - list
+    - tuple
+  input_type:
+    default: <classnumpy.float32>
+    descp: Input data type e.g. np.float32
+    doc_dtype: data type
+    dtype:
+    - numpy.float32
+  onnx_file_path:
+    default: model.onnx
+    descp: Path where to save the generated onnx file
+    doc_dtype: str
+    dtype:
+    - string
+  params:
+    descp: Path to the params file or params dictionary. (Including both arg_params
+      and aux_params)
+    doc_dtype: str or symbol object
+    dtype:
+    - string
+  sym:
+    descp: Path to the json file or Symbol object
+    doc_dtype: str or symbol object
+    dtype:
+    - string
+  verbose:
+    default: 'False'
+    descp: If true will print logs of the model conversion
+    doc_dtype: Boolean
+    dtype:
+    - boolean
+inputs:
+  optional:
+  - input_type
+  - onnx_file_path
+  - verbose
+  required:
+  - sym
+  - params
+  - input_shape
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/onnx/index.html#mxnet.contrib.onnx.export_model
+package: mxnet
+target: export_model
+title: mxnet.contrib.onnx.export_model
+version: 1.6.0

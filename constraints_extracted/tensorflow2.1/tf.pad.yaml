@@ -1,0 +1,52 @@
+constraints:
+  constant_values:
+    default: '0'
+    descp: In "CONSTANT" mode, the scalar pad value to use. Must be same type as `tensor`.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  mode:
+    default: CONSTANT
+    descp: One of "CONSTANT", "REFLECT", or "SYMMETRIC" (case-insensitive)
+    dtype:
+    - tf.string
+    enum:
+    - CONSTANT
+    - REFLECT
+    - SYMMETRIC
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  paddings:
+    descp: A `Tensor` of type `int32`.
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  tensor:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: When mode is not one of "CONSTANT", "REFLECT", or "SYMMETRIC".
+inputs:
+  optional:
+  - mode
+  - constant_values
+  - name
+  required:
+  - tensor
+  - paddings
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/pad
+outputs: A `Tensor`. Has the same type as `tensor`.
+package: tensorflow
+target: pad
+title: tf.pad
+version: 2.1.0

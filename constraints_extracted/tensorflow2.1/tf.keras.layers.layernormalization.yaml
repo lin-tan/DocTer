@@ -1,0 +1,100 @@
+aliases:
+- tf.compat.v1.keras.layers.LayerNormalization
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  axis:
+    default: '-1'
+    descp: Integer or List/Tuple. The axis that should be normalized (typically the
+      features axis).
+    dtype:
+    - int
+    structure:
+    - list
+    - tuple
+  beta_constraint:
+    default: None
+    descp: Optional constraint for the beta weight.
+  beta_initializer:
+    default: zeros
+    descp: Initializer for the beta weight.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  beta_regularizer:
+    default: None
+    descp: Optional regularizer for the beta weight.
+  center:
+    default: 'True'
+    descp: If True, add offset of `beta` to normalized tensor. If False, `beta` is
+      ignored.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  epsilon:
+    default: '0.001'
+    descp: Small float added to variance to avoid dividing by zero.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  gamma_constraint:
+    default: None
+    descp: Optional constraint for the gamma weight.
+  gamma_initializer:
+    default: ones
+    descp: Initializer for the gamma weight.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  gamma_regularizer:
+    default: None
+    descp: Optional regularizer for the gamma weight.
+  name:
+    default: None
+    descp: ''
+  scale:
+    default: 'True'
+    descp: If True, multiply by `gamma`. If False, `gamma` is not used. When the next
+      layer is linear (also e.g. `nn.relu`), this can be disabled since the scaling
+      will be done by the next layer.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  trainable:
+    default: 'True'
+    descp: Boolean, if `True` the variables will be marked as trainable.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - axis
+  - epsilon
+  - center
+  - scale
+  - beta_initializer
+  - gamma_initializer
+  - beta_regularizer
+  - gamma_regularizer
+  - beta_constraint
+  - gamma_constraint
+  - trainable
+  - name
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/LayerNormalization
+package: tensorflow
+target: LayerNormalization
+title: tf.keras.layers.LayerNormalization
+version: 2.1.0

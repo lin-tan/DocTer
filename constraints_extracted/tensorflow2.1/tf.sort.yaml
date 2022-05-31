@@ -1,0 +1,44 @@
+aliases:
+- tf.compat.v1.sort
+constraints:
+  axis:
+    default: '-1'
+    descp: The axis along which to sort. The default is -1, which sorts the last axis.
+    dtype:
+    - int
+  direction:
+    default: ASCENDING
+    descp: The direction in which to sort the values (`'ASCENDING'` or`'DESCENDING'`).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  values:
+    descp: 1-D or higher numeric `Tensor`.
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If axis is not a constant scalar, or the direction is invalid.
+inputs:
+  optional:
+  - axis
+  - direction
+  - name
+  required:
+  - values
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sort
+outputs: A `Tensor` with the same dtype and shape as `values`, with the elements     sorted
+  along the given `axis`.
+package: tensorflow
+target: sort
+title: tf.sort
+version: 2.1.0

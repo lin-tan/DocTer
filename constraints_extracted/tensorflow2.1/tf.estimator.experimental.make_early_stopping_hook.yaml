@@ -1,0 +1,37 @@
+aliases:
+- tf.compat.v1.estimator.experimental.make_early_stopping_hook
+constraints:
+  estimator:
+    descp: A `tf.estimator.Estimator` instance.
+  run_every_secs:
+    default: '60'
+    descp: If specified, calls `should_stop_fn` at an interval of`run_every_secs`
+      seconds. Defaults to 60 seconds. Either this or`run_every_steps` must be set.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  run_every_steps:
+    default: None
+    descp: If specified, calls `should_stop_fn` every`run_every_steps` steps. Either
+      this or `run_every_secs` must be set.
+  should_stop_fn:
+    descp: '`callable`, function that takes no arguments and returns a`bool`. If the
+      function returns `True`, stopping will be initiated by the chief.'
+exceptions:
+- TypeError: If `estimator` is not of type `tf.estimator.Estimator`.
+- ValueError: If both `run_every_secs` and `run_every_steps` are set.
+inputs:
+  optional:
+  - run_every_secs
+  - run_every_steps
+  required:
+  - estimator
+  - should_stop_fn
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/estimator/experimental/make_early_stopping_hook
+outputs: A `SessionRunHook` that periodically executes `should_stop_fn` and initiates
+  early stopping if the function returns `True`.
+package: tensorflow
+target: make_early_stopping_hook
+title: tf.estimator.experimental.make_early_stopping_hook
+version: 2.1.0

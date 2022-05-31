@@ -1,0 +1,22 @@
+constraints:
+  type1:
+    descp: ''
+    doc_dtype: '`torch.dtype`'
+    dtype:
+    - torch.dtype
+  type2:
+    descp: ''
+    doc_dtype: '`torch.dtype`'
+    dtype:
+    - torch.dtype
+inputs:
+  optional: []
+  required:
+  - type1
+  - type2
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.promote_types
+package: torch
+ret_type: dtype
+target: promote_types
+title: torch.promote_types
+version: 1.5.0

@@ -1,0 +1,102 @@
+check_nan: true
+constraints:
+  data_format:
+    default: NHWC
+    descp: An optional `string`, must be set to `"NHWC"`. Defaults to`"NHWC"`. Specify
+      the data format of the input and output data.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  include_batch_in_index:
+    default: 'False'
+    descp: An optional `boolean`. Defaults to `False`. Whether to include batch dimension
+      in flattened index of `argmax`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `float32`, `float64`,`int32`,
+      `uint8`, `int16`, `int8`, `int64`, `bfloat16`, `uint16`, `half`,`uint32`, `uint64`.
+      4-D with shape `[batch, height, width, channels]`.  Input to pool over.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint16
+    - tf.uint32
+    - tf.uint64
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  ksize:
+    descp: An int or list of `ints` that has length `1`, `2` or `4`. The size of the
+      window for each dimension of the input tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    - '[2]'
+    - '[4]'
+    structure:
+    - list
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  output_dtype:
+    default: tf.dtypes.int64
+    descp: 'An optional `tf.DType` from: `tf.int32, tf.int64`. Defaults to `tf.int64`.
+      The dtype of the returned argmax tensor.'
+    dtype:
+    - tf.dtype
+    - tf.int32
+    - tf.int64
+    ndim:
+    - '0'
+  padding:
+    descp: 'A `string` from: `"SAME", "VALID"`. The type of padding algorithm to use.'
+    dtype:
+    - tf.dtype
+    - tf.string
+  strides:
+    descp: An int or list of `ints` that has length `1`, `2` or `4`. The stride of
+      the sliding window for each dimension of the input tensor.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[1]'
+    - '[2]'
+    - '[4]'
+    structure:
+    - list
+inputs:
+  optional:
+  - data_format
+  - output_dtype
+  - include_batch_in_index
+  - name
+  required:
+  - input
+  - ksize
+  - strides
+  - padding
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/max_pool_with_argmax
+outputs: A tuple of `Tensor` objects (output, argmax).
+package: tensorflow
+target: max_pool_with_argmax
+title: tf.nn.max_pool_with_argmax
+version: 2.1.0

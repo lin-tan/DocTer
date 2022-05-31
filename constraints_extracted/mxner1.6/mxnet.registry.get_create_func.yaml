@@ -1,0 +1,19 @@
+constraints:
+  base_class:
+    descp: base class for classes that will be reigstered
+    doc_dtype: type
+  nickname:
+    descp: nickname of base_class for logging
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - base_class
+  - nickname
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/registry/index.html#mxnet.registry.get_create_func
+package: mxnet
+target: get_create_func
+title: mxnet.registry.get_create_func
+version: 1.6.0

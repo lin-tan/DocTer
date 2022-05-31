@@ -1,0 +1,60 @@
+aliases:
+- tf.compat.v1.nn.bias_add
+check_nan: true
+constraints:
+  bias:
+    descp: A 1-D `Tensor` with size matching the channel dimension of `value`. Must
+      be the same type as `value` unless `value` is a quantized type, in which case
+      a different quantized type may be used.
+    dtype:
+    - dtype:&value
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  data_format:
+    default: None
+    descp: A string. 'N...C' and 'NC...' are supported. If `None` (the default) is
+      specified then 'N..C' is assumed.
+    dtype:
+    - tf.string
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  value:
+    descp: A `Tensor` with type `float`, `double`, `int64`, `int32`, `uint8`,`int16`,
+      `int8`, `complex64`, or `complex128`.
+    dtype:
+    - float
+    - tf.complex128
+    - tf.complex64
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+exceptions: ValueError if data format is unrecognized, if `value` has less than two
+  dimensions when `data_format` is 'N..C'/`None` or `value` has less then three dimensions
+  when `data_format` is `NC..`, if `bias` does not have exactly one dimension (is
+  a vector), or if the size of `bias`does not match the size of the channel dimension
+  of `value`.
+inputs:
+  optional:
+  - data_format
+  - name
+  required:
+  - value
+  - bias
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/bias_add
+outputs: A `Tensor` with the same type as `value`.
+package: tensorflow
+target: bias_add
+title: tf.nn.bias_add
+version: 2.1.0

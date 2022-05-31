@@ -1,0 +1,36 @@
+aliases:
+- tf.compat.v1.io.gfile.copy
+constraints:
+  dst:
+    descp: string, name of the file to which to copy to
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  overwrite:
+    default: 'False'
+    descp: boolean, if false it's an error for `dst` to be occupied by an existing
+      file.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  src:
+    descp: string, name of the file whose contents need to be copied
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+exceptions:
+- errors.OpError: If the operation fails.
+inputs:
+  optional:
+  - overwrite
+  required:
+  - src
+  - dst
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/gfile/copy
+package: tensorflow
+target: copy
+title: tf.io.gfile.copy
+version: 2.1.0

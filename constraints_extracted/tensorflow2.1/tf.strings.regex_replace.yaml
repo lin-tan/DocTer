@@ -1,0 +1,52 @@
+aliases:
+- tf.compat.v1.regex_replace
+- tf.compat.v1.strings.regex_replace
+constraints:
+  input:
+    descp: string `Tensor`, the source strings to process.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  pattern:
+    descp: string or scalar string `Tensor`, regular expression to use, see more details
+      at https://github.com/google/re2/wiki/Syntax
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  replace_global:
+    default: 'True'
+    descp: '`bool`, if `True` replace all non-overlapping matches, else replace only
+      the first match.'
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  rewrite:
+    descp: string or scalar string `Tensor`, value to use in match replacement, supports
+      backslash-escaped digits (\1 to \9) can be to insert text matching corresponding
+      parenthesized group.
+    dtype:
+    - tf.string
+inputs:
+  optional:
+  - replace_global
+  - name
+  required:
+  - input
+  - pattern
+  - rewrite
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/regex_replace
+outputs: string `Tensor` of the same shape as `input` with specified replacements.
+package: tensorflow
+target: regex_replace
+title: tf.strings.regex_replace
+version: 2.1.0

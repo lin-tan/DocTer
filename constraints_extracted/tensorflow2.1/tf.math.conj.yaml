@@ -1,0 +1,30 @@
+aliases:
+- tf.compat.v1.conj
+- tf.compat.v1.math.conj
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: '`Tensor` to conjugate.  Must have numeric or variant type.'
+    dtype:
+    - numeric
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: If `x` is not a numeric tensor.
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/conj
+outputs: A `Tensor` that is the conjugate of `x` (with the same type).
+package: tensorflow
+target: conj
+title: tf.math.conj
+version: 2.1.0

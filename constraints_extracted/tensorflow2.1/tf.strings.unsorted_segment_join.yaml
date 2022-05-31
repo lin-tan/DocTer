@@ -1,0 +1,52 @@
+aliases:
+- tf.compat.v1.strings.unsorted_segment_join
+constraints:
+  inputs:
+    descp: A `Tensor` of type `string`. The input to be joined.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_segments:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. A scalar.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  segment_ids:
+    descp: 'A `Tensor`. Must be one of the following types: `int32`, `int64`. A tensor
+      whose shape is a prefix of data.shape.  Negative segment ids are not supported.'
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  separator:
+    default: ''
+    descp: An optional `string`. Defaults to `""`. The separator to use when joining.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - separator
+  - name
+  required:
+  - inputs
+  - segment_ids
+  - num_segments
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/unsorted_segment_join
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: unsorted_segment_join
+title: tf.strings.unsorted_segment_join
+version: 2.1.0

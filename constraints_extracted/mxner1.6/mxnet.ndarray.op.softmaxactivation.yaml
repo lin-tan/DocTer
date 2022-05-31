@@ -1,0 +1,45 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  mode:
+    default: _Null
+    descp: Specifies how to compute the softmax. If set to `instance`, it computes
+      softmax for each instance. If set to `channel`, It computes cross channel softmax
+      for each position of each instance.
+    doc_dtype: '{''channel'', ''instance''},optional, default=''instance'''
+    dtype:
+    - boolean
+    enum:
+    - channel
+    - instance
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - mode
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.SoftmaxActivation
+package: mxnet
+target: SoftmaxActivation
+title: mxnet.ndarray.op.SoftmaxActivation
+version: 1.6.0

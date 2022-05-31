@@ -1,0 +1,76 @@
+aliases:
+- tf.compat.v1.signal.linear_to_mel_weight_matrix
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: The `DType` of the result matrix. Must be a floating point type.
+    dtype:
+    - float
+    - tf.dtype
+    - tf.float32
+  lower_edge_hertz:
+    default: '125.0'
+    descp: Python float. Lower bound on the frequencies to be included in the mel
+      spectrum. This corresponds to the lower edge of the lowest triangular band.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: An optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_mel_bins:
+    default: '20'
+    descp: Python int. How many bands in the resulting mel spectrum.
+    dtype:
+    - int
+  num_spectrogram_bins:
+    default: '129'
+    descp: An integer `Tensor`. How many bins there are in the source spectrogram
+      data, which is understood to be `fft_size // 2 + 1`, i.e. the spectrogram only
+      contains the nonredundant FFT bins.
+    dtype:
+    - int
+    tensor_t:
+    - tf.tensor
+  sample_rate:
+    default: '8000'
+    descp: An integer or float `Tensor`. Samples per second of the input signal used
+      to create the spectrogram. Used to figure out the frequencies corresponding
+      to each spectrogram bin, which dictates how they are mapped into the mel scale.
+    dtype:
+    - float
+    - int
+    tensor_t:
+    - tf.tensor
+  upper_edge_hertz:
+    default: '3800.0'
+    descp: Python float. The desired top edge of the highest frequency band.
+    dtype:
+    - float
+    ndim:
+    - '0'
+exceptions:
+- ValueError: If `num_mel_bins`/`num_spectrogram_bins`/`sample_rate` are not positive,
+    `lower_edge_hertz` is negative, frequency edges are incorrectly ordered, `upper_edge_hertz`
+    is larger than the Nyquist frequency.
+inputs:
+  optional:
+  - num_mel_bins
+  - num_spectrogram_bins
+  - sample_rate
+  - lower_edge_hertz
+  - upper_edge_hertz
+  - dtype
+  - name
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/linear_to_mel_weight_matrix
+outputs: A `Tensor` of shape `[num_spectrogram_bins, num_mel_bins]`.
+package: tensorflow
+target: linear_to_mel_weight_matrix
+title: tf.signal.linear_to_mel_weight_matrix
+version: 2.1.0

@@ -1,0 +1,25 @@
+constraints:
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  offset:
+    default: '0'
+    descp: 'the diagonal to consider. Default: 0 (main diagonal).'
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - offset
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.diagflat
+package: torch
+ret_type: Tensor
+target: diagflat
+title: torch.diagflat
+version: 1.5.0

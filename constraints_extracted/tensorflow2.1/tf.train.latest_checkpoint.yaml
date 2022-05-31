@@ -1,0 +1,26 @@
+aliases:
+- tf.compat.v1.train.latest_checkpoint
+constraints:
+  checkpoint_dir:
+    descp: Directory where the variables were saved.
+  latest_filename:
+    default: None
+    descp: Optional name for the protocol buffer file that contains the list of most
+      recent checkpoint filenames. See the corresponding argument to `Saver.save()`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - list
+inputs:
+  optional:
+  - latest_filename
+  required:
+  - checkpoint_dir
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/train/latest_checkpoint
+outputs: The full path to the latest checkpoint or `None` if no checkpoint was found.
+package: tensorflow
+target: latest_checkpoint
+title: tf.train.latest_checkpoint
+version: 2.1.0

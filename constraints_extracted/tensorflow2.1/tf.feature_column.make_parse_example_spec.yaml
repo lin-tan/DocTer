@@ -1,0 +1,18 @@
+constraints:
+  feature_columns:
+    descp: An iterable containing all feature columns. All items should be instances
+      of classes derived from `FeatureColumn`.
+    structure:
+    - list
+exceptions:
+- ValueError: If any of the given `feature_columns` is not a `FeatureColumn`instance.
+inputs:
+  optional: []
+  required:
+  - feature_columns
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/make_parse_example_spec
+outputs: A dict mapping each feature key to a `FixedLenFeature` or `VarLenFeature`value.
+package: tensorflow
+target: make_parse_example_spec
+title: tf.feature_column.make_parse_example_spec
+version: 2.1.0

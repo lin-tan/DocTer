@@ -1,0 +1,32 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  A:
+    default: None
+    descp: Tensor of input matrices to be decomposed
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+    tensor_t:
+    - tensor
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - A
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/linalg/index.html#mxnet.ndarray.linalg.potrf
+package: mxnet
+target: potrf
+title: mxnet.ndarray.linalg.potrf
+version: 1.6.0

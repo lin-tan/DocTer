@@ -1,0 +1,16 @@
+constraints:
+  input:
+    descp: the input tensor of size `(*, n, n)` where `*` is zero or more batch dimensions.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.logdet
+package: torch
+ret_type: Tensor
+target: logdet
+title: torch.logdet
+version: 1.5.0

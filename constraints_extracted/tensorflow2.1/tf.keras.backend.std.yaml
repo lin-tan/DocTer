@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.backend.std
+constraints:
+  axis:
+    default: None
+    descp: An integer, the axis to compute the standard deviation.
+  keepdims:
+    default: 'False'
+    descp: A boolean, whether to keep the dimensions or not. If `keepdims` is `False`,
+      the rank of the tensor is reduced by 1. If `keepdims` is `True`, the reduced
+      dimension is retained with length 1.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: A tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - keepdims
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/std
+outputs: A tensor with the standard deviation of elements of `x`.
+package: tensorflow
+target: std
+title: tf.keras.backend.std
+version: 2.1.0

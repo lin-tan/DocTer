@@ -1,0 +1,26 @@
+aliases:
+- tf.optimizers.get
+- tf.compat.v1.keras.optimizers.get
+constraints:
+  identifier:
+    descp: 'Optimizer identifier, one of String: name of an optimizerDictionary: configuration
+      dictionary. - Keras Optimizer instance (it will be returned unchanged). - TensorFlow
+      Optimizer instance (it will be wrapped as a Keras Optimizer). '
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    structure:
+    - dict
+exceptions:
+- ValueError: If `identifier` cannot be interpreted.
+inputs:
+  optional: []
+  required:
+  - identifier
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/optimizers/get
+outputs: A Keras Optimizer instance.
+package: tensorflow
+target: get
+title: tf.keras.optimizers.get
+version: 2.1.0

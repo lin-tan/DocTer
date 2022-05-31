@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  elementwise_affine:
+    default: 'True'
+    descp: 'a boolean value that when set to `True`, this module has learnable per-element
+      affine parameters initialized to ones (for weights) and zeros (for biases).
+      Default: `True`.'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  eps:
+    default: 1e-05
+    descp: 'a value added to the denominator for numerical stability. Default: 1e-5'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  normalized_shape:
+    descp: ''
+    doc_dtype: int or list or torch.Size
+    dtype:
+    - int
+    structure:
+    - list
+inputs:
+  optional:
+  - eps
+  - elementwise_affine
+  required:
+  - normalized_shape
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.LayerNorm
+package: torch
+target: LayerNorm
+title: torch.nn.LayerNorm
+version: 1.5.0

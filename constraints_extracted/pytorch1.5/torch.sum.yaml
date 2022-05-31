@@ -1,0 +1,29 @@
+constraints:
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor.If specified, the input tensor
+      is casted to `dtype` before the operationis performed. This is useful for preventing
+      data type overflows. Default: None.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    enum:
+    - dtype
+    tensor_t:
+    - torch.tensor
+  input:
+    descp: the input tensor.
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - dtype
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.sum
+package: torch
+ret_type: Tensor
+target: sum
+title: torch.sum
+version: 1.5.0

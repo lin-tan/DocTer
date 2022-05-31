@@ -1,0 +1,24 @@
+constraints:
+  period:
+    default: '1'
+    descp: Interval (number of epochs) between checkpoints. Default period is 1.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+  prefix:
+    descp: Prefix for the checkpoint filenames.
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional:
+  - period
+  required:
+  - prefix
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/callback/index.html#mxnet.callback.do_checkpoint
+package: mxnet
+target: do_checkpoint
+title: mxnet.callback.do_checkpoint
+version: 1.6.0

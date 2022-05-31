@@ -1,0 +1,47 @@
+check_nan: true
+constraints:
+  ids:
+    descp: A `Tensor` with type `int32` or `int64` containing the ids to be looked
+      up in `params`.
+    dtype:
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - tf.tensor
+  max_norm:
+    default: None
+    descp: If not `None`, each embedding is clipped if its l2-norm is larger than
+      this value.
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  params:
+    descp: A single tensor representing the complete embedding tensor, or a list of
+      P tensors all of same shape except for the first dimension, representing sharded
+      embedding tensors.  Alternatively, a`PartitionedVariable`, created by partitioning
+      along dimension 0. Each element must be appropriately sized for the 'div' `partition_strategy`.
+    ndim:
+    - '0'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If `params` is empty.
+inputs:
+  optional:
+  - max_norm
+  - name
+  required:
+  - params
+  - ids
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/embedding_lookup
+outputs: A `Tensor` with the same type as the tensors in `params`.
+package: tensorflow
+target: embedding_lookup
+title: tf.nn.embedding_lookup
+version: 2.1.0

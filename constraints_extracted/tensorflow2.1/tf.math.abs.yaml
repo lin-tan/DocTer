@@ -1,0 +1,39 @@
+aliases:
+- tf.abs
+- tf.compat.v1.abs
+- tf.compat.v1.math.abs
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor` or `SparseTensor` of type `float16`, `float32`, `float64`,`int32`,
+      `int64`, `complex64` or `complex128`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    - tf.int32
+    - tf.int64
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/abs
+outputs: A `Tensor` or `SparseTensor` the same size, type, and sparsity as `x` with   absolute
+  values. Note, for `complex64` or `complex128` input, the returned `Tensor` will
+  be   of type `float32` or `float64`, respectively.
+package: tensorflow
+target: abs
+title: tf.math.abs
+version: 2.1.0

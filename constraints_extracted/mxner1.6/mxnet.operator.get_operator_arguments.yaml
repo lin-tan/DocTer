@@ -1,0 +1,15 @@
+constraints:
+  op_name:
+    descp: Handle for the operator
+    doc_dtype: str
+    dtype:
+    - string
+inputs:
+  optional: []
+  required:
+  - op_name
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/operator/index.html#mxnet.operator.get_operator_arguments
+package: mxnet
+target: get_operator_arguments
+title: mxnet.operator.get_operator_arguments
+version: 1.6.0

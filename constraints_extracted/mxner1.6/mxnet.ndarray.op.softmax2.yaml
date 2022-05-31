@@ -1,0 +1,74 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: The axis along which to compute softmax.
+    doc_dtype: int, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  dtype:
+    default: _Null
+    descp: DType of the output in case this can't be inferred. Defaults to the same
+      as input's dtype if not defined (dtype=None).
+    doc_dtype: '{None, ''float16'', ''float32'', ''float64''},optional, default=''None'''
+    enum:
+    - None
+    - float16
+    - float32
+    - float64
+  length:
+    default: None
+    descp: The length array.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  temperature:
+    default: _Null
+    descp: Temperature parameter in softmax
+    doc_dtype: double or None, optional, default=None
+    dtype:
+    - numpy.double
+  use_length:
+    default: _Null
+    descp: Whether to use the length input as a mask over the data input.
+    doc_dtype: boolean or None, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - length
+  - axis
+  - temperature
+  - dtype
+  - use_length
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.softmax
+package: mxnet
+target: softmax
+title: mxnet.ndarray.op.softmax
+version: 1.6.0

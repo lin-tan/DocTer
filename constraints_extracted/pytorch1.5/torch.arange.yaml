@@ -1,0 +1,89 @@
+constraints:
+  device:
+    default: None
+    descp: 'the desired device of returned tensor. Default: if `None`, uses the current
+      device for the default tensor type (see `torch.set_default_tensor_type()`).
+      `device` will be the CPU for CPU tensor types and the current CUDA device for
+      CUDA tensor types.'
+    doc_dtype: '`torch.device`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  dtype:
+    default: None
+    descp: 'the desired data type of returned tensor. Default: if `None`, uses a global
+      default (see `torch.set_default_tensor_type()`). If dtype is not given, infer
+      the data type from the other input arguments. If any of start, end, or stop
+      are floating-point, the dtype is inferred to be the default dtype, see `get_default_dtype()`.
+      Otherwise, the dtype is inferred to be torch.int64.'
+    doc_dtype: '`torch.dtype`, optional'
+    dtype:
+    - torch.dtype
+    - torch.float32
+    tensor_t:
+    - torch.tensor
+  end:
+    descp: the ending value for the set of points
+    doc_dtype: Number
+    ndim:
+    - '0'
+  layout:
+    default: torch.strided
+    descp: 'the desired layout of returned Tensor. Default: `torch.strided`.'
+    doc_dtype: '`torch.layout`, optional'
+    dtype:
+    - torch.dtype
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+  requires_grad:
+    default: 'False'
+    descp: 'If autograd should record operations on the returned tensor. Default:
+      `False`.'
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    - torch.dtype
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+  start:
+    default: '0'
+    descp: 'the starting value for the set of points. Default: `0`.'
+    doc_dtype: Number
+    dtype:
+    - int
+    ndim:
+    - '0'
+  step:
+    default: '1'
+    descp: 'the gap between each pair of adjacent points. Default: `1`.'
+    doc_dtype: Number
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - start
+  - step
+  - out
+  - dtype
+  - layout
+  - device
+  - requires_grad
+  required:
+  - end
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.arange
+package: torch
+ret_type: Tensor
+target: arange
+title: torch.arange
+version: 1.5.0

@@ -1,0 +1,35 @@
+aliases:
+- tf.compat.v1.strings.upper
+constraints:
+  encoding:
+    default: ''
+    descp: An optional `string`. Defaults to `""`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  input:
+    descp: A `Tensor` of type `string`.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - encoding
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/upper
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: upper
+title: tf.strings.upper
+version: 2.1.0

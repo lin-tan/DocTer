@@ -1,0 +1,18 @@
+aliases:
+- tf.compat.v1.keras.utils.custom_object_scope
+constraints:
+  '*args':
+    descp: Variable length list of dictionaries of name, class pairs to add to custom
+      objects.
+    structure:
+    - list
+inputs:
+  optional: []
+  required:
+  - '*args'
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/utils/custom_object_scope
+outputs: Object of type `CustomObjectScope`.
+package: tensorflow
+target: custom_object_scope
+title: tf.keras.utils.custom_object_scope
+version: 2.1.0

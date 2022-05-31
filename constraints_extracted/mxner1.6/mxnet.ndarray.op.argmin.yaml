@@ -1,0 +1,53 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: The axis along which to perform the reduction. Negative values means indexing
+      from right to left. `Requires axis to be set as int, because global reduction
+      is not supported yet.`
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - boolean
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  keepdims:
+    default: _Null
+    descp: If this is set to True, the reduced axis is left in the result as dimension
+      with size one.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axis
+  - keepdims
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/op/index.html#mxnet.ndarray.op.argmin
+package: mxnet
+target: argmin
+title: mxnet.ndarray.op.argmin
+version: 1.6.0

@@ -1,0 +1,96 @@
+aliases:
+- tf.image.decode_and_crop_jpeg
+- tf.compat.v1.image.decode_and_crop_jpeg
+- tf.compat.v1.io.decode_and_crop_jpeg
+constraints:
+  acceptable_fraction:
+    default: '1'
+    descp: An optional `float`. Defaults to `1`. The minimum required fraction of
+      lines before a truncated input is accepted.
+    dtype:
+    - float
+    - int
+    ndim:
+    - '0'
+  channels:
+    default: '0'
+    descp: An optional `int`. Defaults to `0`. Number of color channels for the decoded
+      image.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  contents:
+    descp: A `Tensor` of type `string`. 0-D.  The JPEG-encoded image.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  crop_window:
+    descp: 'A `Tensor` of type `int32`. 1-D.  The crop window: [crop_y, crop_x, crop_height,
+      crop_width].'
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+  dct_method:
+    default: ''
+    descp: An optional `string`. Defaults to `""`. string specifying a hint about
+      the algorithm used for decompression.  Defaults to "" which maps to a system-specific
+      default.  Currently valid values are ["INTEGER_FAST", "INTEGER_ACCURATE"].  The
+      hint may be ignored (e.g., the internal jpeg library changes to a version that
+      does not have that specific option.)
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  fancy_upscaling:
+    default: 'True'
+    descp: An optional `bool`. Defaults to `True`. If true use a slower but nicer
+      upscaling of the chroma planes (yuv420/422 only).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  ratio:
+    default: '1'
+    descp: An optional `int`. Defaults to `1`. Downscaling ratio.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  try_recover_truncated:
+    default: 'False'
+    descp: An optional `bool`. Defaults to `False`. If true try to recover an image
+      from truncated input.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - channels
+  - ratio
+  - fancy_upscaling
+  - try_recover_truncated
+  - acceptable_fraction
+  - dct_method
+  - name
+  required:
+  - contents
+  - crop_window
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_and_crop_jpeg
+outputs: A `Tensor` of type `uint8`.
+package: tensorflow
+target: decode_and_crop_jpeg
+title: tf.io.decode_and_crop_jpeg
+version: 2.1.0

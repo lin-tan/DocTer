@@ -1,0 +1,62 @@
+check_nan: true
+constraints:
+  ctx:
+    default: None
+    descp: Device context. Default context is the current default context.
+    doc_dtype: Context, optional
+  dtype:
+    default: <classnumpy.float32>
+    descp: The data type of the NDArray. The default datatype is np.float32.
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+    structure:
+    - ndarray
+  infer_range:
+    default: None
+    descp: Infer the stop position from the start, step, repeat, and output tensor
+      size. Deprecated. Only False is supported.
+    doc_dtype: boolean, optional
+    dtype:
+    - boolean
+  repeat:
+    default: '1'
+    descp: Number of times to repeat each element. The default repeat count is 1.
+    doc_dtype: int, optional
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  start:
+    descp: Start of interval. The default start value is 0.
+    doc_dtype: number, optional
+    ndim:
+    - '0'
+  step:
+    default: '1.0'
+    descp: Spacing between values. The default step size is 1.
+    doc_dtype: number, optional
+    ndim:
+    - '0'
+  stop:
+    default: None
+    descp: End of interval.
+    doc_dtype: number
+inputs:
+  optional:
+  - stop
+  - step
+  - repeat
+  - infer_range
+  - ctx
+  - dtype
+  required:
+  - start
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.arange
+package: mxnet
+target: arange
+title: mxnet.ndarray.arange
+version: 1.6.0

@@ -1,0 +1,17 @@
+constraints:
+  mapping:
+    descp: a dictionary that maps from nn module to nnq module
+    structure:
+    - dict
+  mod:
+    descp: input module
+inputs:
+  optional: []
+  required:
+  - mod
+  - mapping
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.quantization.swap_module
+package: torch
+target: swap_module
+title: torch.quantization.swap_module
+version: 1.5.0

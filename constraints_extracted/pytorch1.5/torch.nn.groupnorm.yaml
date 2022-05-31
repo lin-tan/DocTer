@@ -1,0 +1,49 @@
+check_nan: true
+constraints:
+  affine:
+    default: 'True'
+    descp: 'a boolean value that when set to `True`, this module has learnable per-channel
+      affine parameters initialized to ones (for weights) and zeros (for biases).
+      Default: `True`.'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  eps:
+    default: 1e-05
+    descp: 'a value added to the denominator for numerical stability. Default: 1e-5'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  num_channels:
+    descp: number of channels expected in input
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  num_groups:
+    descp: number of groups to separate the channels into
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+inputs:
+  optional:
+  - eps
+  - affine
+  required:
+  - num_groups
+  - num_channels
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.GroupNorm
+package: torch
+target: GroupNorm
+title: torch.nn.GroupNorm
+version: 1.5.0

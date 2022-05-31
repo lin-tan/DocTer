@@ -1,0 +1,21 @@
+constraints:
+  device:
+    default: None
+    descp: device for which to return the device capability. This function is a no-op
+      if this argument is a negative integer. It uses the current device, given by
+      `current_device()`, if `device` is `None` (default).
+    doc_dtype: torch.device or int, optional
+    dtype:
+    - int
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - device
+  required: []
+link: https://pytorch.org/docs/1.5.0/cuda.html#torch.cuda.get_device_capability
+package: torch
+target: get_device_capability
+title: torch.cuda.get_device_capability
+version: 1.5.0

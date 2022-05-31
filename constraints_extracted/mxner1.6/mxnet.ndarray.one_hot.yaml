@@ -1,0 +1,76 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  depth:
+    default: _Null
+    descp: Depth of the one hot dimension.
+    doc_dtype: int, required
+    dtype:
+    - int
+  dtype:
+    default: _Null
+    descp: DType of the output
+    doc_dtype: '{''float16'', ''float32'', ''float64'', ''int32'', ''int64'', ''int8'',
+      ''uint8''},optional, default=''float32'''
+    enum:
+    - float16
+    - float32
+    - float64
+    - int32
+    - int64
+    - int8
+    - uint8
+  indices:
+    default: None
+    descp: array of locations where to set on_value
+    doc_dtype: NDArray
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  off_value:
+    default: _Null
+    descp: The value assigned to the locations not represented by indices.
+    doc_dtype: double, optional, default=0
+    dtype:
+    - numeric
+    - numpy.double
+    ndim:
+    - '0'
+  on_value:
+    default: _Null
+    descp: The value assigned to the locations represented by indices.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numeric
+    - numpy.double
+    ndim:
+    - '0'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - indices
+  - depth
+  - on_value
+  - off_value
+  - dtype
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.one_hot
+package: mxnet
+target: one_hot
+title: mxnet.ndarray.one_hot
+version: 1.6.0

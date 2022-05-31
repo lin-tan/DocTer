@@ -1,0 +1,121 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  background_id:
+    default: _Null
+    descp: Optional, id of the background class which will be ignored in nms.
+    doc_dtype: int, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  coord_start:
+    default: _Null
+    descp: Start index of the consecutive 4 coordinates.
+    doc_dtype: int, optional, default='2'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  force_suppress:
+    default: _Null
+    descp: Optional, if set false and id_index is provided, nms will only apply to
+      boxes belongs to the same category
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  id_index:
+    default: _Null
+    descp: Optional, index of the class categories, -1 to disable.
+    doc_dtype: int, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  in_format:
+    default: _Null
+    descp: The input box encoding type. "corner" means boxes are encoded as [xmin,
+      ymin, xmax, ymax], "center" means boxes are encodes as [x, y, width, height].
+    doc_dtype: '{''center'', ''corner''},optional, default=''corner'''
+    enum:
+    - center
+    - corner
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  out_format:
+    default: _Null
+    descp: The output box encoding type. "corner" means boxes are encoded as [xmin,
+      ymin, xmax, ymax], "center" means boxes are encodes as [x, y, width, height].
+    doc_dtype: '{''center'', ''corner''},optional, default=''corner'''
+    enum:
+    - center
+    - corner
+  overlap_thresh:
+    default: _Null
+    descp: Overlapping(IoU) threshold to suppress object with smaller score.
+    doc_dtype: float, optional, default=0.5
+    dtype:
+    - float
+    ndim:
+    - '0'
+  score_index:
+    default: _Null
+    descp: Index of the scores/confidence of boxes.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  topk:
+    default: _Null
+    descp: Apply nms to topk boxes with descending scores, -1 to no restriction.
+    doc_dtype: int, optional, default='-1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  valid_thresh:
+    default: _Null
+    descp: Filter input boxes to those whose scores greater than valid_thresh.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - overlap_thresh
+  - valid_thresh
+  - topk
+  - coord_start
+  - score_index
+  - id_index
+  - background_id
+  - force_suppress
+  - in_format
+  - out_format
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.box_non_maximum_suppression
+package: mxnet
+target: box_non_maximum_suppression
+title: mxnet.contrib.ndarray.box_non_maximum_suppression
+version: 1.6.0

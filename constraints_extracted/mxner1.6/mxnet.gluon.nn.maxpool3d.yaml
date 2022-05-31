@@ -1,0 +1,71 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  ceil_mode:
+    default: 'False'
+    descp: When True, will use ceil instead of floor to compute the output shape.
+    doc_dtype: bool, default False
+  layout:
+    default: NCDHW
+    descp: Dimension ordering of data and out ('NCDHW' or 'NDHWC'). 'N', 'C', 'H',
+      'W', 'D' stands for batch, channel, height, width and depth dimensions respectively.
+      padding is applied on 'D', 'H' and 'W' dimension.
+    doc_dtype: str, default 'NCDHW'
+    dtype:
+    - string
+    ndim:
+    - '0'
+  padding:
+    default: '0'
+    descp: If padding is non-zero, then the input is implicitly zero-padded on both
+      sides for padding number of points.
+    doc_dtype: int or list/tuple of 3 ints,
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    range:
+    - '[0,inf)'
+    structure:
+    - list
+    - tuple
+  pool_size:
+    default: (2,2,2)
+    descp: Size of the max pooling windows.
+    doc_dtype: int or list/tuple of 3 ints,
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    - tuple
+  strides:
+    default: None
+    descp: Factor by which to downscale. E.g. 2 will halve the input size. If None,
+      it will default to pool_size.
+    doc_dtype: int, list/tuple of 3 ints, or None.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - list
+    - tuple
+inputs:
+  optional:
+  - pool_size
+  - strides
+  - padding
+  - ceil_mode
+  - layout
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.MaxPool3D
+package: mxnet
+target: MaxPool3D
+title: mxnet.gluon.nn.MaxPool3D
+version: 1.6.0

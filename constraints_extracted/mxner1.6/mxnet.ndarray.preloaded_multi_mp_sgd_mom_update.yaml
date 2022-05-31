@@ -1,0 +1,66 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*data':
+    descp: Weights, gradients, momentums, learning rates and weight decays
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  clip_gradient:
+    default: None
+    descp: Clip gradient to the range of [-clip_gradient, clip_gradient] If clip_gradient
+      <= 0, gradient clipping is turned off. grad = max(min(grad, clip_gradient),
+      -clip_gradient).
+    doc_dtype: float, optional, default=-1
+    dtype:
+    - float
+    ndim:
+    - '0'
+  momentum:
+    default: None
+    descp: The decay rate of momentum estimates at each epoch.
+    doc_dtype: float, optional, default=0
+    dtype:
+    - float
+    ndim:
+    - '0'
+  num_weights:
+    default: None
+    descp: Number of updated weights.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rescale_grad:
+    default: None
+    descp: Rescale gradient to grad = rescale_grad*grad.
+    doc_dtype: float, optional, default=1
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - momentum
+  - rescale_grad
+  - clip_gradient
+  - num_weights
+  - out
+  required:
+  - '*data'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.preloaded_multi_mp_sgd_mom_update
+package: mxnet
+target: preloaded_multi_mp_sgd_mom_update
+title: mxnet.ndarray.preloaded_multi_mp_sgd_mom_update
+version: 1.6.0

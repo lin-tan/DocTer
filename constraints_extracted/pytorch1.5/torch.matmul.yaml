@@ -1,0 +1,29 @@
+constraints:
+  input:
+    descp: the first tensor to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  other:
+    descp: the second tensor to be multiplied
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  out:
+    default: None
+    descp: the output tensor.
+    doc_dtype: Tensor, optional
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional:
+  - out
+  required:
+  - input
+  - other
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.matmul
+package: torch
+ret_type: Tensor
+target: matmul
+title: torch.matmul
+version: 1.5.0

@@ -1,0 +1,22 @@
+constraints:
+  lhs:
+    descp: First array to be subtracted.
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array to be subtracted. If `lhs.shape != rhs.shape`, they must be
+      broadcastable to a common shape.__spec__
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.subtract
+package: mxnet
+target: subtract
+title: mxnet.ndarray.sparse.subtract
+version: 1.6.0

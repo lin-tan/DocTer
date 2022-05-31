@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.sparse.eye
+constraints:
+  dtype:
+    default: tf.dtypes.float32
+    descp: The type of element in the resulting `Tensor`.
+    dtype:
+    - tf.dtype
+    - tf.float32
+  name:
+    default: None
+    descp: A name for this `Op`. Defaults to "eye".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_columns:
+    default: None
+    descp: Optional non-negative integer or `int32` scalar `tensor` giving the number
+      of columns in the resulting matrix. Defaults to `num_rows`.
+    dtype:
+    - int
+    - tf.int32
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  num_rows:
+    descp: Non-negative integer or `int32` scalar `tensor` giving the number of rows
+      in the resulting matrix.
+    dtype:
+    - int
+    - tf.int32
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - num_columns
+  - dtype
+  - name
+  required:
+  - num_rows
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/sparse/eye
+outputs: A `SparseTensor` of shape [num_rows, num_columns] with ones along the diagonal.
+package: tensorflow
+target: eye
+title: tf.sparse.eye
+version: 2.1.0

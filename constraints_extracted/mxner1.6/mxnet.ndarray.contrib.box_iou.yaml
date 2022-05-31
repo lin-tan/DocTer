@@ -1,0 +1,46 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  format:
+    default: _Null
+    descp: The box encoding type. "corner" means boxes are encoded as [xmin, ymin,
+      xmax, ymax], "center" means boxes are encodes as [x, y, width, height].
+    doc_dtype: '{''center'', ''corner''},optional, default=''corner'''
+    enum:
+    - center
+    - corner
+  lhs:
+    default: None
+    descp: The first input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rhs:
+    default: None
+    descp: The second input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lhs
+  - rhs
+  - format
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.box_iou
+package: mxnet
+target: box_iou
+title: mxnet.ndarray.contrib.box_iou
+version: 1.6.0

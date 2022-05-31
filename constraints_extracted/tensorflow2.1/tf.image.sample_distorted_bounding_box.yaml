@@ -1,0 +1,106 @@
+constraints:
+  area_range:
+    default: None
+    descp: An optional list of `floats`. Defaults to `[0.05, 1]`. The cropped area
+      of the image must contain a fraction of the supplied image within this range.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+  aspect_ratio_range:
+    default: None
+    descp: An optional list of `floats`. Defaults to `[0.75, 1.33]`. The cropped area
+      of the image must have an aspect `ratio = width / height` within this range.
+    dtype:
+    - float
+    ndim:
+    - '0'
+    structure:
+    - list
+  bounding_boxes:
+    descp: A `Tensor` of type `float32`. 3-D with shape `[batch, N, 4]`describing
+      the N bounding boxes associated with the image.
+    dtype:
+    - tf.float32
+    tensor_t:
+    - tf.tensor
+  image_size:
+    descp: 'A `Tensor`. Must be one of the following types: `uint8`, `int8`,`int16`,
+      `int32`, `int64`. 1-D, containing `[height, width, channels]`.'
+    dtype:
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint8
+    tensor_t:
+    - tf.tensor
+  max_attempts:
+    default: None
+    descp: An optional `int`. Defaults to `100`. Number of attempts at generating
+      a cropped region of the image of the specified constraints. After `max_attempts`
+      failures, return the entire image.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  min_object_covered:
+    default: '0.1'
+    descp: A Tensor of type `float32`. Defaults to `0.1`. The cropped area of the
+      image must contain at least this fraction of any bounding box supplied. The
+      value of this parameter should be non-negative. In the case of 0, the cropped
+      area does not need to overlap any of the bounding boxes supplied.
+    dtype:
+    - float
+    - tf.float32
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  seed:
+    default: '0'
+    descp: An optional `int`. Defaults to `0`. If `seed` is set to non-zero, the random
+      number generator is seeded by the given `seed`.  Otherwise, it is seeded by
+      a random seed.
+    dtype:
+    - int
+    ndim:
+    - '0'
+  use_image_if_no_bounding_boxes:
+    default: None
+    descp: An optional `bool`. Defaults to `False`. Controls behavior if no bounding
+      boxes supplied. If true, assume an implicit bounding box covering the whole
+      input. If false, raise an error.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - seed
+  - min_object_covered
+  - aspect_ratio_range
+  - area_range
+  - max_attempts
+  - use_image_if_no_bounding_boxes
+  - name
+  required:
+  - image_size
+  - bounding_boxes
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/sample_distorted_bounding_box
+outputs: A tuple of `Tensor` objects (begin, size, bboxes).
+package: tensorflow
+target: sample_distorted_bounding_box
+title: tf.image.sample_distorted_bounding_box
+version: 2.1.0

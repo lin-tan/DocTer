@@ -1,0 +1,43 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  ctx:
+    default: None
+    descp: An optional device context. Defaults to the current default context (`mxnet.context.current_context()`).
+    doc_dtype: Context, optional
+  dtype:
+    default: None
+    descp: An optional value type (default is float32).
+    doc_dtype: str or numpy.dtype, optional
+    dtype:
+    - numpy.dtype
+    - string
+  out:
+    default: None
+    descp: The output NDArray (default is None).
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  shape:
+    descp: The shape of the empty array.
+    doc_dtype: int or tuple of int or list of int
+    dtype:
+    - int
+    structure:
+    - list
+    - ndarray
+    - tuple
+inputs:
+  optional:
+  - ctx
+  - dtype
+  - out
+  required:
+  - shape
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.ones
+package: mxnet
+target: ones
+title: mxnet.ndarray.ones
+version: 1.6.0

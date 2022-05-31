@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.data.experimental.from_variant
+constraints:
+  structure:
+    descp: A `tf.data.experimental.Structure` object representing the structure of
+      each element in the dataset.
+  variant:
+    descp: A scalar `tf.variant` tensor representing a dataset.
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional: []
+  required:
+  - variant
+  - structure
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/data/experimental/from_variant
+outputs: A `tf.data.Dataset` instance.
+package: tensorflow
+target: from_variant
+title: tf.data.experimental.from_variant
+version: 2.1.0

@@ -1,0 +1,65 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  anchors:
+    default: None
+    descp: (B, N, 4) encoded in corner
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  matches:
+    default: None
+    descp: (B, N) value range [0, M)
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  means:
+    default: None
+    descp: (4,) Mean value to be subtracted from encoded values
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  refs:
+    default: None
+    descp: (B, M, 4) encoded in corner
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  samples:
+    default: None
+    descp: (B, N) value +1 (positive), -1 (negative), 0 (ignore)
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  stds:
+    default: None
+    descp: (4,) Std value to be divided from encoded values
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - samples
+  - matches
+  - anchors
+  - refs
+  - means
+  - stds
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.box_encode
+package: mxnet
+target: box_encode
+title: mxnet.contrib.ndarray.box_encode
+version: 1.6.0

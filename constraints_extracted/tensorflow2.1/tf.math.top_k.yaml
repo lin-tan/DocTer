@@ -1,0 +1,51 @@
+aliases:
+- tf.nn.top_k
+- tf.compat.v1.math.top_k
+- tf.compat.v1.nn.top_k
+constraints:
+  input:
+    descp: 1-D or higher `Tensor` with last dimension at least `k`.
+  k:
+    default: '1'
+    descp: 0-D `int32` `Tensor`.  Number of top elements to look for along the last
+      dimension (along each row for matrices).
+    dtype:
+    - int
+    - tf.int32
+    - tf.string
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sorted:
+    default: 'True'
+    descp: If true the resulting `k` elements will be sorted by the values in descending
+      order.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - k
+  - sorted
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/top_k
+outputs:
+- values: The `k` largest elements along each last dimensional slice.
+- indices: The indices of `values` within the last dimension of `input`.
+package: tensorflow
+target: top_k
+title: tf.math.top_k
+version: 2.1.0

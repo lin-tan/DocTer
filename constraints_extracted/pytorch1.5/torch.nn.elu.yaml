@@ -1,0 +1,27 @@
+check_nan: true
+constraints:
+  alpha:
+    default: '1.0'
+    descp: 'the  alpha  value for the ELU formulation. Default: 1.0'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  inplace:
+    default: 'False'
+    descp: 'can optionally do the operation in-place. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - alpha
+  - inplace
+  required: []
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.ELU
+package: torch
+target: ELU
+title: torch.nn.ELU
+version: 1.5.0

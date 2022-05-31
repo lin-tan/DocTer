@@ -1,0 +1,34 @@
+aliases:
+- tf.compat.v1.feature_column.sequence_categorical_column_with_hash_bucket
+constraints:
+  dtype:
+    default: tf.dtypes.string
+    descp: The type of features. Only string and integer types are supported.
+    dtype:
+    - tf.dtype
+    - tf.string
+  hash_bucket_size:
+    descp: An int > 1. The number of buckets.
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  key:
+    descp: A unique string identifying the input feature.
+    dtype:
+    - tf.string
+exceptions:
+- ValueError: '`hash_bucket_size` is not greater than 1.'
+- ValueError: '`dtype` is neither string nor integer.'
+inputs:
+  optional:
+  - dtype
+  required:
+  - key
+  - hash_bucket_size
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/feature_column/sequence_categorical_column_with_hash_bucket
+outputs: A `SequenceCategoricalColumn`.
+package: tensorflow
+target: sequence_categorical_column_with_hash_bucket
+title: tf.feature_column.sequence_categorical_column_with_hash_bucket
+version: 2.1.0

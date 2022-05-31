@@ -1,0 +1,19 @@
+constraints:
+  tensor:
+    descp: an n-dimensional torch.Tensor
+  val:
+    descp: the value to fill the tensor with
+    ndim:
+    - '0'
+    tensor_t:
+    - torch.tensor
+inputs:
+  optional: []
+  required:
+  - tensor
+  - val
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.constant_
+package: torch
+target: constant_
+title: torch.nn.init.constant_
+version: 1.5.0

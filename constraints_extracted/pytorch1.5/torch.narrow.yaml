@@ -1,0 +1,40 @@
+constraints:
+  dim:
+    descp: the dimension along which to narrow
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  input:
+    descp: the tensor to narrow
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  length:
+    descp: the distance to the ending dimension
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  start:
+    descp: the starting dimension
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional: []
+  required:
+  - input
+  - dim
+  - start
+  - length
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.narrow
+package: torch
+ret_type: Tensor
+target: narrow
+title: torch.narrow
+version: 1.5.0

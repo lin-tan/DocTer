@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  inplace:
+    default: 'False'
+    descp: 'If set to `True`, will do this operation in-place. Default: `False`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  input:
+    descp: ''
+  p:
+    default: '0.5'
+    descp: 'probability of a channel to be zeroed. Default: 0.5'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  training:
+    default: 'True'
+    descp: 'apply dropout if is `True`. Default: `True`'
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - p
+  - training
+  - inplace
+  required:
+  - input
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.dropout3d
+package: torch
+target: dropout3d
+title: torch.nn.functional.dropout3d
+version: 1.5.0

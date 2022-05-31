@@ -1,0 +1,22 @@
+constraints:
+  lhs:
+    descp: First array to be multiplied.
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+  rhs:
+    descp: Second array to be multiplied. If `lhs.shape != rhs.shape`, they must be
+      broadcastable to a common shape.
+    doc_dtype: scalar or mxnet.ndarray.sparse.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - lhs
+  - rhs
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.multiply
+package: mxnet
+target: multiply
+title: mxnet.ndarray.sparse.multiply
+version: 1.6.0

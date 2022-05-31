@@ -1,0 +1,31 @@
+aliases:
+- tf.compat.v1.keras.backend.foldr
+constraints:
+  elems:
+    descp: tensor
+  fn:
+    descp: 'Callable that will be called upon each element in elems and an accumulator,
+      for instance `lambda acc, x: acc + x`'
+  initializer:
+    default: None
+    descp: The first value used (`elems[-1]` in case of None)
+  name:
+    default: None
+    descp: A string name for the foldr node in the graph
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - initializer
+  - name
+  required:
+  - fn
+  - elems
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/foldr
+outputs: Same type and shape as initializer
+package: tensorflow
+target: foldr
+title: tf.keras.backend.foldr
+version: 2.1.0

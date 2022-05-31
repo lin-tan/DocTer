@@ -1,0 +1,25 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: Positional input arguments
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - out
+  required:
+  - '*args'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/sparse/index.html#mxnet.ndarray.sparse.add_n
+package: mxnet
+target: add_n
+title: mxnet.ndarray.sparse.add_n
+version: 1.6.0

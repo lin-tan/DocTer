@@ -1,0 +1,39 @@
+constraints:
+  line_length:
+    default: '120'
+    descp: Rotal length of printed lines
+    doc_dtype: int
+    dtype:
+    - int
+    ndim:
+    - '0'
+  positions:
+    default: '[0.44,0.64,0.74,1.0]'
+    descp: Relative or absolute positions of log elements in each line.
+    doc_dtype: list
+    structure:
+    - list
+  shape:
+    default: None
+    descp: A dict of shapes, str->shape (tuple), given input shapes.
+    doc_dtype: dict
+    dtype:
+    - string
+    structure:
+    - dict
+    - tuple
+  symbol:
+    descp: Symbol to be visualized.
+    doc_dtype: Symbol
+inputs:
+  optional:
+  - shape
+  - line_length
+  - positions
+  required:
+  - symbol
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/visualization/index.html#mxnet.visualization.print_summary
+package: mxnet
+target: print_summary
+title: mxnet.visualization.print_summary
+version: 1.6.0

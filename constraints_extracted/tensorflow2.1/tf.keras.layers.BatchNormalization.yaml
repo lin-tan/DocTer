@@ -1,0 +1,188 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  adjustment:
+    default: None
+    descp: 'A function taking the `Tensor` containing the (dynamic) shape of the input
+      tensor and returning a pair (scale, bias) to apply to the normalized values
+      (before gamma and beta), only during training. For example, if axis==-1,`adjustment
+      = lambda shape: (   tf.random.uniform(shape[-1:], 0.93, 1.07),   tf.random.uniform(shape[-1:],
+      -0.1, 0.1))`will scale the normalized value by up to 7% up or down, then shift
+      the result by up to 0.1 (with independent scaling and bias for each feature
+      but shared across all examples), and finally apply gamma and/or beta. If`None`,
+      no adjustment is applied. Cannot be specified if virtual_batch_size is specified.'
+    tensor_t:
+    - tf.tensor
+  axis:
+    default: '-1'
+    descp: Integer, the axis that should be normalized (typically the features axis).
+      For instance, after a `Conv2D` layer with`data_format="channels_first"`, set
+      `axis=1` in `BatchNormalization`.
+    dtype:
+    - int
+  beta_constraint:
+    default: None
+    descp: Optional constraint for the beta weight.
+  beta_initializer:
+    default: zeros
+    descp: Initializer for the beta weight.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  beta_regularizer:
+    default: None
+    descp: Optional regularizer for the beta weight.
+  center:
+    default: 'True'
+    descp: If True, add offset of `beta` to normalized tensor. If False, `beta` is
+      ignored.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+  epsilon:
+    default: '0.001'
+    descp: Small float added to variance to avoid dividing by zero.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  fused:
+    default: None
+    descp: if `True`, use a faster, fused implementation, or raise a ValueError if
+      the fused implementation cannot be used. If `None`, use the faster implementation
+      if possible. If False, do not used the fused implementation.
+    ndim:
+    - '0'
+  gamma_constraint:
+    default: None
+    descp: Optional constraint for the gamma weight.
+  gamma_initializer:
+    default: ones
+    descp: Initializer for the gamma weight.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  gamma_regularizer:
+    default: None
+    descp: Optional regularizer for the gamma weight.
+  momentum:
+    default: '0.99'
+    descp: Momentum for the moving average.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  moving_mean_initializer:
+    default: zeros
+    descp: Initializer for the moving mean.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  moving_variance_initializer:
+    default: ones
+    descp: Initializer for the moving variance.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  renorm:
+    default: 'False'
+    descp: Whether to use Batch Renormalization (https://arxiv.org/abs/1702.03275).
+      This adds extra variables during training. The inference is the same for either
+      value of this parameter.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  renorm_clipping:
+    default: None
+    descp: A dictionary that may map keys 'rmax', 'rmin', 'dmax' to scalar `Tensors`
+      used to clip the renorm correction. The correction`(r, d)` is used as `corrected_value
+      = normalized_value * r + d`, with`r` clipped to [rmin, rmax], and `d` to [-dmax,
+      dmax]. Missing rmax, rmin, dmax are set to inf, 0, inf, respectively.
+    ndim:
+    - '0'
+    structure:
+    - dict
+    tensor_t:
+    - tf.tensor
+  renorm_momentum:
+    default: '0.99'
+    descp: Momentum used to update the moving means and standard deviations with renorm.
+      Unlike `momentum`, this affects training and should be neither too small (which
+      would add noise) nor too large (which would give stale estimates). Note that
+      `momentum` is still applied to get the means and variances for inference.
+    dtype:
+    - float
+    ndim:
+    - '0'
+  scale:
+    default: 'True'
+    descp: If True, multiply by `gamma`. If False, `gamma` is not used. When the next
+      layer is linear (also e.g. `nn.relu`), this can be disabled since the scaling
+      will be done by the next layer.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  trainable:
+    default: 'True'
+    descp: Boolean, if `True` the variables will be marked as trainable.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  virtual_batch_size:
+    default: None
+    descp: An `int`. By default, `virtual_batch_size` is `None`, which means batch
+      normalization is performed across the whole batch. When`virtual_batch_size`
+      is not `None`, instead perform "Ghost Batch Normalization", which creates virtual
+      sub-batches which are each normalized separately (with shared gamma, beta, and
+      moving statistics). Must divide the actual batch size during execution.
+    dtype:
+    - int
+    enum:
+    - None
+    - virtual_batch_size
+inputs:
+  optional:
+  - axis
+  - momentum
+  - epsilon
+  - center
+  - scale
+  - beta_initializer
+  - gamma_initializer
+  - moving_mean_initializer
+  - moving_variance_initializer
+  - beta_regularizer
+  - gamma_regularizer
+  - beta_constraint
+  - gamma_constraint
+  - renorm
+  - renorm_clipping
+  - renorm_momentum
+  - fused
+  - trainable
+  - virtual_batch_size
+  - adjustment
+  - name
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/BatchNormalization
+package: tensorflow
+target: BatchNormalization
+title: tf.keras.layers.BatchNormalization
+version: 2.1.0

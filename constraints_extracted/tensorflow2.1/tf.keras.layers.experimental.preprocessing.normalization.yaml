@@ -1,0 +1,44 @@
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  axis:
+    default: '-1'
+    descp: Integer or tuple of integers, the axis or axes that should be normalized
+      (typically the features axis). We will normalize each element in the specified
+      axis. The default is '-1' (the innermost axis); 0 (the batch axis) is not allowed.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    structure:
+    - tuple
+  data:
+    default: None
+    descp: The data to train on. It can be passed either as a tf.data Dataset, or
+      as a numpy array.
+    structure:
+    - list
+  dtype:
+    default: None
+    descp: ''
+  reset_state:
+    default: None
+    descp: Optional argument specifying whether to clear the state of the layer at
+      the start of the call to `adapt`, or whether to start from the existing state.
+      Subclasses may choose to throw if reset_state is set to 'False'.
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - axis
+  - dtype
+  - '**kwargs'
+  - data
+  - reset_state
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/experimental/preprocessing/Normalization
+package: tensorflow
+target: Normalization
+title: tf.keras.layers.experimental.preprocessing.Normalization
+version: 2.1.0

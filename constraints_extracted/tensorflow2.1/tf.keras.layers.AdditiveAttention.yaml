@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.keras.layers.AdditiveAttention
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  causal:
+    default: None
+    descp: Boolean. Set to `True` for decoder self-attention. Adds a mask such that
+      position `i` cannot attend to positions `j > i`. This prevents the flow of information
+      from the future towards the past.
+    ndim:
+    - '0'
+  use_scale:
+    default: 'True'
+    descp: If `True`, will create a variable to scale the attention scores.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - use_scale
+  - '**kwargs'
+  - causal
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/AdditiveAttention
+package: tensorflow
+target: AdditiveAttention
+title: tf.keras.layers.AdditiveAttention
+version: 2.1.0

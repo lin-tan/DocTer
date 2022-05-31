@@ -1,0 +1,54 @@
+aliases:
+- tf.compat.v1.clip_by_value
+constraints:
+  clip_value_max:
+    descp: A 0-D (scalar) `Tensor`, or a `Tensor` with the same shape as `t`. The
+      maximum value to clip by.
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[scalar]'
+    tensor_t:
+    - tf.tensor
+  clip_value_min:
+    descp: A 0-D (scalar) `Tensor`, or a `Tensor` with the same shape as `t`. The
+      minimum value to clip by.
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[scalar]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  t:
+    descp: A `Tensor` or `IndexedSlices`.
+    tensor_t:
+    - tf.tensor
+dependency:
+- scalar
+exceptions:
+- ValueError: If the clip tensors would trigger array broadcasting that would make
+    the returned tensor larger than the input.
+- TypeError: If dtype of the input is `int32` and dtype of the `clip_value_min` or
+    `clip_value_max` is `float32`
+inputs:
+  optional:
+  - name
+  required:
+  - t
+  - clip_value_min
+  - clip_value_max
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/clip_by_value
+outputs: A clipped `Tensor` or `IndexedSlices`.
+package: tensorflow
+target: clip_by_value
+title: tf.clip_by_value
+version: 2.1.0

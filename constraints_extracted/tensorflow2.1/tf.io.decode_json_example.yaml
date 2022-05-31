@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.decode_json_example
+- tf.compat.v1.io.decode_json_example
+constraints:
+  json_examples:
+    descp: A `Tensor` of type `string`. Each string is a JSON object serialized according
+      to the JSON mapping of the Example proto.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - json_examples
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_json_example
+outputs: A `Tensor` of type `string`.
+package: tensorflow
+target: decode_json_example
+title: tf.io.decode_json_example
+version: 2.1.0

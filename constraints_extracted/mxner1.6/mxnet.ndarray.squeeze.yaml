@@ -1,0 +1,43 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Selects a subset of the single-dimensional entries in the shape. If an
+      axis is selected with shape entry greater than one, an error is raised.
+    doc_dtype: Shape or None, optional, default=None
+    dtype:
+    - int
+    ndim:
+    - '1'
+    range:
+    - '[0,inf)'
+  data:
+    default: None
+    descp: data to squeeze
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - data
+  - axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.squeeze
+package: mxnet
+target: squeeze
+title: mxnet.ndarray.squeeze
+version: 1.6.0

@@ -1,0 +1,55 @@
+constraints:
+  fixed_length:
+    default: None
+    descp: If set, the first `fixed_length` bytes of each element will be converted.
+      Data will be zero-padded or truncated to the specified length.`fixed_length`
+      must be a multiple of the size of `out_type`.`fixed_length` must be specified
+      if the elements of `input_bytes` are of variable length.
+  input_bytes:
+    descp: Each element of the input Tensor is converted to an array of bytes.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  little_endian:
+    default: 'True'
+    descp: Whether the `input_bytes` data is in little-endian format. Data will be
+      converted into host byte order if necessary.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  out_type:
+    descp: '`DType` of the output. Acceptable types are `half`, `float`, `double`,`int32`,
+      `uint16`, `uint8`, `int16`, `int8`, `int64`.'
+    dtype:
+    - float
+    - tf.float16
+    - tf.float64
+    - tf.int16
+    - tf.int32
+    - tf.int64
+    - tf.int8
+    - tf.uint16
+    - tf.uint8
+inputs:
+  optional:
+  - little_endian
+  - fixed_length
+  - name
+  required:
+  - input_bytes
+  - out_type
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/io/decode_raw
+outputs: A `Tensor` object storing the decoded bytes.
+package: tensorflow
+target: decode_raw
+title: tf.io.decode_raw
+version: 2.1.0

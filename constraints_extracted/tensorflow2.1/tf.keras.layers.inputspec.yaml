@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.keras.layers.InputSpec
+- tf.compat.v1.layers.InputSpec
+check_nan: true
+constraints:
+  axes:
+    default: None
+    descp: Dictionary mapping integer axes to a specific dimension value.
+  dtype:
+    default: None
+    descp: Expected DataType of the input.
+  max_ndim:
+    default: None
+    descp: Integer, maximum rank of the input.
+  min_ndim:
+    default: None
+    descp: Integer, minimum rank of the input.
+  ndim:
+    default: None
+    descp: Integer, expected rank of the input.
+  shape:
+    default: None
+    descp: Shape tuple, expected shape of the input (may include None for unchecked
+      axes).
+    structure:
+    - tuple
+inputs:
+  optional:
+  - dtype
+  - shape
+  - ndim
+  - max_ndim
+  - min_ndim
+  - axes
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/InputSpec
+package: tensorflow
+target: InputSpec
+title: tf.keras.layers.InputSpec
+version: 2.1.0

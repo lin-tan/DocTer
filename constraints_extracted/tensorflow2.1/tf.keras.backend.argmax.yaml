@@ -1,0 +1,23 @@
+aliases:
+- tf.compat.v1.keras.backend.argmax
+constraints:
+  axis:
+    default: '-1'
+    descp: axis along which to perform the reduction.
+    dtype:
+    - int
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/argmax
+outputs: A tensor.
+package: tensorflow
+target: argmax
+title: tf.keras.backend.argmax
+version: 2.1.0

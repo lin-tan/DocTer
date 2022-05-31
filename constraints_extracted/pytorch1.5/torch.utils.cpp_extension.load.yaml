@@ -1,0 +1,80 @@
+constraints:
+  build_directory:
+    default: None
+    descp: optional path to use as build workspace.
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  extra_cflags:
+    default: None
+    descp: optional list of compiler flags to forward to the build.
+    structure:
+    - list
+  extra_cuda_cflags:
+    default: None
+    descp: optional list of compiler flags to forward to nvcc when building CUDA sources.
+    structure:
+    - list
+  extra_include_paths:
+    default: None
+    descp: optional list of include directories to forward to the build.
+    structure:
+    - list
+  extra_ldflags:
+    default: None
+    descp: optional list of linker flags to forward to the build.
+    structure:
+    - list
+  is_python_module:
+    default: 'True'
+    descp: If `True` (default), imports the produced shared library as a Python module.
+      If `False`, loads it into the process as a plain dynamic library.
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  name:
+    descp: The name of the extension to build. This MUST be the same as the name of
+      the pybind11 module!
+  sources:
+    descp: A list of relative or absolute paths to C++ source files.
+    structure:
+    - list
+  verbose:
+    default: 'False'
+    descp: If `True`, turns on verbose logging of load steps.
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  with_cuda:
+    default: None
+    descp: Determines whether CUDA headers and libraries are added to the build. If
+      set to `None` (default), this value is automatically determined based on the
+      existence of `.cu` or `.cuh` in `sources`. Set it to True` to force CUDA headers
+      and libraries to be included.
+    dtype:
+    - torch.bool
+    enum:
+    - None
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - extra_cflags
+  - extra_cuda_cflags
+  - extra_ldflags
+  - extra_include_paths
+  - build_directory
+  - verbose
+  - with_cuda
+  - is_python_module
+  required:
+  - name
+  - sources
+link: https://pytorch.org/docs/1.5.0/cpp_extension.html#torch.utils.cpp_extension.load
+package: torch
+target: load
+title: torch.utils.cpp_extension.load
+version: 1.5.0

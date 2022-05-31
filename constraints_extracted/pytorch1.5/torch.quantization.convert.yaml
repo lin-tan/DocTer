@@ -1,0 +1,29 @@
+constraints:
+  inplace:
+    default: 'False'
+    descp: carry out model transformations in-place, the original module is mutated
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  mapping:
+    default: None
+    descp: a dictionary that maps from float module type to quantized module type,
+      can be overwrritten to allow swapping user defined Modules
+    dtype:
+    - torch.float32
+    structure:
+    - dict
+  module:
+    descp: calibrated module with observers
+inputs:
+  optional:
+  - mapping
+  - inplace
+  required:
+  - module
+link: https://pytorch.org/docs/1.5.0/quantization.html#torch.quantization.convert
+package: torch
+target: convert
+title: torch.quantization.convert
+version: 1.5.0

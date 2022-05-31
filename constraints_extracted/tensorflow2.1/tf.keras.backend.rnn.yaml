@@ -1,0 +1,141 @@
+aliases:
+- tf.compat.v1.keras.backend.rnn
+constraints:
+  constants:
+    default: None
+    descp: List of constant values passed at each step.
+  go_backwards:
+    default: 'False'
+    descp: Boolean. If True, do the iteration over the time dimension in reverse order
+      and return the reversed sequence.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  initial_states:
+    descp: Tensor with shape `(samples, state_size)`(no time dimension), containing
+      the initial values for the states used in the step function. In the case that
+      state_size is in a nested shape, the shape of initial_states will also follow
+      the nested structure.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    - '2'
+    shape:
+    - '[samples,state_size]'
+    tensor_t:
+    - tf.tensor
+  input_length:
+    default: None
+    descp: An integer or a 1-D Tensor, depending on whether the time dimension is
+      fixed-length or not. In case of variable length input, it is used for masking
+      in case there's no mask specified.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    - '1'
+    shape:
+    - '[1]'
+    tensor_t:
+    - tf.tensor
+  inputs:
+    descp: Tensor of temporal data of shape `(samples, time, ...)`(at least 3D), or
+      nested tensors, and each of which has shape`(samples, time, ...)`.
+    ndim:
+    - '>=2'
+    shape:
+    - '[samples,time,...]'
+    tensor_t:
+    - tf.tensor
+  mask:
+    default: None
+    descp: Binary tensor with shape `(samples, time, 1)`, with a zero for every element
+      that is masked.
+    ndim:
+    - '3'
+    shape:
+    - '[samples,time,1]'
+    tensor_t:
+    - tf.tensor
+  step_function:
+    descp: RNN step function. Args;     input; Tensor with shape `(samples, ...)`
+      (no time dimension),         representing input for the batch of samples at
+      a certain         time step.     states; List of tensors. Returns;     output;
+      Tensor with shape `(samples, output_dim)`        (no time dimension).     new_states;
+      List of tensors, same length and shapes         as 'states'. The first state
+      in the list must be the         output tensor at the previous timestep.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    - '2'
+    - '>=1'
+    shape:
+    - '[samples,...]'
+    - '[samples,output_dim]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  time_major:
+    default: 'False'
+    descp: Boolean. If true, the inputs and outputs will be in shape`(timesteps, batch,
+      ...)`, whereas in the False case, it will be`(batch, timesteps, ...)`. Using
+      `time_major = True` is a bit more efficient because it avoids transposes at
+      the beginning and end of the RNN calculation. However, most TensorFlow data
+      is batch-major, so by default this function accepts input and emits output in
+      batch-major form.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  unroll:
+    default: 'False'
+    descp: Whether to unroll the RNN or to use a symbolic `while_loop`.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  zero_output_for_mask:
+    default: 'False'
+    descp: Boolean. If True, the output for masked timestep will be zeros, whereas
+      in the False case, output from previous timestep is returned.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+dependency:
+- time
+- state_size
+- output_dim
+- samples
+exceptions:
+- ValueError: if input dimension is less than 3.
+- ValueError: if `unroll` is `True` but input timestep is not a fixed number.
+- ValueError: if `mask` is provided (not `None`) but states is not provided (`len(states)`
+    == 0).
+inputs:
+  optional:
+  - go_backwards
+  - mask
+  - constants
+  - unroll
+  - input_length
+  - time_major
+  - zero_output_for_mask
+  required:
+  - step_function
+  - inputs
+  - initial_states
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/rnn
+outputs: 'A tuple, `(last_output, outputs, new_states)`.     last_output: the latest
+  output of the rnn, of shape `(samples, ...)`    outputs: tensor with shape `(samples,
+  time, ...)` where each         entry `outputs[s, t]` is the output of the step function         at
+  time `t` for sample `s`.     new_states: list of tensors, latest states returned
+  by         the step function, of shape `(samples, ...)`.'
+package: tensorflow
+target: rnn
+title: tf.keras.backend.rnn
+version: 2.1.0

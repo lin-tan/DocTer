@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.ifft2d
+- tf.compat.v1.signal.ifft2d
+- tf.compat.v1.spectral.ifft2d
+constraints:
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `complex64`, `complex128`.
+      A complex tensor.'
+    dtype:
+    - tf.complex
+    - tf.complex128
+    - tf.complex64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/signal/ifft2d
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: ifft2d
+title: tf.signal.ifft2d
+version: 2.1.0

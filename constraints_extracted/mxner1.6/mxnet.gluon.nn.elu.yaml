@@ -1,0 +1,23 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: '1.0'
+    descp: The alpha parameter as described by Clevert et al, 2016
+    doc_dtype: float
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - alpha
+  required:
+  - '**kwargs'
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.ELU
+package: mxnet
+target: ELU
+title: mxnet.gluon.nn.ELU
+version: 1.6.0

@@ -1,0 +1,39 @@
+constraints:
+  _use_new_zipfile_serialization:
+    default: 'False'
+    descp: ''
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  f:
+    descp: a file-like object (has to implement write and flush) or a string containing
+      a file name
+    ndim:
+    - '0'
+    - '1'
+  obj:
+    descp: saved object
+  pickle_module:
+    default: <modulepicklefrom/opt/conda/lib/python3.6/pickle.py>
+    descp: module used for pickling metadata and objects
+  pickle_protocol:
+    default: '2'
+    descp: can be specified to override the default protocol
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - pickle_module
+  - pickle_protocol
+  - _use_new_zipfile_serialization
+  required:
+  - obj
+  - f
+link: https://pytorch.org/docs/1.5.0/torch.html#torch.save
+package: torch
+target: save
+title: torch.save
+version: 1.5.0

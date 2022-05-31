@@ -1,0 +1,47 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  is_log:
+    default: _Null
+    descp: If set, compute the density of the log-probability instead of the probability.
+    doc_dtype: boolean, optional, default=0
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+  lam:
+    default: None
+    descp: Lambda (rate) parameters of the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  sample:
+    default: None
+    descp: Samples from the distributions.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - sample
+  - lam
+  - is_log
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.random_pdf_exponential
+package: mxnet
+target: random_pdf_exponential
+title: mxnet.ndarray.random_pdf_exponential
+version: 1.6.0

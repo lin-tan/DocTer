@@ -1,0 +1,78 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  axis:
+    default: _Null
+    descp: Arange elements according to the size of a certain axis of input array.
+      The negative numbers are interpreted counting from the backward. If not provided,
+      will arange elements according to the input shape.
+    doc_dtype: int or None, optional, default='None'
+    dtype:
+    - int
+    structure:
+    - ndarray
+  ctx:
+    default: _Null
+    descp: Context of output, in format [cpu|gpu|cpu_pinned](n).Only used for imperative
+      calls.
+    doc_dtype: string, optional, default=''
+    dtype:
+    - string
+  data:
+    default: None
+    descp: The input
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  repeat:
+    default: _Null
+    descp: The repeating time of all elements. E.g repeat=3, the element a will be
+      repeated three times -> a, a, a.
+    doc_dtype: int, optional, default='1'
+    dtype:
+    - int
+    ndim:
+    - '0'
+  start:
+    default: _Null
+    descp: Start of interval. The interval includes this value. The default start
+      value is 0.
+    doc_dtype: double, optional, default=0
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+  step:
+    default: _Null
+    descp: Spacing between values.
+    doc_dtype: double, optional, default=1
+    dtype:
+    - numpy.double
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - start
+  - step
+  - repeat
+  - ctx
+  - axis
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/ndarray/index.html#mxnet.contrib.ndarray.arange_like
+package: mxnet
+target: arange_like
+title: mxnet.contrib.ndarray.arange_like
+version: 1.6.0

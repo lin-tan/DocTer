@@ -1,0 +1,57 @@
+constraints:
+  atol:
+    default: None
+    descp: '`Tensor`.  Same `dtype` as, and broadcastable to, `x`. The absolute tolerance.  Default
+      is `10 * eps`.'
+  message:
+    default: None
+    descp: A string to prefix to the default message.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: A name for this operation (optional).  Defaults to "assert_near".
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  rtol:
+    default: None
+    descp: '`Tensor`.  Same `dtype` as, and broadcastable to, `x`. The relative tolerance.  Default
+      is `10 * eps`.'
+  summarize:
+    default: None
+    descp: Print this many entries of each tensor.
+  x:
+    descp: Float or complex `Tensor`.
+    dtype:
+    - float
+    - tf.complex
+    tensor_t:
+    - tf.tensor
+  y:
+    descp: Float or complex `Tensor`, same dtype as and broadcastable to `x`.
+exceptions:
+- InvalidArgumentError: if the check can be performed immediately and`x != y` is False
+    for any pair of elements in `x` and `y`. The check can be performed immediately
+    during eager execution or if `x` and `y` are statically known.
+inputs:
+  optional:
+  - rtol
+  - atol
+  - message
+  - summarize
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/debugging/assert_near
+outputs: Op that raises `InvalidArgumentError` if `x` and `y` are not close enough.   This
+  can be used with `tf.control_dependencies` inside of `tf.function`s   to block followup
+  computation until the check has executed.
+package: tensorflow
+target: assert_near
+title: tf.debugging.assert_near
+version: 2.1.0

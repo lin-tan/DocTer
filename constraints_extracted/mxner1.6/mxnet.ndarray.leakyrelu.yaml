@@ -1,0 +1,78 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  act_type:
+    default: _Null
+    descp: Activation function to be applied.
+    doc_dtype: '{''elu'', ''gelu'', ''leaky'', ''prelu'', ''rrelu'', ''selu''},optional,
+      default=''leaky'''
+    enum:
+    - elu
+    - gelu
+    - leaky
+    - prelu
+    - rrelu
+    - selu
+  data:
+    default: None
+    descp: Input data to activation function.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  gamma:
+    default: None
+    descp: Input data to activation function.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lower_bound:
+    default: _Null
+    descp: Lower bound of random slope. (For rrelu only)
+    doc_dtype: float, optional, default=0.125
+    dtype:
+    - float
+    ndim:
+    - '0'
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  slope:
+    default: _Null
+    descp: Init slope for the activation. (For leaky and elu only)
+    doc_dtype: float, optional, default=0.25
+    dtype:
+    - float
+    ndim:
+    - '0'
+  upper_bound:
+    default: _Null
+    descp: Upper bound of random slope. (For rrelu only)
+    doc_dtype: float, optional, default=0.333999991
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - data
+  - gamma
+  - act_type
+  - slope
+  - lower_bound
+  - upper_bound
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.LeakyReLU
+package: mxnet
+target: LeakyReLU
+title: mxnet.ndarray.LeakyReLU
+version: 1.6.0

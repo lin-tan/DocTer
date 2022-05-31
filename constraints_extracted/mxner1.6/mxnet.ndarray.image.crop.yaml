@@ -1,0 +1,58 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  height:
+    default: _Null
+    descp: Height of the cropping area.
+    doc_dtype: int, required
+    dtype:
+    - int
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  width:
+    default: _Null
+    descp: Width of the cropping area.
+    doc_dtype: int, required
+    dtype:
+    - int
+  x:
+    default: _Null
+    descp: Left boundary of the cropping area.
+    doc_dtype: int, required
+    dtype:
+    - int
+  y:
+    default: _Null
+    descp: Top boundary of the cropping area.
+    doc_dtype: int, required
+    dtype:
+    - int
+inputs:
+  optional:
+  - data
+  - x
+  - y
+  - width
+  - height
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.crop
+package: mxnet
+target: crop
+title: mxnet.ndarray.image.crop
+version: 1.6.0

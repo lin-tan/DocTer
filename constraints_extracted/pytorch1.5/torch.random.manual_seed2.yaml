@@ -1,0 +1,15 @@
+constraints:
+  seed:
+    descp: The desired seed.
+    doc_dtype: int
+    dtype:
+    - int
+inputs:
+  optional: []
+  required:
+  - seed
+link: https://pytorch.org/docs/1.5.0/random.html
+package: torch
+target: manual_seed
+title: torch.random.manual_seed
+version: 1.5.0

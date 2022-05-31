@@ -1,0 +1,35 @@
+aliases:
+- tf.not_equal
+- tf.compat.v1.math.not_equal
+- tf.compat.v1.not_equal
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `tf.Tensor` or `tf.SparseTensor` or `tf.IndexedSlices`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+  y:
+    descp: A `tf.Tensor` or `tf.SparseTensor` or `tf.IndexedSlices`.
+    tensor_t:
+    - SparseTensor
+    - tf.tensor
+exceptions: '`tf.errors.InvalidArgumentError`: If shapes of arguments are incompatible'
+inputs:
+  optional:
+  - name
+  required:
+  - x
+  - y
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/not_equal
+outputs: A `tf.Tensor` of type bool with the same size as that of x or y.
+package: tensorflow
+target: not_equal
+title: tf.math.not_equal
+version: 2.1.0

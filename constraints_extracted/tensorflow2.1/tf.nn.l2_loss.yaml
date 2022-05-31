@@ -1,0 +1,32 @@
+aliases:
+- tf.compat.v1.nn.l2_loss
+check_nan: true
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  t:
+    descp: 'A `Tensor`. Must be one of the following types: `half`, `bfloat16`, `float32`,
+      `float64`. Typically 2-D, but may have any dimensions.'
+    dtype:
+    - tf.bfloat16
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - t
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/l2_loss
+outputs: A `Tensor`. Has the same type as `t`.
+package: tensorflow
+target: l2_loss
+title: tf.nn.l2_loss
+version: 2.1.0

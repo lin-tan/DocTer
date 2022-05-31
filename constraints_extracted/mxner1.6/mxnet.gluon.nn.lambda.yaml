@@ -1,0 +1,24 @@
+check_nan: true
+constraints:
+  function:
+    descp: 'Function used in lambda must be one of the following: 1) the name of an
+      operator that is available in ndarray. For example: block = Lambda(''tanh'')   <ol
+      class="arabic" start="2"> a function that conforms to `def function(*args)`.
+      For example: block = Lambda(lambda x: nd.LeakyReLU(x, slope=0.1))   '
+    doc_dtype: str or function
+    dtype:
+    - string
+  prefix:
+    default: None
+    descp: ''
+inputs:
+  optional:
+  - prefix
+  required:
+  - function
+layer_constructor: true
+link: https://mxnet.apache.org/versions/1.6.0/api/python/docs/api/gluon/nn/index.html#mxnet.gluon.nn.Lambda
+package: mxnet
+target: Lambda
+title: mxnet.gluon.nn.Lambda
+version: 1.6.0

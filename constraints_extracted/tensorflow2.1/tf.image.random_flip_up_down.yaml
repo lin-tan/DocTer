@@ -1,0 +1,38 @@
+aliases:
+- tf.compat.v1.image.random_flip_up_down
+constraints:
+  image:
+    descp: 4-D Tensor of shape `[batch, height, width, channels]` or 3-D Tensor of
+      shape `[height, width, channels]`.
+    ndim:
+    - '3'
+    - '4'
+    shape:
+    - '[batch,height,width,channels]'
+    - '[height,width,channels]'
+    tensor_t:
+    - tf.tensor
+  seed:
+    default: None
+    descp: A Python integer. Used to create a random seed. See`tf.compat.v1.set_random_seed`
+      for behavior.
+    dtype:
+    - int
+dependency:
+- batch
+- width
+- channels
+- height
+exceptions:
+- ValueError: if the shape of `image` not supported.
+inputs:
+  optional:
+  - seed
+  required:
+  - image
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/image/random_flip_up_down
+outputs: A tensor of the same type and shape as `image`.
+package: tensorflow
+target: random_flip_up_down
+title: tf.image.random_flip_up_down
+version: 2.1.0

@@ -1,0 +1,67 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  a:
+    default: None
+    descp: Input array a
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  atol:
+    default: _Null
+    descp: Absolute tolerance.
+    doc_dtype: float, optional, default=9.99999994e-09
+    dtype:
+    - float
+    ndim:
+    - '0'
+  b:
+    default: None
+    descp: Input array b
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  equal_nan:
+    default: _Null
+    descp: Whether to compare NaN's as equal. If True, NaN's in A will be considered
+      equal to NaN's in B in the output array.
+    doc_dtype: boolean, optional, default=1
+    dtype:
+    - boolean
+    ndim:
+    - '0'
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  rtol:
+    default: _Null
+    descp: Relative tolerance.
+    doc_dtype: float, optional, default=9.99999975e-06
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - a
+  - b
+  - rtol
+  - atol
+  - equal_nan
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.allclose
+package: mxnet
+target: allclose
+title: mxnet.ndarray.contrib.allclose
+version: 1.6.0

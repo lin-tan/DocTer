@@ -1,0 +1,44 @@
+constraints:
+  input:
+    descp: A string `Tensor` of rank `N`, the strings to split.  If`rank(input)` is
+      not known statically, then it is assumed to be `1`.
+    dtype:
+    - tf.string
+    tensor_t:
+    - tf.tensor
+  maxsplit:
+    default: '-1'
+    descp: An `int`. If `maxsplit > 0`, limit of the split of the result.
+    dtype:
+    - int
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  sep:
+    default: None
+    descp: '`0-D` string `Tensor`, the delimiter string.'
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: If sep is not a string.
+inputs:
+  optional:
+  - sep
+  - maxsplit
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/strings/split
+outputs: A `RaggedTensor` of rank `N+1`, the strings split according to the delimiter.
+package: tensorflow
+target: split
+title: tf.strings.split
+version: 2.1.0

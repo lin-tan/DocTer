@@ -1,0 +1,33 @@
+check_nan: true
+constraints:
+  destination:
+    descp: Destination position for each of the original axes. Can be negative but
+      must be unique.
+    doc_dtype: int or sequence of int
+    dtype:
+    - int
+    structure:
+    - list
+  source:
+    descp: Original position of the axes to move. Can be negative but must be unique.
+    doc_dtype: int or sequence of int
+    dtype:
+    - int
+    structure:
+    - list
+  tensor:
+    descp: The array which axes should be reordered
+    doc_dtype: mx.nd.array
+    structure:
+    - ndarray
+inputs:
+  optional: []
+  required:
+  - tensor
+  - source
+  - destination
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.moveaxis
+package: mxnet
+target: moveaxis
+title: mxnet.ndarray.moveaxis
+version: 1.6.0

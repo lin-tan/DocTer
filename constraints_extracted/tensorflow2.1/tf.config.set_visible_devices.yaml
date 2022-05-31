@@ -1,0 +1,26 @@
+aliases:
+- tf.config.experimental.set_visible_devices
+- tf.compat.v1.config.experimental.set_visible_devices
+- tf.compat.v1.config.set_visible_devices
+constraints:
+  device_type:
+    default: None
+    descp: (optional) Only configure devices matching this device type. For example
+      "CPU" or "GPU". Other devices will be left unaltered.
+  devices:
+    descp: List of `PhysicalDevice`s to make visible
+    structure:
+    - list
+exceptions:
+- ValueError: If argument validation fails.
+- RuntimeError: Runtime is already initialized.
+inputs:
+  optional:
+  - device_type
+  required:
+  - devices
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/config/set_visible_devices
+package: tensorflow
+target: set_visible_devices
+title: tf.config.set_visible_devices
+version: 2.1.0

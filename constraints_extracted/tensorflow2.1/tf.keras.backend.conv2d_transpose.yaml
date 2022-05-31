@@ -1,0 +1,69 @@
+aliases:
+- tf.compat.v1.keras.backend.conv2d_transpose
+constraints:
+  data_format:
+    default: None
+    descp: string, `"channels_last"` or `"channels_first"`.
+    dtype:
+    - tf.string
+    enum:
+    - channels_first
+    - channels_last
+  dilation_rate:
+    default: (1, 1)
+    descp: Tuple of 2 integers.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    shape:
+    - '[2]'
+    structure:
+    - tuple
+  kernel:
+    descp: kernel tensor.
+  output_shape:
+    descp: 1D int tensor for the output shape.
+    dtype:
+    - int
+    ndim:
+    - '1'
+    tensor_t:
+    - tf.tensor
+  padding:
+    default: valid
+    descp: string, `"same"` or `"valid"`.
+    dtype:
+    - tf.string
+    enum:
+    - same
+    - valid
+    ndim:
+    - '0'
+  strides:
+    default: (1, 1)
+    descp: strides tuple.
+    dtype:
+    - int
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+exceptions:
+- ValueError: if `data_format` is neither `channels_last` or`channels_first`.
+inputs:
+  optional:
+  - strides
+  - padding
+  - data_format
+  - dilation_rate
+  required:
+  - x
+  - kernel
+  - output_shape
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/conv2d_transpose
+outputs: A tensor, result of transposed 2D convolution.
+package: tensorflow
+target: conv2d_transpose
+title: tf.keras.backend.conv2d_transpose
+version: 2.1.0

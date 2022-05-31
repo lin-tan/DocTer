@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.backend.update_sub
+constraints:
+  decrement:
+    descp: A tensor of same shape as `x`.
+    tensor_t:
+    - tf.tensor
+  x:
+    descp: A Variable.
+inputs:
+  optional: []
+  required:
+  - x
+  - decrement
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/update_sub
+outputs: The variable `x` updated.
+package: tensorflow
+target: update_sub
+title: tf.keras.backend.update_sub
+version: 2.1.0

@@ -1,0 +1,37 @@
+check_nan: true
+constraints:
+  input:
+    descp: N-dimensional tensor
+    doc_dtype: Tensor
+    tensor_t:
+    - torch.tensor
+  mode:
+    default: constant
+    descp: '`''constant''`, `''reflect''`, `''replicate''` or `''circular''`. Default:
+      `''constant''`'
+    dtype:
+    - string
+  pad:
+    descp: m-elements tuple, where  m/2  <=  input dimensions and m  is even.
+    doc_dtype: tuple
+    structure:
+    - tuple
+  value:
+    default: '0'
+    descp: 'fill value for `''constant''` padding. Default: `0`'
+    dtype:
+    - int
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - mode
+  - value
+  required:
+  - input
+  - pad
+link: https://pytorch.org/docs/1.5.0/nn.functional.html#torch.nn.functional.pad
+package: torch
+target: pad
+title: torch.nn.functional.pad
+version: 1.5.0

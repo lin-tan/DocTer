@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.keras.layers.ReLU
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: ''
+  max_value:
+    default: None
+    descp: Float >= 0. Maximum activation value.
+  negative_slope:
+    default: '0'
+    descp: Float >= 0. Negative slope coefficient.
+    dtype:
+    - int
+  threshold:
+    default: '0'
+    descp: Float. Threshold value for thresholded activation.
+    dtype:
+    - int
+inputs:
+  optional:
+  - max_value
+  - negative_slope
+  - threshold
+  - '**kwargs'
+  required: []
+layer_constructor: true
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/layers/ReLU
+package: tensorflow
+target: ReLU
+title: tf.keras.layers.ReLU
+version: 2.1.0

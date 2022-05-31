@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.linalg.logm
+constraints:
+  input:
+    descp: 'A `Tensor`. Must be one of the following types: `complex64`, `complex128`.
+      Shape is `[..., M, M]`.'
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - name
+  required:
+  - input
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/logm
+outputs: A `Tensor`. Has the same type as `input`.
+package: tensorflow
+target: logm
+title: tf.linalg.logm
+version: 2.1.0

@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.math.polyval
+constraints:
+  coeffs:
+    descp: A list of `Tensor` representing the coefficients of the polynomial.
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor` representing the variable of the polynomial.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - coeffs
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/polyval
+outputs: A `tensor` of the shape as the expression p(x) with usual broadcasting rules
+  for element-wise addition and multiplication applied.
+package: tensorflow
+target: polyval
+title: tf.math.polyval
+version: 2.1.0

@@ -1,0 +1,91 @@
+aliases:
+- tf.compat.v1.linalg.tridiagonal_solve
+constraints:
+  conjugate_rhs:
+    default: 'False'
+    descp: If `True`, `rhs` is conjugated before solving.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  diagonals:
+    descp: A `Tensor` or tuple of `Tensor`s describing left-hand sides. The shape
+      depends of `diagonals_format`, see description above. Must be`float32`, `float64`,
+      `complex64`, or `complex128`.
+    structure:
+    - tuple
+    tensor_t:
+    - tf.tensor
+  diagonals_format:
+    default: compact
+    descp: one of `matrix`, `sequence`, or `compact`. Default is`compact`.
+    dtype:
+    - tf.string
+    enum:
+    - compact
+    - matrix
+    ndim:
+    - '0'
+    structure:
+    - list
+  name:
+    default: None
+    descp: A name to give this `Op` (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  partial_pivoting:
+    default: 'True'
+    descp: whether to perform partial pivoting. `True` by default. Partial pivoting
+      makes the procedure more stable, but slower. Partial pivoting is unnecessary
+      in some cases, including diagonally dominant and symmetric positive definite
+      matrices (see e.g. theorem 9.12 in [1]).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  rhs:
+    descp: A `Tensor` of shape [..., M] or [..., M, K] and with the same dtype as`diagonals`.
+      Note that if the shape of `rhs` and/or `diags` isn't known statically, `rhs`
+      will be treated as a matrix rather than a vector.
+    ndim:
+    - '>=1'
+    - '>=2'
+    shape:
+    - '[...,m,k]'
+    - '[...,m]'
+    structure:
+    - list
+    tensor_t:
+    - tf.tensor
+  transpose_rhs:
+    default: 'False'
+    descp: If `True`, `rhs` is transposed before solving (has no effect if the shape
+      of rhs is [..., M]).
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+dependency:
+- k
+- m
+exceptions:
+- ValueError: An unsupported type is provided as input, or when the input tensors
+    have incorrect shapes.
+inputs:
+  optional:
+  - diagonals_format
+  - transpose_rhs
+  - conjugate_rhs
+  - name
+  - partial_pivoting
+  required:
+  - diagonals
+  - rhs
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/linalg/tridiagonal_solve
+outputs: A `Tensor` of shape [..., M] or [..., M, K] containing the solutions.
+package: tensorflow
+target: tridiagonal_solve
+title: tf.linalg.tridiagonal_solve
+version: 2.1.0

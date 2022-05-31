@@ -1,0 +1,20 @@
+aliases:
+- tf.compat.v1.keras.regularizers.l2
+constraints:
+  l:
+    default: '0.01'
+    descp: Float; L2 regularization factor.
+    dtype:
+    - float
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - l
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/regularizers/l2
+outputs: An L2 Regularizer with the given regularization factor.
+package: tensorflow
+target: l2
+title: tf.keras.regularizers.l2
+version: 2.1.0

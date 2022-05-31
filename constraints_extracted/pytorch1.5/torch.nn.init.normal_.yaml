@@ -1,0 +1,28 @@
+constraints:
+  mean:
+    default: '0.0'
+    descp: the mean of the normal distribution
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  std:
+    default: '1.0'
+    descp: the standard deviation of the normal distribution
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  tensor:
+    descp: an n-dimensional torch.Tensor
+inputs:
+  optional:
+  - mean
+  - std
+  required:
+  - tensor
+link: https://pytorch.org/docs/1.5.0/nn.init.html#torch.nn.init.normal_
+package: torch
+target: normal_
+title: torch.nn.init.normal_
+version: 1.5.0

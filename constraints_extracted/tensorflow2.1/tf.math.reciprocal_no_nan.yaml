@@ -1,0 +1,33 @@
+aliases:
+- tf.compat.v1.math.reciprocal_no_nan
+constraints:
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  x:
+    descp: A `Tensor` of type `float16`, `float32`, `float64` `complex64` or`complex128`.
+    dtype:
+    - tf.complex128
+    - tf.complex64
+    - tf.float16
+    - tf.float32
+    - tf.float64
+    tensor_t:
+    - tf.tensor
+exceptions:
+- TypeError: x must be of a valid dtype.
+inputs:
+  optional:
+  - name
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/math/reciprocal_no_nan
+outputs: A `Tensor` of same shape and type as `x`.
+package: tensorflow
+target: reciprocal_no_nan
+title: tf.math.reciprocal_no_nan
+version: 2.1.0

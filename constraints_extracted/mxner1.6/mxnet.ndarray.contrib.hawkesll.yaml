@@ -1,0 +1,85 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  alpha:
+    default: None
+    descp: Shape (K,) The infectivity factor (branching ratio) for each process
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  beta:
+    default: None
+    descp: Shape (K,) The decay parameter for each process
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lags:
+    default: None
+    descp: Shape (N, T) the interarrival times
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  lda:
+    default: None
+    descp: Shape (N, K) The intensity for each of the K processes, for each sample
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  marks:
+    default: None
+    descp: Shape (N, T) the marks (process ids)
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  max_time:
+    default: None
+    descp: the length of the interval where the processes were sampled
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  state:
+    default: None
+    descp: Shape (N, K) the Hawkes state for each process
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  valid_length:
+    default: None
+    descp: The number of valid points in the process
+    doc_dtype: NDArray
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - lda
+  - alpha
+  - beta
+  - state
+  - lags
+  - marks
+  - valid_length
+  - max_time
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/contrib/index.html#mxnet.ndarray.contrib.hawkesll
+package: mxnet
+target: hawkesll
+title: mxnet.ndarray.contrib.hawkesll
+version: 1.6.0

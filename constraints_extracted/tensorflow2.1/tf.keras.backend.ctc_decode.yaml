@@ -1,0 +1,53 @@
+aliases:
+- tf.compat.v1.keras.backend.ctc_decode
+constraints:
+  beam_width:
+    default: '100'
+    descp: 'if `greedy` is `false`: a beam search decoder will be used with a beam
+      of this width.'
+    dtype:
+    - int
+  greedy:
+    default: 'True'
+    descp: perform much faster best-path search if `true`. This does not use a dictionary.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+    structure:
+    - dict
+  input_length:
+    descp: tensor `(samples, )` containing the sequence length for each batch item
+      in `y_pred`.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  top_paths:
+    default: '1'
+    descp: if `greedy` is `false`, how many of the most probable paths will be returned.
+    dtype:
+    - int
+  y_pred:
+    descp: tensor `(samples, time_steps, num_categories)`containing the prediction,
+      or output of the softmax.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - greedy
+  - beam_width
+  - top_paths
+  required:
+  - y_pred
+  - input_length
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/ctc_decode
+outputs:
+- Tuple: 'List: if `greedy` is `true`, returns a list of one element that     contains
+    the decoded sequence.     If `false`, returns the `top_paths` most probable     decoded
+    sequences.     Important: blank labels are returned as `-1`. Tensor `(top_paths,
+    )` that contains     the log probability of each decoded sequence.'
+package: tensorflow
+target: ctc_decode
+title: tf.keras.backend.ctc_decode
+version: 2.1.0

@@ -1,0 +1,61 @@
+aliases:
+- tf.compat.v1.random.stateless_categorical
+constraints:
+  dtype:
+    default: tf.dtypes.int64
+    descp: integer type to use for the output. Defaults to int64.
+    dtype:
+    - int
+    - tf.dtype
+    - tf.int64
+    ndim:
+    - '0'
+  logits:
+    descp: 2-D Tensor with shape `[batch_size, num_classes]`.  Each slice`[i, :]`
+      represents the unnormalized log-probabilities for all classes.
+    ndim:
+    - '2'
+    shape:
+    - '[batch_size,num_classes]'
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: Optional name for the operation.
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_samples:
+    descp: 0-D.  Number of independent samples to draw for each row slice.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  seed:
+    descp: A shape [2] integer Tensor of seeds to the random number generator.
+    dtype:
+    - int
+    range:
+    - '[0,inf)'
+    tensor_t:
+    - tf.tensor
+dependency:
+- batch_size
+- num_classes
+inputs:
+  optional:
+  - dtype
+  - name
+  required:
+  - logits
+  - num_samples
+  - seed
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/random/stateless_categorical
+outputs: The drawn samples of shape `[batch_size, num_samples]`.
+package: tensorflow
+target: stateless_categorical
+title: tf.random.stateless_categorical
+version: 2.1.0

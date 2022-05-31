@@ -1,0 +1,81 @@
+constraints:
+  arg_params:
+    descp: Dictionary of name to NDArray.
+    doc_dtype: dict
+    structure:
+    - dict
+    - ndarray
+  aux_params:
+    descp: Dictionary of name to NDArray.
+    doc_dtype: dict
+    structure:
+    - dict
+    - ndarray
+  calib_mode:
+    default: entropy
+    descp: If calib_mode='none', no calibration will be used and the thresholds for
+      requantization after the corresponding layers will be calculated at runtime
+      by calling min and max operators. The quantized models generated in this mode
+      are normally 10-20% slower than those with calibrations during inference. If
+      calib_mode='naive', the min and max values of the layer outputs from a calibration
+      dataset will be directly taken as the thresholds for quantization. If calib_mode='entropy'
+      (default mode), the thresholds for quantization will be derived such that the
+      KL divergence between the distributions of FP32 layer outputs and quantized
+      layer outputs is minimized based upon the calibration dataset.
+    doc_dtype: str
+    dtype:
+    - string
+    ndim:
+    - '0'
+  ctx:
+    default: cpu(0)
+    descp: ''
+  excluded_op_names:
+    default: None
+    descp: A list of strings representing the names of the operators that users want
+      to excluding
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  excluded_sym_names:
+    default: None
+    descp: A list of strings representing the names of the symbols that users want
+      to excluding from being quantized.
+    doc_dtype: list of strings
+    dtype:
+    - string
+    structure:
+    - list
+  logger:
+    default: <moduleloggingfrom/work/conda_env/lib/python3.8/logging/__init__.py>
+    descp: A logging object for printing information during the process of quantization.
+    doc_dtype: Object
+  quantized_dtype:
+    default: int8
+    descp: The quantized destination type for input data. Currently support 'int8'
+      , 'uint8' and 'auto'. 'auto' means automatically select output type according
+      to calibration result. Default value is 'int8'.
+    doc_dtype: str
+    dtype:
+    - string
+  sym:
+    descp: ''
+inputs:
+  optional:
+  - ctx
+  - excluded_sym_names
+  - excluded_op_names
+  - calib_mode
+  - quantized_dtype
+  - logger
+  required:
+  - sym
+  - arg_params
+  - aux_params
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/contrib/quantization/index.html#mxnet.contrib.quantization.quantize_graph
+package: mxnet
+target: quantize_graph
+title: mxnet.contrib.quantization.quantize_graph
+version: 1.6.0

@@ -1,0 +1,58 @@
+constraints:
+  '**kwargs':
+    descp: ''
+  brightness:
+    default: _Null
+    descp: How much to jitter brightness.
+    doc_dtype: float, required
+    dtype:
+    - float
+  contrast:
+    default: _Null
+    descp: How much to jitter contrast.
+    doc_dtype: float, required
+    dtype:
+    - float
+  data:
+    default: None
+    descp: The input.
+    doc_dtype: NDArray
+    structure:
+    - ndarray
+  hue:
+    default: _Null
+    descp: How much to jitter hue.
+    doc_dtype: float, required
+    dtype:
+    - float
+  name:
+    default: None
+    descp: ''
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+  saturation:
+    default: _Null
+    descp: How much to jitter saturation.
+    doc_dtype: float, required
+    dtype:
+    - float
+inputs:
+  optional:
+  - data
+  - brightness
+  - contrast
+  - saturation
+  - hue
+  - out
+  - name
+  required:
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/image/index.html#mxnet.ndarray.image.random_color_jitter
+package: mxnet
+target: random_color_jitter
+title: mxnet.ndarray.image.random_color_jitter
+version: 1.6.0

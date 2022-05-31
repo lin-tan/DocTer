@@ -1,0 +1,41 @@
+aliases:
+- tf.compat.v1.dynamic_partition
+constraints:
+  data:
+    descp: A `Tensor`.
+    tensor_t:
+    - tf.tensor
+  name:
+    default: None
+    descp: A name for the operation (optional).
+    dtype:
+    - tf.string
+    ndim:
+    - '0'
+  num_partitions:
+    descp: An `int` that is `>= 1`. The number of partitions to output.
+    dtype:
+    - int
+    ndim:
+    - '0'
+    range:
+    - '[0,inf)'
+  partitions:
+    descp: A `Tensor` of type `int32`. Any shape.  Indices in the range `[0, num_partitions)`.
+    dtype:
+    - tf.int32
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - name
+  required:
+  - data
+  - partitions
+  - num_partitions
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/dynamic_partition
+outputs: A list of `num_partitions` `Tensor` objects with the same type as `data`.
+package: tensorflow
+target: dynamic_partition
+title: tf.dynamic_partition
+version: 2.1.0

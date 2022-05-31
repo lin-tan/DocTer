@@ -1,0 +1,26 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    descp: ''
+  '*args':
+    descp: Positional input matrices
+    doc_dtype: NDArray[]
+    structure:
+    - ndarray
+  out:
+    default: None
+    descp: The output NDArray to hold the result.
+    doc_dtype: NDArray, optional
+    structure:
+    - ndarray
+inputs:
+  optional:
+  - out
+  required:
+  - '*args'
+  - '**kwargs'
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/ndarray/ndarray.html#mxnet.ndarray.khatri_rao
+package: mxnet
+target: khatri_rao
+title: mxnet.ndarray.khatri_rao
+version: 1.6.0

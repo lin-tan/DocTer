@@ -1,0 +1,29 @@
+aliases:
+- tf.compat.v1.keras.backend.all
+constraints:
+  axis:
+    default: None
+    descp: axis along which to perform the reduction.
+  keepdims:
+    default: 'False'
+    descp: whether the drop or broadcast the reduction axes.
+    dtype:
+    - tf.bool
+    ndim:
+    - '0'
+  x:
+    descp: Tensor or variable.
+    tensor_t:
+    - tf.tensor
+inputs:
+  optional:
+  - axis
+  - keepdims
+  required:
+  - x
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/keras/backend/all
+outputs: A uint8 tensor (0s and 1s).
+package: tensorflow
+target: all
+title: tf.keras.backend.all
+version: 2.1.0

@@ -1,0 +1,103 @@
+check_nan: true
+constraints:
+  '**kwargs':
+    default: null
+    descp: dict of keyword arguments for base layer.
+  '*args':
+    default: null
+    descp: ''
+  cell:
+    default: None
+    descp: an RNNCell, a projection to output_size is added to it.
+  dropout_state_filter_visitor:
+    default: None
+    descp: '(optional), default: (see below).  Function that takes any hierarchical
+      level of the state and returns a scalar or depth=1 structure of Python booleans
+      describing which terms in the state should be dropped out.  In addition, if
+      the function returns `True`, dropout is applied across this sublevel.  If the
+      function returns`False`, dropout is not applied across this entire sublevel.
+      Default behavior: perform dropout on all terms except the memory (`c`) state
+      of `LSTMCellState` objects, and don''t try to apply dropout to`TensorArray`
+      objects: `def dropout_state_filter_visitor(s): if isinstance(s, LSTMCellState):
+      # Never perform dropout on the c   state. return LSTMCellState(c=False, h=True)
+      elif isinstance(s, TensorArray): return False return True`'
+  dtype:
+    default: None
+    descp: (optional) The `dtype` of the input, state, and output tensors. Required
+      and used <strong>iff</strong> `variational_recurrent = True`.
+  input_keep_prob:
+    default: None
+    descp: unit Tensor or float between 0 and 1, input keep probability; if it is
+      constant and 1, no input dropout will be added.
+    dtype:
+    - float
+    tensor_t:
+    - tf.tensor
+  input_size:
+    default: None
+    descp: (optional) (possibly nested tuple of) `TensorShape` objects containing
+      the depth(s) of the input tensors expected to be passed in to the `DropoutWrapper`.  Required
+      and used <strong>iff</strong> `variational_recurrent = True` and `input_keep_prob
+      < 1`.
+    enum:
+    - DropoutWrapper
+    - TensorShape
+    structure:
+    - tuple
+    tensor_t:
+    - tf.tensor
+  output_keep_prob:
+    default: None
+    descp: unit Tensor or float between 0 and 1, output keep probability; if it is
+      constant and 1, no output dropout will be added.
+    dtype:
+    - float
+    tensor_t:
+    - tf.tensor
+  seed:
+    default: None
+    descp: (optional) integer, the randomness seed.
+    dtype:
+    - int
+  state_keep_prob:
+    default: None
+    descp: unit Tensor or float between 0 and 1, output keep probability; if it is
+      constant and 1, no output dropout will be added. State dropout is performed
+      on the outgoing states of the cell. <strong>Note</strong>the state components
+      to which dropout is applied when `state_keep_prob`is in `(0, 1)` are also determined
+      by the argument`dropout_state_filter_visitor` (e.g. by default dropout is never
+      applied to the `c` component of an `LSTMStateTuple`).
+    dtype:
+    - float
+    tensor_t:
+    - tf.tensor
+  variational_recurrent:
+    default: None
+    descp: Python bool.  If `True`, then the same dropout pattern is applied across
+      all time steps per run call. If this parameter is set, `input_size` <strong>must</strong>
+      be provided.
+    dtype:
+    - tf.bool
+exceptions:
+- TypeError: if `cell` is not an `RNNCell`, or `keep_state_fn` is provided but not
+    `callable`.
+- ValueError: if any of the keep_probs are not between 0 and 1.
+inputs:
+  optional:
+  - '*args'
+  - '**kwargs'
+  - cell
+  - input_keep_prob
+  - output_keep_prob
+  - state_keep_prob
+  - variational_recurrent
+  - input_size
+  - dtype
+  - seed
+  - dropout_state_filter_visitor
+  required: []
+link: https://www.tensorflow.org/versions/r2.1/api_docs/python/tf/nn/RNNCellDropoutWrapper
+package: tensorflow
+target: RNNCellDropoutWrapper
+title: tf.nn.RNNCellDropoutWrapper
+version: 2.1.0

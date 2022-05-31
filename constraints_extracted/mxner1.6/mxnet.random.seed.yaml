@@ -1,0 +1,25 @@
+constraints:
+  ctx:
+    default: all
+    descp: The device context of the generator. The default is "all" which means seeding
+      random number generators of all devices.
+    doc_dtype: Context
+    dtype:
+    - string
+    ndim:
+    - '0'
+  seed_state:
+    descp: The random number seed.
+    doc_dtype: int
+    dtype:
+    - int
+inputs:
+  optional:
+  - ctx
+  required:
+  - seed_state
+link: https://mxnet.apache.org/versions/1.6/api/python/docs/api/mxnet/random/index.html#mxnet.random.seed
+package: mxnet
+target: seed
+title: mxnet.random.seed
+version: 1.6.0

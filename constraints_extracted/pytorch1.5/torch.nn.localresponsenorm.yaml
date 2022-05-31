@@ -1,0 +1,39 @@
+check_nan: true
+constraints:
+  alpha:
+    default: '0.0001'
+    descp: 'multiplicative factor. Default: 0.0001'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  beta:
+    default: '0.75'
+    descp: 'exponent. Default: 0.75'
+    dtype:
+    - torch.float32
+    ndim:
+    - '0'
+  k:
+    default: '1.0'
+    descp: 'additive factor. Default: 1'
+    dtype:
+    - int
+    - torch.float32
+    ndim:
+    - '0'
+  size:
+    descp: amount of neighbouring channels used for normalization
+inputs:
+  optional:
+  - alpha
+  - beta
+  - k
+  required:
+  - size
+layer_constructor: true
+link: https://pytorch.org/docs/1.5.0/nn.html#torch.nn.LocalResponseNorm
+package: torch
+target: LocalResponseNorm
+title: torch.nn.LocalResponseNorm
+version: 1.5.0

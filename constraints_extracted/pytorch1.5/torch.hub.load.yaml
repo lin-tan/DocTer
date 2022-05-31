@@ -1,0 +1,53 @@
+constraints:
+  '**kwargs':
+    descp: the corresponding kwargs for callable model.
+    doc_dtype: optional
+  '*args':
+    descp: the corresponding args for callable model.
+    doc_dtype: optional
+  force_reload:
+    default: None
+    descp: whether to force a fresh download of github repo unconditionally. Default
+      is False.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+  github:
+    descp: 'a string with format "repo_owner/repo_name[:tag_name]" with an optional
+      tag/branch. The default branch is master if not specified. Example: ''pytorch/vision[:hub]'''
+    doc_dtype: string
+    dtype:
+    - string
+    ndim:
+    - '0'
+    - '1'
+  model:
+    descp: a string of entrypoint name defined in repo's hubconf.py
+    doc_dtype: string
+    dtype:
+    - string
+  verbose:
+    default: None
+    descp: If False, mute messages about hitting local caches. Note that the message
+      about first download is cannot be muted. Default is True.
+    doc_dtype: bool, optional
+    dtype:
+    - torch.bool
+    ndim:
+    - '0'
+inputs:
+  optional:
+  - force_reload
+  - verbose
+  required:
+  - github
+  - model
+  - '*args'
+  - '**kwargs'
+link: https://pytorch.org/docs/1.5.0/hub.html#torch.hub.load
+package: torch
+target: load
+title: torch.hub.load
+version: 1.5.0
