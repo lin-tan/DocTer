@@ -127,12 +127,13 @@ cd /home/code/DocTer
 
 **Quick start: Tensorflow CI mode with example APIs**
 
-For example, to run the fuzzer for Tensorflow CI mode with example APIs, use the following command:
+For example, to run the fuzzer for Tensorflow CI mode with example APIs, use the following commands (you  need to create the workdir folder first):
 
 ```
+mkdir /home/workdir/
+
 bash run_fuzzer.sh tensorflow ./example_constr/tf2.1 ./configs/ci.config | tee /home/workdir/tf_ci.log
 ```
-
 
 
 The script `run_fuzzer.sh` calls the fuzzer and takes three parameters:
