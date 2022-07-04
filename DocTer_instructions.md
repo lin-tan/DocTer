@@ -135,6 +135,7 @@ mkdir /home/workdir/
 bash run_fuzzer.sh tensorflow ./example_constr/tf2.1 ./configs/ci.config | tee /home/workdir/tf_ci.log
 ```
 
+This process generates thousands of test cases for each API and may take a long while. 
 
 The script `run_fuzzer.sh` calls the fuzzer and takes three parameters:
 - 1. Target library name. One of `tensorflow`, `pytorch`, or `mxnet`.
